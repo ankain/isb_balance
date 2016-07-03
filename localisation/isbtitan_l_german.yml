@@ -86,7 +86,7 @@ LEVIATHAN_CORE_02:0 "Artemis Kern"
  
 #Doomsday Waffen
 TECH_UNLOCK_TITAN_DOOMSDAY_TITLE:0 "§ESchaltet die Titanen Doomsday-Waffen Forschingsreihe frei§!"
-TECH_UNLOCK_TITAN_DOOMSDAY_DESC:0 "Doomsday-Waffen sind Planetenzerstörende Waffensysteme die ganze Kolonien sofort auslöschen können.\n\nNach dem Erforschen einer Doomsday-Waffe muss diese zuerst in der Imperiums-Ansicht ausgewählt werden und ihre Benutzing per Edikt freigegeben werden."
+TECH_UNLOCK_TITAN_DOOMSDAY_DESC:0 "Doomsday-Waffen sind Planetenzerstörende Waffensysteme die ganze Kolonien sofort auslöschen können.\n\nNach dem Erforschen einer Doomsday-Waffe muss diese zuerst in der Imperiums-Ansicht ausgewählt werden und ihre Benutzing per Erlass freigegeben werden."
  
 #Titan Doomsday Device
 edict_doomsday_authorisation:0 "Erlaube Doomsday-Waffen"
@@ -102,18 +102,18 @@ doomsday_outlawed_desc:1 "Lange starrte ich in den Abgrund, doch ich soll nicht 
 #Doomsday-Waffe - Kinetisches Bombardement
 doomsday_kinetic:0 "Kinetisches Bombardement"
 doomsday_kinetic_name:0 "Benutze kinetisches Neutronium-Bombardement."
-doomsday_kinetic_desc:1 "Wer zusammenhält, der teilt eine gemeinsame Katastrophe, Und wird zusammen vernichtet.\n\n§EJeden Monat werden auf jedem Planeten, der unter 10% HP übrig hat und ein Schiff von Titanengröße im Orbit hat, 4-5 Felder zu radioaktivem Ödland. Solange bis alle Einwohner tot sind oder das Bombardement endet.\n\nNach dem Auswählen dieser waffe muss erst ein Imperiums Edikt erlassen werden, damit der Titan diese benutzen kann.§!\n"
+doomsday_kinetic_desc:1 "Wer zusammenhält, der teilt eine gemeinsame Katastrophe; Und wird zusammen vernichtet.\n\n§EJeden Monat werden auf jedem Planeten, der unter 10% HP übrig hat und ein Schiff von Titanengröße im Orbit hat, 4-5 Felder zu radioaktivem Ödland. Solange bis alle Einwohner tot sind oder das Bombardement endet.\n\nNach dem Auswählen dieser Waffe muss erst ein Imperiumsweiter Erlass erlassen werden, damit der Titan diese benutzen kann.§!\n"
  
 #Doomsday-Waffe - Evolutionsvirus
 doomsday_virus:0 "Evolutionsvirus"
 doomsday_virus_name:0 "Benutze das Evolutionsvirus."
-doomsday_virus_desc:1 "Was erschafft, kann auch ungeschaffen machen.\n\n§EJeden Monat verliert jeder Planet, der unter 10% HP übrig hat und ein Schiff von Titanengröße im Orbit hat, 3 Bevölkerungen. Solange bis alle Einwohner tot sind oder das Bombardement endet.\n\nHat eine 5%-ige Chance den Planetentyp auf KARG zu ändern.\n\nNach dem Auswählen dieser waffe muss erst ein Imperiums Edikt erlassen werden, damit der Titan diese benutzen kann.§!\n"
+doomsday_virus_desc:1 "Was erschafft, kann auch ungeschaffen machen.\n\n§EJeden Monat verliert jeder Planet, der unter 10% HP übrig hat und ein Schiff von Titanengröße im Orbit hat, 3 Bevölkerungen. Solange bis alle Einwohner tot sind oder das Bombardement endet.\n\nHat eine 5%-ige Chance den Planetentyp auf KARG zu ändern.\n\nNach dem Auswählen dieser Waffe muss erst ein Imperiumsweiter Erlass erlassen werden, damit der Titan diese benutzen kann.§!\n"
  
 opinion_doomsday_low:0 "Benutzt Doomsday-Waffen"
  
 #Doomsday-Waffe - Sonnenbrecher
 TECH_UNLOCK_SUN_CRUSHER_CHAIN_TITLE:0 "§ESonnenbrecher Forschungsreihe§!"
-TECH_UNLOCK_SUN_CRUSHER_CHAIN_DESC:0 "Das erforschen aller Technologien dieser reihe schaltet die Sonnenbrecher Doomsday-Waffe frei."
+TECH_UNLOCK_SUN_CRUSHER_CHAIN_DESC:0 "Das erforschen aller Technologien dieser Reihe schaltet die Sonnenbrecher Doomsday-Waffe frei."
  
 TECH_UNLOCK_SUN_CRUSHER_CONSTRUCTION_TITLE:0 "§HSchaltet Doomsday-Waffe frei:§! Sonnenbrecher"
 TECH_UNLOCK_SUN_CRUSHER_CONSTRUCTION_DESC:0 "§HSonnenbrecher§!\n$tech_sun_crusher_desc$"
@@ -144,7 +144,7 @@ pc_ringworld_seam_nova:0 "Brennede Ringwelt"
 pc_ringworld_seam_nova_desc:0 "Ein riesiges künstliches Band das die Sonne einkreist.\n\nDieser Teil der Hauptstruktur schein irreparabel beschädigt zu sein."
  
 edict_doomsday_nova_authorisation:0 "Erlaube benutze Sonnenbrecher"
-edict_doomsday_nova_authorisation_desc:0 "\nDoomsday-Waffen müssen erlaubt sein.\n\nUm die Waffe zu aktivieren, fliege den Sonnenbrecher in den Orbit des Zielsterns, aktiviere diesen Erlass und löse die Flotte des Sonnenbrechers auf.\n\nDu kannst den Sonnenbrecher nur in feindlichen Systemen oder unkolonisierten Systemen innerhalb unserer Grenzen nutzen!\n\n§HWARNUNG: Das benutzen des Sonnebrechers ist durch die Galaktische Kriegsverordnung explizit verboten. Andere Imperien werden uns für die Benutzung verurteilen, außer im absoluten Notfall...§!\n\n"
+edict_doomsday_nova_authorisation_desc:0 "\nDoomsday-Waffen müssen erlaubt sein.\n\nUm die Waffe zu aktivieren, fliege den Sonnenbrecher in den Orbit des Zielsterns, aktiviere diesen Erlass und löse die Flotte des Sonnenbrechers auf.\n\nDu kannst den Sonnenbrecher nur in feindlichen Systemen oder unkolonisierten Systemen außerhalb unserer Grenzen nutzen!\n\n§HWARNUNG: Das benutzen des Sonnebrechers ist durch die Galaktische Kriegsverordnung explizit verboten. Andere Imperien werden uns für die Benutzung verurteilen, außer im absoluten Notfall...§!\n\n"
  
 #Sonnenbrecher Ansehensveränderungen
 opinion_doomsday_outlawed:0 "Verbietet Doomsday-Waffen"
@@ -159,7 +159,7 @@ opinion_doomsday_has_nova_small:0 "Besitzt einen Sonnenbrecher"
 opinion_doomsday_has_nova_large:0 "Besitzt viele Sonnenbrecher"
  
 error_nova_01.name:0 "Aktivierung Fehlgeschlagen"
-error_nova_01.desc:0 "Achtung: Die Aktivierung der Waffe ist fehlgeschlagen.\n\nDiese Waffe kann nicht gegen schwarze Löcher, Neutronensterne oder Pulsare eingesetzt werden. Sie ist zudem ineffektiv gegen Planeten jeder Art. Nur Aktive Sterne können als Ziel dienen."
+error_nova_01.desc:0 "Achtung: Die Aktivierung der Waffe ist fehlgeschlagen.\n\nDiese Waffe kann nicht gegen schwarze Löcher, Neutronensterne oder Pulsare eingesetzt werden. Sie ist zudem ineffektiv gegen Planeten jeder Art. Nur aktive Sterne können als Ziel dienen."
 error_nova_01.a:0 "Verstanden"
  
 error_nova_02.name:0 "Aktivierung Fehlgeschlagen"
@@ -175,12 +175,12 @@ error_nova_04.desc:0 "Achtung: Die Aktivierung der Waffe ist fehlgeschlagen.\n\n
 error_nova_04.a:0 "Verstanden"
  
 titan_doomsday.105.title:0 "Bestätigung"
-titan_doomsday.105.desc:0 "Willst du diesen Sonnenbrecher wirklich abwracken?\n\nFalls du die Waffe aktivieren möchtest, stell sicher dass der [Erlaube Sonnenbrecher Benutzung] Erlass in der Imperiums Erlassliste aktiv ist."
+titan_doomsday.105.desc:0 "Willst du diesen Sonnenbrecher wirklich abwracken?\n\nFalls du die Waffe aktivieren möchtest, stell sicher dass der [Erlaube Sonnenbrecher Benutzung] Erlass in der Imperialen Erlassliste aktiv ist."
 titan_doomsday.105.a:0 "Sonnenbrecher Abwracken"
 titan_doomsday.105.b:0 "Befehl abbrechen"
  
 nova_success.name:0 "Künstliche Supernova"
-nova_success.desc:0 "Nachdem alle Tests abgeschlossen wurden, wird der letzte Authorisierungscode and die Schiffs KI gesendet. Die Waffe agiert nun eigenständig, aktiviert den Kern und bereitet sich auf den finalen Sprung ins Innere des Sterns vor. Dann verschwindet das Schiff, fast schon gleichgültig, ohne ein zeichen für die bevorstehende Vernichtung, lässt es nichts außer der brodelnden Oberfläche des Sterns zurück.\n\nInnerhalb weniger Stunden ändert sich seine Farbe, während die Oberfläche beginnt zu zerfallen und die interne Fusionsreaktion die ihn am Leben erhält überdreht und umgeleitet wird. Dieses System und alles in ihm ist dem Untergang geweiht.\n\nDer Stern bläht sich auf und beginnt zu explodieren. "
+nova_success.desc:0 "Nachdem alle Tests abgeschlossen wurden, wird der letzte Authorisierungscode and die Schiffs KI gesendet. Die Waffe agiert nun eigenständig, aktiviert den Kern und bereitet sich auf den finalen Sprung ins Innere des Sterns vor. Dann verschwindet das Schiff, fast schon gleichgültig, ohne ein Zeichen für die bevorstehende Vernichtung, lässt es nichts außer der brodelnden Oberfläche des Sterns zurück.\n\nInnerhalb weniger Stunden ändert sich seine Farbe, während die Oberfläche beginnt zu zerfallen und die interne Fusionsreaktion die ihn am Leben erhält überdreht und umgeleitet wird. Dieses System und alles in ihm ist dem Untergang geweiht.\n\nDer Stern bläht sich auf und beginnt zu explodieren. "
 nova_success.a:0 "..."
  
 #Leviathan Technologie
@@ -189,7 +189,7 @@ TECH_UNLOCK_LEVIATHAN_CONSTRUCTION_TITLE:0 "§HNeuer Schiffstyp freigeschaltet:�
 TECH_UNLOCK_LEVIATHAN_CONSTRUCTION_DESC:0 "§HLeviathan§!\nDas zweite Super-Großkampfschiff Design. Der Leviathan ist ein rein offensiver Großkampfshiff Killer, der die neusten Fortschritte bei der Erforschung von Phasen-Materialien für extreme Geschwindigkeit und Manövrierbarkeit nutzt."
  
 TECH_UNLOCK_LEVIATHAN_CHAIN_TITLE:0 "§ELeviathan Forschungsreihe§!"
-TECH_UNLOCK_LEVIATHAN_CHAIN_DESC:0 "Das erforschen aller Technologien dieser Reihe shaltet den Leviathan Schiffstyp frei."
+TECH_UNLOCK_LEVIATHAN_CHAIN_DESC:0 "Das erforschen aller Technologien dieser Reihe schaltet den Leviathan Schiffstyp frei."
  
 SHIELD_ISB_01:0 "Phasenschilde"
 SHIELD_ISB_01_DESC:0 "Fortschritte im Bereich der Phasenverschiebung erlauben stark verbesserte Schilde die noch mehr Beschuss standhalten als die konventionellen Varianten."
