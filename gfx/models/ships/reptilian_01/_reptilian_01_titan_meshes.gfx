@@ -1,0 +1,48 @@
+objectTypes = {	
+	
+	#######  Battleship frame  #######	
+	pdxmesh = {
+		name = "reptilian_01_titan_frame_mesh"
+		file = "gfx/models/ships/reptilian_01/reptilian_01_battleship_frame.mesh"
+				animation = { id = "idle"			type = "reptilian_01_battleship_frame_idle_animation" }
+				animation = { id = "death"			type = "reptilian_01_battleship_frame_death_animation" }
+				animation = { id = "death2"			type = "reptilian_01_battleship_frame_death2_animation" }
+				animation = { id = "death3"			type = "reptilian_01_battleship_frame_death3_animation" }
+				animation = { id = "attack"			type = "reptilian_01_battleship_frame_idle_animation" }				
+		scale = 1.52
+		#	meshsettings = {
+		#		shader = "PdxMeshShip"
+		#	}
+	}
+		
+	#######  Battleship bow sections  #######			
+	pdxmesh = {
+		name = "reptilian_01_titan_bow_mesh"		
+		file = "gfx/models/ships/reptilian_01/reptilian_01_battleship_bow_M1S2SHB.mesh"
+		scale = 1.52
+		meshsettings = {
+			shader = "PdxMeshShip"
+		}
+	}
+	
+	pdxmesh = {
+		name = "reptilian_01_titan_mid_mesh"		
+		file = "gfx/models/ships/reptilian_01/reptilian_01_battleship_mid_M4SHB.mesh"
+		
+		scale = 1.52
+		meshsettings = {
+			shader = "PdxMeshShip"
+		}
+	}			
+	
+	pdxmesh = {
+		name = "reptilian_01_titan_stern_mesh"
+		file = "gfx/models/ships/reptilian_01/reptilian_01_battleship_stern_M1S2.mesh"
+		scale = 1.52
+		meshsettings = {
+			shader = "PdxMeshShip"
+		}
+	}
+}
+
+	

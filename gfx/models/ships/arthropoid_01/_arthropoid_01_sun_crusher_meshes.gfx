@@ -1,0 +1,22 @@
+objectTypes = {
+		
+	#######  Construction Ship  #######	
+		
+	pdxmesh = {
+		name = "arthropoid_01_sun_crusher_mesh"
+		file = "gfx/models/ships/arthropoid_01/arthropoid_01_sun_crusher.mesh"
+		scale = 1.0
+		
+		animation = { id = "idle"						type = "arthropoid_01_construction_idle_animation" }
+		animation = { id = "working"					type = "arthropoid_01_construction_working_animation" }
+		animation = { id = "working_looping"			type = "arthropoid_01_construction_working_looping_animation" }
+		
+		
+			meshsettings = {
+			shader = "PdxMeshShip"
+			
+			#Mipmap tweaking
+			#texture_diffuse = "1x1.dds"
+			}
+	}	
+}

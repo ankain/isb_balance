@@ -1,0 +1,204 @@
+﻿l_german:
+
+titan:0 "Titan"
+titan_plural:0 "Titane"
+TITAN_BOW:0 "Sky Star"
+TITAN_MID:0 "Unwavering Faith"
+TITAN_STERN:0 "Light of Dawn"
+ 
+leviathan:0 "Leviathan"
+leviathan_plural:0 "Leviathane"
+LEVIATHAN_BOW:0 "Hades' Bident"
+LEVIATHAN_MID:0 "Cornucopia"
+LEVIATHAN_STERN:0 "Aegis"
+ 
+titan_ship_fallen_empire:0 "Titan"
+titan_ship_fallen_empire_plural:0 "Titane"
+ 
+ai_ship_upkeep:0 "Titan / Leviathan AI Fix"
+tech_isb_base:0 "Improved Space Battles"
+tech_isb_base_desc:0 "Balance-Verbesserungen für Weltraumschlachten"
+ 
+SWARM_STRIKE_CRAFT_PREONLY:0 "Prethorynschwarm Angriffsschiff"
+CORE_SWARM_AGGRESSIVE:0 "Schwarm Aggressiv"
+CORE_SWARM_DEFEND:0 "Schwarm Defensiv"
+leader_trait_hive_regeneration:0 "Schwarmbrut: Stoffwechselbeschleunigung"
+leader_trait_hive_regeneration_desc:0 " Die Kollektivintelligenz welche die Aktionen der Prethorynflotte kontrolliert, hat die Flotte mit beschleunigter Heilung ausgestattet."
+leader_trait_hive_hp:0 "Schwarmbrut: Zähigkeit"
+leader_trait_hive_hp_desc:0 " Die Kollektivintelligenz welche die Aktionen der Prethorynflotte kontrolliert, hat die Wiederstandskraft der Flotte erhöht."
+leader_trait_hive_speed:0 "Kollektivintelligenz"
+leader_trait_hive_speed_desc:0 " Die Kollektivintelligenz welche die Aktionen der Prethorynflotte kontrolliert, zeigt eine extreme Multitasking Fähigkeit."
+ 
+CORE_ED_AGGRO:0 "ED Aggressiv"
+CORE_ED_DEFEND:0 "ED Defensiv"
+ 
+CORE_SENTINEL:0 "Wache Kern"
+
+opinion_crisis_threat:0 "Ragnarok"
+ 
+#Titanen Technologie und Vorraussetzungen
+ 
+TECH_UNLOCK_TITAN_CONSTRUCTION_TITLE:0 "§HNeuer Schiffstyp:§! Titan"
+TECH_UNLOCK_TITAN_CONSTRUCTION_DESC:0 "§HTitan§!\nDie Früchte jahrzehntelanger Forschung. Der Titan ist das erste Schiff der Super-Großkampfschiff Linie und repräsentiert einen völlig neuen Ansatz im Design von Waffenplatformen."
+ 
+TECH_UNLOCK_TITAN_WEAPON_MODULES_TITLE:0 "§ESchaltet die Titanenwaffen Forschungsreihe frei§!"
+TECH_UNLOCK_TITAN_WEAPON_MODULES_DESC:0 "Titanenmodule sind spezielle Module für Super-Großkampfschiffe."
+ 
+TECH_UNLOCK_TITAN_CHAIN_TITLE:0 "§ETitanen Forschungsreihe§!"
+TECH_UNLOCK_TITAN_CHAIN_DESC:0 "Das erforschen aller Technologien dieser Reihe schaltet den TITAN Schiffstyp frei."
+ 
+#Titanenwaffen Technologie und Vorraussetzungen
+TECH_UNLOCK_TITAN_MODULE_CHAIN_TITLE:0 "§ETitanemodul Forschungsreihe§!"
+TECH_UNLOCK_TITAN_MODULE_CHAIN_DESC:0 "Diese Forschungsreihe schaltet verschiedene Titanenmodule frei."
+ 
+titan_weapon_components:0 "Titanenmodule"
+titan_weapon_components_DESC:0 "Nun da wir dieses Riesending gebaut haben, was sollen wir damit machen?"
+ 
+TITAN_NO_WEAPON:0 "Leerer Platz"
+ 
+TITAN_PROJECTED_DEFENSES:0 "Vorhergesagte Verteidigung"
+TITAN_PROJECTED_DEFENSES_DESC:0 "Erweiterte Schildmanipulationstechnologie erlaubt es dem Titanen, Verbündete mit Schilden vor Beschuss zu schützen."
+aura_projected_defenses:0 "$aura_category_defensive$ - $aura_type_support$"
+ 
+TITAN_INERTIA_DAMPENERS:0 "Trägheitsdämpfer"
+TITAN_INERTIA_DAMPENERS_DESC:0 "Durch Einsetzen verbesserter Trägheitsdämpfer auf dem Titanen erzielen wir höhere Sublicht Geschwindigkeiten."
+ 
+TITAN_CENTRALISED_COMMAND:0 "Zentralisierte Flottenkommandos"
+TITAN_CENTRALISED_COMMAND_DESC:0 "Durch Vernetzung der FTL-Computer der Flotte mit dem Titanen werden die Sprungberechnungen signifikant beschleunigt."
+aura_centralised_command:0 "$aura_category_defensive$ - $aura_type_support$"
+ 
+TITAN_NETWORKED_TARGET:0 "Vernetzte Zielsysteme"
+TITAN_NETWORKED_TARGET_DESC:0 "Durch analysieren von Sensordaten der Flotte ist der Titan in der Lage, die effektive Feuerreichweite aller Schiffe zu erhöhen."
+aura_networked_target:0 "$aura_category_defensive$ - $aura_type_support$"
+ 
+TITAN_VIRUS:0 "KI Kriegsführung"
+TITAN_VIRUS_DESC:0 "Die KI des Titanen greift feindliche Schiffssysteme and und reduziert deren Genauigkeit und Feuerrate."
+aura_titan_virus:0 "$aura_category_offensive$ - $aura_type_debuff$"
+ 
+TITAN_CORE_01:0 "Rächerkern"
+TITAN_CORE_02:0 "Bastionskern"
+TITAN_CORE_03:0 "Wächterkern"
+ 
+TITAN_CORE_FALLEN:0 "Templerkern"
+ 
+LEVIATHAN_CORE_01:0 "Ares Kern"
+LEVIATHAN_CORE_02:0 "Artemis Kern"
+ 
+#Doomsday Waffen
+TECH_UNLOCK_TITAN_DOOMSDAY_TITLE:0 "§ESchaltet die Titanen Doomsday-Waffen Forschingsreihe frei§!"
+TECH_UNLOCK_TITAN_DOOMSDAY_DESC:0 "Doomsday-Waffen sind Planetenzerstörende Waffensysteme die ganze Kolonien sofort auslöschen können.\n\nNach dem Erforschen einer Doomsday-Waffe muss diese zuerst in der Imperiums-Ansicht ausgewählt werden und ihre Benutzing per Edikt freigegeben werden."
+ 
+#Titan Doomsday Device
+edict_doomsday_authorisation:0 "Erlaube Doomsday-Waffen"
+edict_doomsday_authorisation_desc:0 "\nDoomsday-Waffen dürfen nicht verboten sein.\n\nErlaube die Benutzung von Doomsday-Waffen. Verschiede Doomsday-Waffen können in der Imperien-Ansicht ausgewählt werden.\n\n"
+ 
+policy_isb_doomsday_policy:0 "Doomsday-Waffen"
+policy_isb_doomsday_policy_desc:0 "'Sollen wir sie wirklich benutzen? Warum fragen wir uns das überhaupt nachdem wir so weit gekommen sind.'\n"
+ 
+doomsday_outlawed:0 "Verboten"
+doomsday_outlawed_name:0 "Doomsday-Waffen Verboten"
+doomsday_outlawed_desc:1 "Lange starrte ich in den Abgrund, doch ich soll nicht schwanken!\n\n§EDein Imperium wird keine Doomsday-Waffen benutzen.§!\n"
+ 
+#Doomsday-Waffe - Kinetisches Bombardement
+doomsday_kinetic:0 "Kinetisches Bombardement"
+doomsday_kinetic_name:0 "Benutze kinetisches Neutronium-Bombardement."
+doomsday_kinetic_desc:1 "Wer zusammenhält, der teilt eine gemeinsame Katastrophe, Und wird zusammen vernichtet.\n\n§EJeden Monat werden auf jedem Planeten, der unter 10% HP übrig hat und ein Schiff von Titanengröße im Orbit hat, 4-5 Felder zu radioaktivem Ödland. Solange bis alle Einwohner tot sind oder das Bombardement endet.\n\nNach dem Auswählen dieser waffe muss erst ein Imperiums Edikt erlassen werden, damit der Titan diese benutzen kann.§!\n"
+ 
+#Doomsday-Waffe - Evolutionsvirus
+doomsday_virus:0 "Evolutionsvirus"
+doomsday_virus_name:0 "Benutze das Evolutionsvirus."
+doomsday_virus_desc:1 "Was erschafft, kann auch ungeschaffen machen.\n\n§EJeden Monat verliert jeder Planet, der unter 10% HP übrig hat und ein Schiff von Titanengröße im Orbit hat, 3 Bevölkerungen. Solange bis alle Einwohner tot sind oder das Bombardement endet.\n\nHat eine 5%-ige Chance den Planetentyp auf KARG zu ändern.\n\nNach dem Auswählen dieser waffe muss erst ein Imperiums Edikt erlassen werden, damit der Titan diese benutzen kann.§!\n"
+ 
+opinion_doomsday_low:0 "Benutzt Doomsday-Waffen"
+ 
+#Doomsday-Waffe - Sonnenbrecher
+TECH_UNLOCK_SUN_CRUSHER_CHAIN_TITLE:0 "§ESonnenbrecher Forschungsreihe§!"
+TECH_UNLOCK_SUN_CRUSHER_CHAIN_DESC:0 "Das erforschen aller Technologien dieser reihe schaltet die Sonnenbrecher Doomsday-Waffe frei."
+ 
+TECH_UNLOCK_SUN_CRUSHER_CONSTRUCTION_TITLE:0 "§HSchaltet Doomsday-Waffe frei:§! Sonnenbrecher"
+TECH_UNLOCK_SUN_CRUSHER_CONSTRUCTION_DESC:0 "§HSonnenbrecher§!\n$tech_sun_crusher_desc$"
+ 
+sun_crusher:0 "Sonnenbrecher"
+sun_crusher_plural:0 "Sonnenbrecher"
+ 
+SUN_CRUSHER_SECTION:0 "Erlösung"
+SUN_CRUSHER_CORE:0 "Nova Kern"
+ 
+exploding_bunny:0 "Exploding Bunny"
+exploding_bunny_plural:0 "Exploding Bunnies"
+ 
+pc_destroyed:0 "Zerbrochener Planet"
+pc_destroyed_desc:0 "Die Kruste dieses sterbenden Planteten wurde mit imenser Kraft zerrissen, und sein Kern freigelegt."
+ 
+pc_nova:0 "Glasierter Planet"
+pc_nova_desc:0 "Dieser Planet wurde durch eine Supernova zerstört, so gut wie alle Atmosphäre ist verbrannt und die Oberfläche mit Glas überzogen. Die Feuer der Vernichtung werden noch für Jahrmillionen brennen."
+ 
+pc_nova_gas:0 "Brennender Gasgigant"
+pc_nova_gas_desc:0 "Dieser Gasgigant wurde durch die Explosion seiner Sonne entzündet. Die schweren Elemente die von der Nova ausgestoßen wurden werden weiterhin die Reste seiner Atmosphäre verbrennen, bis alles Gas aufgebraucht ist."
+ 
+pc_ringworld_habitable_nova:0 "Brennede Ringwelt"
+pc_ringworld_habitable_nova_desc:0 "Ein riesiges künstliches Band das die Sonne einkreist.\n\nDieser Teil der Hauptstruktur schein irreparabel beschädigt zu sein."
+pc_ringworld_tech_nova:0 "Brennede Ringwelt"
+pc_ringworld_tech_nova_desc:0 "Ein riesiges künstliches Band das die Sonne einkreist.\n\nDieser Teil der Hauptstruktur schein irreparabel beschädigt zu sein."
+pc_ringworld_seam_nova:0 "Brennede Ringwelt"
+pc_ringworld_seam_nova_desc:0 "Ein riesiges künstliches Band das die Sonne einkreist.\n\nDieser Teil der Hauptstruktur schein irreparabel beschädigt zu sein."
+ 
+edict_doomsday_nova_authorisation:0 "Erlaube benutze Sonnenbrecher"
+edict_doomsday_nova_authorisation_desc:0 "\nDoomsday-Waffen müssen erlaubt sein.\n\nUm die Waffe zu aktivieren, fliege den Sonnenbrecher in den Orbit des Zielsterns, aktiviere diesen Erlass und löse die Flotte des Sonnenbrechers auf.\n\nDu kannst den Sonnenbrecher nur in feindlichen Systemen oder unkolonisierten Systemen innerhalb unserer Grenzen nutzen!\n\n§HWARNUNG: Das benutzen des Sonnebrechers ist durch die Galaktische Kriegsverordnung explizit verboten. Andere Imperien werden uns für die Benutzung verurteilen, außer im absoluten Notfall...§!\n\n"
+ 
+#Sonnenbrecher Ansehensveränderungen
+opinion_doomsday_outlawed:0 "Verbietet Doomsday-Waffen"
+opinion_doomsday_allowed:0 "Erlaubt Doomsday-Waffen"
+opinion_doomsday_low:0 "Hat eine schwache Doomsday-Waffe benutzt"
+opinion_doomsday_destroy_planet:0 "Hat Planet/en zerstört"
+opinion_doomsday_destroy_planet_owner:0 "Hat meine/n Planet/en zerstört"
+opinion_doomsday_destroy_star:0 "Hat Sonnensystem/e zerstört"
+opinion_doomsday_destroy_star_empty:0 "Hat einen Sonnenbrecher Test durchgeführt"
+opinion_doomsday_destroy_star_owner:0 "Hat mein/e Sonnesystem/e zerstört"
+opinion_doomsday_has_nova_small:0 "Besitzt einen Sonnenbrecher"
+opinion_doomsday_has_nova_large:0 "Besitzt viele Sonnenbrecher"
+ 
+error_nova_01.name:0 "Aktivierung Fehlgeschlagen"
+error_nova_01.desc:0 "Achtung: Die Aktivierung der Waffe ist fehlgeschlagen.\n\nDiese Waffe kann nicht gegen schwarze Löcher, Neutronensterne oder Pulsare eingesetzt werden. Sie ist zudem ineffektiv gegen Planeten jeder Art. Nur Aktive Sterne können als Ziel dienen."
+error_nova_01.a:0 "Verstanden"
+ 
+error_nova_02.name:0 "Aktivierung Fehlgeschlagen"
+error_nova_02.desc:0 "Achtung: Die Aktivierung der Waffe ist fehlgeschlagen.\n\nDie Waffe kann nur in feindlichen Systemen oder in unkolonisierten Systemen außerhalb unserer Grenzen eingesetzt werden.\n\nDU MONSTER."
+error_nova_02.a:0 "Verstanden"
+ 
+error_nova_03.name:0 "Aktivierung Fehlgeschlagen"
+error_nova_03.desc:0 "Achtung: Die Aktivierung der Waffe ist fehlgeschlagen.\n\nDie Waffe kann nur im Orbit eines Sterns aktiviert werden. Wähle den Stern aus und befiehl dem Schiff sich in den Orbit zu begeben."
+error_nova_03.a:0 "Verstanden"
+ 
+error_nova_04.name:0 "Aktivierung Fehlgeschlagen"
+error_nova_04.desc:0 "Achtung: Die Aktivierung der Waffe ist fehlgeschlagen.\n\nEs kann nur ein Stern auf einmal zerstört werden. Bitte warte mit der Aktivierung des nächsten Sonnenbrechers bis der erste Stern zerstört ist."
+error_nova_04.a:0 "Verstanden"
+ 
+titan_doomsday.105.title:0 "Bestätigung"
+titan_doomsday.105.desc:0 "Willst du diesen Sonnenbrecher wirklich abwracken?\n\nFalls du die Waffe aktivieren möchtest, stell sicher dass der [Erlaube Sonnenbrecher Benutzung] Erlass in der Imperiums Erlassliste aktiv ist."
+titan_doomsday.105.a:0 "Sonnenbrecher Abwracken"
+titan_doomsday.105.b:0 "Befehl abbrechen"
+ 
+nova_success.name:0 "Künstliche Supernova"
+nova_success.desc:0 "Nachdem alle Tests abgeschlossen wurden, wird der letzte Authorisierungscode and die Schiffs KI gesendet. Die Waffe agiert nun eigenständig, aktiviert den Kern und bereitet sich auf den finalen Sprung ins Innere des Sterns vor. Dann verschwindet das Schiff, fast schon gleichgültig, ohne ein zeichen für die bevorstehende Vernichtung, lässt es nichts außer der brodelnden Oberfläche des Sterns zurück.\n\nInnerhalb weniger Stunden ändert sich seine Farbe, während die Oberfläche beginnt zu zerfallen und die interne Fusionsreaktion die ihn am Leben erhält überdreht und umgeleitet wird. Dieses System und alles in ihm ist dem Untergang geweiht.\n\nDer Stern bläht sich auf und beginnt zu explodieren. "
+nova_success.a:0 "..."
+ 
+#Leviathan Technologie
+ 
+TECH_UNLOCK_LEVIATHAN_CONSTRUCTION_TITLE:0 "§HNeuer Schiffstyp freigeschaltet:§! Leviathan"
+TECH_UNLOCK_LEVIATHAN_CONSTRUCTION_DESC:0 "§HLeviathan§!\nDas zweite Super-Großkampfschiff Design. Der Leviathan ist ein rein offensiver Großkampfshiff Killer, der die neusten Fortschritte bei der Erforschung von Phasen-Materialien für extreme Geschwindigkeit und Manövrierbarkeit nutzt."
+ 
+TECH_UNLOCK_LEVIATHAN_CHAIN_TITLE:0 "§ELeviathan Forschungsreihe§!"
+TECH_UNLOCK_LEVIATHAN_CHAIN_DESC:0 "Das erforschen aller Technologien dieser Reihe shaltet den Leviathan Schiffstyp frei."
+ 
+SHIELD_ISB_01:0 "Phasenschilde"
+SHIELD_ISB_01_DESC:0 "Fortschritte im Bereich der Phasenverschiebung erlauben stark verbesserte Schilde die noch mehr Beschuss standhalten als die konventionellen Varianten."
+SMALL_SHIELD_ISB_01:0 "Kleiner Phasenschild"
+MEDIUM_SHIELD_ISB_01:0 "Mittlerer Phasenschild"
+LARGE_SHIELD_ISB_01:0 "Großer Phasenschild"
+ 
+CRYSTAL_ARMOR_ISB_01:0 "Phasenpanzerung"
+CRYSTAL_ARMOR_ISB_01_DESC:0 "Verbesserungen bei der Materiemanipulation erlauben uns stark verstärkte Hüllenpanzerungen herzustellen."
+SMALL_CRYSTAL_ARMOR_ISB_01:0 "Kleine Phasenpanzerung"
+MEDIUM_CRYSTAL_ARMOR_ISB_01:0 "Mittlere Phasenpanzerung"
+LARGE_CRYSTAL_ARMOR_ISB_01:0 "Große Phasenpanzerung"

@@ -1,0 +1,7 @@
+###############EVENT SOUND######################
+sound =
+{
+	name = "event_nova_explosion"
+	file = "event/event_nova_explosion.wav"
+	volume = 0.8
+}

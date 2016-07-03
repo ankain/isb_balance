@@ -1,0 +1,63 @@
+isb_doomsday_policy = {
+
+	potential = {
+		has_technology = tech_titan_doomsday_weapons_01
+	}
+	
+	option = {
+		name = "doomsday_outlawed"
+
+		potential = { }
+
+		valid = {
+		}
+		
+		policy_flags = {
+			doomsday_outlawed
+		}
+
+		AI_weight = {			
+			modifier = {
+				factor = 1
+			}
+		}
+	}
+	
+	option = {
+		name = "doomsday_kinetic"
+
+		potential = { 
+			has_technology = tech_titan_doomsday_weapons_02 
+		}
+		
+		policy_flags = {
+			doomsday_kinetic
+		}
+		
+		AI_weight = {			
+			modifier = {
+				factor = 0
+			}
+		}
+	}
+	
+	option = {
+		name = "doomsday_virus"
+		
+		potential = {
+			has_technology = tech_titan_doomsday_weapons_03
+		}
+		
+		policy_flags = {
+			doomsday_virus
+		}
+		
+		modifier = {}
+				
+		AI_weight = {
+			modifier = {
+				factor = 0
+			}					
+		}		
+	}
+}

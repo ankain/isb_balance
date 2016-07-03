@@ -1,0 +1,26 @@
+objectTypes = {	
+
+	pdxmesh = {
+		name = "ringworld_habitable_nova_01_mesh"
+		file = "gfx/models/planets/ringworld_habitable_nova.mesh"
+		cull_distance = 999999999.0f
+		
+		scale = 1.8
+	}
+	
+	pdxmesh = {
+		name = "ringworld_seam_nova_01_mesh"
+		file = "gfx/models/planets/ringworld_seam_nova.mesh"
+		cull_distance = 999999999.0f
+		
+		scale = 1.8
+	}
+	
+	pdxmesh = {
+		name = "ringworld_tech_nova_01_mesh"
+		file = "gfx/models/planets/ringworld_tech_nova.mesh"
+		cull_distance = 999999999.0f
+		
+		scale = 1.8
+	}	
+}

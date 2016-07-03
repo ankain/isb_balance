@@ -1,0 +1,25 @@
+# All global modifiers are here.  They are applied from certain game-features.
+#
+# Effects are fully scriptable here.
+
+# The names can NOT be removed or changed since the code references them
+
+#ai_ship_upkeep = {
+#	ship_upkeep_mult = -0.10
+#	max_minerals = 16000
+#	shipsize_titan_build_cost_mult = -0.5
+#	shipsize_leviathan_build_cost_mult = -0.5
+#}
+
+fallen_ship_upkeep = {
+	ship_upkeep_mult = -0.70	
+}
+
+test_mode = {
+	tile_resource_minerals_mult = 100.0
+	tile_resource_energy_mult = 1000.0
+	tile_resource_physics_research_mult = 5000.0
+	tile_resource_society_research_mult = 5000.0
+	tile_resource_engineering_research_mult = 5000.0
+	navy_size_mult = 1
+}

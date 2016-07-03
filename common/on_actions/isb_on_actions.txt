@@ -1,0 +1,39 @@
+# Triggers when the game starts
+on_game_start = {
+	events = {
+		isb.1
+	}
+}
+
+# A planet is being bombarded
+# This = planet under bombardment
+# From = bombarding empire
+on_monthly_orbital_bombardment = {
+	events = {
+		titan_doomsday.1
+	}
+}
+
+# This = owner of fleet
+# From = disbanded fleet
+on_fleet_disbanded = {
+	events = {
+		titan_doomsday.101
+	}
+}
+
+# No scope, like on_game_start
+on_yearly_pulse = {
+	events = {
+		# Doomsday weapons yearly check
+		titan_doomsday.801		
+	}
+}
+
+# No scope, like on_game_start
+on_bi_yearly_pulse = {
+	events = {
+		# Crisis bi yearly check
+		isb.2
+	}
+}

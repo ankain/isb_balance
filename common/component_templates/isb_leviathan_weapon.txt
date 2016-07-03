@@ -1,0 +1,59 @@
+#melee core
+utility_component_template = {
+	key = "LEVIATHAN_CORE_01"
+	size = medium
+	icon = "GFX_ship_part_titan_core_01"
+	icon_frame = 1
+	power = 0
+	cost = 100
+	military_power = 35000
+	can_recharge_shield = yes
+	
+	ship_behavior = "aggressive"
+	
+	ship_modifier = {
+		SHIP_WEAPON_DAMAGE = 3.9
+		ship_fire_rate_mult = 1.1
+		
+		#SHIP_HITPOINTS_ADD = 11000		
+		SHIP_AUTO_REPAIR_ADD = 0.125
+		#SHIP_SHIELD_REGEN_ADD = 150
+		#ship_combat_speed_mult = 0.4		
+	}
+		
+	component_set = "leviathan_core_components"
+	
+	ai_weight = {
+		weight = 1.0
+	}	
+}
+
+#ranged core
+utility_component_template = {
+	key = "LEVIATHAN_CORE_02"
+	size = medium
+	icon = "GFX_ship_part_titan_core_02"
+	icon_frame = 1
+	power = 0
+	cost = 100
+	military_power = 35000
+	can_recharge_shield = yes
+	
+	ship_behavior = "defensive"
+	
+	ship_modifier = {
+		SHIP_WEAPON_DAMAGE = 3.9
+		ship_fire_rate_mult = 1.1
+		
+		#SHIP_HITPOINTS_ADD = 11000		
+		SHIP_AUTO_REPAIR_ADD = 0.125
+		#SHIP_SHIELD_REGEN_ADD = 150
+		#ship_combat_speed_mult = 0.4		
+	}
+		
+	component_set = "leviathan_core_components"
+	
+	ai_weight = {
+		weight = 2.0
+	}	
+}

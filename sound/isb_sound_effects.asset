@@ -1,0 +1,19 @@
+soundeffect = {
+	name = event_nova_explosion
+	sounds = {
+		sound = event_nova_explosion
+	} 
+	volume = 0.6
+	max_audible = 1
+	max_audible_behaviour = fail	
+}
+
+soundeffect = {
+	name = event_nova_alert
+	sounds = {
+		sound = event_yellow_alert_01
+	} 
+	volume = 0.6
+	max_audible = 1
+	max_audible_behaviour = fail	
+}

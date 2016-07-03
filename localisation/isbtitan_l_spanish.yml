@@ -1,0 +1,202 @@
+﻿l_spanish:
+
+titan:0 "Titan"
+titan_plural:0 "Titans"
+TITAN_BOW:0 "Sky Star"
+TITAN_MID:0 "Unwavering Faith"
+TITAN_STERN:0 "Light of Dawn"
+
+leviathan:0 "Leviathan"
+leviathan_plural:0 "Leviathans"
+LEVIATHAN_BOW:0 "Hades' Bident"
+LEVIATHAN_MID:0 "Cornucopia"
+LEVIATHAN_STERN:0 "Aegis"
+
+titan_ship_fallen_empire:0 "Titan"
+titan_ship_fallen_empire_plural:0 "Titans"
+
+ai_ship_upkeep:0 "Titan / Leviathan AI Fix"
+tech_isb_base:0 "Improved Space Battles"
+tech_isb_base_desc:0 "Balance changes for Improved Space Battles"
+
+SWARM_STRIKE_CRAFT_PREONLY:0 "Prethoryn Swarm Strike Craft"
+CORE_SWARM_AGGRESSIVE:0 "Swarm Aggressive"
+CORE_SWARM_DEFEND:0 "Swarm Defensive"
+leader_trait_hive_regeneration:0 "Hive Breed : Metabolism"
+leader_trait_hive_regeneration_desc:0 " The gestalt conciousness that controls the actions of Prethoryn fleets has modified the fleet to enhance their healing speed."
+leader_trait_hive_hp:0 "Hive Breed : Toughness"
+leader_trait_hive_hp_desc:0 " The gestalt conciousness that controls the actions of Prethoryn fleets has modified the fleet to enhance their toughness."
+leader_trait_hive_speed:0 "Hive Mind"
+leader_trait_hive_speed_desc:0 " The gestalt conciousness that controls the actions of Prethoryn fleets has proven capable of tremendous multi-tasking."
+
+CORE_ED_AGGRO:0 "ED Aggressive"
+CORE_ED_DEFEND:0 "ED Defensive"
+
+CORE_SENTINEL:0 "Sentinel Core"
+
+opinion_crisis_threat:0 "Ragnarok"
+
+#Titan techs and pre-reqs
+
+TECH_UNLOCK_TITAN_CONSTRUCTION_TITLE:0 "§HUnlocks Ship type:§! Titan"
+TECH_UNLOCK_TITAN_CONSTRUCTION_DESC:0 "§HTitan§!\nThe culmination of decades of research. The Titan is the first in the line of Super Capital Ships and represents a profound shift in weapons platform design."
+
+TECH_UNLOCK_TITAN_WEAPON_MODULES_TITLE:0 "§EUnlocks Titan modules research chain§!"
+TECH_UNLOCK_TITAN_WEAPON_MODULES_DESC:0 "Titan modules are specialised modules for the Titan."
+
+TECH_UNLOCK_TITAN_CHAIN_TITLE:0 "§ETitan Research Chain§!"
+TECH_UNLOCK_TITAN_CHAIN_DESC:0 "Researching all technologies in this research chain will unlock the Titan ship type"
+
+#titan weapon modules tech and pre-reqs
+TECH_UNLOCK_TITAN_MODULE_CHAIN_TITLE:0 "§ETitan Module Research Chain§!"
+TECH_UNLOCK_TITAN_MODULE_CHAIN_DESC:0 "This research chain will unlock various Titan modules"
+
+titan_weapon_components:0 "Titan Modules"
+titan_weapon_components_DESC:0 "Well, we went and built that big thing you wanted. Now what do we do with it?"
+
+TITAN_NO_WEAPON:0 "Empty Slot"
+
+TITAN_PROJECTED_DEFENSES:0 "Projected Defenses"
+TITAN_PROJECTED_DEFENSES_DESC:0 "Advanced shield manipulation technologies allows the Titan to project shields at incoming enemy fire, shielding all ships within range."
+aura_projected_defenses:0 "$aura_category_defensive$ - $aura_type_support$"
+
+TITAN_INERTIA_DAMPENERS:0 "Inertia Dampeners"
+TITAN_INERTIA_DAMPENERS_DESC:0 "Deploying additional inertia dampeners on the Titan allows us to greatly increase sublight speed."
+
+TITAN_CENTRALISED_COMMAND:0 "Centralised Fleet Operations"
+TITAN_CENTRALISED_COMMAND_DESC:0 "Networking the fleet's FTL computers to the Titan's significantly speeds up jump calculations."
+aura_centralised_command:0 "$aura_category_defensive$ - $aura_type_support$"
+
+TITAN_NETWORKED_TARGET:0 "Networked Targeting Systems"
+TITAN_NETWORKED_TARGET_DESC:0 "By analysing sensor data from the fleet during combat, the Titan is able to increase effective weapons range of all ships."
+aura_networked_target:0 "$aura_category_defensive$ - $aura_type_support$"
+
+TITAN_VIRUS:0 "AI Warfare"
+TITAN_VIRUS_DESC:0 "The Titan's AI attacks the systems of all enemy ships in range, decreasing their accuracy and rate of fire."
+aura_titan_virus:0 "$aura_category_offensive$ - $aura_type_debuff$"
+
+TITAN_CORE_01:0 "Avenger Core"
+TITAN_CORE_02:0 "Bastion Core"
+TITAN_CORE_03:0 "Sentinel Core"
+
+TITAN_CORE_FALLEN:0 "Templar Core"
+
+LEVIATHAN_CORE_01:0 "Ares Core"
+LEVIATHAN_CORE_02:0 "Artemis Core"
+
+#Doomsday weapons
+TECH_UNLOCK_TITAN_DOOMSDAY_TITLE:0 "§EUnlocks Titan doomsday weapons research chain§!"
+TECH_UNLOCK_TITAN_DOOMSDAY_DESC:0 "Doomsday weapons are planet killing weapons designed to destroy entire colonies.\n\nYou will have to select a doomsday weapon after researching them from empire policy screen and authorise their use through an empire edict."
+
+#Titan Doomsday Device
+edict_doomsday_authorisation:0 "Authorise Doomsday Weapons"
+edict_doomsday_authorisation_desc:0 "\nRequires doomsday weapons to not be outlawed.\n\nAuthorise the use of doomsday weapons. You can select a different doomsday weapon from the empire policies menu.\n\n"
+
+policy_isb_doomsday_policy:0 "Doomsday Weapons"
+policy_isb_doomsday_policy_desc:0 "'Should they be used? I think it is frightening that we have come this far and still have to ask that question.'\n"
+
+doomsday_outlawed:0 "Outlawed"
+doomsday_outlawed_name:0 "Doomsday weapons outlawed"
+doomsday_outlawed_desc:1 "Long have I gazed into the abyss. But I shall not waver.\n\n§EYour empire will not use doomsday weapons.§!\n"
+
+doomsday_kinetic:0 "Kinetic Bombardment"
+doomsday_kinetic_name:0 "Only Neutronium Kinetic Bombardment can be used"
+doomsday_kinetic_desc:1 "When you are together, you can share a common catastrophe. You can be exterminated together.\n\n§EEvery month, any planet being bombarded with less than 10% hp and a Titan size ship in system will have 4 - 5 tiles converted to radioactive wastelands. This will continue until bombardment stops or all populations are dead.\n\nAfter selecting this weapon you have to authorise its use under empire edicts for your Titans to activate it.§!\n"
+
+doomsday_virus:0 "Evolutionary Virus"
+doomsday_virus_name:0 "Only the Evolutionary Virus can be used"
+doomsday_virus_desc:1 "What can make, can just as easily unmake.\n\n§EEvery month, any planet being bombarded with less than 10% hp and a Titan size ship in system will lose 3 populations. This will continue until bombardment stops or all populations are dead.\n\n5% chance of turning the planet barren.\n\nAfter selecting this weapon you have to authorise its use under empire edicts for your Titans to activate it.§!\n"
+
+opinion_doomsday_low:0 "Doomsday weapon user"
+
+# Doomsday Weapon - Sun Crusher
+TECH_UNLOCK_SUN_CRUSHER_CHAIN_TITLE:0 "§ESun Crusher Research Chain§!"
+TECH_UNLOCK_SUN_CRUSHER_CHAIN_DESC:0 "Researching all technologies in this research chain will unlock Doomsday Weapon : Sun Crusher"
+
+TECH_UNLOCK_SUN_CRUSHER_CONSTRUCTION_TITLE:0 "§HUnlocks Doomsday Weapon:§! Sun Crusher"
+TECH_UNLOCK_SUN_CRUSHER_CONSTRUCTION_DESC:0 "§HSun Crusher§!\n$tech_sun_crusher_desc$"
+
+sun_crusher:0 "Sun Crusher"
+sun_crusher_plural:0 "Sun Crushers"
+
+SUN_CRUSHER_SECTION:0 "Redemption"
+SUN_CRUSHER_CORE:0 "Nova Core"
+
+exploding_bunny:0 "Exploding Bunny"
+exploding_bunny_plural:0 "Exploding Bunnies"
+
+pc_destroyed:0 "Shattered Planet"
+pc_destroyed_desc:0 "The crust of this dying planet has been ripped open by incredible forces, exposing its molten core."
+
+pc_nova:0 "Glassed Planet"
+pc_nova_desc:0 "This planet was destroyed when its sun went nova. Most of its atmosphere has been stripped away and its surface turned into glass. Fires will continue to rage across the entire planet for millenia."
+
+pc_nova_gas:0 "Burning Gas Giant"
+pc_nova_gas_desc:0 "This gas giant was set on fire when its sun went nova. The heavier elements ejected during the nova will continue to consume and burn what remains of the gas giant's atmosphere until it is depleted."
+
+pc_ringworld_habitable_nova:0 "Burning Ring World"
+pc_ringworld_habitable_nova_desc:0 "An immense band encircling the system's sun.\n\nThis section of the superstructure appears irreparably damaged."
+pc_ringworld_tech_nova:0 "Burning Ring World"
+pc_ringworld_tech_nova_desc:0 "An immense band encircling the system's sun.\n\nThis section of the superstructure appears irreparably damaged."
+pc_ringworld_seam_nova:0 "Burning Ring World"
+pc_ringworld_seam_nova_desc:0 "An immense band encircling the system's sun.\n\nThis section of the superstructure appears irreparably damaged."
+
+edict_doomsday_nova_authorisation:0 "Authorise Sun Crusher Use"
+edict_doomsday_nova_authorisation_desc:0 "\nRequires doomsday weapons to not be outlawed.\n\nTo activate the weapon, move the Sun Crusher into orbit around the system's star, activate this edict, then disband the Sun Crusher fleet.\n\nYou can only use the Sun Crusher on systems outside our borders with hostile colonies, or empty systems within our borders.\n\n§HWARNING: Use of the Sun Crusher is explicitly prohibited by the Galactic Rules of Engagement. Other empires will condemn us for using it except in the most dire of circumstances.§!\n\n"
+
+#Sun Crusher opinion modifiers
+opinion_doomsday_outlawed:0 "Outlawed doomsday weapons"
+opinion_doomsday_allowed:0 "Allowed doomsday weapons"
+opinion_doomsday_low:0 "Used basic level doomsday weapons"
+opinion_doomsday_destroy_planet:0 "Destroyed planet(s)"
+opinion_doomsday_destroy_planet_owner:0 "Destroyed my planet(s)"
+opinion_doomsday_destroy_star:0 "Destroyed star system(s)"
+opinion_doomsday_destroy_star_empty:0 "Conducted Sun Crusher weapons test"
+opinion_doomsday_destroy_star_owner:0 "Destroyed my star system(s)"
+opinion_doomsday_has_nova_small:0 "Has a Sun Crusher stockpile"
+opinion_doomsday_has_nova_large:0 "Has a large Sun Crusher stockpile"
+
+error_nova_01.name:0 "Activation Failed"
+error_nova_01.desc:0 "Alert : Weapon activation has failed.\n\nThe weapon cannot be used on a black hole, neutron star or pulsar. It is also ineffective against planets. Please find a main sequence star and try again."
+error_nova_01.a:0 "Understood"
+
+error_nova_02.name:0 "Activation Failed"
+error_nova_02.desc:0 "Alert : Weapon activation has failed.\n\nThe weapon can only be used in hostile systems outside of our borders, or in empty systems.\n\nYou monster."
+error_nova_02.a:0 "Understood"
+
+error_nova_03.name:0 "Activation Failed"
+error_nova_03.desc:0 "Alert : Weapon activation has failed.\n\nThe weapon must be activated while the ship is in orbit around a star. Right click the star and order the ship to enter orbit and try again."
+error_nova_03.a:0 "Understood"
+
+error_nova_04.name:0 "Activation Failed"
+error_nova_04.desc:0 "Alert : Weapon activation has failed.\n\nYou cannot destroy two stars at the same time. Please wait for the first star to go nova before activating this weapon again."
+error_nova_04.a:0 "Understood"
+
+titan_doomsday.105.title:0 "Confirmation"
+titan_doomsday.105.desc:0 "Are you sure you want to scrap this Sun Crusher?\n\nIf you are trying to activate the weapon, please ensure the (Authorise Sun Crusher Use) edict is activated in the empire edicts screen."
+titan_doomsday.105.a:0 "Destroy the Sun Crusher"
+titan_doomsday.105.b:0 "Cancel the order"
+
+nova_success.name:0 " "
+nova_success.desc:0 "With all activation checks complete, the final authorisation code is sent to the onboard AI. The weapon switches into full autonomous mode, powering up its core and preparing for a final, short jump into the core of the star. Then it disappears, almost nonchalantly, giving no hint of the cataclysm it is about to unleash, leaving behind only the silently raging surface of the star.\n\nWithin hours the star changes colour, its surface collapsing as the internal fusion processes keeping it alive are subverted and repurposed. This system, and everything in it, is doomed.\n\nThe star has begun to go nova. "
+nova_success.a:0 "..."
+
+#Leviathan Tech
+
+TECH_UNLOCK_LEVIATHAN_CONSTRUCTION_TITLE:0 "§HUnlocks Ship type:§! Leviathan"
+TECH_UNLOCK_LEVIATHAN_CONSTRUCTION_DESC:0 "§HLeviathan§!\nThe second super-capital ship designed. The Leviathan is a purely offensive capital ship killer that utilises the latest advances in phased materials for incredible speed and maneuverability."
+
+TECH_UNLOCK_LEVIATHAN_CHAIN_TITLE:0 "§ELeviathan Research Chain§!"
+TECH_UNLOCK_LEVIATHAN_CHAIN_DESC:0 "Researching all technologies in this research chain will unlock the Leviathan ship type"
+
+SHIELD_ISB_01:0 "Phased Shields"
+SHIELD_ISB_01_DESC:0 "$tech_phased_shields_desc$"
+SMALL_SHIELD_ISB_01:0 "Small Phased Shields"
+MEDIUM_SHIELD_ISB_01:0 "Medium Phased Shields"
+LARGE_SHIELD_ISB_01:0 "Large Phased Shields"
+
+CRYSTAL_ARMOR_ISB_01:0 "Phased Armor"
+CRYSTAL_ARMOR_ISB_01_DESC:0 "Improvements in matter manipulation allow us to increase the integrity of the ship's hull."
+SMALL_CRYSTAL_ARMOR_ISB_01:0 "Small Phased Armor"
+MEDIUM_CRYSTAL_ARMOR_ISB_01:0 "Medium Phased Armor"
+LARGE_CRYSTAL_ARMOR_ISB_01:0 "Large Phased Armor"

@@ -1,0 +1,13 @@
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_ship_counter_titan"
+		textureFile = "gfx/interface/system/icon_titan.dds"
+	}
+}
+
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_ship_sizes_titan"
+		textureFile = "gfx/interface/system/icon_titan.dds"
+	}
+}

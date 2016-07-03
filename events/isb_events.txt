@@ -1,0 +1,603 @@
+namespace = isb
+
+event = {
+	id = isb.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		#every_country = {
+		#	limit = { is_ai = yes }
+		#	add_modifier = {
+		#		modifier = "ai_ship_upkeep"
+		#		days = -1
+		#	}
+		#}
+
+		every_country = {
+			limit = {
+				is_country_type = fallen_empire
+			}
+			add_modifier = {
+				modifier = "fallen_ship_upkeep"
+				days = -1
+			}						
+		}
+
+		#every_country = {
+		#	limit = { is_ai = no }
+		#	add_modifier = {
+		#		modifier = "test_mode"
+		#		days = -1
+		#	}
+		#}
+	}
+}
+
+# Crisis check for opinion boost every 5 years.
+event = {
+	id = isb.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		# initialise and reset
+		if = {
+			limit = {
+				has_global_flag = crisis_threat_low
+			}
+
+			remove_global_flag = crisis_threat_low
+		}
+
+		if = {
+			limit = {
+				has_global_flag = crisis_threat_med
+			}
+
+			remove_global_flag = crisis_threat_med
+		}
+
+		if = {
+			limit = {
+				has_global_flag = crisis_threat_high
+			}
+
+			remove_global_flag = crisis_threat_high
+		}
+
+		random_country = {
+			save_event_target_as = crisis_var
+			set_variable = {
+				which = "crisis_threat_count"
+				value = 1
+			}
+		}
+
+		# ed 1 threat
+		if = {
+			random_country = {
+				limit = {
+					is_country_type = extradimensional
+				}
+
+				random_country = {
+					limit = {
+						is_same_value = event_target:crisis_var
+					}
+					change_variable = {
+						which = "crisis_threat_count"
+						value = 1
+					}
+				}
+
+				# ~5 stations per system, 5 systems
+				if = {
+					limit = {
+						count_owned_ships = {
+							limit = { is_ship_size = military_station_large_ed }
+							count > 24
+						}
+					}
+					random_country = {
+						limit = {
+							is_same_value = event_target:crisis_var
+						}
+						change_variable = {
+							which = "crisis_threat_count"
+							value = 1
+						}
+					}
+
+					# 10 systems
+					if = {
+						limit = {
+							count_owned_ships = {
+								limit = { is_ship_size = military_station_large_ed }
+								count > 49
+							}
+						}
+						random_country = {
+							limit = {
+								is_same_value = event_target:crisis_var
+							}
+							change_variable = {
+								which = "crisis_threat_count"
+								value = 1
+							}
+						}
+
+						# 20 systems
+						if = {
+							limit = {
+								count_owned_ships = {
+									limit = { is_ship_size = military_station_large_ed }
+									count > 99
+								}
+							}
+							random_country = {
+								limit = {
+									is_same_value = event_target:crisis_var
+								}
+								change_variable = {
+									which = "crisis_threat_count"
+									value = 2
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		# ed 2 threat
+		if = {
+			random_country = {
+				limit = {
+					is_country_type = extradimensional_2
+				}
+
+				random_country = {
+					limit = {
+						is_same_value = event_target:crisis_var
+					}
+					change_variable = {
+						which = "crisis_threat_count"
+						value = 1
+					}
+				}
+
+				# ~5 stations per system, 5 systems
+				if = {
+					limit = {
+						count_owned_ships = {
+							limit = { is_ship_size = military_station_large_ed }
+							count > 24
+						}
+					}
+					random_country = {
+						limit = {
+							is_same_value = event_target:crisis_var
+						}
+						change_variable = {
+							which = "crisis_threat_count"
+							value = 1
+						}
+					}
+
+					# 10 systems
+					if = {
+						limit = {
+							count_owned_ships = {
+								limit = { is_ship_size = military_station_large_ed }
+								count > 49
+							}
+						}
+						random_country = {
+							limit = {
+								is_same_value = event_target:crisis_var
+							}
+							change_variable = {
+								which = "crisis_threat_count"
+								value = 1
+							}
+						}
+
+						# 20 systems
+						if = {
+							limit = {
+								count_owned_ships = {
+									limit = { is_ship_size = military_station_large_ed }
+									count > 99
+								}
+							}
+							random_country = {
+								limit = {
+									is_same_value = event_target:crisis_var
+								}
+								change_variable = {
+									which = "crisis_threat_count"
+									value = 2
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		# ed 3 threat
+		if = {
+			random_country = {
+				limit = {
+					is_country_type = extradimensional_3
+				}
+
+				random_country = {
+					limit = {
+						is_same_value = event_target:crisis_var
+					}
+					change_variable = {
+						which = "crisis_threat_count"
+						value = 1
+					}
+				}
+
+				# ~5 stations per system, 5 systems
+				if = {
+					limit = {
+						count_owned_ships = {
+							limit = { is_ship_size = military_station_large_ed }
+							count > 24
+						}
+					}
+					random_country = {
+						limit = {
+							is_same_value = event_target:crisis_var
+						}
+						change_variable = {
+							which = "crisis_threat_count"
+							value = 1
+						}
+					}
+
+					# 10 systems
+					if = {
+						limit = {
+							count_owned_ships = {
+								limit = { is_ship_size = military_station_large_ed }
+								count > 49
+							}
+						}
+						random_country = {
+							limit = {
+								is_same_value = event_target:crisis_var
+							}
+							change_variable = {
+								which = "crisis_threat_count"
+								value = 1
+							}
+						}
+
+						# 20 systems
+						if = {
+							limit = {
+								count_owned_ships = {
+									limit = { is_ship_size = military_station_large_ed }
+									count > 99
+								}
+							}
+							random_country = {
+								limit = {
+									is_same_value = event_target:crisis_var
+								}
+								change_variable = {
+									which = "crisis_threat_count"
+									value = 2
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		# swarm threat
+		if = {
+			random_country = {
+				limit = {
+					is_country_type = swarm					
+				}
+
+				random_country = {
+					limit = {
+						is_same_value = event_target:crisis_var
+					}
+					change_variable = {
+						which = "crisis_threat_count"
+						value = 3
+					}
+				}
+
+				# Count planets
+				if = {
+					limit = {
+						num_owned_planets > 10
+					}
+					random_country = {
+						limit = {
+							is_same_value = event_target:crisis_var
+						}
+						change_variable = {
+							which = "crisis_threat_count"
+							value = 1
+						}
+					}
+
+					# 25 systems
+					if = {
+						limit = {
+							num_owned_planets > 24
+						}
+						random_country = {
+							limit = {
+								is_same_value = event_target:crisis_var
+							}
+							change_variable = {
+								which = "crisis_threat_count"
+								value = 5
+							}
+						}
+
+						# 50 systems
+						if = {
+							limit = {
+								num_owned_planets > 49
+							}
+							random_country = {
+								limit = {
+									is_same_value = event_target:crisis_var
+								}
+								change_variable = {
+									which = "crisis_threat_count"
+									value = 8
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		# AI threat. Didn't buff this crisis so count it as weak for now
+		if = {
+			random_country = {
+				limit = {
+					is_country_type = ai_empire					
+				}
+
+				random_country = {
+					limit = {
+						is_same_value = event_target:crisis_var
+					}
+					change_variable = {
+						which = "crisis_threat_count"
+						value = 3
+					}
+				}
+				
+				# Count planets
+				if = {
+					limit = {
+						num_owned_planets > 10
+					}
+					random_country = {
+						limit = {
+							is_same_value = event_target:crisis_var
+						}
+						change_variable = {
+							which = "crisis_threat_count"
+							value = 3
+						}
+					}
+					
+					# 25 systems
+					if = {
+						limit = {
+							num_owned_planets > 24
+						}
+						random_country = {
+							limit = {
+								is_same_value = event_target:crisis_var
+							}
+							change_variable = {
+								which = "crisis_threat_count"
+								value = 3
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		random_country = {
+			limit = {
+				is_same_value = event_target:crisis_var
+			}
+			
+			if = {
+				limit = {
+					check_variable = {
+						which = "crisis_threat_count"
+						value > 1
+					}				
+				}
+				set_global_flag = crisis_threat_low
+
+				if = {
+					limit = {
+						check_variable = {
+							which = "crisis_threat_count"
+							value > 8
+						}					
+					}
+					set_global_flag = crisis_threat_med
+
+					if = {
+						limit = {
+							check_variable = {
+								which = "crisis_threat_count"
+								value > 16
+							}						
+						}
+						set_global_flag = crisis_threat_high
+					}
+				}
+
+				every_country = {
+					limit = {
+						OR = {
+							is_country_type = default
+							is_country_type = fallen_empire
+						}
+					}
+
+					save_event_target_as = crisis_checker
+
+					every_country = {
+						limit = {
+							has_communications = PREV
+							NOT = { is_country = PREV }
+							OR = {
+								is_country_type = default
+								is_country_type = fallen_empire
+							}
+						}
+
+						add_opinion_modifier = { who = event_target:crisis_checker modifier = opinion_crisis_threat }
+						if = {
+							limit = {
+								has_global_flag = crisis_threat_med
+							}
+							add_opinion_modifier = { who = event_target:crisis_checker modifier = opinion_crisis_threat }
+
+							if = {
+								limit = {
+									has_global_flag = crisis_threat_high
+								}
+								add_opinion_modifier = { who = event_target:crisis_checker modifier = opinion_crisis_threat }
+							}
+						}
+					}
+				}
+
+				# remove global flags
+				if = {
+					limit = {
+						has_global_flag = crisis_threat_low
+					}
+
+					remove_global_flag = crisis_threat_low
+				}
+
+				if = {
+					limit = {
+						has_global_flag = crisis_threat_med
+					}
+
+					remove_global_flag = crisis_threat_med
+				}
+
+				if = {
+					limit = {
+						has_global_flag = crisis_threat_high
+					}
+
+					remove_global_flag = crisis_threat_high
+				}
+			}
+		}
+	}
+}
+
+# Test event
+country_event = {
+	id = isb.3
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {		
+		capital_scope = {			
+			solar_system = {
+				random_system_planet  = {			
+					limit = {
+						is_star = yes
+					}
+					save_event_target_as = test_spawn_loc
+				}
+			}			
+		}
+			
+		
+		
+		create_country = {
+			name = "Test country"
+			type = bunny
+		}
+		last_created_country = {
+			establish_communications_no_message = ROOT
+			establish_contact = { who = ROOT }			
+			save_event_target_as = bunny1
+			#declare_war = ROOT
+			
+			create_fleet = {
+				effect = {
+					#set_owner = event_target:bunny1
+					create_ship = {
+						name = random
+						design = "Avatar"						
+					}
+					set_location = {
+						target = event_target:test_spawn_loc
+						distance = 1
+					}
+					set_fleet_stance = aggressive					
+				}
+				
+			}
+			
+			#declare_war = ROOT
+		}
+		
+		create_country = {
+			name = "Test country2"
+			type = bunny
+		}
+		last_created_country = {
+			establish_communications_no_message = ROOT
+			establish_contact = { who = ROOT }			
+			establish_communications_no_message = event_target:bunny1
+			establish_contact = { who = event_target:bunny1 }
+			save_event_target_as = bunny2
+			
+			create_fleet = {
+				effect = {
+					#set_owner = event_target:bunny2
+					create_ship = {
+						name = random
+						design = "Avatar"						
+					}
+					set_location = {
+						target = event_target:test_spawn_loc
+						distance = 1
+					}
+					set_fleet_stance = aggressive
+				}				
+			}
+			
+			save_event_target_as = bunny2
+			declare_war = event_target:bunny1
+			#declare_war = ROOT
+		}
+	}
+}

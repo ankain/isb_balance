@@ -1,0 +1,16 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_ship_part_shield_isb_01"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_shield_isb_01.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_crystal_armor_isb_01"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_crystal_armor_isb_01.dds"
+	}
+	
+	spriteType = {
+			name = "GFX_text_titan"
+			texturefile = "gfx/interface/icons/text_icons/icon_text_titan.dds"
+	}
+}

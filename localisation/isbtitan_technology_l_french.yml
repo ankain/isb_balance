@@ -1,0 +1,86 @@
+﻿l_french:
+
+#Titan techs and pre-reqs
+tech_titan:0 "Titan"
+tech_titan_desc:0 "\nWhen I am weaker than you, I ask for freedom because that is according to your principles; when I am stronger than you, I take away your freedom because that is according to my principles.\n\n"
+
+tech_titan_phy_01_mass_manipulation:0 "Theory : Mass Manipulation"
+tech_titan_phy_01_mass_manipulation_desc:0 "\nAn alternative application of shielding technology. The ability to manipulate the mass of an object without affecting its other properties will allow us to build at a scale once thought impossible.\n\n"
+
+tech_titan_phy_02_inertia_dampeners:0 "Theory : Inertia Dampeners"
+tech_titan_phy_02_inertia_dampeners_desc:0 "\nThere's a reason why we don't try to move military stations. Well, there used to be anyway.\n\n"
+
+tech_titan_soc_01_weapons_platform:0 "Theory : Massive Weapons Platforms"
+tech_titan_soc_01_weapons_platform_desc:0 "\nThe liberty of our people is solely our responsibility. Tempting as it is to foist this burden upon our well-wishers, we must never forget that the onus of our emancipation rests with us and us alone.\n\n"
+
+tech_titan_soc_02_super_capital:0 "Theory : Super Capital Ships"
+tech_titan_soc_02_super_capital_desc:0 "\nIf you go looking for trouble, you're sure to find it.\n\n"
+
+tech_titan_eng_01_massive_construction:0 "Framework : Massive Scale Building"
+tech_titan_eng_01_massive_construction_desc:0 "\nThe proposal to create ships of that scale would require a complete redesign of the current construction platforms and logistical support.\n\n"
+
+tech_titan_eng_02_drone_swarm:0 "Framework : Construction Drone Swarm"
+tech_titan_eng_02_drone_swarm_desc:0 "\nSo, instead of having ten drones finish it in a month, why not just use a thousand drones and finish it in a day? I'll pay extra.\n\n"
+
+#titan weapon modules tech and pre-reqs
+tech_titan_weapon_module_01:0 "Theory : Titan Modules"
+tech_titan_weapon_module_01_desc:0 "\nThe size and power generation capabilities of the Titan has opened up avenues for specialised modules.\n\n"
+
+tech_titan_weapon_module_02:0 "Titan Module : Projected Defenses"
+tech_titan_weapon_module_02_desc:0 "\n'Hey, if we project the shields directly in front of their weapons instead, wouldn't it damage their ship and still protect us?'\n\n'Shut up, Jerry.'\n\n"
+
+tech_titan_weapon_module_03:0 "Titan Module : Centralised Fleet Operations"
+tech_titan_weapon_module_03_desc:0 "\nCentralised is better right? Let's just get the Titan to handle everything.\n\n"
+
+tech_titan_weapon_module_04:0 "Titan Module : Networked Targeting"
+tech_titan_weapon_module_04_desc:0 "\nTwo heads are better than one. How about a hundred?\n\n"
+
+tech_titan_weapon_module_05:0 "Titan Module : AI Warfare"
+tech_titan_weapon_module_05_desc:0 "\nThe AI got tired of running combat simulations and decided to take a more...personal approach.\n\n"
+
+tech_titan_doomsday_weapons_01:0 "Theory : Doomsday Weapons"
+tech_titan_doomsday_weapons_01_desc:0 "\nEnemies strengthen you.\n\nAllies weaken.\n\nI tell you this in the hope that it will help you understand why I act as I do in the full knowledge that great forces accumulate in my Empire with but one wish - the wish to destroy me. You who read these words may know full well what actually happened, but I doubt that you understand it.\n\n"
+
+tech_titan_doomsday_weapons_02:0 "Doomsday Weapon : Neutronium Kinetic Bombardment"
+tech_titan_doomsday_weapons_02_desc:0 "\nBy adding a modified zero-point energy device to a neutronium core, the destructive power of orbital kinetic bombard is multiplied a thousandfold without affecting accuracy.\n\nYou may select this weapon through the empire policy screen and authorise its use under empire edicts.\n\n"
+
+tech_titan_doomsday_weapons_03:0 "Doomsday Weapon : Evolutionary Virus"
+tech_titan_doomsday_weapons_03_desc:0 "\nBy seeding the planet's atmosphere with special genetically modified viruses, we are able to target only the enemy's population. Unless something goes wrong.\n\nYou may select this weapon through the empire policy screen and authorise its use under empire edicts..\n\n"
+
+# leviathan techs and pre-reqs
+tech_leviathan:0 "Leviathan"
+tech_leviathan_desc:0 "\nGiven enough time for the generations to evolved, the predator produces particular survival adaptations in its prey which, through the circular operation of feedback, produce changes in the predator which again produce changes in the predator which again change the prey.\n\n"
+
+tech_leviathan_phy_01:0 "Theory : Multi-dimensional Structuring"
+tech_leviathan_phy_01_desc:0 "\nBeing able to structure and manipulate matter at higher dimensions will allow us to manufacture a new range of exotic materials.\n\n"
+
+tech_leviathan_phy_02:0 "Theory : Dimensionally Phased Materials"
+tech_leviathan_phy_02_desc:0 "\nTemporarily shifting matter into higher dimensions infuses them with several unique properties that can be integrated into a new ship design.\n\n"
+
+tech_leviathan_soc_01:0 "Theory : Specialised Weapons Platform"
+tech_leviathan_soc_01_desc:0 "\nWhile the Titan fulfilled its purpose as a general purpose fleet support platform, it became immediately apparent that a specialised platform was required for the more dangerous fleet operations.\n\n"
+
+tech_leviathan_soc_02:0 "Doctrine : Capital Ship Warfare"
+tech_leviathan_soc_02_desc:0 "\n'War, war never changes.'\n\n'Actually, it does, that's why we have to draft this new doctrine.'\n\n'Shut up, Jerry.'\n\n"
+
+tech_leviathan_eng_01:0 "Framework : Multi-dimensional Construction"
+tech_leviathan_eng_01_desc:0 "\nUtilising the breakthroughts in multi-dimensional structuring will allow us to create frames and structures for our ships.\n\n"
+
+tech_leviathan_eng_02:0 "Framework : Energy Amplification"
+tech_leviathan_eng_02_desc:0 "\nAdvances in energy storage and manipulation allows us to focus and amplify the energy transmission capabilities of weapons systems.\n\n"
+
+tech_phased_shields:0 "Phased Shields"
+tech_phased_shields_desc:0 "By aligning the shield's field projection with the hull, the field strength can be increased with some reduction in hull integrity."
+
+# Sun Crusher techs and pre-reqs
+tech_sun_crusher:0 "Doomsday Weapon : Sun Crusher"
+tech_sun_crusher_desc:0 "\nA fully autonomous ship built around a doomsday weapon, designed to transport the massive system to its target. By utilising dimensional phasing and specially modified phase shields, this weapon can survive inside the core of a main sequence star just long to make a localised alteration of the laws of physics and trigger a nova.\n\n§HThe Sun Crusher will nova the system's sun, destroying all colonies and ships in the system, and turn all planets uninhabitable.\n\nInstructions for how to activate this weapon can be found in the associated authorisation edict.§!"
+
+tech_sun_crusher_soc_01:0 "Doctrine : Autonomous Weapons Systems"
+tech_sun_crusher_soc_01_desc:0 "\nBy completely eliminating the need for a crew, we are able to utilise a significantly larger fraction of the ship's hull space for weapons systems and operate in a multitude of deadly environments. This allows us to design highly specific weapons platforms."
+
+tech_sun_crusher_phy_01:0 "Theory : Localised Reality Manipulation"
+tech_sun_crusher_phy_01_desc:0 "\nSaturating an area of space with high energy exotic particles allows us to tweak a multitude of physical constants. The tricky part is doing so without collapsing the local structure."
+
+tech_sun_crusher_phy_02:0 "Theory : Internal Stellar Manipulation"
+tech_sun_crusher_phy_02_desc:0 "\nAccessing the core of the star allows us to modify its internal reality structures and, in theory, control or modify its stellar processes. However, we will first require a detailed core analysis of various stars."

@@ -1,0 +1,13 @@
+objectTypes = {
+
+	pdxmesh = {
+		name = "avian_01_sun_crusher_mesh"
+		file = "gfx/models/ships/avian_01/avian_01_sun_crusher.mesh"
+		
+		animation = { id = "idle"						type = "avian_01_construction_idle_animation" }
+		animation = { id = "working"					type = "avian_01_construction_working_animation" }
+		animation = { id = "working_looping"			type = "avian_01_construction_working_looping_animation" }
+		
+		scale = 1.0
+	}	
+}

@@ -1,0 +1,1328 @@
+#change fortification health
+#change orbital bombardment
+
+namespace = titan_doomsday
+
+planet_event = {
+	id = titan_doomsday.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			country_event = { id = titan_doomsday.2 }
+		}
+	}
+}
+
+# Doomsday weapon
+country_event = {
+	id = titan_doomsday.2
+	hide_window = yes
+	is_triggered_only = yes
+	picture = GFX_evt_physics_research
+	
+	title = bombard_trigger
+	
+	desc = {
+		text = you_are_bombarding
+	}
+	
+	
+	immediate = {
+		if = {
+			limit = { has_country_flag = able_to_doomsday }
+			remove_country_flag = able_to_doomsday
+		}
+		if = {
+			#can use doomsday weapons
+			limit = {
+				has_technology = tech_titan_doomsday_weapons_01
+				has_country_edict = doomsday_authorisation
+				#NOT = { has_policy_flag = doomsday_outlawed }
+			}
+				
+				
+		
+			FROM = {
+				save_event_target_as = dooms_tar				
+				random_system = {
+					limit = {
+						any_planet = { is_same_value = event_target:dooms_tar }
+					}
+					
+					#count_ships not working?
+					#every_fleet_in_system = {
+					#	limit = {
+					#			count_ships = {
+					#				limit = { 									
+					#					is_ship_size = titan
+					#				}
+					#				count > 1					
+					#			}
+					#		owner = { is_same_value = ROOT	}
+					#	}
+						
+					#	fleet_event = { id = titan_doomsday.2 }						
+						
+					#	owner = {
+					#		set_country_flag = able_to_doomsday
+					#	}
+					#}
+					if = {
+						limit = {
+							any_ship_in_system = {
+								is_ship_size = titan
+								owner = { is_same_value = ROOT }								
+							}
+						}
+						
+						#ROOT = { country_event = { id = titan_doomsday.2 } }
+						
+						ROOT = {
+							set_country_flag = able_to_doomsday							
+						}
+					}
+					save_event_target_as = bombardsys				
+				}				
+			}
+		
+			if = {
+				limit = {
+					has_country_flag = able_to_doomsday
+				}				
+				
+				FROM = {
+					if = {
+						limit = {							
+							fortification_health < 10  
+						}						
+						# For now, 50% chance of triggering opinion hit
+						random_list = {
+							50 = {
+								# Opinion only applies when used against other empires or rebels
+								if = {
+									limit = {
+										OR = {
+											OWNER = { is_country_type = default }
+											OWNER = { is_country_type = rebel }
+											OWNER = { is_country_type = fallen_empire }
+										}
+									}
+									ROOT = { country_event = { id = titan_doomsday.802 } }
+								}
+							}
+							50 = {
+							
+							}								
+						}
+						
+						#Can use virus, kills 3 pops a month
+						if = { 
+							limit = { ROOT = { has_policy_flag = doomsday_virus } }
+							
+							random_list = {
+								1 = {
+									change_variable = {
+										which = "planets_destroyed"
+										value = 1
+									}
+									# Opinion only applies when used against other empires or rebels
+									if = {
+										limit = {
+											OR = {
+												OWNER = { is_country_type = default }
+												OWNER = { is_country_type = rebel }
+												OWNER = { is_country_type = fallen_empire }
+											}
+										}										
+										# Reaction to destroying a planet
+										ROOT = { country_event = { id = titan_doomsday.803 } }
+										# Owners reaction
+										OWNER = { country_event = { id = titan_doomsday.804 } }
+									}
+									destroy_colony = yes									
+									orbital_deposit_tile = {
+										clear_deposits = yes
+									}
+									if = {
+										limit = {
+											NOT = {	is_planet_class = pc_ringworld_habitable }
+										}
+										change_pc = pc_barren
+									}
+									
+									if = {
+										limit = {
+											is_planet_class = pc_ringworld_habitable
+										}
+										change_pc = pc_ringworld_habitable_damaged
+									}
+								}
+								99 = {
+								}
+							}
+							
+							random_pop = {
+								kill_pop = yes
+							}
+							
+							random_pop = {
+								kill_pop = yes
+							}
+							
+							random_pop = {
+								kill_pop = yes
+							}
+							
+							random_army = {
+								remove_army = yes
+							}
+							
+							random_army = {
+								remove_army = yes
+							}
+						}
+						
+						#Can use kinetic, changes 5 tiles a month
+						if = {
+							limit = { ROOT = { has_policy_flag = doomsday_kinetic } }
+							
+							# 0% chance of going wrong.
+							random_list = {
+								0 = {
+									# Opinion only applies when used against other empires or rebels
+									if = {
+										limit = {
+											OR = {
+												OWNER = { is_country_type = default }
+												OWNER = { is_country_type = rebel }
+												OWNER = { is_country_type = fallen_empire }
+											}
+										}
+										# Reaction to destroying a planet
+										ROOT = { country_event = { id = titan_doomsday.803 } }
+										# Owners reaction
+										OWNER = { country_event = { id = titan_doomsday.804 } }
+									}
+									destroy_colony = yes
+									every_tile = {									
+										limit = {
+											has_building = yes
+										}
+										set_ruined = yes
+									}
+									orbital_deposit_tile = {
+										clear_deposits = yes
+									}
+									change_pc = pc_molten
+								}
+								100 = {									
+								}
+							}
+							
+							random_tile = {
+								limit = {
+									has_blocker = no
+								}
+								set_blocker = "tb_radioactive_wasteland"					
+							}
+							
+							random_tile = {
+								limit = {
+									has_blocker = no
+								}
+								set_blocker = "tb_radioactive_wasteland"					
+							}
+							
+							random_tile = {
+								limit = {
+									has_blocker = no
+								}
+								set_blocker = "tb_radioactive_wasteland"					
+							}
+							
+							random_tile = {
+								limit = {
+									has_blocker = no
+								}
+								set_blocker = "tb_radioactive_wasteland"					
+							}
+							
+							random_list = {
+								50 = {
+									random_tile = {
+										limit = {
+											has_blocker = no
+										}
+										set_blocker = "tb_radioactive_wasteland"					
+									}
+								}
+								50 = {
+								
+								}
+							}							
+							
+							random_army = {
+								remove_army = yes
+							}						
+						}
+					}
+				}
+			}		
+		}
+	}
+}
+
+# Nova weapon
+country_event = {
+	id = titan_doomsday.101
+	hide_window = yes
+	is_triggered_only = yes
+	picture = GFX_evt_physics_research
+	
+	title = star_boom_trigger
+	
+	desc = {
+		text = you_are_bombarding
+	}
+
+	immediate = {
+		# Only players can use nova weapons
+		if = {
+			limit = {				
+				is_ai = no
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						is_ship_size = sun_crusher
+					}
+					has_country_edict = doomsday_nova_authorisation				
+				}
+				
+				# Initialise checks
+				if = {
+					limit = {
+						has_country_flag = can_nova_star					
+					}
+					remove_country_flag = can_nova_star				
+				}
+				
+				# Error flags
+				
+				# nova_01 = Cannot nova black holes / neutron stars / pulsars
+				set_country_flag = error_nova_01
+				
+				# nova_02 = Cannot nova non hostile or neutral non empty systems
+				set_country_flag = error_nova_02
+				
+				# nova_03 = Need to be in orbit around star to nova
+				set_country_flag = error_nova_03
+				
+				# nova_04 = Currently nova'ing another star, cannot use another weapon
+				set_country_flag = error_nova_04
+				
+				if = {
+					limit = {
+						NOT = { has_country_flag = nova_worked }
+					}
+					remove_country_flag = error_nova_04
+				
+					FROM = {				
+						solar_system = {
+							random_system_planet = {
+								limit = {
+									is_star = yes
+									NOT = {	is_planet_class = pc_black_hole }
+									NOT = {	is_planet_class = pc_neutron_star }
+									NOT = {	is_planet_class = pc_pulsar }
+								}
+								save_global_event_target_as = nova_star
+								
+								ROOT = {
+									remove_country_flag = error_nova_01
+								}
+							}
+						}
+					}
+					
+					# Check for hostile colonies in system
+					FROM = {
+						solar_system = {
+							every_system_planet = {
+								limit = {
+									is_colony = yes
+								}
+								if = {
+									limit = {
+										owner = { is_hostile = ROOT }								
+									}
+									ROOT = { 
+										set_country_flag = can_nova_star
+										
+										remove_country_flag = error_nova_02
+									}
+								}
+							}
+						}
+					}
+					
+					# System does not have hostile colonies, check for friendlies
+					if = {
+						limit = {
+							NOT = { has_country_flag = can_nova_star }
+						}
+						set_country_flag = can_nova_star
+						remove_country_flag = error_nova_02						
+						FROM = {
+							solar_system = {
+								if = {
+									limit = {
+										any_planet = {
+											#OR = {
+											is_colony = yes
+												#NOT = { is_inside_border = ROOT }
+											#}				
+										}
+									}
+									ROOT = { 
+										remove_country_flag = can_nova_star
+										
+										set_country_flag = error_nova_02
+									}
+								}
+							}
+						}
+					}
+					
+					if = {
+						limit = {
+							has_country_flag = can_nova_star
+							FROM = { 
+								exists = orbit
+								ORBIT = { is_same_value = event_target:nova_star }
+							}
+						}
+						
+						remove_country_flag = error_nova_03				
+						FROM = { 
+							save_event_target_as = nova_ship 
+							create_fleet = { 
+								effect = {			
+									#set_owner = ROOT
+									create_ship = {							
+										name = random
+										design = "explosion"
+										#graphical_culture = ROOT
+									}
+									set_event_locked = yes
+									set_location = {
+										target = event_target:nova_star
+										distance = 0.1
+										angle = 0
+									}
+								}							
+							}
+							#create_ambient_object = {
+							#	type = "exploding_bunny_object"
+							#	location = solar_system
+							#}
+							#last_created_ambient_object = { 
+							#	set_ambient_object_flag = is_bunny
+							#	set_location = {
+							#			target = event_target:nova_star
+							#			distance = 0
+							#			angle = 0
+							#		}
+							#}
+						}
+						
+						# Star explodes in 6 days
+						country_event = { id = titan_doomsday.104 days = 7 }
+						
+						remove_country_flag = can_nova_star
+						set_country_flag = nova_worked
+						
+						# Show only once
+						if = {
+							limit = {
+								NOT = { has_country_flag = nova_seen_desc }
+							}
+							ROOT = {
+								# Activation success
+								country_event = { id = titan_doomsday.103 }
+							}
+						}
+						
+						# Recreate nova ship just for vision
+						FROM = {
+							save_event_target_as = nova_ship						
+							create_fleet = { 
+								effect = {
+									set_owner = ROOT
+									set_event_locked = yes
+									create_ship = {									
+										name = random
+										design = "Sun Crusher"
+										graphical_culture = ROOT
+									}
+									set_location = {
+										target = event_target:nova_ship
+										distance = 0
+										angle = random
+									}
+								}
+							}
+						}
+					}
+				}
+				#country_event = { id = titan_doomsday.102 }
+				
+				# Activation failed
+				if = {
+					limit = {
+						OR = {
+							NOT = { has_country_flag = nova_worked }
+							has_country_flag = error_nova_04
+						}
+					}
+					country_event = { id = titan_doomsday.102 }
+				}
+			}
+			
+			# Confirm if player wants to destroy nova weapon
+			if = {
+				limit = {				
+					FROM = {
+						is_ship_size = sun_crusher
+					}
+					NOT = { has_country_edict = doomsday_nova_authorisation }
+				}
+				
+				country_event = { id = titan_doomsday.105 }
+			}
+		}
+	}
+}
+
+# delayed trigger
+country_event = {
+	id = titan_doomsday.104
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		change_variable = {
+			which = "stars_destroyed"
+			value = 1
+		}
+		random_planet = {
+			limit = {
+				is_same_value = event_target:nova_star
+			}
+			# Opinion modifiers for destroying star					
+			solar_system = {
+				if = {
+					limit = {
+						exists = OWNER								
+						OR = {
+							OWNER = { is_country_type = default }
+							OWNER = { is_country_type = rebel }
+							OWNER = { is_country_type = fallen_empire }
+						}
+					}							
+					# destroyed populated star system
+					if = {
+						limit = {
+							NOT = { OWNER = { is_same_value = ROOT } }
+						}
+						
+						ROOT = { country_event = { id = titan_doomsday.805 } }
+						OWNER = { country_event = { id = titan_doomsday.806 } }
+					}
+				}
+				
+				# Destroyed empty star system
+				if = {
+					limit = {
+						NOT = { exists = OWNER }						
+					}
+												
+					ROOT = { country_event = { id = titan_doomsday.807 } }
+					
+					# System was not in my borders
+					if = {
+						limit = {
+							NOT = { is_inside_border = ROOT }
+						}
+						
+						ROOT = { country_event = { id = titan_doomsday.805 } }
+					}
+				}
+			}			
+			
+			random_list = {
+				55 = {
+					change_pc = pc_pulsar
+				}
+				35 = {
+					change_pc = pc_neutron_star
+				}
+				10 = {
+					change_pc = pc_black_hole
+				}
+			}
+			orbital_deposit_tile = {
+				if = {
+					limit = {
+						has_deposit = yes
+					}
+					clear_deposits = yes
+				}
+			}
+			#set_name = ""
+			
+			solar_system = {
+				#set_name = ""
+				every_system_planet = {
+					limit = {
+						is_star = no
+					}
+					#set_name = ""
+					
+					change_variable = {
+						which = "planets_destroyed"
+						value = 1
+					}
+					
+					if = {
+						limit = {
+							is_colony = yes
+						}
+						
+						# Empire reaction
+						ROOT = { country_event = { id = titan_doomsday.803 } }
+						# Owners reaction
+						OWNER = { country_event = { id = titan_doomsday.804 } }
+						
+						destroy_colony = yes
+						set_planet_max_health = 0
+						every_tile = {	
+							limit = {
+								has_building = yes
+							}
+							set_ruined = yes
+						}
+					}
+					
+					orbital_deposit_tile = {
+						if = {
+							limit = {
+								has_deposit = yes
+							}
+							clear_deposits = yes
+						}								
+					}
+					
+					# Ringworld destruction
+					if = {
+						limit = {
+							OR = {
+								is_planet_class = pc_ringworld_habitable
+								is_planet_class = pc_ringworld_habitable_damaged
+								is_planet_class = pc_ringworld_tech
+								is_planet_class = pc_ringworld_tech_damaged
+								is_planet_class = pc_ringworld_seam 
+								is_planet_class = pc_ringworld_seam_damaged
+							}
+						}
+							
+						if = {
+							limit = {
+								OR = {
+									is_planet_class = pc_ringworld_habitable
+									is_planet_class = pc_ringworld_habitable_damaged
+								}
+							}
+							change_pc = pc_ringworld_habitable_nova
+						}
+						
+						if = {
+							limit = {
+								OR = {
+										is_planet_class = pc_ringworld_tech
+										is_planet_class = pc_ringworld_tech_damaged
+								}
+							}
+							change_pc = pc_ringworld_tech_nova
+						}
+						
+						if = {
+							limit = {
+								OR = {
+										is_planet_class = pc_ringworld_seam
+										is_planet_class = pc_ringworld_seam_damaged
+								}
+							}
+							change_pc = pc_ringworld_seam_nova
+						}						
+					}
+					
+					if = {
+						limit = {
+							NOT = { is_planet_class = pc_asteroid }
+							NOT = {
+								OR = {									
+									is_planet_class = pc_ringworld_habitable_nova
+									is_planet_class = pc_ringworld_tech_nova								
+									is_planet_class = pc_ringworld_seam_nova
+								}
+							}
+						}
+						if = {
+							limit = {
+								is_planet_class = pc_gas_giant
+							}
+							random_list = {															
+								25 = {											
+									change_pc = pc_nova
+									set_ring = no
+								}
+								75 = {
+									#change_pc = pc_toxic
+									change_pc = pc_nova_gas
+									set_ring = no
+								}																
+							}
+						}
+						
+						if = {
+							limit = {
+								NOT = { is_planet_class = pc_nova }
+								NOT = { is_planet_class = pc_nova_gas }
+							}
+							random_list = {
+								5 = {
+									change_pc = pc_destroyed
+									set_ring = yes
+								}										
+								25 = {											
+									change_pc = pc_molten
+									set_ring = no
+								}
+								70 = {
+									#change_pc = pc_toxic
+									change_pc = pc_nova
+									set_ring = no
+								}																
+							}
+						}
+					}
+				}
+				
+				every_fleet_in_system = {
+					destroy_fleet = THIS
+				}
+				
+				#random_system_ambient_object = {
+				#	limit = {
+				#		has_ambient_object_flag = is_bunny
+				#	}
+					
+				#	destroy_ambient_object = THIS
+				#}
+				
+				#every_ship = { 
+				#	limit = {
+				#		PREV = { 
+				#			#solar_system = { is_same_value = event_target:nova_star } 
+				#			is_same_value = event_target:nova_star
+				#		}
+				#	}
+					
+				#	reduce_hp_percent = 90
+				#}
+			}
+			
+			clear_global_event_target = nova_star
+		}		
+
+		# Clear all flags
+		country_event = { id = titan_doomsday.199 }
+	}
+}
+
+# Failed to activate, Remake ship and show error
+country_event = {
+	id = titan_doomsday.102
+	hide_window = yes
+	is_triggered_only = yes
+	picture = GFX_evt_physics_research
+	
+	title = star_boom_fail
+	
+	desc = {
+		text = you_are_failing
+	}	
+	
+	immediate = {
+		FROMFROM = {
+			save_event_target_as = nova_ship
+			create_fleet = { 
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Sun Crusher"
+						graphical_culture = ROOT
+					}
+					set_location = {
+						target = event_target:nova_ship
+						distance = 0
+						angle = random
+					}
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				has_country_flag = error_nova_04
+			}
+			country_event = { id = titan_doomsday.195 }
+			break = yes
+		}
+		
+		if = {
+			limit = {
+				has_country_flag = error_nova_01
+			}
+			country_event = { id = titan_doomsday.198 }
+			break = yes
+		}
+		
+		if = {
+			limit = {
+				has_country_flag = error_nova_02
+			}
+			country_event = { id = titan_doomsday.197 }
+			break = yes
+		}
+		
+		if = {
+			limit = {
+				has_country_flag = error_nova_03
+			}
+			country_event = { id = titan_doomsday.196 }
+			break = yes
+		}
+	}
+}
+
+# Successful activation
+country_event = {
+	id = titan_doomsday.103
+	hide_window = no
+	is_triggered_only = yes
+	picture = GFX_evt_city_ruins
+	#show_sound = event_nova_explosion
+	
+	title = "nova_success.name"
+	desc = "nova_success.desc"
+	
+	option = {
+		name = "nova_success.a"
+		set_country_flag = nova_seen_desc
+	}
+}
+
+# Confirm destruction of weapon
+country_event = {
+	id = titan_doomsday.105
+	hide_window = no
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station
+	
+	title = "titan_doomsday.105.title"
+	
+	desc = {
+		text = "titan_doomsday.105.desc"
+	}
+	
+	# Destroy weapon
+	option = {
+		name = titan_doomsday.105.a
+	}
+	
+	# Oops
+	option = {
+		name = titan_doomsday.105.b	
+		FROMFROM = {
+			save_event_target_as = nova_ship
+			create_fleet = { 
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Sun Crusher"
+						graphical_culture = ROOT
+					}
+					set_location = {
+						target = event_target:nova_ship
+						distance = 0
+						angle = random
+					}
+				}
+			}
+		}		
+	}
+}
+
+# Nova Error 01
+country_event = {
+	id = titan_doomsday.198
+	hide_window = no
+	is_triggered_only = yes
+	picture = GFX_evt_unknown_ships
+	show_sound = event_nova_alert
+	
+	title = "error_nova_01.name"
+	desc = "error_nova_01.desc"
+	
+	option = {
+		name = "error_nova_01.a"
+	}
+}
+
+# Nova Error 02
+country_event = {
+	id = titan_doomsday.197
+	hide_window = no
+	is_triggered_only = yes
+	picture = GFX_evt_unknown_ships
+	show_sound = event_nova_alert
+	
+	title = "error_nova_02.name"
+	desc = "error_nova_02.desc"
+	
+	option = {
+		name = "error_nova_02.a"
+	}
+}
+
+# Nova Error 03
+country_event = {
+	id = titan_doomsday.196
+	hide_window = no
+	is_triggered_only = yes
+	picture = GFX_evt_unknown_ships
+	show_sound = event_nova_alert
+	
+	title = "error_nova_03.name"
+	desc = "error_nova_03.desc"
+	
+	option = {
+		name = "error_nova_03.a"
+	}
+}
+
+# Nova Error 04
+country_event = {
+	id = titan_doomsday.195
+	hide_window = no
+	is_triggered_only = yes
+	picture = GFX_evt_unknown_ships
+	show_sound = event_nova_alert
+	
+	title = "error_nova_04.name"
+	desc = "error_nova_04.desc"
+	
+	option = {
+		name = "error_nova_04.a"
+	}
+}
+
+# Clears error and check flags
+country_event = {
+	id = titan_doomsday.199
+	hide_window = yes
+	is_triggered_only = yes
+	picture = GFX_evt_physics_research
+	
+	title = clear_flags
+	
+	desc = {
+		text = you_are_clearing
+	}	
+	
+	immediate = {
+		if = {
+			limit = {
+				has_country_flag = can_nova_star					
+			}
+			remove_country_flag = can_nova_star
+		}
+		
+		if = {
+			limit = {
+				has_country_flag = nova_worked					
+			}
+			remove_country_flag = nova_worked
+		}		
+		
+		if = {
+			limit = {
+				has_country_flag = error_nova_01					
+			}
+			remove_country_flag = error_nova_01
+		}
+		
+		if = {
+			limit = {
+				has_country_flag = error_nova_02
+			}
+			remove_country_flag = error_nova_02
+		}
+		
+		if = {
+			limit = {
+				has_country_flag = error_nova_03
+			}
+			remove_country_flag = error_nova_03
+		}
+		
+		if = {
+			limit = {
+				has_country_flag = error_nova_04
+			}
+			remove_country_flag = error_nova_04
+		}
+	}
+}
+
+
+# Doomsday Opinion mods start from 801
+# Yearly pulse doomsday checks. Also clears flags if country has no nova weapons, just in case.
+event = {
+	id = titan_doomsday.801
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		# Limit to players for now because AI can't use doomsday atm
+		every_country = {
+			limit = {
+				is_ai = no
+			}
+			
+			if = {
+				limit = {
+					has_technology = tech_titan_doomsday_weapons_01
+				}
+				
+				if = {
+					limit = {
+						count_owned_ships = {
+							limit = { is_ship_size = sun_crusher }
+							count = 0
+						}
+					}
+					
+					# resets all flags just in case
+					country_event = { id = titan_doomsday.199}
+				}
+				
+				save_event_target_as = dooms_check
+				
+				if = {
+					limit = {
+						count_owned_ships = {
+							limit = { is_ship_size = sun_crusher }
+							count > 0
+						}
+					}					
+					
+					if = {
+						limit = {
+							has_country_flag = doomsday_has_nova_small
+						}
+						
+						remove_country_flag = doomsday_has_nova_small
+					}
+					
+					if = {
+						limit = {
+							has_country_flag = doomsday_has_nova_large
+						}
+						
+						remove_country_flag = doomsday_has_nova_large
+					}
+					
+					if = {
+						limit = {
+							count_owned_ships = {
+								limit = { is_ship_size = sun_crusher }
+								count < 4
+							}
+						}
+						
+						set_country_flag = doomsday_has_nova_small
+					}
+					if = {
+						limit = {
+							count_owned_ships = {
+								limit = { is_ship_size = sun_crusher }
+								count > 3
+							}
+						}
+						
+						set_country_flag = doomsday_has_nova_large
+					}
+				}
+				
+				every_country = {				
+					limit = {
+						has_communications = PREV
+						NOT = { is_country = PREV }
+						OR = {
+							is_country_type = default
+							is_country_type = rebel
+							is_country_type = fallen_empire
+						}
+					}
+					
+					# Policy checks
+					if = {
+						limit = {
+							PREV = {								
+								NOT = { has_policy_flag = doomsday_outlawed }
+							}
+						}
+						add_opinion_modifier = { who = event_target:dooms_check modifier = opinion_doomsday_allowed }						
+					}
+					
+					if = {
+						limit = {
+							PREV = {								
+								has_policy_flag = doomsday_outlawed
+							}
+						}
+						add_opinion_modifier = { who = event_target:dooms_check modifier = opinion_doomsday_outlawed }				
+					}
+					
+					# Nova weapon checks
+					if = {
+						limit = {
+							has_opinion_modifier = { who = event_target:dooms_check modifier = opinion_doomsday_has_nova_small }
+						}
+						remove_opinion_modifier = { who = event_target:dooms_check modifier = opinion_doomsday_has_nova_small }
+					}
+					
+					if = {
+						limit = {
+							has_opinion_modifier = { who = event_target:dooms_check modifier = opinion_doomsday_has_nova_small }
+						}
+						remove_opinion_modifier = { who = event_target:dooms_check modifier = opinion_doomsday_has_nova_small }
+					}
+					
+					if = {
+						limit = {
+							has_opinion_modifier = { who = event_target:dooms_check modifier = opinion_doomsday_has_nova_large }
+						}
+						remove_opinion_modifier = { who = event_target:dooms_check modifier = opinion_doomsday_has_nova_large }
+					}
+					
+					if = {
+						limit = {
+							PREV = {
+								has_country_flag = doomsday_has_nova_small
+							}
+						}
+						
+						add_opinion_modifier = { who = event_target:dooms_check modifier = opinion_doomsday_has_nova_small }						
+					}
+					
+					if = {
+						limit = {
+							PREV = {
+								has_country_flag = doomsday_has_nova_large
+							}
+						}
+						
+						add_opinion_modifier = { who = event_target:dooms_check modifier = opinion_doomsday_has_nova_large }						
+					}
+				}
+				
+				# Clean up
+				if = {
+						limit = {
+							has_country_flag = doomsday_has_nova_small
+						}
+						
+						remove_country_flag = doomsday_has_nova_small
+					}
+					
+				if = {
+					limit = {
+						has_country_flag = doomsday_has_nova_large
+					}
+					
+					remove_country_flag = doomsday_has_nova_large
+				}
+			}
+		}
+	}
+}
+
+# Doomsday weapon used.
+country_event = {
+	id = titan_doomsday.802
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_communications = ROOT
+				NOT = { is_country = ROOT }					
+			}
+			add_opinion_modifier = { who = ROOT modifier = opinion_doomsday_low }
+		}
+		#every_owned_pop = {
+			#if = {
+			#	limit = { pop_has_ethic = ethic_pacifist }
+			#	add_modifier = {
+			#		modifier = "pop_full_bombardment_neg"
+			#		days = 3600
+			#		clear_on_owner_change = yes
+			#		multiplier = 4.0
+			#	}
+			#}
+			#if = {
+			#	limit = { pop_has_ethic = ethic_fanatic_pacifist }
+			#	add_modifier = {
+			#		modifier = "pop_full_bombardment_neg"
+			#		days = 3600
+			#		clear_on_owner_change = yes
+			#		multiplier = 6.0
+			#	}
+			#}
+		#}
+	}
+}
+
+# Planet destroyed
+country_event = {
+	id = titan_doomsday.803
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_communications = ROOT
+				NOT = { is_country = ROOT }				
+			}
+			add_opinion_modifier = { who = ROOT modifier = opinion_doomsday_destroy_planet }
+		}		
+	}
+}
+
+# Planet destroyed - owner modifier
+country_event = {
+	id = titan_doomsday.804
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {		
+		FROM = { save_event_target_as = doomsday_destroyer}
+		
+		add_opinion_modifier = { who = event_target:doomsday_destroyer modifier = opinion_doomsday_destroy_planet_owner }
+	}
+}
+
+# Star destroyed
+country_event = {
+	id = titan_doomsday.805
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_communications = ROOT
+				NOT = { is_country = ROOT }				
+			}
+			add_opinion_modifier = { who = ROOT modifier = opinion_doomsday_destroy_star }
+		}		
+	}
+}
+
+# Star destroyed - owner modifier
+country_event = {
+	id = titan_doomsday.806
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {		
+		FROM = { save_event_target_as = doomsday_destroyer}
+		
+		if = {
+			limit = {
+				NOT = { is_same_value = event_target:doomsday_destroyer }
+			}
+			add_opinion_modifier = { who = event_target:doomsday_destroyer modifier = opinion_doomsday_destroy_star_owner }
+		}
+	}
+}
+
+# Empty Star destroyed 
+country_event = {
+	id = titan_doomsday.807
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_communications = ROOT
+				NOT = { is_country = ROOT }				
+			}
+			add_opinion_modifier = { who = ROOT modifier = opinion_doomsday_destroy_star_empty }
+		}
+	}
+}
+
+
+country_event = {
+	id = titan_doomsday.999
+	hide_window = no
+	is_triggered_only = yes
+	picture = GFX_evt_physics_research
+	
+	title = system_trigger
+	
+	desc = {
+		text = you_found_ship
+	}
+	
+	option = {
+		name = titan_ok
+	}
+}

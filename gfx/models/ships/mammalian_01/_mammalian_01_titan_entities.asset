@@ -1,0 +1,281 @@
+@titan_scale = 38
+
+##################         	 BATTLESHIP           ########################
+
+# FRAME
+entity = {
+	name = "mammalian_01_titan_entity"
+	pdxmesh = "mammalian_01_titan_frame_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"	animation = "idle" animation_blend_time = 4.0 
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_battleship_hum" } }
+	}
+	state = { name = "moving"	animation = "idle" animation_blend_time = 4.0 
+		event = { trigger_once = yes sound = { soundeffect = "moving_out_battleship" } }
+	}
+	state = { name = "death" animation = "death" animation_blend_time = 0.0 chance = 1 looping = no
+		event = { time = 9.26 node = "part1_locator" particle = "ship_explosion_air_vent_particle" }
+		event = { time = 9.26 node = "part1_locator" particle = "ship_burn_particle" }
+		event = { time = 9.26 node = "part1_locator" particle = "large_ship_explosion_particle" }
+		event = { time = 7.63 node = "part1_locator" particle = "ship_explosion_particle" }
+		
+		event = { time = 10.26 node = "part2_back_locator" particle = "ship_explosion_air_vent_particle" }
+		event = { time = 10.26 node = "part2_back_locator" particle = "ship_burn_particle" }
+		
+		event = { time = 10.26 node = "part3_locator" particle = "ship_burn_particle" }
+		event = { time = 10.26 node = "part3_locator" particle = "large_ship_explosion_particle" }
+		
+		event = { time = 0.0 particle = "large_ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+	}
+	state = { name = "death" animation = "death2" animation_blend_time = 0.0 chance = 1 looping = no
+		event = { time = 9.56 node = "part1_locator" particle = "ship_explosion_air_vent_particle" }
+		event = { time = 9.56 node = "part1_locator" particle = "ship_burn_particle" }
+		event = { time = 9.56 node = "part1_locator" particle = "large_ship_explosion_particle" }
+		event = { time = 9.0 node = "part1_locator" particle = "ship_explosion_particle" }
+		
+		event = { time = 9.56 node = "part2_front_locator" particle = "ship_explosion_air_vent_particle" }
+		event = { time = 9.56 node = "part2_front_locator" particle = "ship_burn_particle" }
+		event = { time = 14.7 node = "part2_back_locator" particle = "ship_explosion_air_vent_particle" }
+		event = { time = 14.7 node = "part2_back_locator" particle = "ship_burn_particle" }
+		
+		event = { time = 14.7 node = "part3_locator" particle = "ship_explosion_air_vent_particle" }
+		event = { time = 14.7 node = "part3_locator" particle = "ship_burn_particle" }
+		event = { time = 14.7 node = "part3_locator" particle = "large_ship_explosion_particle" }
+		
+		event = { time = 0.0 particle = "large_ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+	}
+	state = { name = "death" animation = "death3" animation_blend_time = 0.0 chance = 1 looping = no
+		event = { time = 1.0 node = "explosion_locator1" particle = "ship_burn_particle" }
+		event = { time = 1.0 node = "explosion_locator1" particle = "ship_explosion_particle" }
+		
+		event = { time = 1.7 node = "explosion_locator2" particle = "ship_burn_particle" }
+		event = { time = 1.7 node = "explosion_locator2" particle = "ship_explosion_particle" }
+		
+		event = { time = 3.7 node = "explosion_locator3" particle = "ship_burn_particle" }
+		event = { time = 3.7 node = "explosion_locator3" particle = "ship_explosion_particle" }
+		
+		event = { time = 6.0 node = "explosion_locator4" particle = "ship_burn_particle" }
+		event = { time = 6.0 node = "explosion_locator4" particle = "ship_explosion_particle" }
+		
+		event = { time = 7.3 node = "explosion_locator5" particle = "ship_burn_particle" }
+		event = { time = 7.3 node = "explosion_locator5" particle = "ship_explosion_particle" }
+		
+		event = { time = 0.0 particle = "large_ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+	}
+	
+	scale = 2.25
+	
+	game_data = {
+		size = @titan_scale
+	}
+}
+
+
+entity = {
+	name = "mammalian_01_titan_bow_entity"
+	pdxmesh = "mammalian_01_titan_bow_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "moving" state_time = 5
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "death" state_time = 5 }
+	
+	locator = {
+		name = "large_gun_01"
+		position = { 0 3.5 0.5}
+		rotation = { 0 0 0 }
+	}
+	
+	locator = {
+		name = "large_gun_02"
+		position = { 4.0 2.0 -3.8}
+		rotation = { 0 0 0 }
+	}
+	
+	locator = {
+		name = "large_gun_03"
+		position = { -4.0 2.0 -3.8}
+		rotation = { 0 0 0 }
+	}
+	
+	locator = {
+		name = "large_gun_04"
+		position = { 0 -2.0 -6}
+		rotation = { 0 0 180 }
+	}
+	
+	locator = {
+		name = "large_gun_05"
+		position = { 0 -3.0 -10}
+		rotation = { 0 0 180 }
+	}
+	
+	#locator = {
+	#	name = "large_gun_06"
+	#	position = { 4.5 1.5 -18.8}
+	#	rotation = { 0 0 0 }
+	#}
+	
+	#locator = {
+	#	name = "large_gun_07"
+	#	position = { -4.5 1.5 -18.8}
+	#	rotation = { 0 0 0 }
+	#}
+	
+	locator = {
+		name = "medium_gun_02"
+		position = { 0.0 2.0 -4}
+		rotation = { 0 0 0 }
+	}
+}
+
+
+#MID
+entity = {
+	name = "mammalian_01_titan_mid_entity"
+	pdxmesh = "mammalian_01_titan_mid_mesh"
+	
+	default_state = "idle"
+	state = { name = idle	state_time = 5
+		event = { time = 0 node = "light_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	
+	state = { name = moving	state_time = 5
+		event = { time = 0 node = "light_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	
+	state = { name = "death" state_time = 5 }
+	
+	locator = {
+		name = "large_gun_01"
+		position = { 1.5 3.55 -3.7}
+		rotation = { -90 0 0 }
+	}
+	
+	locator = {
+		name = "large_gun_02"
+		position = { -1.5 3.55 -3.7}
+		rotation = { 90 0 0 }
+	}
+	
+	locator = {
+		name = "large_gun_03"
+		position = { 0 3.6 -1.0}
+		rotation = { 0 0 0 }
+	}
+	
+	locator = {
+		name = "medium_gun_01"
+		position = { 1.4 3.55 -7.1}
+		rotation = { 90 0 0 }
+	}
+	
+	locator = {
+		name = "medium_gun_02"
+		position = { -1.4 3.55 -7.1}
+		rotation = { 90 0 0 }
+	}
+		
+	locator = {
+		name = "strike_craft_locator_01"
+		position = { 5 0 0}
+		rotation = { -90 0 0 }
+	}
+	locator = {
+		name = "strike_craft_locator_02"
+		position = { -5 0 0}
+		rotation = { 90 0 0 }
+	}
+	locator = {
+		name = "strike_craft_locator_03"
+		position = { 5 0 -7}
+		rotation = { -90 0 0 }
+	}
+	locator = {
+		name = "strike_craft_locator_04"
+		position = { -5 0 -7}
+		rotation = { 90 0 0 }
+	}
+}
+
+
+
+# STERN
+
+entity = {
+	name = "mammalian_01_titan_stern_entity"
+	pdxmesh = "mammalian_01_titan_stern_mesh"
+	
+	default_state = idle
+	state = { name = "idle" state_time = 5
+		event = { time = 0 node = "engine_medium_01" particle = "mammalian_01_2_35_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "mammalian_01_2_35_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_03" particle = "mammalian_01_2_35_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_04" particle = "mammalian_01_2_35_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
+		
+		event = { time = 0 node = "light_01" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_02" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "moving" state_time = 5
+		event = { time = 0 node = "engine_medium_01" particle = "mammalian_01_2_35_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "mammalian_01_2_35_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_03" particle = "mammalian_01_2_35_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_04" particle = "mammalian_01_2_35_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
+	
+		event = { time = 0 node = "light_01" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_02" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "death" state_time = 5 }
+	
+	locator = {
+		name = "large_gun_01"
+		position = { 10 -2.0 5.6}
+		rotation = { 0 0 -33 }
+	}
+	
+	locator = {
+		name = "large_gun_02"
+		position = { -10 -2.0 5.6}
+		rotation = { 0 0 33 }
+	}
+	
+	#locator = {
+	#	name = "large_gun_03"
+	#	position = { 8 -2.5 -5.6}
+	#	rotation = { 0 0 -33 }
+	#}
+	
+	#locator = {
+	#	name = "large_gun_04"
+	#	position = { -8 -2.5 -5.6}
+	#	rotation = { 0 0 33 }
+	#}
+	
+	locator = {
+		name = "large_gun_03"
+		position = { 0.0 6.6 18}
+		rotation = { 0 0 0 }
+	}
+	
+	
+	locator = {
+		name = "small_gun_01"
+		position = { -12.5 -3.5 4.6}
+		rotation = { 0 0 35 }
+	}
+	
+	locator = {
+		name = "small_gun_02"
+		position = { 12.5 -3.5 4.6}
+		rotation = { 0 0 -35 }
+	}
+}

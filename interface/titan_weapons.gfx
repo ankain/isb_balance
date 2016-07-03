@@ -1,0 +1,42 @@
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_ship_part_titan_cc"
+		textureFile = "gfx/interface/icons/ship_parts/ship_part_titan_cc.dds"
+	}
+}
+
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_ship_part_titan_network"
+		textureFile = "gfx/interface/icons/ship_parts/ship_part_titan_network.dds"
+	}
+}
+
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_ship_part_titan_virus"
+		textureFile = "gfx/interface/icons/ship_parts/ship_part_titan_virus.dds"
+	}
+}
+
+
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_ship_part_titan_core_01"
+		textureFile = "gfx/interface/icons/ship_parts/ship_part_titan_core_01.dds"
+	}
+}
+
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_ship_part_titan_core_02"
+		textureFile = "gfx/interface/icons/ship_parts/ship_part_titan_core_02.dds"
+	}
+}
+
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_ship_part_titan_core_03"
+		textureFile = "gfx/interface/icons/ship_parts/ship_part_titan_core_03.dds"
+	}
+}

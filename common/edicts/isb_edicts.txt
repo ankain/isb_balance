@@ -1,0 +1,45 @@
+##########################################################################
+# Empire edicts
+##########################################################################
+
+country_edict = {
+	name = "doomsday_authorisation"
+	modifier = {
+	}
+	
+	prerequisites = {
+		"tech_titan_doomsday_weapons_01"
+	}
+	
+	influence_cost = 15
+		
+	allow = {
+		NOT = { has_policy_flag = doomsday_outlawed }
+	}
+	
+	ai_weight = {
+		weight = 0				
+	}	
+}
+
+# Special edict for nova
+country_edict = {
+	name = "doomsday_nova_authorisation"
+	modifier = {
+	}
+	
+	prerequisites = {
+		"tech_sun_crusher"
+	}
+	
+	# Don't actually need this, just to remind players this authorisation is still on
+	influence_cost = 50
+		
+	allow = {
+		NOT = { has_policy_flag = doomsday_outlawed }
+	}
+	
+	ai_weight = {
+		weight = 0				
+	}	
+}

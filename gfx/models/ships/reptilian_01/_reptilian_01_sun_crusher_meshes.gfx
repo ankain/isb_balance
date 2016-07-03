@@ -1,0 +1,17 @@
+objectTypes = {		
+	pdxmesh = {
+		name = "reptilian_01_sun_crusher_mesh"
+		file = "gfx/models/ships/reptilian_01/reptilian_01_sun_crusher.mesh"
+		scale = 1.0
+		
+		animation = { id = "idle"						type = "reptilian_01_construction_idle_animation" }
+		animation = { id = "working"					type = "reptilian_01_construction_working_start_animation" }
+		animation = { id = "working_looping"			type = "reptilian_01_construction_working_looping_animation" }
+
+	#	meshsettings = {
+	#		shader = "PdxMeshShip"
+	#	}
+	}	
+}
+
+	

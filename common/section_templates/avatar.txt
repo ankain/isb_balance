@@ -1,0 +1,36 @@
+ship_section_template = {
+	key = "AVATAR_SECTION"
+	ship_size = avatar
+	fits_on_slot = mid
+	entity = "avatar_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "root"
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_02"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "root"
+	}	
+	
+	small_utility_slots = 0
+	medium_utility_slots = 0
+	large_utility_slots = 7
+}
+
+# Explosion
+ship_section_template = {
+	key = "exploding_bunny_avatar_section"
+	ship_size = exploding_bunny_avatar
+	fits_on_slot = mid
+	entity = "exploding_bunny_avatar_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	small_utility_slots = 1
+}

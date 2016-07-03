@@ -1,0 +1,29 @@
+# Sun Crusher
+ship_design = {
+	name = "Sun Crusher"
+	ship_size = sun_crusher
+
+	section = {
+		template = "SUN_CRUSHER_SECTION"
+		slot = "mid"
+		
+		component = {
+			slot = "SMALL_UTILITY_1"
+			template = "SMALL_ZERO_POINT_REACTOR"
+		}
+	}
+	
+	required_component="SUN_CRUSHER_CORE"	
+}
+
+# Exploding Bunny
+ship_design = {
+	name = "explosion"
+	ship_size = exploding_bunny	
+}
+
+# Exploding Bunny Avatar
+ship_design = {
+	name = "destroy_planet"
+	ship_size = exploding_bunny_avatar	
+}

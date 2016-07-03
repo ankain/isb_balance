@@ -1,0 +1,13 @@
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_ship_counter_leviathan"
+		textureFile = "gfx/interface/system/icon_leviathan.dds"
+	}
+}
+
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_ship_sizes_leviathan"
+		textureFile = "gfx/interface/system/icon_leviathan.dds"
+	}
+}

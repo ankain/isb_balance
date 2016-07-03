@@ -1,0 +1,132 @@
+@leviathan_scale = 25
+
+# FRAME
+entity = {
+	name = "fungoid_01_leviathan_entity"
+	pdxmesh = "fungoid_01_leviathan_frame_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"	animation = "idle" animation_blend_time = 4.0 
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_battleship_hum" } }
+	}
+	state = { name = "moving"	animation = "idle" animation_blend_time = 4.0 
+		event = { trigger_once = yes sound = { soundeffect = "moving_out_battleship" } }
+	}
+	state = { name = "death" animation = "death3" animation_blend_time = 0.0 chance = 1 looping = no
+		event = { time = 1.0 node = "explosion_locator_01" particle = "ship_burn_particle" }
+		event = { time = 1.0 node = "explosion_locator_01" particle = "ship_explosion_particle" }
+		
+		event = { time = 1.7 node = "explosion_locator_02" particle = "ship_burn_particle" }
+		event = { time = 1.7 node = "explosion_locator_02" particle = "ship_explosion_particle" }
+		
+		event = { time = 3.7 node = "explosion_locator_03" particle = "ship_burn_particle" }
+		event = { time = 3.7 node = "explosion_locator_03" particle = "ship_explosion_particle" }
+		
+		event = { time = 6.0 node = "explosion_locator_04" particle = "ship_burn_particle" }
+		event = { time = 6.0 node = "explosion_locator_04" particle = "ship_explosion_particle" }
+		
+		event = { time = 7.3 node = "explosion_locator_05" particle = "ship_burn_particle" }
+		event = { time = 7.3 node = "explosion_locator_05" particle = "ship_explosion_particle" }
+		
+		event = { time = 0.0 particle = "large_ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+	}
+	
+	scale = 1.4
+	
+	game_data = {
+		size = @leviathan_scale
+	}
+}
+
+# BOW
+entity = {
+	name = "fungoid_01_leviathan_bow_entity"
+	pdxmesh = "fungoid_01_leviathan_bow_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_green_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_green_effect" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "moving" state_time = 5
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_green_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_green_effect" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "death" state_time = 5 }
+	
+	locator = {
+		name = "large_gun_01"
+		position = { 1.25 3.1 -20.0}
+		rotation = { 0 0 -90 }
+	}
+	
+	locator = {
+		name = "large_gun_02"
+		position = { -1.25 3.1 -20.0}
+		rotation = { 0 0 90 }
+	}
+}
+
+#MID
+entity = {
+	name = "fungoid_01_leviathan_mid_entity"
+	pdxmesh = "fungoid_01_leviathan_mid_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_green_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_green_effect" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "moving" state_time = 5
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_green_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_green_effect" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "death" state_time = 5 }
+	
+}
+
+# STERN
+
+entity = {
+	name = "fungoid_01_leviathan_stern_entity"
+	pdxmesh = "fungoid_01_leviathan_stern_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_green_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_green_effect" trigger_once = yes keep_particle = yes }
+		
+		event = { time = 0 node = "engine_large_up_01" particle = "fungoid_01_2_5_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_up_02" particle = "fungoid_01_2_5_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_up_03" particle = "fungoid_01_2_5_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_up_04" particle = "fungoid_01_2_5_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_up_05" particle = "fungoid_01_2_5_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_down_01" particle = "fungoid_01_2_5_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_down_02" particle = "fungoid_01_2_5_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_down_03" particle = "fungoid_01_2_5_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_down_04" particle = "fungoid_01_2_5_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_down_05" particle = "fungoid_01_2_5_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "moving" state_time = 5
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_green_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_green_effect" trigger_once = yes keep_particle = yes }
+		
+		event = { time = 0 node = "engine_large_up_01" particle = "fungoid_01_2_5_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_up_02" particle = "fungoid_01_2_5_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_up_03" particle = "fungoid_01_2_5_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_up_04" particle = "fungoid_01_2_5_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_up_05" particle = "fungoid_01_2_5_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_down_01" particle = "fungoid_01_2_5_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_down_02" particle = "fungoid_01_2_5_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_down_03" particle = "fungoid_01_2_5_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_down_04" particle = "fungoid_01_2_5_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_down_05" particle = "fungoid_01_2_5_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "death" state_time = 5 }
+	
+	locator = {
+		name = "large_gun_02"
+		position = { 0.0 0.6 -7.0}
+		rotation = { 0 0 180 }
+	}
+}

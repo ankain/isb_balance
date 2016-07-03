@@ -1,0 +1,54 @@
+	
+objectTypes = {
+	#######  Battleship frame  #######
+	
+	pdxmesh = {
+		name = "molluscoid_01_leviathan_frame_mesh"
+		file = "gfx/models/ships/molluscoid_01/molluscoid_01_battleship_frame.mesh"
+				animation = { id = "idle"			type = "molluscoid_01_battleship_frame_idle_animation" }
+				animation = { id = "death"			type = "molluscoid_01_battleship_frame_death_animation" }
+				animation = { id = "death2"			type = "molluscoid_01_battleship_frame_death2_animation" }
+				animation = { id = "death3"			type = "molluscoid_01_battleship_frame_death3_animation" }
+				animation = { id = "attack"			type = "molluscoid_01_battleship_frame_idle_animation" }				
+		scale = 1.5
+		meshsettings = {
+			shader = "PdxMeshShip"
+		}
+	}
+	
+	#######  Battleship bow sections  #######	
+	
+	pdxmesh = {
+		name = "molluscoid_01_leviathan_bow_mesh"
+		file = "gfx/models/ships/molluscoid_01/molluscoid_01_leviathan_bow_L1M1S2.mesh"
+		scale = 1.5
+		meshsettings = {
+			shader = "PdxMeshShip"
+		#Mipmap tweaking
+		#texture_diffuse = "2x2.dds"
+		}
+	}
+		
+	pdxmesh = {
+		name = "molluscoid_01_leviathan_mid_mesh"
+		file = "gfx/models/ships/molluscoid_01/molluscoid_01_leviathan_mid_S4LHB.mesh"
+		scale = 1.5
+		meshsettings = {
+			shader = "PdxMeshShip"
+		#Mipmap tweaking
+		#texture_diffuse = "2x2.dds"
+		}
+	}
+
+	
+	pdxmesh = {
+		name = "molluscoid_01_leviathan_stern_mesh"
+		file = "gfx/models/ships/molluscoid_01/molluscoid_01_leviathan_stern_M1S2.mesh"
+		scale = 1.5
+		meshsettings = {
+			shader = "PdxMeshShip"
+		#Mipmap tweaking
+		#texture_diffuse = "2x2.dds"
+		}
+	}
+}

@@ -1,0 +1,13 @@
+component_set = {
+	key = "SHIELD_ISB_01"
+	
+	icon = "GFX_ship_part_shield_isb_01"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "CRYSTAL_ARMOR_ISB_01"
+	
+	icon = "GFX_ship_part_crystal_armor_isb_01"
+	icon_frame = 1	
+}

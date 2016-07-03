@@ -1,0 +1,45 @@
+objectTypes = {
+	#######  Battleship frame  #######
+	
+	pdxmesh = {
+		name = "reptilian_01_leviathan_frame_mesh"
+		file = "gfx/models/ships/reptilian_01/reptilian_01_battleship_frame.mesh"
+				animation = { id = "idle"			type = "reptilian_01_battleship_frame_idle_animation" }
+				animation = { id = "death"			type = "reptilian_01_battleship_frame_death_animation" }
+				animation = { id = "death2"			type = "reptilian_01_battleship_frame_death2_animation" }
+				animation = { id = "death3"			type = "reptilian_01_battleship_frame_death3_animation" }
+				animation = { id = "attack"			type = "reptilian_01_battleship_frame_idle_animation" }				
+		scale = 1.7
+		#	meshsettings = {
+		#		shader = "PdxMeshShip"
+		#	}
+	}	
+	pdxmesh = {
+		name = "reptilian_01_leviathan_bow_mesh"
+		file = "gfx/models/ships/reptilian_01/reptilian_01_leviathan_bow_M3S2.mesh"
+		scale = 1.7
+		meshsettings = {
+			shader = "PdxMeshShip"
+		}
+	}			
+	
+	pdxmesh = {
+		name = "reptilian_01_leviathan_mid_mesh"
+		file = "gfx/models/ships/reptilian_01/reptilian_01_leviathan_mid_L3.mesh"
+		scale = 1.7
+		meshsettings = {
+			shader = "PdxMeshShip"
+		}
+	}
+	
+	pdxmesh = {
+		name = "reptilian_01_leviathan_stern_mesh"
+		file = "gfx/models/ships/reptilian_01/reptilian_01_leviathan_stern_M1S2.mesh"
+		scale = 1.7
+		meshsettings = {
+			shader = "PdxMeshShip"
+		}
+	}		
+}
+
+	

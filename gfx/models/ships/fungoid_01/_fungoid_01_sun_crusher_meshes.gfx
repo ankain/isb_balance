@@ -1,0 +1,14 @@
+objectTypes = {
+	
+	###### Construction Ship ######
+	pdxmesh = {
+		name = "fungoid_01_sun_crusher_mesh"
+		file = "gfx/models/ships/fungoid_01/fungoid_01_sun_crusher.mesh"
+		
+		animation = { id = "idle"						type = "fungoid_01_construction_idle_animation" }
+		animation = { id = "working"					type = "fungoid_01_construction_working_animation" }
+		animation = { id = "working_looping"			type = "fungoid_01_construction_working_looping_animation" }
+		
+		scale = 1.0
+	}
+}

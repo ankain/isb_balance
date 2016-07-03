@@ -1,0 +1,12 @@
+objectTypes = {
+	pdxmesh = {
+		name = "molluscoid_01_sun_crusher_mesh"
+		file = "gfx/models/ships/molluscoid_01/molluscoid_01_sun_crusher.mesh"
+		scale = 1.0
+		
+		animation = { id = "idle"						type = "molluscoid_01_construction_idle_animation" }
+		animation = { id = "working"					type = "molluscoid_01_construction_working_start_animation" }
+		animation = { id = "working_looping"			type = "molluscoid_01_construction_working_looping_animation" }
+
+	}	
+}

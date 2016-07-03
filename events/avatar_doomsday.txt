@@ -1,0 +1,120 @@
+namespace = avatar_doomsday
+
+ship_event = {
+	id = avatar_doomsday.1
+	hide_window = yes
+	#is_triggered_only = yes
+	
+	picture = GFX_evt_physics_research
+	
+	title = ship_trigger
+	
+	desc = {
+		text = you_found_ship
+	}
+	
+	trigger = {
+		is_ship_size = avatar
+		exists = ORBIT
+		ORBIT = {
+			is_star = no
+		}
+		exists = OWNER
+		OWNER = {
+			is_country_type = default
+			is_ai = no
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+
+	immediate = {
+		ORBIT = {
+			save_event_target_as = avatar_planet
+			planet_event = { id = avatar_doomsday.2 days = 3}
+		}
+		
+		FLEET = {
+			set_location = {
+				target = ORBIT
+				distance = 0.11
+				angle = 0
+			}
+			set_event_locked = yes
+			#create_ambient_object = {
+			#	type = "exploding_bunny_avatar_object"
+			#	location = solar_system
+			#}
+			#last_created_ambient_object = { 
+			#	set_ambient_object_flag = is_bunny
+			#	set_location = {
+			#		target = event_target:avatar_planet
+			#		distance = 0.1
+			#		angle = 0
+			#	}
+			#}
+		}
+	}
+	
+	option = {
+		name = ship_ok
+	}
+}
+
+planet_event = {
+	id = avatar_doomsday.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		#solar_system = {
+		#	random_system_ambient_object = {
+		#		limit = {
+		#			has_ambient_object_flag = is_bunny
+		#		}
+				
+		#		destroy_ambient_object = this
+		#	}
+		#}
+		create_fleet = { 
+			effect = {			
+				#set_owner = ROOT
+				create_ship = {							
+					name = random
+					design = "destroy_planet"
+					#graphical_culture = ROOT
+				}
+				set_event_locked = yes
+				set_location = {
+					target = PREV
+					distance = 0.1
+					angle = 0
+				}				
+			}							
+		}
+		
+		planet_event = { id = avatar_doomsday.3 days = 10 }
+	}
+	
+}
+
+# destroy planet
+planet_event = {
+	id = avatar_doomsday.3
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {		
+		
+		change_pc = pc_nova
+		
+		FROMFROM = {
+			FLEET = {
+				set_event_locked = no
+			}
+		}
+	}
+	
+}

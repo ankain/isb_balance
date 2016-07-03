@@ -1,0 +1,15 @@
+ai_ship_upkeep = {
+	potential = {
+		always = yes
+	}
+	
+	trigger = {
+		is_country_type = default
+		is_ai = yes		
+	}
+	
+	ship_upkeep_mult = -0.10
+	max_minerals = 16000
+	shipsize_titan_build_cost_mult = -0.5
+	shipsize_leviathan_build_cost_mult = -0.5
+}
