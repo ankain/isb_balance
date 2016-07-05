@@ -2,10 +2,10 @@
 
 #Titanen Technologie und Vorraussetzungen
 tech_titan:0 "Titan"
-tech_titan_desc:0 "\nBin ich schwächer, frage ich nach Freiheit, weil dies euer Prinzip ist; Bin ich stärke, nehme ich dir deine Freiheit, weil dies mein Prinzip ist.\n\n"
+tech_titan_desc:0 "\nDer Schwache ersucht den Starken um seine Freiheit; Der Starke nimmt den Schwachen ihre Freiheit.\n\n"
  
 tech_titan_phy_01_mass_manipulation:0 "Theorie: Massenmanipulation"
-tech_titan_phy_01_mass_manipulation_desc:0 "\nEine alternative Anwendung der Schild Technologie. Die Fähigkeit, die Masse eines Objekts su verändern, ohne dabei andere Aspekte zu beeinflussen, erlaubt uns das bauen in nie da gewesenen Größenordnungen.\n\n"
+tech_titan_phy_01_mass_manipulation_desc:0 "\nEine alternative Anwendung der Schildtechnologie. Die Fähigkeit, die Masse eines Objekts su verändern, ohne dabei andere Aspekte zu beeinflussen, erlaubt uns das bauen in nie da gewesenen Größenordnungen.\n\n"
  
 tech_titan_phy_02_inertia_dampeners:0 "Theorie: Trägheitsdämpfer"
 tech_titan_phy_02_inertia_dampeners_desc:0 "\nEs gab einen guten Grund warum Festungen Stationär waren. Naja jetzt nicht mehr.\n\n"
@@ -17,7 +17,7 @@ tech_titan_soc_02_super_capital:0 "Theorie: Super-Großkampfschiffe"
 tech_titan_soc_02_super_capital_desc:0 "\nWer Ärger sucht wird ihn auch finden.\n\n"
  
 tech_titan_eng_01_massive_construction:0 "Framework: Giganten Bauweise"
-tech_titan_eng_01_massive_construction_desc:0 "\nDer Vorschlag, Schiffe dieser größe zu bauen erforder ein neues Design für die gesammte Logistik und alle Konstruktionsplatformen.\n\n"
+tech_titan_eng_01_massive_construction_desc:0 "\nDer Vorschlag, Schiffe dieser Größe zu bauen erfordert ein neues Design für die gesammte Logistik und alle Konstruktionsplatformen.\n\n"
  
 tech_titan_eng_02_drone_swarm:0 "Framework: Baudrohnen Schwarm"
 tech_titan_eng_02_drone_swarm_desc:0 "\nWarum zehn Drohnen einen Monat arbeiten lassen, wenn 100 es in einem Tag schaffen? Wir zahlen auch drauf.\n\n"
@@ -27,7 +27,7 @@ tech_titan_weapon_module_01:0 "Theorie: Titanenmodule"
 tech_titan_weapon_module_01_desc:0 "\nDie schiere Größe und Kapazität des Titanen erlaubt die Entwicklung neuer, stärkerer Module.\n\n"
  
 tech_titan_weapon_module_02:0 "Titanenmodul: Vorhergesagte Verteidigung"
-tech_titan_weapon_module_02_desc:0 "\n'Moment, wenn wir ein Schild direkt vor sie projezieren würde es uns schützen und ihnen schaden?'\n\n'Klappe Jerry.'\n\n"
+tech_titan_weapon_module_02_desc:0 "\n'Würden Schilde direkt vor dem Gegner nicht dafür sorgen, das sie sich selbst beim Schießen schaden?'\n\n'Klappe Jerry.'\n\n"
  
 tech_titan_weapon_module_03:0 "Titanenmodul: Zentralisierte Flottenkomandos"
 tech_titan_weapon_module_03_desc:0 "\nZentralisierung ist besser nicht wahr? Lasst einfach den Titanen alles berechnen.\n\n"
@@ -36,26 +36,26 @@ tech_titan_weapon_module_04:0 "Titanenmodul: Vernetzte Zielsysteme"
 tech_titan_weapon_module_04_desc:0 "\nZwei Köpfe denken schneller als einer. Wie wärs mit Hundert?\n\n"
  
 tech_titan_weapon_module_05:0 "Titanenmodul: KI Kriegsführung"
-tech_titan_weapon_module_05_desc:0 "\nDie KI ist von den ewigen Kampfsimulationen gelangweilt...deswegen wird sie jetzt persönlich.\n\n"
+tech_titan_weapon_module_05_desc:0 "\nDie KI ist von den ewigen Kampfsimulationen gelangweilt. Deswegen wird sie jetzt etwas...persönlicher.\n\n"
  
 tech_titan_doomsday_weapons_01:0 "Theorie: Doomsday-Waffen"
-tech_titan_doomsday_weapons_01_desc:0 "\nGegner machen dich Stark.\n\nVerbündete Schwach.\n\nIch sage dir das in der Hoffnung das du besser verstehst warum ich tue was ich tue, in dem wissen das sich große mächte in meinem Imperium sammeln, mit dem unbändigen Wunsch mich zu vernichten. Die, die ihr diese Worte lest kennt die Geschehnisse, doch ihr werdet sie nie verstehen.\n\n"
+tech_titan_doomsday_weapons_01_desc:0 "\nGegner machen dich Stark.\n\nVerbündete Schwach.\n\nIch sage dir das in der Hoffnung das du besser verstehst warum ich tue was ich tue, in dem wissen das sich große Mächte in meinem Imperium sammeln, mit dem unbändigen Wunsch mich zu vernichten. Die, die ihr diese Worte lest kennt die Geschehnisse, doch ihr werdet sie nie verstehen.\n\n"
  
 tech_titan_doomsday_weapons_02:0 "Doomsday-Waffe: Kinetisches Bombardment"
-tech_titan_doomsday_weapons_02_desc:0 "\nDurch anfügen eines modifzierten Nullpunkt felds zu einem Neutronium Kern, steigt die tödliche Effizienz des planetaren Bombardements um ein tausendfaches ohne Einbußen bei der Genauigkeit.\n\nDu kannst diese Waffe in der Imperiumsansicht auswählen und ihre Benutzung per Imperiums-Erlass erlauben.\n\n"
+tech_titan_doomsday_weapons_02_desc:0 "\nDurch anfügen eines modifzierten Nullpunkt Feldes zu einem Neutronium Kern, steigt die tödliche Effizienz des planetaren Bombardements um ein tausendfaches ohne Einbußen bei der Genauigkeit.\n\nDu kannst diese Waffe in der Imperiumsansicht auswählen und ihre Benutzung per Imperialem Erlass erlauben.\n\n"
  
 tech_titan_doomsday_weapons_03:0 "Doomsday-Waffe: Evolutionsvirus"
-tech_titan_doomsday_weapons_03_desc:0 "\nDurch impfen der Atmosphäre des Feindplaneten sind wir in der Lage, nur die feindliche Population auszulöschen. Sofern nichts schief geht...\n\nDu kannst diese Waffe in der Imperiumsansicht auswählen und ihre Benutzung per Imperiums-Erlass erlauben.\n\n"
+tech_titan_doomsday_weapons_03_desc:0 "\nDurch einbringen eines Modifizierten Virus in Atmosphäre des Feindplaneten sind wir in der Lage, nur die feindliche Population auszulöschen. Sofern nichts schief geht...\n\nDu kannst diese Waffe in der Imperiumsansicht auswählen und ihre Benutzung per Imperialem Erlass erlauben.\n\n"
  
 #Leviathan Technologie und Vorraussetzungen
 tech_leviathan:0 "Leviathan"
 tech_leviathan_desc:0 "\nMit genügend Zeit passt sich die Beute dem Räuber an, somit ist auch der Räuber gezwungen sich anzupassen oder er stirbt aus.\n\n"
  
 tech_leviathan_phy_01:0 "Theorie: Mehrdimensionale Strukturen"
-tech_leviathan_phy_01_desc:0 "\nDie Fähigkeit Materie auf höheren Dimensionen zu strukturieren und zu manipulieren, öffnet eine ganze Welt voller exoticher Materialien.\n\n"
+tech_leviathan_phy_01_desc:0 "\nDie Fähigkeit Materie auf höheren Dimensionen zu strukturieren und zu manipulieren, öffnet eine ganze Welt voller exotischer Materialien.\n\n"
  
 tech_leviathan_phy_02:0 "Theorie: Dimensionsverschobene Materialien"
-tech_leviathan_phy_02_desc:0 "\nDas temporäre verschieben von materialien in höhere Dimensionen flöst ihnen einzigartige Eigenschaften ein, de sich im Schiffsbau sicher nutzlich machen werden.\n\n"
+tech_leviathan_phy_02_desc:0 "\nDas temporäre verschieben von Materialien in höhere Dimensionen flöst ihnen einzigartige Eigenschaften ein, die sich im Schiffsbau sicher nützlich machen werden.\n\n"
  
 tech_leviathan_soc_01:0 "Theorie: Spezializierte Waffenplatformen"
 tech_leviathan_soc_01_desc:0 "\nWo der Titan ehr eine generelle Rolle in der Unterstützung einer Flotte einnimmt, werden gleichzeitig neue, spezialisierte Waffensysteme für die gefährlicheren Aufgaben gebraucht.\n\n"
@@ -67,17 +67,17 @@ tech_leviathan_eng_01:0 "Framework: Mehrdimensionale Konstruktion"
 tech_leviathan_eng_01_desc:0 "\nDer Einsatz von mehrdimensionalen Materialien erlaubt uns neuartige Schiffsrümpfe und Bauweisen.\n\n"
  
 tech_leviathan_eng_02:0 "Framework: Energieverstärkung"
-tech_leviathan_eng_02_desc:0 "\nFortschritte in der Speicher und manipulationstechnologie sorgen for verbesserte Leistungen all unserer Waffensysteme.\n\n"
+tech_leviathan_eng_02_desc:0 "\nFortschritte in der Speicher und Manipulationstechnologie sorgen für verbesserte Leistungen all unserer Waffensysteme.\n\n"
  
 tech_phased_shields:0 "Phasenschilde"
-tech_phased_shields_desc:0 "Durch dichtes Alegen der Schildprojektion an die Hülle wird eine höhere Schildstärke erzeugt, auf Kosten der Hüllenstärke."
+tech_phased_shields_desc:0 "Durch dichtes Anlegen der Schildprojektion an die Hülle wird eine höhere Schildstärke erzeugt, auf Kosten der Hüllenstärke."
  
 #Sonnenbrecher Technologie und Vorraussetzungen
 tech_sun_crusher:0 "Doomsday-Waffe: Sonnenbrecher"
-tech_sun_crusher_desc:0 "\nEin vollautomatisches Schiff, gebaut um die gewaltige Waffe zu ihrem Ziel zu tragen. Der Einstaz von Dimensionsverschiebung und speziellen Phasenschilden erlaubt es der Waffe im inneren eines Aktiven Sterns zu überleben und eine Veränderung an der Reaktion im Inneren des Sterns vorzunehmen.\n\n§HDer Sonnenbrecher lässt den Stern eines Systems in einer Supernova explodieren, welche alle Kolonien, Planeten und Schiffe im System zerstört und nichts als verbrannte Planeten zurücklässt.\n\nEine Anleitung zum nutzen dieser Waffe findet sich in ihrem Beglaubigungs Erlass.§!"
+tech_sun_crusher_desc:0 "\nEin vollautomatisches Schiff, gebaut um die gewaltige Waffe zu ihrem Ziel zu tragen. Der Einstaz von Dimensionsverschiebung und speziellen Phasenschilden erlaubt es der Waffe im inneren eines Aktiven Sterns zu überleben und eine Veränderung an der Reaktion im Inneren des Sterns vorzunehmen.\n\n§HDer Sonnenbrecher lässt den Stern eines Systems in einer Supernova explodieren, welche alle Kolonien, Planeten und Schiffe im System zerstört und nichts als verbrannte Planeten zurücklässt.\n\nEine Anleitung zum nutzen dieser Waffe findet sich in ihrem Beglaubigungserlass.§!"
  
 tech_sun_crusher_soc_01:0 "Doktrin: Selbsthandelne Waffensysteme"
-tech_sun_crusher_soc_01_desc:0 "\nDurch das entfernen der Bezastzung sind wir in der Lage, können wir weit mehr Hüllenplatz für Waffensysteme nutzen und in zuvor unbetretbaren Umgebungen operieren. Dies Erlaubt uns die Entwickling hochentwickelter Waffensysteme."
+tech_sun_crusher_soc_01_desc:0 "\nDurch das entfernen der Besatzung sind wir in der Lage, weit mehr Hüllenplatz für Waffensysteme zu nutzen und in zuvor unbetretbaren Umgebungen zu operieren. Dies Erlaubt uns die Konstruktion hochentwickelter Waffensysteme."
  
 tech_sun_crusher_phy_01:0 "Theorie: Lokale Realitätsstörung"
 tech_sun_crusher_phy_01_desc:0 "\nDurch sättigung des Raums mit exotischen Partikeln lassen sich bestimmte physikalische Konstanten verändern und Gesetze aushebeln. Schweirig nur dabei nicht die lokalen Strukturen zu vaporisieren."
