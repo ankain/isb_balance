@@ -42,5 +42,32 @@ objectTypes = {
 			texture_normal = "avatar_normal.dds"
 			texture_specular = "avatar_specular.dds"
 		}
+	}
+	
+	pdxmesh = {
+		name = "avatar_constructor_mesh"
+		file = "gfx/models/ships/ai_01/ai_01_warship_large.mesh"
+		
+		meshsettings = {		
+			shader = "PdxMeshShip"		
+			texture_diffuse = "avatar_diffuse.dds"
+			#texture_normal = "avatar_normal.dds"
+			texture_specular = "avatar_specular.dds"
+		}
+	}
+
+	pdxmesh = {
+		name = "avatar_frame_mesh"
+		file = "gfx/models/ships/isb_avatar/avatar.mesh"		
+		
+		#animation = { id = "idle"			type = "ai_01_station_large_station_idle_animation" }
+		#animation = { id = "death"			type = "ai_01_station_large_death_animation" }
+		
+		meshsettings = {		
+			shader = "PdxMeshShip"		
+			texture_diffuse = "avatar_frame_diffuse.dds"
+			texture_normal = "avatar_normal.dds"
+			texture_specular = "avatar_specular.dds"
+		}
 	}	
 }

@@ -11,15 +11,32 @@
 #	shipsize_leviathan_build_cost_mult = -0.5
 #}
 
+test_mode = {
+	tile_resource_minerals_mult = 2000.0
+	tile_resource_energy_mult = 2000.0
+	tile_resource_physics_research_mult = 5000.0
+	tile_resource_society_research_mult = 5000.0
+	tile_resource_engineering_research_mult = 5000.0
+	navy_size_mult = 100.0
+}
+
+
 fallen_ship_upkeep = {
 	ship_upkeep_mult = -0.70	
 }
 
-test_mode = {
-	tile_resource_minerals_mult = 100.0
-	tile_resource_energy_mult = 1000.0
-	tile_resource_physics_research_mult = 5000.0
-	tile_resource_society_research_mult = 5000.0
-	tile_resource_engineering_research_mult = 5000.0
-	navy_size_mult = 1
+mod_avatar_raider = {
+	ship_ftl_warp_range_mult = 1.0
+	#ship_interstellar_speed_mult = 0.2
+	ship_winddown_mult = -0.8
+	#ship_weapon_damage = 2
+	ship_hitpoints_mult = 1.0
+}
+
+#avatar_frame_inactive = {
+#	ship_upkeep_mult = -0.50
+#}
+
+mod_avatar_frame_active = {
+	ship_upkeep_mult = 5.5
 }

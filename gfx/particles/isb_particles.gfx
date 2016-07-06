@@ -19,4 +19,18 @@ objectTypes = {
 		
 		scale = 1.5
 	}
+	
+	pdxparticle = {
+		name = "avatar_core_explosion_particle"
+		type = "avatar_core_explosion"
+		
+		scale = 4.0
+	}
+	
+	pdxparticle = {
+		name = "avatar_energy_weapon_hit_particle"
+		type = "blue_laser_hit_effect"
+		
+		scale = 5.0
+	}
 }

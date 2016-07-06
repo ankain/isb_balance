@@ -27,3 +27,41 @@ ship_design = {
 	name = "destroy_planet"
 	ship_size = exploding_bunny_avatar	
 }
+
+ship_design = {
+	name = "Avatar Construction"
+	ship_size = avatar_frame
+	
+	section = {
+		template = "AVATAR_FRAME_SECTION"
+		slot = "mid"
+	}
+}
+
+# Avatar
+ship_design = {
+	name = "Doom Star"
+	ship_size = avatar
+
+	section = {
+		template = "AVATAR_SECTION"
+		slot = "mid"
+		
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "AVATAR_ENERGY_GUN_01"
+		}
+		
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "AVATAR_ENERGY_GUN_01"
+		}
+		
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_ZERO_POINT_REACTOR"
+		}
+	}
+	
+	required_component="AVATAR_CORE"
+}

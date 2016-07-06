@@ -5,8 +5,10 @@
 NDefines.NCombat.COMBAT_BACK_OFF_RATE = 0.6
 
 -- In case people aren't using ISB graphics, reduces clipping on Titans
-NDefines.NShip.FLEET_BASE_FORMATION_SCALE			= 2.5
+NDefines.NShip.FLEET_BASE_FORMATION_SCALE			= 2.8
 
+-- To fix Avatar planet destroyer inconsistencies
+NDefines.NGraphics.DEFAULT_PLANET_PLANE				= -175.0
 
 --NDefines.NAI.SHARED_THREAT_MULT = 0.5 -- How much does having a shared threat boost opinion?
 NDefines.NAI.SHARED_THREAT_MAX = 250
@@ -49,9 +51,9 @@ NDefines.NSpecies.MAX_TRAIT_POINTS 					= 3
 NDefines.NSpecies.MAX_TRAITS 							= 6		-- Max racial traits (1 is always used for homeworld type trait)
 
 NDefines.NShip.MILITARY_POWER_ESTIMATED_ARMOR_PENETRATION	= 0.5	-- use as an estimated armor penetration in formula damage_reduction *= 1 - armor_penetration.
-NDefines.NShip.MILITARY_POWER_SCALE				= 2.0
-NDefines.NShip.MILITARY_POWER_HEALTH_WEIGHT		= 0.125
-NDefines.NShip.MILITARY_POWER_DAMAGE_WEIGHT		= 0.1255
+NDefines.NShip.MILITARY_POWER_SCALE				= 3.0
+NDefines.NShip.MILITARY_POWER_HEALTH_WEIGHT		= 0.10
+NDefines.NShip.MILITARY_POWER_DAMAGE_WEIGHT		= 0.10
 NDefines.NShip.MILITARY_POWER_EXPONENT				= 0.75	-- math: power = ( ( effective_health * damage_per_day ) ^ exponent ) * scale
 
 NDefines.NInterface.MAX_NUM_SAVE_GAMES						= 50

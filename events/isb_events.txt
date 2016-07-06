@@ -34,6 +34,23 @@ event = {
 	}
 }
 
+# Test mode
+event = {
+	id = isb.99
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {		
+		every_country = {
+			limit = { is_ai = no }
+			add_modifier = {
+				modifier = "test_mode"
+				days = -1
+			}
+		}
+	}
+}
+
 # Crisis check for opinion boost every 5 years.
 event = {
 	id = isb.2

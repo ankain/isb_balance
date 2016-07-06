@@ -41,7 +41,7 @@ particle={
 		billboard=yes
 		hide=no
 		texture={
-			file="gfx/particles/flare_wide.dds"
+			file="gfx/particles/flare_wide_no_center.dds"
 			x=1
 			y=1
 			shader="ParticleAdditive"
@@ -50,7 +50,7 @@ particle={
 			x=250.000
 			y=250.000
 			z=250.000
-			alpha=155.000,alpha_fade
+			alpha=225.000,alpha_fade
 		}
 		position={
 		}
@@ -71,7 +71,7 @@ particle={
 		billboard=yes
 		hide=no
 		texture={
-			file="gfx/particles/flare_wide.dds"
+			file="gfx/particles/flare_wide_no_center.dds"
 			x=1
 			y=1
 			shader="ParticleAdditive"
@@ -80,7 +80,7 @@ particle={
 			x=250.000
 			y=250.000
 			z=250.000
-			alpha=155.000,alpha_fade
+			alpha=225.000,alpha_fade
 		}
 		position={
 		}
@@ -101,7 +101,7 @@ particle={
 		billboard=yes
 		hide=no
 		texture={
-			file="gfx/particles/flare_wide.dds"
+			file="gfx/particles/flare_wide_no_center.dds"
 			x=1
 			y=1
 			shader="ParticleAdditive"
@@ -110,14 +110,14 @@ particle={
 			x=250.000
 			y=250.000
 			z=250.000
-			alpha=155.000,alpha_fade
+			alpha=225.000,alpha_fade
 		}
 		position={
 		}
 		duration=-1.000
 		life={ 3.300 0.300 }
 		emission=10.000
-		size={ 13.000 1.000 }
+		size={ 14.500 1.000 }
 		rotation={ 90.000 0.00 }		
 	}
 	subsystem={
@@ -160,7 +160,7 @@ particle={
 	}
 	subsystem={
 		name="blackness2"
-		max_amount=60
+		max_amount=80
 		slave_particles=0
 		emitter_type="point"
 		invert=no
@@ -185,7 +185,7 @@ particle={
 		duration=-1.000
 		life={ 1.200 0.000 }
 		emission=10.000
-		size={ 35.00 0.000 }
+		size={ 30.00 0.000 }
 		rotation={ 0.000 0.000 }
 		rotation_speed=0.000
 	}

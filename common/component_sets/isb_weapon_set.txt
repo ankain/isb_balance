@@ -29,3 +29,19 @@ component_set = {
 	icon = "GFX_ship_part_border_extruder_1"
 	icon_frame = 1
 }
+
+component_set = {
+	key = "avatar_weapon_components"
+	
+	#show_in_designer = no
+	icon = "GFX_ship_part_border_extruder_1"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "avatar_components"
+	
+	show_in_designer = no
+	icon = "GFX_ship_part_border_extruder_1"
+	icon_frame = 1
+}

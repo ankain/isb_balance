@@ -9,14 +9,14 @@ ship_section_template = {
 		name = "LARGE_GUN_01"
 		slot_size = large
 		slot_type = weapon
-		locatorname = "root"
+		locatorname = "large_gun_01"
 	}
 	
 	component_slot = {
 		name = "LARGE_GUN_02"
 		slot_size = large
 		slot_type = weapon
-		locatorname = "root"
+		locatorname = "large_gun_02"
 	}	
 	
 	small_utility_slots = 0
@@ -33,4 +33,26 @@ ship_section_template = {
 	icon = "GFX_ship_part_core_mid"
 	
 	small_utility_slots = 1
+}
+
+ship_section_template = {
+	key = "AVATAR_CONSTRUCTOR_SECTION"
+	ship_size = avatar_constructor
+	fits_on_slot = mid	
+	entity = "avatar_constructor_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	cost = 80
+	
+	small_utility_slots = 3
+}
+
+ship_section_template = {
+	key = "AVATAR_FRAME_SECTION"
+	ship_size = avatar_frame
+	fits_on_slot = mid	
+	entity = "avatar_frame_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	cost = 20000
 }
