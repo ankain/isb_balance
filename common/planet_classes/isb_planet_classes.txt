@@ -98,7 +98,7 @@ pc_nova = {
 
 pc_nova_gas = {
 	entity = "nova_planet_gas"
-	entity_scale = 14
+	entity_scale = 16
 	icon_frame = 12
 	
 	atmosphere_color 		= hsv { 0.05 0.6 0.75 }		#DONE

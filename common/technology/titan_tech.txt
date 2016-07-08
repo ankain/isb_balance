@@ -81,7 +81,7 @@ tech_titan = {
 	}
 	
 	modifier = {
-		max_minerals = 3000
+		max_minerals = 4000
 		max_energy = 2000
 	}
 	
@@ -828,6 +828,67 @@ tech_titan_doomsday_weapons_03 = {
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
+	}
+	
+	ai_weight = {
+		factor = 1.25
+	}
+}
+
+# Von Neumann Machines
+tech_titan_doomsday_weapons_04 = {
+	area = engineering
+	cost = @tier3cost5
+	tier = 3
+	category = { industry }
+	ai_update_type = military
+	prerequisites = { "tech_titan_doomsday_weapons_02" "tech_titan_doomsday_weapons_03" }
+	weight = @tier3weight4
+	is_rare = yes
+	
+	prereqfor_desc = {
+		custom = {
+			title = "TECH_UNLOCK_TITAN_DOOMSDAY_TITLE"
+			desc = "TECH_UNLOCK_TITAN_DOOMSDAY_DESC"
+		}
+	}
+	
+	modifier = {		
+	}
+	
+	weight_modifier = {
+		factor = 1.0		
+	}
+	
+	ai_weight = {
+		factor = 1.25
+	}
+}
+
+# Nanite Disassemblers
+tech_titan_doomsday_weapons_05 = {
+	area = engineering
+	cost = @tier3cost5
+	tier = 3
+	category = { industry }
+	ai_update_type = military
+	prerequisites = { "tech_titan_doomsday_weapons_04"}
+	weight = @tier3weight4
+	is_rare = yes
+	
+	prereqfor_desc = {
+		custom = {
+			title = "TECH_UNLOCK_TITAN_DOOMSDAY_TITLE"
+			desc = "TECH_UNLOCK_TITAN_DOOMSDAY_DESC"
+		}
+	}
+	
+	modifier = {
+		influence_gain_add = 0.50
+	}
+	
+	weight_modifier = {
+		factor = 1.0		
 	}
 	
 	ai_weight = {

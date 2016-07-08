@@ -263,7 +263,7 @@ entity = {
 	
 	default_state = "idle" 
 	state = { name = "idle" state_time = 10 looping = no
-		event = { time = 0.0 particle = "planet_destruction" keep_particle = yes trigger_once = yes sound = { } }
+		event = { time = 0.0 particle = "planet_destruction" keep_particle = yes trigger_once = yes sound = { soundeffect = "effect_longinus_fire" } }
 	}	
 	
 	game_data = {

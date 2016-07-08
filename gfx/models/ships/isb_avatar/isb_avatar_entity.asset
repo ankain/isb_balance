@@ -15,7 +15,7 @@ entity = {
 		event = { time = 3.0 node = "explosion_6" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
 	
 		event = { time = 0 particle = "avatar_core_effect_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 0.1 particle = "avatar_core_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_energy" } }
+		event = { time = 0.1 particle = "avatar_core_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
 	}	
 		
 	scale = 0.3	
@@ -58,7 +58,7 @@ entity = {
 		event = { time = 4.0 node = "explosion_6" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
 	
 		event = { time = 0 particle = "avatar_core_effect_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 4.9 particle = "large_ai_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_energy" } }
+		event = { time = 4.9 particle = "large_ai_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_large" } }
 	}
 	
 	locator = {
@@ -168,7 +168,7 @@ entity = {
 	state = { name = "idle" state_time = 8 looping = no
 		start_event = { particle = "avatar_energy_weapon_hit_particle" keep_particle = yes sound = { soundeffect = energy_lance_hit } }
 		event = { time = 2.25 particle = "avatar_energy_weapon_hit_particle" keep_particle = yes }
-		event = { time = 4.25 particle = "avatar_energy_weapon_hit_particle" keep_particle = yes }
+		#event = { time = 4.25 particle = "avatar_energy_weapon_hit_particle" keep_particle = yes }
 		#event = { time = 6.25 particle = "avatar_energy_weapon_hit_particle" keep_particle = yes }
 		event = { trigger_once = yes sound = { soundeffect = "distance_energy_lance_hit" } }
 	}

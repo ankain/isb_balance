@@ -51,6 +51,20 @@ event = {
 	}
 }
 
+# Test mode off
+event = {
+	id = isb.98
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {		
+		every_country = {
+			limit = { is_ai = no }
+			remove_modifier = "test_mode"			
+		}
+	}
+}
+
 # Crisis check for opinion boost every 5 years.
 event = {
 	id = isb.2
@@ -473,6 +487,7 @@ event = {
 
 				every_country = {
 					limit = {
+						is_ai = no
 						OR = {
 							is_country_type = default
 							is_country_type = fallen_empire

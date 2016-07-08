@@ -12,8 +12,8 @@ LEVIATHAN_BOW:0 "Hades' Bident"
 LEVIATHAN_MID:0 "Cornucopia"
 LEVIATHAN_STERN:0 "Aegis"
 
-titan_ship_fallen_empire:0 "Titan"
-titan_ship_fallen_empire_plural:0 "Titans"
+titan_ship_fallen_empire:0 "Fallen Titan"
+titan_ship_fallen_empire_plural:0 "Fallen Titans"
 
 ai_ship_upkeep:0 "Titan / Leviathan AI Fix"
 tech_isb_base:0 "Improved Space Battles"
@@ -101,11 +101,11 @@ doomsday_outlawed_desc:1 "Long have I gazed into the abyss. But I shall not wave
 
 doomsday_kinetic:0 "Kinetic Bombardment"
 doomsday_kinetic_name:0 "Only Neutronium Kinetic Bombardment can be used"
-doomsday_kinetic_desc:1 "When you are together, you can share a common catastrophe. You can be exterminated together.\n\n§EEvery month, any planet being bombarded with less than 10% hp and a Titan size ship in system will have 4 - 5 tiles converted to radioactive wastelands. This will continue until bombardment stops or all populations are dead.\n\nAfter selecting this weapon you have to authorise its use under empire edicts for your Titans to activate it.§!\n"
+doomsday_kinetic_desc:1 "When you are together, you can share a common catastrophe. You can be exterminated together.\n\n§EEvery month, any planet being bombarded with less than 10% hp and a Titan / Avatar size ship in system will have 4 - 5 tiles converted to radioactive wastelands. This will continue until bombardment stops or all populations are dead.\n\nAfter selecting this weapon you have to authorise its use under empire edicts for you to activate it.§!\n"
 
 doomsday_virus:0 "Evolutionary Virus"
 doomsday_virus_name:0 "Only the Evolutionary Virus can be used"
-doomsday_virus_desc:1 "What can make, can just as easily unmake.\n\n§EEvery month, any planet being bombarded with less than 10% hp and a Titan size ship in system will lose 3 populations. This will continue until bombardment stops or all populations are dead.\n\n5% chance of turning the planet barren.\n\nAfter selecting this weapon you have to authorise its use under empire edicts for your Titans to activate it.§!\n"
+doomsday_virus_desc:1 "What can make, can just as easily unmake.\n\n§EEvery month, any planet being bombarded with less than 10% hp and a Titan / Avatar size ship in system will lose 3 populations. This will continue until bombardment stops or all populations are dead.\n\n5% chance of turning the planet barren.\n\nAfter selecting this weapon you have to authorise its use under empire edicts for you to activate it.§!\n"
 
 opinion_doomsday_low:0 "Doomsday weapon user"
 
@@ -129,10 +129,10 @@ pc_destroyed:0 "Shattered Planet"
 pc_destroyed_desc:0 "The crust of this dying planet has been ripped open by incredible forces, exposing its molten core."
 
 pc_nova:0 "Glassed Planet"
-pc_nova_desc:0 "This planet was destroyed when its sun went nova. Most of its atmosphere has been stripped away and its surface turned into glass. Fires will continue to rage across the entire planet for millenia."
+pc_nova_desc:0 "This planet was destroyed by incredible energies. Most of its atmosphere has been stripped away and its surface turned into glass. Fires will continue to rage across the entire planet for millenia."
 
 pc_nova_gas:0 "Burning Gas Giant"
-pc_nova_gas_desc:0 "This gas giant was set on fire when its sun went nova. The heavier elements ejected during the nova will continue to consume and burn what remains of the gas giant's atmosphere until it is depleted."
+pc_nova_gas_desc:0 "This gas giant was set on fire by incredible energies. The heavier elements ejected during the nova will continue to consume and burn what remains of the gas giant's atmosphere until it is depleted."
 
 pc_ringworld_habitable_nova:0 "Burning Ring World"
 pc_ringworld_habitable_nova_desc:0 "An immense band encircling the system's sun.\n\nThis section of the superstructure appears irreparably damaged."
@@ -203,21 +203,51 @@ LARGE_CRYSTAL_ARMOR_ISB_01:0 "Large Phased Armor"
 
 # v1.3 - Avatar and Doomsday Weapons
 
+avatar:0 "Avatar"
+avatar_plural:0 "Avatars"
+
+exploding_bunny_avatar:0 "Exploding Avatar Bunny"
+exploding_bunny_avatar_plural:0 "Exploding Avatar Bunnies"
+
+avatar_frame:0 "Avatar Construction Framework"
+avatar_frame_plural:0 "Avatar Construction Frameworks"
+
+avatar_constructor:0 "Avatar Construction Ship"
+avatar_constructor_plural:0 "Avatar Construction Ships"
+
+AVATAR_CONSTRUCTOR_SECTION:0 "Frame Constructor"
+AVATAR_FRAME_SECTION:0 " Avatar Frame"
+
 mod_avatar_raider:0 "Avatar Raider Buffs"
 mod_avatar_frame_active:0 "Avatar Construction in Progress"
 
+TECH_UNLOCK_AVATAR_CHAIN_TITLE:0 "§EAvatar Research Chain§!"
+TECH_UNLOCK_AVATAR_CHAIN_DESC:0 "Researching all technologies in this research chain will unlock The Avatar Project."
+
+TECH_UNLOCK_AVATAR_CONSTRUCTION_TITLE:0 "§HUnlocks Ship type:§! Avatar Constructor"
+TECH_UNLOCK_AVATAR_CONSTRUCTION_DESC:0 "The Avatar Project is an Empire-wide construction project that will allow us to build the Avatar, our largest and most destructive weapons platform yet. Powered by an artificial black hole, it is capable of unleashing enough energy to destroy entire planets. The Avatar will cause weak empires to fear us, making them more likely to bow to our wishes. However, it will also antagonise strong Empires.§!\n\n§EThe constructor will allow you to create an Avatar frame and start the Avatar construction project.\n\nWARNING: The other Empires that already distrust us will not sit idly by while we construct this Doomsday Station. Be prepared for massive assaults by enemy fleets seeking to destroy it before construction completes.§!\n\n§HMove the constructor to a well-defended system and click disband fleet to begin construction of the frame."
+
+edict_doomsday_longinus_authorisation:0 "Authorise Spear of Longinus"
+edict_doomsday_longinus_authorisation_desc:0 "\nRequires doomsday weapons to not be outlawed.\n\nTo activate the weapon, move the Avatar into orbit around a planet, then activate this edict. \n\nYou can only use the Spear of Longinus on hostile or empty planets.\n\n"
+
+doomsday_nanite:0 "Nanite Disassemblers"
+doomsday_nanite_name:0 "Only Nanite Disassemblers can be used"
+doomsday_nanite_desc:1 "\n§EEvery month, any planet being bombarded with less than 10% hp and a Titan / Avatar size ship in system will have 1 building and 1 population destroyed. This will continue until bombardment stops or there are no buildings and populations left.\n\nEach building destroyed will generate about 350 minerals and 50 energy. Each population destroyed will generate about 350 energy and 50 minerals.\n\nAfter selecting this weapon you have to authorise its use under empire edicts for you to activate it.\n\nWARNING: The Nanite Disassemblers are considered a brutal doomsday weapon.§!\n"
+
+# Avatar construction projects
 PROJ_AVATAR_CONSTRUCT_01:0 "Avatar Construction Frame (Deactivated)"
-PROJ_AVATAR_CONSTRUCT_01_DESC:0 "This is the framework for the automated construction of the Avatar. Research this project to activate the frame and begin construction. Construction of the Avatar will take 10 years and cost us approximately 700 energy and minerals per month.\n\n§HWARNING: The other Empires that already distrust us will not sit idly by while we construct this Doomsday Station. Be prepared for assaults by enemy fleets seeking to destroy it before construction completes.§!"
+PROJ_AVATAR_CONSTRUCT_01_DESC:0 "This is the framework for the automated construction of the Avatar. Research this project to activate the frame and begin construction.\n\nConstruction of the Avatar will take 10 years and cost us approximately 700 energy and minerals per month.\n\n§HWARNING: The other Empires that already distrust us will not sit idly by while we construct this Doomsday Station. Be prepared for assaults by enemy fleets seeking to destroy it before construction completes.§!"
 
 PROJ_AVATAR_CONSTRUCT_02:0 "Avatar Construction Frame (Activated)"
-PROJ_AVATAR_CONSTRUCT_02_DESC:0 "Avatar construction in progress. You cannot research this special project. Construction will complete when this project times out."
+PROJ_AVATAR_CONSTRUCT_02_DESC:0 "Avatar construction in progress. This special project cannot be researched. Construction will complete when this project times out."
 
 PROJ_AVATAR_ERROR_02:0 "Avatar Deactivated"
-PROJ_AVATAR_ERROR_02_DESC:0 "WARNING: The Avatar is too large to be placed in a fleet with other ships. Ensure the Avatar is the only ship in a fleet to reactivate it."
+PROJ_AVATAR_ERROR_02_DESC:0 "WARNING: The Avatar cannot be be placed in a fleet with other ships. Ensure the Avatar is the only ship in a fleet to reactivate it."
 
+# Avatar construction events
 avatar_constructor_01.name:0 "Confirmation"
-avatar_constructor_01.desc:0 "Please confirm your orders.\n\n§HWARNING: Deploy the Avatar construction frame in a well defended system because it will be attacked during construction. It cannot be moved once it has been deployed.§!"
-avatar_constructor_01.a:0 "Deploy Avatar Construction Frame"
+avatar_constructor_01.desc:0 "Please confirm your orders.\n\n§HWARNING: Deploy the Avatar construction frame in a well defended system. It will be attacked during construction, and cannot be moved once it has been deployed.§!"
+avatar_constructor_01.a:0 "Begin Avatar Construction Frame Deployment"
 avatar_constructor_01.b:0 "Destroy the Avatar Construction Ship"
 avatar_constructor_01.c:0 "Cancel"
 
@@ -226,7 +256,7 @@ avatar_construction_start.desc:0 "Construction of the Avatar has begun. The Avat
 avatar_construction_start.a:0 "Place all fleets on high alert."
 
 avatar_construction_complete.name:0 "Construction Complete"
-avatar_construction_complete.desc:0 "The Avatar is now fully operational."
+avatar_construction_complete.desc:0 "Weapons systems online, the Avatar is now fully operational."
 avatar_construction_complete.a:0 "Excellent."
 
 avatar_raid_01.name:0 "Enemy Fleet Detected"
@@ -248,3 +278,20 @@ avatar_raid_04.a:0 "It's a trap!"
 avatar_raid_break.name:0 "Signs of Fleet Activity"
 avatar_raid_break.desc:0 "We have detected an usually large number of incursions by unidentified vessels. However, these vessels appear to be focused on avoiding our sensors rather than regrouping into a fleet.\n\nIt appears our enemies are still preparing for an assault. It is unlikely that they will attack soon, but when they do it will be in far greater numbers than before."
 avatar_raid_break.a:0 "We will be ready."
+
+avatar_error_01.name:0 "Unable to start Avatar Project"
+avatar_error_01.desc:0 "Our empire cannot support more than one Avatar."
+avatar_error_01.a:0 "Understood"
+
+avatar_error_02.name:0 "Avatar Deactivated"
+avatar_error_02.desc:0 "WARNING: The Avatar cannot be be placed in a fleet with other ships. Ensure the Avatar is the only ship in a fleet to reactivate it."
+avatar_error_02.a:0 "Understood"
+
+#Avatar Components
+
+AVATAR_ENERGY_GUN_01:0 "A.T. Projection"
+AVATAR_CORE:0 "S² Core"
+
+# Avatar Opinions
+opinion_has_avatar:0 "Fear will keep them in line"
+opinion_doomsday_med:0 "Brutal doomsday weapon user"

@@ -432,4 +432,5 @@ ship_design = {
 	required_component="JUMP_DRIVE_1"	
 	required_component="SHIP_THRUSTER_4"
 	required_component = "TITAN_CORE_FALLEN"
+	required_component = "TITAN_NETWORKED_TARGET"
 }

@@ -5,3 +5,10 @@ sound =
 	file = "event/event_nova_explosion.wav"
 	volume = 0.8
 }
+
+sound =
+{
+	name = "sound_longinus_fire"
+	file = "longinus_fire.wav"
+	volume = 0.8
+}

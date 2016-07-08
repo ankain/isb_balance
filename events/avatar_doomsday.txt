@@ -33,6 +33,7 @@ fleet_event = {
 	}
 }
 
+# Orbiting an empty planet
 ship_event = {
 	id = avatar_doomsday.2
 	hide_window = yes
@@ -73,14 +74,14 @@ ship_event = {
 			FLEET = {
 				set_event_locked = yes
 				set_fleet_flag = flag_avatar_disabled
-			}			
+			}
 
 			# Disable the Avatar, cannot do anything else. Event lock the fleet as well so nothing moves.
 			if = {
 				limit = {
 					OWNER = { NOT = { has_special_project = PROJ_AVATAR_ERROR_02 } }
-				}				
-				
+				}
+
 				# Trigger Error
 				OWNER = { country_event = { id = avatar_doomsday.99 } }
 
@@ -117,11 +118,12 @@ ship_event = {
 				if = {
 					limit = {
 						exists = ORBIT
+						OWNER = { has_country_edict = doomsday_longinus_authorisation }
 						ORBIT = {
 							is_star = no
 							OR = {
 								NOT = { exists = OWNER }
-								OWNER = { is_hostile_to = event_target:avatar_owner	}
+								OWNER = { is_hostile = event_target:avatar_owner	}
 							}
 							NOT = {
 								OR = {
@@ -131,16 +133,18 @@ ship_event = {
 									is_planet_class = pc_ringworld_habitable_nova
 									is_planet_class = pc_ringworld_tech_nova
 									is_planet_class = pc_ringworld_seam_nova
+									is_planet_class = pc_destroyed
 								}
 							}
 						}
 					}
 					ORBIT = {
-						save_event_target_as = avatar_planet
+						#save_event_target_as = avatar_planet
 						planet_event = { id = avatar_doomsday.3 days = 3}
 					}
 
 					FLEET = {
+						clear_orders = yes
 						set_location = {
 							target = ORBIT
 							distance = 0.11
@@ -164,10 +168,6 @@ ship_event = {
 
 			}
 		}
-	}
-
-	option = {
-		name = ship_ok
 	}
 }
 
@@ -214,10 +214,14 @@ planet_event = {
 	is_triggered_only = yes
 
 	immediate = {
-
-		change_variable = {
-			which = "planets_destroyed"
-			value = 1
+		
+		FROMFROM = { 
+			OWNER = {
+				change_variable = {
+					which = "planets_destroyed"
+					value = 1
+				}
+			}
 		}
 
 		if = {
@@ -240,6 +244,9 @@ planet_event = {
 					}
 					# Reaction to destroying a planet
 					FROMFROM = { OWNER = { country_event = { id = titan_doomsday.803 } } }
+					# Used a doomsday weapon on a colony
+					FROMFROM = { OWNER = { country_event = { id = titan_doomsday.802 } } }
+					FROMFROM = { OWNER = { country_event = { id = titan_doomsday.808 } } }
 					# Owners reaction
 					OWNER = { country_event = { id = titan_doomsday.804 } }
 				}
@@ -375,37 +382,54 @@ country_event = {
 		text = avatar_constructor_01.desc
 	}
 
-	trigger = {
+	trigger = {		
 		FROM = { is_ship_size = avatar_constructor }
+		is_ai = no
 	}
 
 	immediate = {
-		if = {
+		# Check to see if flag is still valid
+		random_system = {
 			limit = {
-				is_ai = no
+				has_star_flag = flag_avatar_build_system
 			}
 
-			# Check to see if flag is still valid
-			random_system = {
+			if = {
 				limit = {
-					has_star_flag = flag_avatar_build_system
-				}
-
-				if = {
-					limit = {
-						NOT = {
-							any_ship_in_system = {
-								is_ship_size = avatar_frame
-							}
+					NOT = {
+						any_ship_in_system = {
+							is_ship_size = avatar_frame
 						}
 					}
-
-					remove_star_flag = flag_avatar_build_system
 				}
+
+				remove_star_flag = flag_avatar_build_system
 			}
 		}
 	}
 
+	# Disband
+	option = {
+		name = avatar_constructor_01.b
+	}
+	#Cancel Order
+	option = {
+		name = avatar_constructor_01.c
+		# Cancel and recreate ship
+		FROM = {
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						random_existing_design = "avatar_constructor"
+						#graphical_culture = ROOT
+					}
+					set_location = PREV
+				}
+			}
+		}
+	}
 	# Create Avatar Frame
 	option = {
 		name = avatar_constructor_01.a
@@ -427,7 +451,7 @@ country_event = {
 				effect = {
 					set_owner = ROOT
 					create_ship = {
-						name = "Avatar Construction Frame"
+						name = "Frame"
 						design = "Avatar Construction"
 						#graphical_culture = ROOT
 					}
@@ -448,30 +472,6 @@ country_event = {
 			# Show error message
 			else = {
 				country_event = { id = avatar_doomsday.199 }
-			}
-		}
-	}
-
-	# Disband
-	option = {
-		name = avatar_constructor_01.b
-	}
-
-	#Cancel Order
-	option = {
-		name = avatar_constructor_01.c
-		# Cancel and recreate ship
-		FROM = {
-			create_fleet = {
-				effect = {
-					set_owner = ROOT
-					create_ship = {
-						name = "Avatar Constructor"
-						random_existing_design = "avatar_constructor"
-						#graphical_culture = ROOT
-					}
-					set_location = PREV
-				}
 			}
 		}
 	}
@@ -556,7 +556,7 @@ country_event = {
 			effect = {
 				set_owner = ROOT
 				create_ship = {
-					name = "Avatar"
+					name = random
 					design = "Doom Star"
 					#graphical_culture = ROOT
 				}
@@ -616,7 +616,7 @@ country_event = {
 					value = 1
 				}
 			}
-			
+
 			# Count approximate enemies
 			set_variable = {
 				which = "avatar_enemy_count"
@@ -675,6 +675,26 @@ country_event = {
 
 			last_created_country = {
 				set_name = random
+				#random_list = {
+				#	17 = {
+				#		set_graphical_culture = arthropoid_01
+				#	}
+				#	17 = {
+				#		set_graphical_culture = avian_01
+				#	}
+				#	17 = {
+				#		set_graphical_culture = fungoid_01
+				#	}
+				#	16 = {
+				#		set_graphical_culture = mammalian_01
+				#	}
+				#	16 = {
+				#		set_graphical_culture = molluscoid_01
+				#	}
+				#	17 = {
+				#		set_graphical_culture = reptilian_01
+				#	}
+				#}
 				establish_communications_no_message = event_target:avatar_owner
 				save_event_target_as = avatar_raider
 
@@ -736,7 +756,7 @@ country_event = {
 											}
 
 											# wave 4 - main. At least 2 Titans and 1 Leviathan
-											PREV = { 
+											PREV = {
 												country_event = { id = avatar_doomsday.107 }
 												create_ship_design = {
 													random_existing_design = "titan"
@@ -745,20 +765,20 @@ country_event = {
 												last_created_fleet = {
 													if = {
 														limit = {
-															count_ships = { 
+															count_ships = {
 																limit = { is_ship_size = titan }
-																count < 2 
+																count < 2
 															}
-														}														
-														create_ship = {
-															name = random
-															design = last_created_design
-															graphical_culture = PREV
 														}
 														create_ship = {
 															name = random
 															design = last_created_design
-															graphical_culture = PREV
+															graphical_culture = last_created_country
+														}
+														create_ship = {
+															name = random
+															design = last_created_design
+															graphical_culture = last_created_country
 														}
 													}
 												}
@@ -769,16 +789,29 @@ country_event = {
 												last_created_fleet = {
 													if = {
 														limit = {
-															count_ships = { 
+															count_ships = {
 																limit = { is_ship_size = leviathan }
 																count < 1
 															}
-														}														
+														}
 														create_ship = {
 															name = random
 															design = last_created_design
-															graphical_culture = PREV
+															graphical_culture = last_created_country
 														}
+													}
+												}
+												create_ship_design = { design = "Judicator" }
+												last_created_fleet = {
+													create_ship = {
+														name = random
+														design = last_created_design
+														graphical_culture = "fallen_empire_02"
+													}
+													create_ship = {
+														name = random
+														design = last_created_design
+														graphical_culture = "fallen_empire_01"
 													}
 												}
 											}
@@ -809,8 +842,8 @@ country_event = {
 															}
 
 															# wave 6 - final. Min 4 Titans and 2 Leviathans
-															PREV = { 
-																country_event = { id = avatar_doomsday.108 } 
+															PREV = {
+																country_event = { id = avatar_doomsday.108 }
 																create_ship_design = {
 																	random_existing_design = "titan"
 																	ftl = warp
@@ -818,25 +851,25 @@ country_event = {
 																last_created_fleet = {
 																	if = {
 																		limit = {
-																			count_ships = { 
+																			count_ships = {
 																				limit = { is_ship_size = titan }
-																				count < 4 
+																				count < 4
 																			}
-																		}														
-																		create_ship = {
-																			name = random
-																			design = last_created_design
-																			graphical_culture = PREV
 																		}
 																		create_ship = {
 																			name = random
 																			design = last_created_design
-																			graphical_culture = PREV
+																			graphical_culture = last_created_country
 																		}
 																		create_ship = {
 																			name = random
 																			design = last_created_design
-																			graphical_culture = PREV
+																			graphical_culture = last_created_country
+																		}
+																		create_ship = {
+																			name = random
+																			design = last_created_design
+																			graphical_culture = last_created_country
 																		}
 																	}
 																}
@@ -847,21 +880,40 @@ country_event = {
 																last_created_fleet = {
 																	if = {
 																		limit = {
-																			count_ships = { 
+																			count_ships = {
 																				limit = { is_ship_size = leviathan }
 																				count < 2
 																			}
-																		}														
-																		create_ship = {
-																			name = random
-																			design = last_created_design
-																			graphical_culture = PREV
 																		}
 																		create_ship = {
 																			name = random
 																			design = last_created_design
-																			graphical_culture = PREV
+																			graphical_culture = last_created_country
 																		}
+																		create_ship = {
+																			name = random
+																			design = last_created_design
+																			graphical_culture = last_created_country
+																		}
+																	}
+																}
+
+																create_ship_design = { design = "Judicator" }
+																last_created_fleet = {
+																	create_ship = {
+																		name = random
+																		design = last_created_design
+																		graphical_culture = "fallen_empire_02"
+																	}
+																	create_ship = {
+																		name = random
+																		design = last_created_design
+																		graphical_culture = "fallen_empire_01"
+																	}
+																	create_ship = {
+																		name = random
+																		design = last_created_design
+																		graphical_culture = "fallen_empire_03"
 																	}
 																}
 															}
@@ -959,6 +1011,13 @@ country_event = {
 			set_name = "Raider Scouts"
 		}
 
+		FROM = {
+			set_variable = {
+				which = "avatar_enemy_count"
+				value = 1
+			}
+		}
+
 		# Look for countries who hate player with at least some military. Minimum 6 countries regardless of power or opinion.
 		every_country = {
 			limit = {
@@ -966,91 +1025,100 @@ country_event = {
 					is_country_type = default
 					is_country_type = fallen_empire
 				}
-				has_communications = FROM				
+				has_communications = FROM
 				NOT = { is_country = FROM }
-				OR = {
-					AND = {
-						fleet_power > 100000
-						opinion = {
-							who = FROM
-							value < -50
-						}
-					}
-					PREV = {
-						check_variable = {
-							which = "avatar_enemy_count"
-							value < 7
-						}
-					}
-				}
-			}
-			
-			# Increment enemy count
-			PREV = {
-				change_variable = {
-					which = "avatar_enemy_count"
-					value = 1
-				}
 			}
 
-			# Corvettes
-			create_ship_design = {
-				random_existing_design = "corvette"
-				ftl = warp
-			}
-			last_created_fleet = {
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							THIS = { fleet_power > 100000 }
+							# Opinion < -50 doesn't work. Wut
+							NOT = {
+								opinion = {
+									who = FROM
+									value > -50
+								}
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = "avatar_enemy_count"
+								value < 7
+							}
+						}
+					}
 				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-			}
 
-			# Destroyers
-			create_ship_design = {
-				random_existing_design = "destroyer"
-				ftl = warp
-			}
-			last_created_fleet = {
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
+
+				# Increment enemy count
+				FROM = {
+					change_variable = {
+						which = "avatar_enemy_count"
+						value = 1
+					}
 				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
+
+				# Corvettes
+				create_ship_design = {
+					random_existing_design = "corvette"
+					ftl = warp
 				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
+				last_created_fleet = {
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+				}
+
+				# Destroyers
+				create_ship_design = {
+					random_existing_design = "destroyer"
+					ftl = warp
+				}
+				last_created_fleet = {
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
 				}
 			}
 		}
@@ -1080,9 +1148,11 @@ country_event = {
 		}
 
 		# Count approximate enemies
-		set_variable = {
-			which = "avatar_enemy_count"
-			value = 1
+		FROM = {
+			set_variable = {
+				which = "avatar_enemy_count"
+				value = 1
+			}
 		}
 
 		# Look for countries who hate player with at least some military. Minimum 6 countries regardless of power or opinion.
@@ -1092,147 +1162,184 @@ country_event = {
 					is_country_type = default
 					is_country_type = fallen_empire
 				}
-				has_communications = FROM				
+				has_communications = FROM
 				NOT = { is_country = FROM }
-				OR = {
-					AND = {
-						fleet_power > 100000
-						opinion = {
-							who = FROM
-							value < -50
+			}
+
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							THIS = { fleet_power > 100000 }
+							NOT = {
+								opinion = {
+									who = FROM
+									value > -50
+								}
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = "avatar_enemy_count"
+								value < 7
+							}
 						}
 					}
-					PREV = {
-						check_variable = {
-							which = "avatar_enemy_count"
-							value < 7
-						}
+				}
+
+				# Increment enemy count
+				FROM = {
+					change_variable = {
+						which = "avatar_enemy_count"
+						value = 1
 					}
 				}
-			}
-			
-			# Increment enemy count
-			PREV = {
-				change_variable = {
-					which = "avatar_enemy_count"
-					value = 1
-				}
-			}
 
-			# Corvettes
-			create_ship_design = {
-				random_existing_design = "corvette"
-				ftl = warp
-			}
-			last_created_fleet = {
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
+				# Corvettes
+				create_ship_design = {
+					random_existing_design = "corvette"
+					ftl = warp
 				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
+				last_created_fleet = {
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
 				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-			}
 
-			# Destroyers
-			create_ship_design = {
-				random_existing_design = "destroyer"
-				ftl = warp
-			}
-			last_created_fleet = {
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
+				# Destroyers
+				create_ship_design = {
+					random_existing_design = "destroyer"
+					ftl = warp
 				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
+				last_created_fleet = {
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
 				}
-			}
 
-			# Cruisers
-			create_ship_design = {
-				random_existing_design = "cruiser"
-				ftl = warp
-			}
-			last_created_fleet = {
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
+				# Cruisers
+				create_ship_design = {
+					random_existing_design = "cruiser"
+					ftl = warp
 				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
+				last_created_fleet = {
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
 				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-			}
 
-			# Battleships
-			create_ship_design = {
-				random_existing_design = "battleship"
-				ftl = warp
-			}
-			last_created_fleet = {
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
+				# Battleships
+				create_ship_design = {
+					random_existing_design = "battleship"
+					ftl = warp
+				}
+				last_created_fleet = {
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}					
 				}
 			}
 		}
@@ -1259,7 +1366,14 @@ country_event = {
 	immediate = {
 		last_created_fleet = {
 			set_name = "Main Battle Fleet"
-		}		
+		}
+
+		FROM = {
+			set_variable = {
+				which = "avatar_enemy_count"
+				value = 1
+			}
+		}
 
 		# Look for countries who hate player with at least some military. Minimum 6 countries regardless of power or opinion.
 		every_country = {
@@ -1268,184 +1382,229 @@ country_event = {
 					is_country_type = default
 					is_country_type = fallen_empire
 				}
-				has_communications = FROM				
+				has_communications = FROM
 				NOT = { is_country = FROM }
-				OR = {
-					AND = {
-						fleet_power > 100000
-						opinion = {
-							who = FROM
-							value < -50
-						}
-					}
-					PREV = {
-						check_variable = {
-							which = "avatar_enemy_count"
-							value < 7
-						}
-					}
-				}
-			}
-			
-			# Increment enemy count
-			PREV = {
-				change_variable = {
-					which = "avatar_enemy_count"
-					value = 1
-				}
 			}
 
-			# Corvettes
-			create_ship_design = {
-				random_existing_design = "corvette"
-				ftl = warp
-			}
-			last_created_fleet = {
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-			}
-
-			# Cruisers
-			create_ship_design = {
-				random_existing_design = "cruiser"
-				ftl = warp
-			}
-			last_created_fleet = {
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-			}
-
-			# Battleships
-			create_ship_design = {
-				random_existing_design = "battleship"
-				ftl = warp
-			}
-			last_created_fleet = {
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-			}
-
-			# Titans
-			random_list = {
-				80 = {}
-				20 = {
-					if = {
-						limit = {
-							fleet_power > 300000
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							THIS = { fleet_power > 100000 }
+							NOT = {
+								opinion = {
+									who = FROM
+									value > -50
+								}
+							}
 						}
-						create_ship_design = {
-							random_existing_design = "titan"
-							ftl = warp
-						}
-						last_created_fleet = {
-							create_ship = {
-								name = random
-								design = last_created_design
-								graphical_culture = PREV
+						FROM = {
+							check_variable = {
+								which = "avatar_enemy_count"
+								value < 7
 							}
 						}
 					}
 				}
-			}
 
-			# Leviathans
-			random_list = {
-				80 = {}
-				20 = {
-					if = {
-						limit = {
-							OR = {
-								fleet_power > 600000
-							}							
-						}
+				# Increment enemy count
+				FROM = {
+					change_variable = {
+						which = "avatar_enemy_count"
+						value = 1
+					}
+				}
+
+				# Corvettes
+				create_ship_design = {
+					random_existing_design = "corvette"
+					ftl = warp
+				}
+				last_created_fleet = {
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+				}
+
+				# Cruisers
+				create_ship_design = {
+					random_existing_design = "cruiser"
+					ftl = warp
+				}
+				last_created_fleet = {
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+				}
+
+				# Battleships
+				if = {
+					limit = {
+						THIS = { is_country_type = fallen_empire}
+					}
+
+					create_ship_design = {
+						design = "Demi"
+						ftl = warp
+					}
+					else = {
 						create_ship_design = {
-							random_existing_design = "leviathan"
+							random_existing_design = "battleship"
 							ftl = warp
 						}
-						last_created_fleet = {
-							create_ship = {
-								name = random
-								design = last_created_design
-								graphical_culture = PREV
+					}
+				}
+
+				last_created_fleet = {
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+				}
+
+				# Titans
+				random_list = {
+					80 = {}
+					20 = {
+						if = {
+							limit = {
+								THIS = { fleet_power > 300000 }
+							}
+							if = {
+								limit = {
+									THIS = { is_country_type = fallen_empire}
+								}
+
+								create_ship_design = {
+									design = "Judicator"
+									ftl = warp
+								}
+								else = {
+									create_ship_design = {
+										random_existing_design = "titan"
+										ftl = warp
+									}
+								}
+							}
+
+							last_created_fleet = {
+								create_ship = {
+									name = random
+									design = last_created_design
+									graphical_culture = PREV
+								}
+							}
+						}
+					}
+				}
+
+				# Leviathans
+				random_list = {
+					80 = {}
+					20 = {
+						if = {
+							limit = {
+								OR = {
+									THIS = { fleet_power > 500000 }
+								}
+							}
+							if = {
+								limit = {
+									THIS = { is_country_type = fallen_empire}
+								}
+
+								create_ship_design = {
+									design = "Judicator"
+									ftl = warp
+								}
+								else = {
+									create_ship_design = {
+										random_existing_design = "leviathan"
+										ftl = warp
+									}
+								}
+							}
+							last_created_fleet = {
+								create_ship = {
+									name = random
+									design = last_created_design
+									graphical_culture = PREV
+								}
 							}
 						}
 					}
@@ -1481,6 +1640,13 @@ country_event = {
 			set_name = "Rebel Alliance (of Concerned Empires)"
 		}
 
+		FROM = {
+			set_variable = {
+				which = "avatar_enemy_count"
+				value = 1
+			}
+		}
+
 		# Look for countries who hate player with at least some military. Minimum 6 countries regardless of power or opinion.
 		every_country = {
 			limit = {
@@ -1488,148 +1654,249 @@ country_event = {
 					is_country_type = default
 					is_country_type = fallen_empire
 				}
-				has_communications = FROM				
+				has_communications = FROM
 				NOT = { is_country = FROM }
-				OR = {
-					AND = {
-						fleet_power > 100000
-						opinion = {
-							who = FROM
-							value < -50
+			}
+
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							THIS = { fleet_power > 100000 }
+							NOT = {
+								opinion = {
+									who = FROM
+									value > 0
+								}
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = "avatar_enemy_count"
+								value < 7
+							}
 						}
 					}
-					PREV = {
-						check_variable = {
-							which = "avatar_enemy_count"
-							value < 7
-						}
+				}
+
+
+				# Increment enemy count
+				FROM = {
+					change_variable = {
+						which = "avatar_enemy_count"
+						value = 1
 					}
 				}
-			}
-			
-			# Increment enemy count
-			PREV = {
-				change_variable = {
-					which = "avatar_enemy_count"
-					value = 1
-				}
-			}
 
-			# Corvettes
-			create_ship_design = {
-				random_existing_design = "corvette"
-				ftl = warp
-			}
-			last_created_fleet = {
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
+				# Corvettes
+				create_ship_design = {
+					random_existing_design = "corvette"
+					ftl = warp
 				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
+				last_created_fleet = {
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
 				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-			}
 
-			# Cruisers
-			create_ship_design = {
-				random_existing_design = "cruiser"
-				ftl = warp
-			}
-			last_created_fleet = {
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
+				# Cruisers
+				create_ship_design = {
+					random_existing_design = "cruiser"
+					ftl = warp
 				}
-			}
+				last_created_fleet = {
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+				}
 
-			# Battleships
-			create_ship_design = {
-				random_existing_design = "battleship"
-				ftl = warp
-			}
-			last_created_fleet = {
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-				create_ship = {
-					name = random
-					design = last_created_design
-					graphical_culture = PREV
-				}
-			}
+				# Battleships
+				if = {
+					limit = {
+						THIS = { is_country_type = fallen_empire}
+					}
 
-			# Titans
-			random_list = {
-				70 = {}
-				21 = {
-					if = {
-						limit = {
-							fleet_power > 300000
-						}
+					create_ship_design = {
+						design = "Demi"
+						ftl = warp
+					}
+					else = {
 						create_ship_design = {
-							random_existing_design = "titan"
+							random_existing_design = "battleship"
 							ftl = warp
+						}
+					}
+				}
+				last_created_fleet = {
+					create_ship = {
+						name = random
+						design = last_created_design
+						graphical_culture = PREV
+					}
+				}
+
+				if = {
+					limit = {
+						THIS = { fleet_power > 200000 }
+					}
+					last_created_fleet = {
+						create_ship = {
+							name = random
+							design = last_created_design
+							graphical_culture = PREV
+						}
+						create_ship = {
+							name = random
+							design = last_created_design
+							graphical_culture = PREV
+						}
+					}
+				}
+
+
+				# Titans
+				random_list = {
+					70 = {}
+					21 = {
+						if = {
+							limit = {
+								THIS = { fleet_power > 300000 }
+							}
+							if = {
+								limit = {
+									THIS = { is_country_type = fallen_empire}
+								}
+
+								create_ship_design = {
+									design = "Judicator"
+									ftl = warp
+								}
+								else = {
+									create_ship_design = {
+										random_existing_design = "titan"
+										ftl = warp
+									}
+								}
+							}
+							last_created_fleet = {
+								create_ship = {
+									name = random
+									design = last_created_design
+									graphical_culture = PREV
+								}
+							}
+						}
+					}
+					9 = {
+						if = {
+							limit = {
+								THIS = { is_country_type = fallen_empire}
+							}
+
+							create_ship_design = {
+								design = "Judicator"
+								ftl = warp
+							}
+							else = {
+								create_ship_design = {
+									random_existing_design = "titan"
+									ftl = warp
+								}
+							}
 						}
 						last_created_fleet = {
 							create_ship = {
@@ -1640,32 +1907,56 @@ country_event = {
 						}
 					}
 				}
-				9 = {
-					create_ship_design = {
-						random_existing_design = "titan"
-						ftl = warp
-					}
-					last_created_fleet = {
-						create_ship = {
-							name = random
-							design = last_created_design
-							graphical_culture = PREV
-						}
-					}
-				}
-			}
 
-			# Leviathans
-			random_list = {
-				70 = {}
-				25 = {
-					if = {
-						limit = {
-							fleet_power > 600000
+				# Leviathans
+				random_list = {
+					80 = {}
+					15 = {
+						if = {
+							limit = {
+								THIS = { fleet_power > 500000 }
+							}
+							if = {
+								limit = {
+									THIS = { is_country_type = fallen_empire}
+								}
+
+								create_ship_design = {
+									design = "Judicator"
+									ftl = warp
+								}
+								else = {
+									create_ship_design = {
+										random_existing_design = "leviathan"
+										ftl = warp
+									}
+								}
+							}
+							last_created_fleet = {
+								create_ship = {
+									name = random
+									design = last_created_design
+									graphical_culture = PREV
+								}
+							}
 						}
-						create_ship_design = {
-							random_existing_design = "leviathan"
-							ftl = warp
+					}
+					5 = {
+						if = {
+							limit = {
+								THIS = { is_country_type = fallen_empire}
+							}
+
+							create_ship_design = {
+								design = "Judicator"
+								ftl = warp
+							}
+							else = {
+								create_ship_design = {
+									random_existing_design = "leviathan"
+									ftl = warp
+								}
+							}
 						}
 						last_created_fleet = {
 							create_ship = {
@@ -1673,19 +1964,6 @@ country_event = {
 								design = last_created_design
 								graphical_culture = PREV
 							}
-						}
-					}
-				}
-				5 = {
-					create_ship_design = {
-						random_existing_design = "leviathan"
-						ftl = warp
-					}
-					last_created_fleet = {
-						create_ship = {
-							name = random
-							design = last_created_design
-							graphical_culture = PREV
 						}
 					}
 				}
@@ -1778,10 +2056,6 @@ country_event = {
 
 		country_event = { id = avatar_doomsday.999 days = 15}
 		#}
-	}
-
-	option = {
-		name = ok
 	}
 }
 

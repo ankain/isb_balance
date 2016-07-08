@@ -56,7 +56,7 @@ tech_leviathan = {
 	}
 	
 	modifier = {
-		max_minerals = 4000
+		max_minerals = 5000
 		max_energy = 1500
 	}
 	
@@ -112,7 +112,7 @@ tech_leviathan_soc_01 = {
 	area = society
 	tier = 3
 	category = { military_theory }
-	prerequisites = { "tech_titan" }
+	prerequisites = { "tech_titan_weapon_module_02" "tech_titan_weapon_module_03" "tech_titan_weapon_module_04" }
 	weight = @tier3weight4
 	is_rare = yes
 	
@@ -288,7 +288,7 @@ tech_leviathan_eng_01 = {
 	area = engineering
 	tier = 3
 	category = { industry }	
-	prerequisites = { "tech_titan" "tech_leviathan_phy_01" }
+	prerequisites = { "tech_leviathan_phy_01" }
 	weight = @tier3weight4
 	is_rare = yes
 	
@@ -377,7 +377,7 @@ tech_leviathan_eng_02 = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = physics
+				area = engineering
 				has_trait = "leader_trait_expertise_industry"
 			}
 		}
@@ -406,7 +406,7 @@ tech_leviathan_phy_01 = {
 	tier = 3
 	category = { field_manipulation }
 	ai_update_type = military
-	prerequisites = { "tech_titan" "tech_leviathan_soc_01"}
+	prerequisites = { "tech_leviathan_soc_01"}
 	weight = @tier3weight4
 	is_rare = yes
 	
@@ -490,7 +490,7 @@ tech_leviathan_phy_02 = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = engineering
+				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
 			}
 		}
@@ -582,7 +582,7 @@ tech_sun_crusher = {
 	weight_modifier = {
 		modifier = {
 			factor = 1.5
-			years_passed > 110
+			years_passed > 105
 		}
 		modifier = {
 			factor = 1.25

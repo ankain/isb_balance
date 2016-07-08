@@ -3,5 +3,6 @@ category = {
 	soundeffects = {
 		event_nova_alert
 		event_nova_explosion
+		effect_longinus_fire
 	}
 }

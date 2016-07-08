@@ -64,7 +64,13 @@ special_project = {
 	
 	# Frame destroyed
 	abort_trigger = {
-		NOT = { exists = FROMFROM }
+		THIS = { 
+			NOT = { 
+				any_owned_ship = {
+					is_ship_size = avatar_frame
+				}
+			}
+		}
 	}
 
 	on_fail = {
@@ -93,12 +99,18 @@ special_project = {
 
 	# Frame destroyed
 	abort_trigger = {
-		NOT = { exists = FROMFROM }
+		THIS = { 
+			NOT = { 
+				any_owned_ship = {
+					is_ship_size = avatar_frame
+				}
+			}
+		}
 	}
 
 	# Construction complete
 	on_fail = {
-		country_event = { id = avatar_doomsday.103 }
+		THIS = { country_event = { id = avatar_doomsday.103 } }
 	}
 }
 
@@ -121,10 +133,16 @@ special_project = {
 	on_success = {
 
 	}
-
-	# Frame destroyed
+	
 	abort_trigger = {
-		FROMFROM = { is_disabled = no }
+		THIS = { 
+			NOT = {
+				any_owned_ship = {
+					is_ship_size = avatar
+					is_disabled = yes
+				}
+			}
+		}
 	}
 
 	on_fail = {

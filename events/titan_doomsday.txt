@@ -8,6 +8,13 @@ planet_event = {
 	hide_window = yes
 	is_triggered_only = yes
 
+	trigger = {
+		FROM = {
+			has_country_edict = doomsday_authorisation
+			has_technology = tech_titan_doomsday_weapons_01
+		}
+	}
+
 	immediate = {
 		FROM = {
 			country_event = { id = titan_doomsday.2 }
@@ -41,8 +48,6 @@ country_event = {
 				has_country_edict = doomsday_authorisation
 				#NOT = { has_policy_flag = doomsday_outlawed }
 			}
-
-
 
 			FROM = {
 				save_event_target_as = dooms_tar
@@ -127,9 +132,11 @@ country_event = {
 
 							random_list = {
 								1 = {
-									change_variable = {
-										which = "planets_destroyed"
-										value = 1
+									ROOT = {
+										change_variable = {
+											which = "planets_destroyed"
+											value = 1
+										}
 									}
 									# Opinion only applies when used against other empires or rebels
 									if = {
@@ -276,6 +283,114 @@ country_event = {
 								remove_army = yes
 							}
 						}
+
+						# v1.3 Avatar update
+						# Can use nanites. 1 pop and 1 building per month, returns energy and minerals based what is consumed
+						if = {
+							limit = { ROOT = { has_policy_flag = doomsday_nanite } }
+
+							# Nanite disassembler use is brutal and will trigger additional opinion hits.
+							random_list = {
+								50 = {
+									# Opinion only applies when used against other empires or rebels
+									if = {
+										limit = {
+											OR = {
+												OWNER = { is_country_type = default }
+												OWNER = { is_country_type = rebel }
+												OWNER = { is_country_type = fallen_empire }
+											}
+										}
+										ROOT = { country_event = { id = titan_doomsday.808 } }
+									}
+								}
+								50 = {
+								}
+							}
+
+							# Clear flags
+							if = {
+								limit = {
+									has_planet_flag = flag_nanite_build
+								}
+
+								remove_planet_flag = flag_nanite_build
+							}
+
+							if = {
+								limit = {
+									has_planet_flag = flag_nanite_pop
+								}
+
+								remove_planet_flag = flag_nanite_pop
+							}
+
+							random_tile = {
+								limit = {
+									has_building = yes
+								}
+								remove_building = yes
+
+								PREV = {
+									set_planet_flag = flag_nanite_build
+								}
+							}
+
+							random_pop = {
+								kill_pop = yes
+
+								PREV = {
+									set_planet_flag = flag_nanite_pop
+								}
+							}
+
+							# Add resources from nanites
+							if = {
+								limit = {
+									has_planet_flag = flag_nanite_build
+								}
+
+								remove_planet_flag = flag_nanite_build
+
+								ROOT = {
+									add_monthly_resource_mult = {
+										resource = minerals
+										value = 24
+										min = 300
+										max = 350
+									}
+									add_monthly_resource_mult = {
+										resource = energy
+										value = 6
+										min = 40
+										max = 50
+									}
+								}
+							}
+
+							if = {
+								limit = {
+									has_planet_flag = flag_nanite_pop
+								}
+
+								remove_planet_flag = flag_nanite_pop
+
+								ROOT = {
+									add_monthly_resource_mult = {
+										resource = energy
+										value = 24
+										min = 300
+										max = 350
+									}
+									add_monthly_resource_mult = {
+										resource = minerals
+										value = 6
+										min = 40
+										max = 50
+									}
+								}
+							}
+						}
 					}
 				}
 			}
@@ -298,6 +413,7 @@ country_event = {
 
 	trigger = {
 		FROM = { is_ship_size = sun_crusher }
+		is_ai = no
 	}
 
 	immediate = {
@@ -598,10 +714,11 @@ country_event = {
 						is_star = no
 					}
 					#set_name = ""
-
-					change_variable = {
-						which = "planets_destroyed"
-						value = 1
+					ROOT = {
+						change_variable = {
+							which = "planets_destroyed"
+							value = 1
+						}
 					}
 
 					if = {
@@ -1013,6 +1130,7 @@ country_event = {
 
 # Doomsday Opinion mods start from 801
 # Yearly pulse doomsday checks. Also clears flags if country has no nova weapons, just in case.
+# v1.3 Added Avatar checks
 event = {
 	id = titan_doomsday.801
 
@@ -1092,6 +1210,26 @@ event = {
 					}
 				}
 
+				#v1.3 Avatar checks
+				if = {
+					limit = {
+						has_country_flag = has_avatar
+					}
+
+					remove_country_flag = has_avatar
+				}
+
+				if = {
+					limit = {
+						count_owned_ships = {
+							limit = { is_ship_size = avatar }
+							count > 0
+						}
+					}
+
+					set_country_flag = has_avatar
+				}
+
 				every_country = {
 					limit = {
 						has_communications = PREV
@@ -1163,6 +1301,24 @@ event = {
 
 						add_opinion_modifier = { who = event_target:dooms_check modifier = opinion_doomsday_has_nova_large }
 					}
+
+					#v1.3 Avatar
+					if = {
+						limit = {
+							has_opinion_modifier = { who = event_target:dooms_check modifier = opinion_has_avatar }
+						}
+						remove_opinion_modifier = { who = event_target:dooms_check modifier = opinion_has_avatar }
+					}
+
+					if = {
+						limit = {
+							PREV = {
+								has_country_flag = has_avatar
+							}
+						}
+
+						add_opinion_modifier = { who = event_target:dooms_check modifier = opinion_has_avatar }
+					}
 				}
 
 				# Clean up
@@ -1186,7 +1342,7 @@ event = {
 	}
 }
 
-# Doomsday weapon used.
+# Low level Doomsday weapon used.
 country_event = {
 	id = titan_doomsday.802
 
@@ -1223,6 +1379,26 @@ country_event = {
 			#	}
 			#}
 		#}
+	}
+}
+
+# Med level Doomsday weapon used.
+country_event = {
+	id = titan_doomsday.808
+
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		every_country = {
+			limit = {
+				has_communications = ROOT
+				NOT = { is_country_type = primitive }
+				NOT = { is_country = ROOT }
+			}
+			add_opinion_modifier = { who = ROOT modifier = opinion_doomsday_med }
+		}
 	}
 }
 

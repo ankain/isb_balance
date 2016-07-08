@@ -73,7 +73,7 @@ entity = {
 		event = { time = 0.0 node = "root" particle = "avian_01_large_ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
 	}
 	
-	scale = 2.3
+	scale = 2.25
 	
 	game_data = {
 		size = @titan_scale

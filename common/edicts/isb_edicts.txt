@@ -43,3 +43,24 @@ country_edict = {
 		weight = 0				
 	}	
 }
+
+# Special edict for spear of longinus
+country_edict = {
+	name = "doomsday_longinus_authorisation"
+	modifier = {
+	}
+	
+	prerequisites = {
+		"tech_avatar_doomsday_01"
+	}
+	
+	influence_cost = 30
+		
+	allow = {
+		NOT = { has_policy_flag = doomsday_outlawed }
+	}
+	
+	ai_weight = {
+		weight = 0				
+	}	
+}

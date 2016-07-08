@@ -60,4 +60,25 @@ isb_doomsday_policy = {
 			}					
 		}		
 	}
+	
+	option = {
+		name = "doomsday_nanite"
+		
+		potential = {
+			has_technology = tech_titan_doomsday_weapons_05
+		}
+		
+		policy_flags = {
+			doomsday_nanite
+		}
+		
+		modifier = {}
+				
+		AI_weight = {
+			modifier = {
+				factor = 0
+			}					
+		}		
+	}
 }
+

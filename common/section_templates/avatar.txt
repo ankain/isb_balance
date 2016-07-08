@@ -17,11 +17,7 @@ ship_section_template = {
 		slot_size = large
 		slot_type = weapon
 		locatorname = "large_gun_02"
-	}	
-	
-	small_utility_slots = 0
-	medium_utility_slots = 0
-	large_utility_slots = 7
+	}
 }
 
 # Explosion
@@ -42,7 +38,7 @@ ship_section_template = {
 	entity = "avatar_constructor_section_entity"
 	icon = "GFX_ship_part_core_mid"
 	
-	cost = 80
+	cost = 25000
 	
 	small_utility_slots = 3
 }
@@ -54,5 +50,5 @@ ship_section_template = {
 	entity = "avatar_frame_section_entity"
 	icon = "GFX_ship_part_core_mid"
 	
-	cost = 20000
+	cost = 22500
 }

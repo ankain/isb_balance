@@ -202,3 +202,98 @@ CRYSTAL_ARMOR_ISB_01_DESC:0 "Verbesserungen bei der Materiemanipulation erlauben
 SMALL_CRYSTAL_ARMOR_ISB_01:0 "Kleine Phasenpanzerung"
 MEDIUM_CRYSTAL_ARMOR_ISB_01:0 "Mittlere Phasenpanzerung"
 LARGE_CRYSTAL_ARMOR_ISB_01:0 "Große Phasenpanzerung"
+
+# v1.3 - Avatar and Doomsday Weapons
+
+avatar:0 "Avatar"
+avatar_plural:0 "Avatars"
+
+exploding_bunny_avatar:0 "Exploding Avatar Bunny"
+exploding_bunny_avatar_plural:0 "Exploding Avatar Bunnies"
+
+avatar_frame:0 "Avatar Construction Framework"
+avatar_frame_plural:0 "Avatar Construction Frameworks"
+
+avatar_constructor:0 "Avatar Construction Ship"
+avatar_constructor_plural:0 "Avatar Construction Ships"
+
+AVATAR_CONSTRUCTOR_SECTION:0 "Frame Constructor"
+AVATAR_FRAME_SECTION:0 " Avatar Frame"
+
+mod_avatar_raider:0 "Avatar Raider Buffs"
+mod_avatar_frame_active:0 "Avatar Construction in Progress"
+
+TECH_UNLOCK_AVATAR_CHAIN_TITLE:0 "§EAvatar Research Chain§!"
+TECH_UNLOCK_AVATAR_CHAIN_DESC:0 "Researching all technologies in this research chain will unlock The Avatar Project."
+
+TECH_UNLOCK_AVATAR_CONSTRUCTION_TITLE:0 "§HUnlocks Ship type:§! Avatar Constructor"
+TECH_UNLOCK_AVATAR_CONSTRUCTION_DESC:0 "The Avatar Project is an Empire-wide construction project that will allow us to build the Avatar, our largest and most destructive weapons platform yet. Powered by an artificial black hole, it is capable of unleashing enough energy to destroy entire planets. The Avatar will cause weak empires to fear us, making them more likely to bow to our wishes. However, it will also antagonise strong Empires.§!\n\n§EThe constructor will allow you to create an Avatar frame and start the Avatar construction project.\n\nWARNING: The other Empires that already distrust us will not sit idly by while we construct this Doomsday Station. Be prepared for massive assaults by enemy fleets seeking to destroy it before construction completes.§!\n\n§HMove the constructor to a well-defended system and click disband fleet to begin construction of the frame."
+
+edict_doomsday_longinus_authorisation:0 "Authorise Spear of Longinus"
+edict_doomsday_longinus_authorisation_desc:0 "\nRequires doomsday weapons to not be outlawed.\n\nTo activate the weapon, move the Avatar into orbit around a planet, then activate this edict. \n\nYou can only use the Spear of Longinus on hostile or empty planets.\n\n"
+
+doomsday_nanite:0 "Nanite Disassemblers"
+doomsday_nanite_name:0 "Only Nanite Disassemblers can be used"
+doomsday_nanite_desc:1 "\n§EEvery month, any planet being bombarded with less than 10% hp and a Titan / Avatar size ship in system will have 1 building and 1 population destroyed. This will continue until bombardment stops or there are no buildings and populations left.\n\nEach building destroyed will generate about 350 minerals and 50 energy. Each population destroyed will generate about 350 energy and 50 minerals.\n\nAfter selecting this weapon you have to authorise its use under empire edicts for you to activate it.\n\nWARNING: The Nanite Disassemblers are considered a brutal doomsday weapon.§!\n"
+
+# Avatar construction projects
+PROJ_AVATAR_CONSTRUCT_01:0 "Avatar Construction Frame (Deactivated)"
+PROJ_AVATAR_CONSTRUCT_01_DESC:0 "This is the framework for the automated construction of the Avatar. Research this project to activate the frame and begin construction.\n\nConstruction of the Avatar will take 10 years and cost us approximately 700 energy and minerals per month.\n\n§HWARNING: The other Empires that already distrust us will not sit idly by while we construct this Doomsday Station. Be prepared for assaults by enemy fleets seeking to destroy it before construction completes.§!"
+
+PROJ_AVATAR_CONSTRUCT_02:0 "Avatar Construction Frame (Activated)"
+PROJ_AVATAR_CONSTRUCT_02_DESC:0 "Avatar construction in progress. This special project cannot be researched. Construction will complete when this project times out."
+
+PROJ_AVATAR_ERROR_02:0 "Avatar Deactivated"
+PROJ_AVATAR_ERROR_02_DESC:0 "WARNING: The Avatar cannot be be placed in a fleet with other ships. Ensure the Avatar is the only ship in a fleet to reactivate it."
+
+# Avatar construction events
+avatar_constructor_01.name:0 "Confirmation"
+avatar_constructor_01.desc:0 "Please confirm your orders.\n\n§HWARNING: Deploy the Avatar construction frame in a well defended system. It will be attacked during construction, and cannot be moved once it has been deployed.§!"
+avatar_constructor_01.a:0 "Begin Avatar Construction Frame Deployment"
+avatar_constructor_01.b:0 "Destroy the Avatar Construction Ship"
+avatar_constructor_01.c:0 "Cancel"
+
+avatar_construction_start.name:0 "Avatar Frame Activated"
+avatar_construction_start.desc:0 "Construction of the Avatar has begun. The Avatar special project will display how much time is left before construction completes\n\nOur activation of the frame has not gone unnoticed. Several empires have already lodged formal complaints against our construction of this station. However, no one has yet dared to move openly against us.\n\nThere has, however, been a sudden increase of border incursions by unidentified ships. It appears our enemies have chosen to make their move covertly. High Command's AI predicts an attack will likely occur within the next 12 months. The size of the attack fleet will be indicative of how much support our enemies have managed to garner."
+avatar_construction_start.a:0 "Place all fleets on high alert."
+
+avatar_construction_complete.name:0 "Construction Complete"
+avatar_construction_complete.desc:0 "Weapons systems online, the Avatar is now fully operational."
+avatar_construction_complete.a:0 "Excellent."
+
+avatar_raid_01.name:0 "Enemy Fleet Detected"
+avatar_raid_01.desc:0 "A fleet of unmarked vessels has been detected heading towards the Avatar construction system.\n\nFleet composition appears to be largely corvettes and destroyers. We are unable to identify any specific Empire affliations. They appear to be raiders, though that is unlikely.\n\nThis must be a scouting fleet to test our defences. "
+avatar_raid_01.a:0 "Signal our defences and prepare for combat."
+
+avatar_raid_02.name:0 "Enemy Fleet Detected"
+avatar_raid_02.desc:0 "A fleet of unmarked vessels has been detected heading towards the Avatar construction system.\n\nFleet composition is mostly corvettes and destroyers, with some cruisers and unidentifed larger vessels."
+avatar_raid_02.a:0 "Again? They don't know when to give up."
+
+avatar_raid_03.name:0 "Enemy Fleet Detected"
+avatar_raid_03.desc:0 "A fleet of unmarked vessels has been detected heading towards the Avatar construction system.\n\nFleet composition ranges from corvettes to battleships and some larger unidentified vessels. They are still posing as raiders, but no mere raider would be able field a fleet of this size.\n\nThis has to be the main battle fleet of our enemies."
+avatar_raid_03.a:0 "They will be defeated."
+
+avatar_raid_04.name:0 "Enemy Fleet Detected"
+avatar_raid_04.desc:0 "Our enemies have dropped all pretenses and are no longer attacking disguised as raiders.\n\nA fleet of alliance ships has been detected heading towards the Avatar construction system. A final, desperate attempt to destroy our Doomsday Station before it becomes operational."
+avatar_raid_04.a:0 "It's a trap!"
+
+avatar_raid_break.name:0 "Signs of Fleet Activity"
+avatar_raid_break.desc:0 "We have detected an usually large number of incursions by unidentified vessels. However, these vessels appear to be focused on avoiding our sensors rather than regrouping into a fleet.\n\nIt appears our enemies are still preparing for an assault. It is unlikely that they will attack soon, but when they do it will be in far greater numbers than before."
+avatar_raid_break.a:0 "We will be ready."
+
+avatar_error_01.name:0 "Unable to start Avatar Project"
+avatar_error_01.desc:0 "Our empire cannot support more than one Avatar."
+avatar_error_01.a:0 "Understood"
+
+avatar_error_02.name:0 "Avatar Deactivated"
+avatar_error_02.desc:0 "WARNING: The Avatar cannot be be placed in a fleet with other ships. Ensure the Avatar is the only ship in a fleet to reactivate it."
+avatar_error_02.a:0 "Understood"
+
+#Avatar Components
+
+AVATAR_ENERGY_GUN_01:0 "A.T. Projection"
+AVATAR_CORE:0 "S² Core"
+
+# Avatar Opinions
+opinion_has_avatar:0 "Fear will keep them in line"
+opinion_doomsday_med:0 "Brutal doomsday weapon user"

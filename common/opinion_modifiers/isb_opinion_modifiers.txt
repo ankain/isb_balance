@@ -103,6 +103,41 @@ opinion_doomsday_low = {
 	}
 }
 
+# Using medium level doomsday weapons
+opinion_doomsday_med = {
+	opinion = {
+		base = 0
+		modifier = {
+			add = -5
+			NOT = { has_ethic = "ethic_militarist" }
+			NOT = { has_ethic = "ethic_fanatic_militarist" }
+			NOT = { is_country_type = fallen_empire }
+		}		
+		modifier = {
+			add = -5
+			has_ethic = "ethic_pacifist"
+			NOT = { is_country_type = fallen_empire }
+		}
+		modifier = {
+			add = -10
+			has_ethic = "ethic_fanatic_pacifist"
+			NOT = { is_country_type = fallen_empire }
+		}
+		modifier = {
+			add = -5
+			has_ai_personality = fallen_empire_xenophile
+		}			
+	}
+	
+	min = -125
+	
+	accumulative = yes
+
+	decay = {
+		base = 2
+	}
+}
+
 # Destroyed a planet with colony
 opinion_doomsday_destroy_planet = {
 	opinion = {
@@ -362,4 +397,38 @@ opinion_crisis_threat = {
 	decay = {
 		base = 2
 	}
+}
+
+# Has an Avatar, modify based on fleet power - Code is with the Sun Crusher checks
+opinion_has_avatar = {
+	opinion = {
+		base = 0
+		modifier = {
+			add = -100
+			THIS = { fleet_power > 900000 }
+			NOT = { is_country_type = fallen_empire }
+		}
+		modifier = {
+			add = -100
+			THIS = { fleet_power > 700000 }
+			NOT = { is_country_type = fallen_empire }
+		}
+		modifier = {
+			add = 50
+			THIS = { fleet_power < 600001 }
+			NOT = { is_country_type = fallen_empire }
+		}
+		modifier = {
+			add = 50
+			THIS = { fleet_power < 400001 }
+			NOT = { is_country_type = fallen_empire }
+		}
+		modifier = {
+			add = 50
+			THIS = { fleet_power < 250001 }
+			NOT = { is_country_type = fallen_empire }
+		}
+	}
+	
+	accumulative = no
 }
