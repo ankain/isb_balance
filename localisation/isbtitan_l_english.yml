@@ -228,7 +228,7 @@ TECH_UNLOCK_AVATAR_CONSTRUCTION_TITLE:0 "§HUnlocks Ship type:§! Avatar Constru
 TECH_UNLOCK_AVATAR_CONSTRUCTION_DESC:0 "The Avatar Project is an Empire-wide construction project that will allow us to build the Avatar, our largest and most destructive weapons platform yet. Powered by an artificial black hole, it is capable of unleashing enough energy to destroy entire planets. The Avatar will cause weak empires to fear us, making them more likely to bow to our wishes. However, it will also antagonise strong Empires.§!\n\n§EThe constructor will allow you to create an Avatar frame and start the Avatar construction project.\n\nWARNING: The other Empires that already distrust us will not sit idly by while we construct this Doomsday Station. Be prepared for massive assaults by enemy fleets seeking to destroy it before construction completes.§!\n\n§HMove the constructor to a well-defended system and click disband fleet to begin construction of the frame."
 
 edict_doomsday_longinus_authorisation:0 "Authorise Spear of Longinus"
-edict_doomsday_longinus_authorisation_desc:0 "\nRequires doomsday weapons to not be outlawed.\n\nTo activate the weapon, move the Avatar into orbit around a planet, then activate this edict. \n\nYou can only use the Spear of Longinus on hostile or empty planets.\n\n"
+edict_doomsday_longinus_authorisation_desc:0 "\nRequires doomsday weapons to not be outlawed.\n\nTo activate the weapon, move the Avatar into orbit around a planet, then activate this edict. You may only destroy hostile planets and empty planets in hostile, neutral (ie. not inside any borders) or your own borders.\n\nYou can only use the Spear of Longinus on hostile or empty planets.\n\n"
 
 doomsday_nanite:0 "Nanite Disassemblers"
 doomsday_nanite_name:0 "Only Nanite Disassemblers can be used"
@@ -286,6 +286,10 @@ avatar_error_01.a:0 "Understood"
 avatar_error_02.name:0 "Avatar Deactivated"
 avatar_error_02.desc:0 "WARNING: The Avatar cannot be be placed in a fleet with other ships. Ensure the Avatar is the only ship in a fleet to reactivate it."
 avatar_error_02.a:0 "Understood"
+
+avatar_error_03.name:0 "Error"
+avatar_error_03.desc:0 "§HWARNING: Authorise Spear of Longinus Edict is active.§!\n\nYou are attempting to destroy an invalid target with your Avatar. You may only destroy hostile planets and empty planets in hostile, neutral (ie. not inside any borders) or your own borders.\n\nThe weapon also cannot destroy asteroids and planets already destroyed by doomsday weapons.\n\nPlease choose a different target or deactivate the edict to stop seeing this warning."
+avatar_error_03.a:0 "Understood"
 
 #Avatar Components
 

@@ -153,6 +153,8 @@ country_event = {
 										OWNER = { country_event = { id = titan_doomsday.804 } }
 									}
 									destroy_colony = yes
+									set_planet_max_health = 0
+									
 									orbital_deposit_tile = {
 										clear_deposits = yes
 									}
