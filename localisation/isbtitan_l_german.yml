@@ -231,7 +231,7 @@ TECH_UNLOCK_AVATAR_CONSTRUCTION_TITLE:0 "§HNeuer Schiffstyp: Avatar Konstruktio
 TECH_UNLOCK_AVATAR_CONSTRUCTION_DESC:0 "Das Avatar Projekt ist ein Imperiumsweites Bauvorhaben, dass uns den Bau des Avatars erlaubt, unserer bisher größten und zerstörerischten Waffenplatform. Angetrieben durch ein künstliches Schwarzes Loch, kann der Avatar genug Energie freisetzen um ganze Planeten zu zerstören. Schwache imperien fürchten den Avatar, was sie dazu bringt eher unsere Angebote anzunehmen. Gleichzeitig wird der Bau aber auch starke Imperien verärgern.§!\n\n§EDas Konstruktionsschiff erlaubt uns, den Bau eines Avatars zu initiiren.\n\nWARNUNG: Die anderen Imperien die uns bereits verachten, werden dem Bau dieser Vernichtungswaffe nicht tatenlos zusehen!. Sei bereit für massive Angriffe auf den im Bau befindlichen Avatar bis er fertiggestellt ist.§!\n\n§HBewege das Konstruktionsschiff in ein gut verteidigtes System und löse seine Flotte auf, um den Bau des Rahmens zu beginnen."
 
 edict_doomsday_longinus_authorisation:0 "Erlaube Heilige Lanze"
-edict_doomsday_longinus_authorisation_desc:0 "\nDoomsday-Waffen müssen erlaubt sein.\n\nZum aktivieren dieser Wafe, bewege den Avatar in den Orbit des Zielpaneten und aktiviere diesen Erlass. \n\nDu kannst die heilige Lanze nur auf feindliche und gegnerische Planeten anwenden.\n\n"
+edict_doomsday_longinus_authorisation_desc:0 "\nDoomsday-Waffen müssen erlaubt sein.\n\nZum aktivieren dieser Wafe, bewege den Avatar in den Orbit des Zielpaneten und aktiviere diesen Erlass. Du kannst nur feindliche Planeten und unkolonisierte Planeten in feindlichem, neutralem(Außerhalb von Grenzen) und innerhabl unseres Gebiets zerstören.\n\nDu kannst die heilige Lanze nur auf feindliche und gegnerische Planeten anwenden.\n\n"
 
 doomsday_nanite:0 "Destruktiver Nanitenschwarm"
 doomsday_nanite_name:0 "Entsende destruktiven Nanitenschwarm"
@@ -289,6 +289,10 @@ avatar_error_01.a:0 "Verstanden"
 avatar_error_02.name:0 "Avatar Deactiviert"
 avatar_error_02.desc:0 "WARNUNG: Der Avatar kann isch nicht in einer Flotte mit anderen Schiffen befinden. Sorge dafür dass der Avatar das einzige Schiff in seiner Flotte ist um ihn zu reaktivieren."
 avatar_error_02.a:0 "Verstanden"
+
+avatar_error_03.name:0 "Fehler"
+avatar_error_03.desc:0 "§HWARNUNG: Erlaube Heilige Lanze Erlass ist Aktiv!.§!\n\nDu versuchst ein invalides Ziel mit dem Avatar zu zerstören. Do kannst nur feindplaneten oder leere Planeten in feidlichem, neutralem(Außerhalb von Grenzen) oder innerhalb unserer Grenzen zerstören.\n\nDie affe kann zudem keine asteroiden zerstören oder Planeten die bereits durch eine andere Doomsday-Waffe zerstört wurden.\n\nBitte wähle ein anderes Ziel oder stoppe den aktiven Erlass um diese Warnung zu vermeiden."
+avatar_error_03.a:0 "Verstanden"
 
 #Avatar Components
 

@@ -48,13 +48,11 @@ ship_event = {
 	}
 
 	trigger = {
-		is_ship_size = avatar
-		# Only players can build avatars for now
-		exists = OWNER
+		# Only players can build and use Avatars for now
 		OWNER = {
 			is_ai = no
-			is_country_type = default
 		}
+		is_ship_size = avatar
 	}
 
 	mean_time_to_happen = {
@@ -122,8 +120,19 @@ ship_event = {
 						ORBIT = {
 							is_star = no
 							OR = {
-								NOT = { exists = OWNER }
-								OWNER = { is_hostile = event_target:avatar_owner	}
+								AND = {
+									NOT = { exists = OWNER }
+									NOT = {
+										any_country = {
+											NOT = { is_hostile = event_target:avatar_owner }
+											PREV = { is_inside_border = PREV }
+										}
+									}
+								}
+								AND = {
+									exists = OWNER
+									OWNER = { is_hostile = event_target:avatar_owner	}
+								}
 							}
 							NOT = {
 								OR = {
@@ -163,6 +172,23 @@ ship_event = {
 						#		angle = 0
 						#	}
 						#}
+					}
+					
+					# Avatar Error 03 - cannot destroy planet
+					else = {
+						if = {
+							limit = {
+								exists = ORBIT
+								OWNER = { has_country_edict = doomsday_longinus_authorisation }
+								NOT = { OWNER = { has_country_flag = avatar_doomsday_error_03 } }
+							}
+							
+							
+							OWNER = { 
+								set_country_flag = avatar_doomsday_error_03
+								country_event = {id = avatar_doomsday.98 } 
+							}
+						}
 					}
 				}
 
@@ -214,8 +240,8 @@ planet_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		
-		FROMFROM = { 
+
+		FROMFROM = {
 			OWNER = {
 				change_variable = {
 					which = "planets_destroyed"
@@ -228,9 +254,33 @@ planet_event = {
 			limit = {
 				NOT = { exists = OWNER}
 			}
+			if = {
+				limit = {
+					OR = {
+						# If system is not in any borders, or in borders of an actual Empire
+						solar_system = {
+							NOT = {
+								any_country = {							
+									PREV = { is_inside_border = PREV}
+								}
+							}
+						}
+						solar_system = {
+							any_country = {
+								OR = {
+									is_country_type = default
+									is_country_type = rebel
+									is_country_type = fallen_empire
+								}
+								PREV = { is_inside_border = PREV}
+							}
+						}
+					}
+				}
+				# Reaction to destroying a planet
+				FROMFROM = { OWNER = { country_event = { id = titan_doomsday.803 } } }
+			}
 
-			# Reaction to destroying a planet
-			FROMFROM = { OWNER = { country_event = { id = titan_doomsday.803 } } }
 
 			else = {
 				# Opinion only applies when used against other empires or rebels
@@ -247,11 +297,12 @@ planet_event = {
 					# Used a doomsday weapon on a colony
 					FROMFROM = { OWNER = { country_event = { id = titan_doomsday.802 } } }
 					FROMFROM = { OWNER = { country_event = { id = titan_doomsday.808 } } }
-					# Owners reaction
-					OWNER = { country_event = { id = titan_doomsday.804 } }
+					# Owners reaction - have to scope to Avatar owner country to call Owner mod
+					FROMFROM = { OWNER = { country_event = { id = avatar_doomsday.801 } } }
 				}
 
 				destroy_colony = yes
+				set_planet_max_health = 0
 			}
 		}
 
@@ -369,6 +420,29 @@ country_event = {
 	}
 }
 
+# Avatar Error 02 - Cannot destroy planet
+country_event = {
+	id = avatar_doomsday.98
+	hide_window = no
+	is_triggered_only = yes
+	picture = GFX_evt_unknown_ships
+	show_sound = event_nova_alert
+
+	title = avatar_error_03.name
+
+	desc = {
+		text = avatar_error_03.desc
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = avatar_error_03.a
+		remove_country_flag = avatar_doomsday_error_03
+	}
+}
+
 # Frame Construction
 country_event = {
 	id = avatar_doomsday.101
@@ -382,7 +456,7 @@ country_event = {
 		text = avatar_constructor_01.desc
 	}
 
-	trigger = {		
+	trigger = {
 		FROM = { is_ship_size = avatar_constructor }
 		is_ai = no
 	}
@@ -1339,7 +1413,7 @@ country_event = {
 						name = random
 						design = last_created_design
 						graphical_culture = PREV
-					}					
+					}
 				}
 			}
 		}
@@ -2030,6 +2104,18 @@ country_event = {
 
 	option = {
 		name = avatar_error_01.a
+	}
+}
+
+# Avatar opinion triggers
+# Destroyed a planet - Owners reaction. FROM = planet destroyed
+country_event = {
+	id = avatar_doomsday.801
+	hide_window = yes
+	is_triggered_only = yes	
+	
+	immediate = {
+		FROM = { OWNER = { country_event = { id = titan_doomsday.804 } } }
 	}
 }
 

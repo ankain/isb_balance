@@ -13,10 +13,10 @@ utility_component_template = {
 	
 	ship_modifier = {
 		SHIP_WEAPON_DAMAGE = 3.9
-		ship_fire_rate_mult = 1.1
+		ship_fire_rate_mult = 1.0
 		
 		#SHIP_HITPOINTS_ADD = 11000		
-		SHIP_AUTO_REPAIR_ADD = 0.125
+		SHIP_AUTO_REPAIR_ADD = 0.1
 		#SHIP_SHIELD_REGEN_ADD = 150
 		#ship_combat_speed_mult = 0.4		
 	}
@@ -43,10 +43,10 @@ utility_component_template = {
 	
 	ship_modifier = {
 		SHIP_WEAPON_DAMAGE = 3.9
-		ship_fire_rate_mult = 1.1
+		ship_fire_rate_mult = 1.0
 		
 		#SHIP_HITPOINTS_ADD = 11000		
-		SHIP_AUTO_REPAIR_ADD = 0.125
+		SHIP_AUTO_REPAIR_ADD = 0.1
 		#SHIP_SHIELD_REGEN_ADD = 150
 		#ship_combat_speed_mult = 0.4		
 	}
