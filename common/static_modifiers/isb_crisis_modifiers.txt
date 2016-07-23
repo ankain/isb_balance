@@ -1,0 +1,17 @@
+# All global modifiers are here.  They are applied from certain game-features.
+#
+# Effects are fully scriptable here.
+
+# The names can NOT be removed or changed since the code references them
+
+mod_normal_ed = {
+	ship_weapon_damage = -0.1
+	ship_hitpoints_mult = -0.1
+	ship_shield_hp_mult = -0.1
+}
+
+mod_normal_swarm = {
+	ship_weapon_damage = -0.2
+	ship_fire_rate_mult = -0.25
+	ship_hitpoints_mult = -0.25	
+}

@@ -126,6 +126,7 @@ ship_event = {
 										any_country = {
 											NOT = { is_hostile = event_target:avatar_owner }
 											PREV = { is_inside_border = PREV }
+											NOT = { is_same_value = event_target:avatar_owner }
 										}
 									}
 								}

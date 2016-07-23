@@ -319,7 +319,7 @@ tech_leviathan_eng_01 = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = physics
+				area = engineering
 				has_trait = "leader_trait_expertise_industry"
 			}
 		}
@@ -505,7 +505,7 @@ tech_leviathan_phy_02 = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = engineering
+				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
 			}
 		}
@@ -535,7 +535,7 @@ tech_phased_shields = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = engineering
+				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
 			}
 		}
@@ -550,7 +550,7 @@ tech_phased_shields = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = engineering
+				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
 			}
 		}
@@ -588,7 +588,7 @@ tech_sun_crusher = {
 			factor = 1.25
 			research_leader = {
 				area = engineering
-				has_trait = "leader_trait_expertise_field_manipulation"
+				has_trait = "leader_trait_expertise_voidcraft"
 			}
 		}
 	}

@@ -47,19 +47,19 @@ country_event = {
 	id = crisis.10
 	hide_window = yes
 	fire_only_once = yes
-	
-	trigger = {		
+
+	trigger = {
 		#is_ai = no
 		is_country_type = default
 		exists = capital_scope
 		#capital_scope = { colony_age > 1800 }
 	}
-	
+
 	is_triggered_only = yes
 	#mean_time_to_happen = {
 	#	months = 3600
 	#}
-	
+
 	immediate = {
 		set_global_flag = prethoryn_subspace_echoes
 		set_global_flag = prethoryn_invasion_happened
@@ -82,9 +82,9 @@ country_event = {
 	desc = "crisis.11.desc"
 	picture = GFX_evt_physics_research
 	show_sound = event_alien_nature
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = crisis.11.a
 		begin_event_chain = {
@@ -99,17 +99,17 @@ country_event = {
 	id = crisis.12
 	hide_window = yes
 	fire_only_once = yes
-	
+
 	#mean_time_to_happen = {
 	#	months = 600
 	#}
-	
+
 	trigger = {
 		#is_ai = no
 		is_country_type = default
 		has_global_flag = prethoryn_subspace_echoes
 	}
-	
+
 	immediate = {
 		remove_global_flag = prethoryn_subspace_echoes
 		set_global_flag = prethoryn_approaching_rim
@@ -162,17 +162,17 @@ country_event = {
 	desc = "crisis.13.desc"
 	picture = GFX_evt_physics_research
 	show_sound = event_alien_nature
-	
+
 	is_triggered_only = yes
-	
+
 	immediate = {
 		random_rim_system = {
 			limit = { has_star_flag = swarm_invasion_target_1 }
 			save_event_target_as = prethoryn_invasion_system
 			closest_system = {
 				limit = {
-					NOT = { 
-						has_star_flag = swarm_invasion_warning 
+					NOT = {
+						has_star_flag = swarm_invasion_warning
 						has_star_flag = swarm_invasion_target_1
 					}
 				}
@@ -181,8 +181,8 @@ country_event = {
 			}
 			closest_system = {
 				limit = {
-					NOT = { 
-						has_star_flag = swarm_invasion_warning 
+					NOT = {
+						has_star_flag = swarm_invasion_warning
 						has_star_flag = swarm_invasion_target_1
 					}
 				}
@@ -191,8 +191,8 @@ country_event = {
 			}
 			closest_system = {
 				limit = {
-					NOT = { 
-						has_star_flag = swarm_invasion_warning 
+					NOT = {
+						has_star_flag = swarm_invasion_warning
 						has_star_flag = swarm_invasion_target_1
 					}
 				}
@@ -201,8 +201,8 @@ country_event = {
 			}
 			closest_system = {
 				limit = {
-					NOT = { 
-						has_star_flag = swarm_invasion_warning 
+					NOT = {
+						has_star_flag = swarm_invasion_warning
 						has_star_flag = swarm_invasion_target_1
 					}
 				}
@@ -211,8 +211,8 @@ country_event = {
 			}
 			closest_system = {
 				limit = {
-					NOT = { 
-						has_star_flag = swarm_invasion_warning 
+					NOT = {
+						has_star_flag = swarm_invasion_warning
 						has_star_flag = swarm_invasion_target_1
 					}
 				}
@@ -220,9 +220,9 @@ country_event = {
 				save_event_target_as = swarm_invasion_warning_5
 			}
 		}
-		
+
 	}
-	
+
 	option = {
 		name = crisis.13.a
 		create_point_of_interest = {
@@ -273,16 +273,16 @@ country_event = {
 	id = crisis.14
 	hide_window = yes
 	fire_only_once = yes
-	
+
 	mean_time_to_happen = {
 		months = 120
 	}
-	
+
 	trigger = {
 		#is_ai = no
 		has_global_flag = prethoryn_approaching_rim
 	}
-	
+
 	immediate = {
 		remove_global_flag = prethoryn_approaching_rim
 		set_global_flag = prethoryn_transmission
@@ -303,9 +303,9 @@ country_event = {
 	desc = "crisis.15.desc"
 	picture = GFX_evt_physics_research
 	show_sound = event_alien_nature
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = crisis.15.a
 		country_event = { id = crisis.16 }
@@ -317,16 +317,16 @@ country_event = {
 	id = crisis.16
 	title = "TRANSMISSION"
 	desc = "crisis.16.desc"
-	
+
 	diplomatic = yes
-	
+
 	picture_event_data = {
 		portrait = swarm1
 		room = "swarm_room"
 	}
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = crisis.16.a
 	}
@@ -337,16 +337,16 @@ country_event = {
 	id = crisis.17
 	hide_window = yes
 	fire_only_once = yes
-	
+
 	mean_time_to_happen = {
 		months = 30
 	}
-	
+
 	trigger = {
 		#is_ai = no
 		has_global_flag = prethoryn_transmission
 	}
-	
+
 	immediate = {
 		remove_global_flag = prethoryn_approaching_rim
 		set_global_flag = prethoryn_arrival
@@ -409,7 +409,7 @@ country_event = {
 				}
 				last_created_country = {
 					set_variable = {
-						which = "swarm_star" 
+						which = "swarm_star"
 						value = 6
 					}
 
@@ -434,7 +434,11 @@ country_event = {
 									add_modifier = {
 										modifier = swarm_strength
 										days = -1
-									}	
+									}
+									add_modifier = {
+										modifier = mod_normal_swarm
+										days = -1
+									}
 								}
 							}
 						}
@@ -450,10 +454,10 @@ country_event = {
 					add_ship_design = last_created_design
 					create_ship_design = { design = "Swarm Large Station" }
 					add_ship_design = last_created_design
-					
+
 					save_event_target_as = prethoryn
 					owner_species = { save_event_target_as = prethoryn_species }
-					
+
 					### FIRST SYSTEM
 					create_fleet = { name = "Prethoryn Vanguard" }
 					create_leader = {
@@ -562,9 +566,9 @@ country_event = {
 						set_location = {
 							target = PREVPREV
 							distance = 35
-							angle = random 
+							angle = random
 						}
-						
+
 						set_fleet_stance = aggressive
 						set_aggro_range = 500
 						set_aggro_range_measure_from = self
@@ -676,9 +680,9 @@ country_event = {
 						set_location = {
 							target = PREVPREV
 							distance = 35
-							angle = random 
+							angle = random
 						}
-						
+
 						set_fleet_stance = aggressive
 						set_aggro_range = 500
 						set_aggro_range_measure_from = self
@@ -790,9 +794,9 @@ country_event = {
 						set_location = {
 							target = PREVPREV
 							distance = 35
-							angle = random 
+							angle = random
 						}
-						
+
 						set_fleet_stance = aggressive
 						set_aggro_range = 500
 						set_aggro_range_measure_from = self
@@ -810,7 +814,7 @@ country_event = {
 					}
 				}
 			}
-			
+
 			### SECOND SYSTEM
 			random_system = {
 				limit = {
@@ -930,9 +934,9 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
-							
+
 							set_fleet_stance = aggressive
 							set_aggro_range = 500
 							set_aggro_range_measure_from = self
@@ -1044,9 +1048,9 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
-							
+
 							set_fleet_stance = aggressive
 							set_aggro_range = 500
 							set_aggro_range_measure_from = self
@@ -1158,9 +1162,9 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
-							
+
 							set_fleet_stance = aggressive
 							set_aggro_range = 500
 							set_aggro_range_measure_from = self
@@ -1179,7 +1183,7 @@ country_event = {
 					}
 				}
 			}
-			
+
 			### THIRD SYSTEM
 			random_system = {
 				limit = {
@@ -1188,7 +1192,7 @@ country_event = {
 						max_distance = 60
 						min_distance = 5
 					}
-					NOT = { 
+					NOT = {
 						has_star_flag = swarm_invasion_target_1
 						has_star_flag = swarm_invasion_target_2
 					}
@@ -1303,9 +1307,9 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
-							
+
 							set_fleet_stance = aggressive
 							set_aggro_range = 500
 							set_aggro_range_measure_from = self
@@ -1417,9 +1421,9 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
-							
+
 							set_fleet_stance = aggressive
 							set_aggro_range = 500
 							set_aggro_range_measure_from = self
@@ -1531,9 +1535,9 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
-							
+
 							set_fleet_stance = aggressive
 							set_aggro_range = 500
 							set_aggro_range_measure_from = self
@@ -1552,7 +1556,7 @@ country_event = {
 					}
 				}
 			}
-			
+
 			### FOURTH SYSTEM
 			random_system = {
 				limit = {
@@ -1561,7 +1565,7 @@ country_event = {
 						max_distance = 60
 						min_distance = 5
 					}
-					NOT = { 
+					NOT = {
 						has_star_flag = swarm_invasion_target_1
 						has_star_flag = swarm_invasion_target_2
 						has_star_flag = swarm_invasion_target_3
@@ -1677,9 +1681,9 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
-							
+
 							set_fleet_stance = aggressive
 							set_aggro_range = 500
 							set_aggro_range_measure_from = self
@@ -1791,9 +1795,9 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
-							
+
 							set_fleet_stance = aggressive
 							set_aggro_range = 500
 							set_aggro_range_measure_from = self
@@ -1905,9 +1909,9 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
-							
+
 							set_fleet_stance = aggressive
 							set_aggro_range = 500
 							set_aggro_range_measure_from = self
@@ -1942,16 +1946,16 @@ country_event = {
 	picture = GFX_evt_physics_research
 	show_sound = event_alien_nature
 	location = event_target:prethoryn_invasion_system
-	
+
 	is_triggered_only = yes
-	
+
 	immediate = {
 		random_rim_system = {
 			limit = { has_star_flag = swarm_invasion_target_1 }
 			save_event_target_as = prethoryn_invasion_system
 		}
 	}
-	
+
 	option = {
 		name = crisis.18.a
 		trigger = {
@@ -2141,9 +2145,9 @@ country_event = {
 	id = crisis.19
 	hide_window = yes
 	fire_only_once = yes
-	
+
 	is_triggered_only = yes
-	
+
 	immediate = {
 		set_global_flag = prethoryn_main_invasion
 		every_country = {
@@ -2157,7 +2161,7 @@ country_event = {
 			limit = { has_star_flag = swarm_invasion_target_1 }
 			random_system_planet = {
 				event_target:prethoryn = {
-					
+
 					### FIRST SYSTEM
 					create_fleet = { name = "Prethoryn Star Brood" }
 					random_list = {
@@ -2424,14 +2428,14 @@ country_event = {
 						set_location = {
 							target = PREVPREV
 							distance = 35
-							angle = random 
+							angle = random
 						}
-						
+
 						set_fleet_stance = aggressive
 						set_aggro_range = 500
 						set_aggro_range_measure_from = self
 					}
-					
+
 					create_fleet = { name = "Prethoryn Star Brood" }
 					random_list = {
 						75 = {
@@ -2706,14 +2710,14 @@ country_event = {
 						set_location = {
 							target = PREVPREV
 							distance = 35
-							angle = random 
+							angle = random
 						}
-						
+
 						set_fleet_stance = aggressive
 						set_aggro_range = 500
 						set_aggro_range_measure_from = self
 					}
-					
+
 					create_fleet = { name = "Prethoryn Star Brood" }
 					random_list = {
 						75 = {
@@ -2984,14 +2988,14 @@ country_event = {
 						set_location = {
 							target = PREVPREV
 							distance = 35
-							angle = random 
+							angle = random
 						}
-						
+
 						set_fleet_stance = aggressive
 						set_aggro_range = 500
 						set_aggro_range_measure_from = self
 					}
-					
+
 					# Infestors
 					create_fleet = { name = "Prethoryn Infestor" }
 					last_created_fleet = {
@@ -3023,7 +3027,7 @@ country_event = {
 						}
 						set_location = PREVPREV
 					}
-					
+
 					# Constructor
 					create_fleet = { name = "Prethoryn Constructor" }
 					last_created_fleet = {
@@ -3035,7 +3039,7 @@ country_event = {
 						}
 						set_location = PREVPREV
 					}
-					
+
 					# Army Transports
 					create_fleet = { name = "Prethoryn Armies" }
 					last_created_fleet = {
@@ -3149,7 +3153,7 @@ country_event = {
 					}
 				}
 			}
-			
+
 			### SECOND SYSTEM
 			random_system = {
 				limit = { has_star_flag = swarm_invasion_target_2 }
@@ -3397,7 +3401,7 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
 							create_ship = {
 								name = random
@@ -3492,14 +3496,14 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
-							
+
 							set_fleet_stance = aggressive
 							set_aggro_range = 500
 							set_aggro_range_measure_from = self
 						}
-						
+
 						create_fleet = { name = "Prethoryn Star Brood" }
 						random_list = {
 							75 = {
@@ -3757,7 +3761,7 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
 							create_ship = {
 								name = random
@@ -3802,14 +3806,14 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
-							
+
 							set_fleet_stance = aggressive
 							set_aggro_range = 500
 							set_aggro_range_measure_from = self
 						}
-						
+
 						create_fleet = { name = "Prethoryn Star Brood" }
 						random_list = {
 							75 = {
@@ -4101,7 +4105,7 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
 							create_ship = {
 								name = random
@@ -4111,14 +4115,14 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
-							
+
 							set_fleet_stance = aggressive
 							set_aggro_range = 500
 							set_aggro_range_measure_from = self
 						}
-					
+
 						# Infestors
 						create_fleet = { name = "Prethoryn Infestor" }
 						last_created_fleet = {
@@ -4150,7 +4154,7 @@ country_event = {
 							}
 							set_location = PREVPREV
 						}
-						
+
 						# Constructor
 						create_fleet = { name = "Prethoryn Constructor" }
 						last_created_fleet = {
@@ -4162,7 +4166,7 @@ country_event = {
 							}
 							set_location = PREVPREV
 						}
-						
+
 						# Army Transports
 						create_fleet = { name = "Prethoryn Armies" }
 						last_created_fleet = {
@@ -4259,7 +4263,7 @@ country_event = {
 					}
 				}
 			}
-			
+
 			### THIRD FLEET
 			random_system = {
 				limit = { has_star_flag = swarm_invasion_target_3 }
@@ -4513,7 +4517,7 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
 							create_ship = {
 								name = random
@@ -4563,14 +4567,14 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
-							
+
 							set_fleet_stance = aggressive
 							set_aggro_range = 500
 							set_aggro_range_measure_from = self
 						}
-						
+
 						create_fleet = { name = "Prethoryn Star Brood" }
 						random_list = {
 							75 = {
@@ -4867,7 +4871,7 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
 							create_ship = {
 								name = random
@@ -4887,14 +4891,14 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
-							
+
 							set_fleet_stance = aggressive
 							set_aggro_range = 500
 							set_aggro_range_measure_from = self
 						}
-						
+
 						create_fleet = { name = "Prethoryn Star Brood" }
 						random_list = {
 							75 = {
@@ -5128,7 +5132,7 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
 							create_ship = {
 								name = random
@@ -5183,14 +5187,14 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
-							
+
 							set_fleet_stance = aggressive
 							set_aggro_range = 500
 							set_aggro_range_measure_from = self
 						}
-					
+
 						# Infestors
 						create_fleet = { name = "Prethoryn Infestor" }
 						last_created_fleet = {
@@ -5222,7 +5226,7 @@ country_event = {
 							}
 							set_location = PREVPREV
 						}
-						
+
 						# Constructor
 						create_fleet = { name = "Prethoryn Constructor" }
 						last_created_fleet = {
@@ -5234,7 +5238,7 @@ country_event = {
 							}
 							set_location = PREVPREV
 						}
-						
+
 						# Army Transports
 						create_fleet = { name = "Prethoryn Armies" }
 						last_created_fleet = {
@@ -5331,7 +5335,7 @@ country_event = {
 					}
 				}
 			}
-			
+
 			### FOURTH FLEET
 			random_system = {
 				limit = { has_star_flag = swarm_invasion_target_4 }
@@ -5628,19 +5632,19 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
-							
+
 							set_fleet_stance = aggressive
 							set_aggro_range = 500
 							set_aggro_range_measure_from = self
 						}
-						
+
 						create_fleet = { name = "Prethoryn Star Brood" }
 						random_list = {
 							75 = {
@@ -5903,7 +5907,7 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
 							create_ship = {
 								name = random
@@ -5963,14 +5967,14 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
-							
+
 							set_fleet_stance = aggressive
 							set_aggro_range = 500
 							set_aggro_range_measure_from = self
 						}
-						
+
 						create_fleet = { name = "Prethoryn Star Brood" }
 						random_list = {
 							75 = {
@@ -6099,42 +6103,7 @@ country_event = {
 								design = "Swarm Small"
 								graphical_culture = "swarm_01"
 							}
-
-
-
-
-
-
-
-
-
-
 							create_ship = {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 								name = random
 								design = "Swarm Small"
 								graphical_culture = "swarm_01"
@@ -6263,14 +6232,14 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 35
-								angle = random 
+								angle = random
 							}
-							
+
 							set_fleet_stance = aggressive
 							set_aggro_range = 500
 							set_aggro_range_measure_from = self
 						}
-					
+
 						# Infestors
 						create_fleet = { name = "Prethoryn Infestor" }
 						last_created_fleet = {
@@ -6302,7 +6271,7 @@ country_event = {
 							}
 							set_location = PREVPREV
 						}
-						
+
 						# Constructor
 						create_fleet = { name = "Prethoryn Constructor" }
 						last_created_fleet = {
@@ -6314,7 +6283,7 @@ country_event = {
 							}
 							set_location = PREVPREV
 						}
-						
+
 						# Army Transports
 						create_fleet = { name = "Prethoryn Armies" }
 						last_created_fleet = {
@@ -6423,16 +6392,16 @@ country_event = {
 	picture = GFX_evt_physics_research
 	show_sound = event_alien_nature
 	location = event_target:prethoryn_invasion_system
-	
+
 	is_triggered_only = yes
-	
+
 	immediate = {
 		random_rim_system = {
 			limit = { has_star_flag = swarm_invasion_target_1 }
 			save_event_target_as = prethoryn_invasion_system
 		}
 	}
-	
+
 	option = {
 		name = crisis.20.a
 	}
@@ -6442,7 +6411,7 @@ country_event = {
 country_event = {
 	id = crisis.30
 	title = "TRANSMISSION"
-	
+
 	desc = {
 		text = crisis.30.desc_01
 	}
@@ -6452,22 +6421,22 @@ country_event = {
 	desc = {
 		text = crisis.30.desc_03
 	}
-	
+
 	diplomatic = yes
-	
+
 	picture_event_data = {
 		portrait = swarm1
 		room = "swarm_room"
 	}
-	
+
 	is_triggered_only = yes
-	
+
 	trigger = {
 		FROM = {
 			is_country_type = swarm
 		}
 	}
-	
+
 	option = {
 		name = crisis.30.a
 		response_text = crisis.30.a.response
@@ -6529,24 +6498,24 @@ country_event = {
 country_event = {
 	id = crisis.50
 	hide_window = yes
-	
+
 	trigger = {
 		has_global_flag = prethoryn_main_invasion
 		NOT = { has_global_flag = sentinels_founded }
 		is_country_type = swarm
-		galaxy_percentage > 0.02
+		galaxy_percentage > 0.08
 	}
-	
+
 	mean_time_to_happen = {
 		months = 12
 	}
-	
+
 	immediate = {
 		set_global_flag = sentinels_founded
 		random_country = {
 			limit = { is_country_type = swarm }
 			save_event_target_as = swarm
-		}	
+		}
 		random_system = {
 			limit = {
 				exists = OWNER
@@ -6556,7 +6525,7 @@ country_event = {
 				}
 			}
 			spawn_system = {
-				min_distance = 120
+				min_distance = 80
 				max_distance = 180
 				initializer = "sentinel_system"
 			}
@@ -6578,9 +6547,9 @@ country_event = {
 	desc = "crisis.51.desc"
 	picture = GFX_evt_federation_fleet
 	show_sound = event_radio_chatter
-	
+
 	is_triggered_only = yes
-	
+
 	immediate = {
 		#random_country = {
 		#	limit = { is_country_type = sentinels }
@@ -6603,7 +6572,7 @@ country_event = {
 			establish_communications_no_message = event_target:fallen_empire
 		}
 	}
-	
+
 	option = {
 		name = crisis.51.a
 		hidden_effect = {
@@ -6617,9 +6586,9 @@ country_event = {
 	id = crisis.52
 	title = "TRANSMISSION"
 	desc = "crisis.52.desc"
-	
+
 	diplomatic = yes
-	
+
 	picture_event_data = {
 		portrait = event_target:sentinels
 		planet_background = event_target:sentinels
@@ -6627,9 +6596,9 @@ country_event = {
 		city_level = event_target:sentinels
 		room = event_target:sentinels
 	}
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = crisis.52.a
 		response_text = crisis.52.a.response
@@ -6650,7 +6619,7 @@ country_event = {
 country_event = {
 	id = crisis.55
 	title = "TRANSMISSION"
-	
+
 	desc = {
 		text = crisis.55.desc_01
 	}
@@ -6666,9 +6635,9 @@ country_event = {
 	desc = {
 		text = crisis.55.desc_05
 	}
-	
+
 	diplomatic = yes
-	
+
 	picture_event_data = {
 		portrait = FROM
 		planet_background = FROM
@@ -6676,15 +6645,15 @@ country_event = {
 		city_level = FROM
 		room = FROM
 	}
-	
+
 	is_triggered_only = yes
-	
+
 	trigger = {
 		FROM = {
 			is_country_type = sentinels
 		}
 	}
-	
+
 	option = {
 		name = crisis.55.a
 		response_text = crisis.55.a.response
@@ -6692,8 +6661,8 @@ country_event = {
 	}
 	option = { # Donate
 		name = crisis.55.b
-		trigger = { 
-			energy > 199 
+		trigger = {
+			energy > 199
 			FROM = {
 				count_owned_ships = {
 					count < 100
@@ -6704,8 +6673,8 @@ country_event = {
 	}
 	option = { # Donate, not enough resources
 		name = crisis.55.b
-		trigger = { 
-			energy < 200 
+		trigger = {
+			energy < 200
 			FROM = {
 				count_owned_ships = {
 					count < 100
@@ -6717,7 +6686,7 @@ country_event = {
 	}
 	option = { # Sentinels can't field more fleets
 		name = crisis.55.b
-		trigger = { 
+		trigger = {
 			FROM = {
 				count_owned_ships = {
 					count > 99
@@ -6733,26 +6702,67 @@ country_event = {
 	}
 }
 
+# Beef up Sentinel
+country_event = {
+	id = crisis.58
+	hide_window = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = sentinels
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				is_difficulty = 2
+			}
+			add_modifier = {
+				modifier = swarm_strength_insane
+				days = -1
+			}
+			else = {
+				if = {
+					limit = {
+						is_difficulty = 1
+					}
+					add_modifier = {
+						modifier = swarm_strength_hard
+						days = -1
+					}
+					else = {
+						add_modifier = {
+							modifier = swarm_strength
+							days = -1
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 #sentinel reinforcement trigger
 country_event = {
 	id = crisis.59
 	hide_window = yes
-	
-	trigger = {		
+
+	trigger = {
 		is_country_type = sentinels
 		num_ships < 200
 	}
-	
+
 	mean_time_to_happen = {
 		months = 36
 	}
-	
+
 	immediate = {
 		if = {
 			limit = { is_country_type = sentinels }
+			country_event = { id = crisis.58 }
 			country_event = { id = crisis.60 }
 		}
-		
 	}
 }
 
@@ -6762,11 +6772,11 @@ country_event = {
 	hide_window = yes
 
 	is_triggered_only = yes
-	
+
 	immediate = {
-		random_country = { 
+		random_country = {
 			limit = { is_country_type = swarm }
-			save_event_target_as = prethoryn 
+			save_event_target_as = prethoryn
 		}
 		random_country = {
 			limit = { is_country_type = default }
@@ -7181,20 +7191,20 @@ country_event = {
 				set_location = {
 					target = PREV
 					distance = 45
-					angle = random 
+					angle = random
 				}
-				
+
 				save_event_target_as = sentinel_fleet
 				set_aggro_range = 500
 				set_fleet_stance = aggressive
 				set_aggro_range_measure_from = self
-				
+
 				queue_actions = {
 					repeat = {
 						find_closest_system = {
 							trigger = {
 								id = "crisis.60.trigger.1"
-								any_planet = {									
+								any_planet = {
 									exists = owner
 									owner = { is_same_value = event_target:prethoryn }
 								}
@@ -7206,8 +7216,9 @@ country_event = {
 							}
 							found_system = {
 								move_to = THIS
-							}	
+							}
 						}
+						wait = 150
 						find_closest_planet = {
 							trigger = {
 								id = "crisis.60.trigger.2"
@@ -7219,10 +7230,11 @@ country_event = {
 								orbit_planet = THIS
 							}
 						}
+						wait = 150
 					}
 				}
 			}
-			
+
 			ROOT = {
 				create_leader = {
 					type = admiral
@@ -7632,14 +7644,14 @@ country_event = {
 				set_location = {
 					target = PREV
 					distance = 45
-					angle = random 
+					angle = random
 				}
-				
+
 				save_event_target_as = sentinel_fleet
 				set_aggro_range = 500
 				set_fleet_stance = aggressive
 				set_aggro_range_measure_from = self
-				
+
 				queue_actions = {
 					repeat = {
 						find_closest_system = {
@@ -7658,8 +7670,9 @@ country_event = {
 							}
 							found_system = {
 								move_to = THIS
-							}	
+							}
 						}
+						wait = 100
 						find_closest_planet = {
 							trigger = {
 								id = "crisis.60.trigger.2b"
@@ -7681,7 +7694,7 @@ country_event = {
 country_event = {
 	id = crisis.61
 	hide_window = yes
-	
+
 	trigger = {
 		is_country_type = sentinels
 		count_owned_ships = {
@@ -7689,15 +7702,15 @@ country_event = {
 		}
 		capital_scope = { has_planet_flag = sentinel_alpha }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 100
 	}
-	
+
 	immediate = {
-		random_country = { 
+		random_country = {
 			limit = { is_country_type = swarm }
-			save_event_target_as = prethoryn 
+			save_event_target_as = prethoryn
 		}
 		random_country = {
 			limit = { is_country_type = default }
@@ -7901,14 +7914,14 @@ country_event = {
 				set_location = {
 					target = PREV
 					distance = 45
-					angle = random 
+					angle = random
 				}
-				
+
 				save_event_target_as = sentinel_fleet
 				set_aggro_range = 500
 				set_fleet_stance = aggressive
 				set_aggro_range_measure_from = self
-				
+
 				queue_actions = {
 					repeat = {
 						find_closest_system = {
@@ -7926,7 +7939,7 @@ country_event = {
 							}
 							found_system = {
 								move_to = THIS
-							}	
+							}
 						}
 						find_closest_planet = {
 							trigger = {
@@ -7949,9 +7962,9 @@ country_event = {
 country_event = {
 	id = crisis.70
 	hide_window = yes
-	
+
 	is_triggered_only = yes
-	
+
 	trigger = {
 		exists = from
 		has_global_flag = sentinels_founded
@@ -7959,10 +7972,10 @@ country_event = {
 		is_country_type = default
 		FROM = { is_country_type = swarm }
 	}
-	
+
 	immediate = {
-		change_variable = { 
-			which = "swarm_fleet_kills" 
+		change_variable = {
+			which = "swarm_fleet_kills"
 			value = 1
 		}
 	}
@@ -7973,9 +7986,9 @@ country_event = {
 	id = crisis.71
 	title = "TRANSMISSION"
 	desc = "crisis.71.desc"
-	
+
 	diplomatic = yes
-	
+
 	picture_event_data = {
 		portrait = event_target:sentinels
 		planet_background = event_target:sentinels
@@ -7983,15 +7996,15 @@ country_event = {
 		city_level = event_target:sentinels
 		room = event_target:sentinels
 	}
-	
+
 	trigger = {
 		#is_ai = no
 		is_country_type = default
 		has_global_flag = sentinels_founded
 		NOT = { has_country_flag = sentinel_donation }
 		check_variable = {
-			which = "swarm_fleet_kills" 
-			value > 6 
+			which = "swarm_fleet_kills"
+			value > 6
 		}
 		any_country = {
 			is_country_type = sentinels
@@ -8003,15 +8016,15 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 100
 	}
-	
+
 	immediate = {
 		set_country_flag = sentinel_donation
 	}
-	
+
 	option = {
 		name = crisis.71.a
 		response_text = crisis.71.a.response
@@ -8123,7 +8136,7 @@ country_event = {
 					set_location = {
 						target = PREV
 						distance = 45
-						angle = random 
+						angle = random
 					}
 				}
 			}
@@ -8140,7 +8153,7 @@ country_event = {
 	id = crisis.100
 	hide_window = yes
 	fire_only_once = yes
-	
+
 	trigger = {
 		has_global_flag = prethoryn_main_invasion
 		is_country_type = swarm
@@ -8150,11 +8163,11 @@ country_event = {
 			owner = { is_country_type = swarm }
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 820
 	}
-	
+
 	immediate = {
 		set_country_flag = injured_swarm_queen
 		random_system = {
@@ -8173,18 +8186,18 @@ country_event = {
 			create_ambient_object = {
 				type = "large_debris_object"
 			}
-			last_created_ambient_object = { 
+			last_created_ambient_object = {
 				set_location = {
 					target = event_target:injured_queen
 					distance = 5
 					angle = random
 				}
-				set_ambient_object_flag = dead_prethoryn 
+				set_ambient_object_flag = dead_prethoryn
 			}
 			create_ambient_object = {
 				type = "dead_swarm_small_object"
 			}
-			last_created_ambient_object = { 
+			last_created_ambient_object = {
 				set_location = {
 					target = event_target:injured_queen
 					distance = 15
@@ -8195,7 +8208,7 @@ country_event = {
 			create_ambient_object = {
 				type = "dead_swarm_small_object"
 			}
-			last_created_ambient_object = { 
+			last_created_ambient_object = {
 				set_location = {
 					target = event_target:injured_queen
 					distance = 20
@@ -8206,7 +8219,7 @@ country_event = {
 			create_ambient_object = {
 				type = "dead_swarm_small_object"
 			}
-			last_created_ambient_object = { 
+			last_created_ambient_object = {
 				set_location = {
 					target = event_target:injured_queen
 					distance = 25
@@ -8217,7 +8230,7 @@ country_event = {
 			create_ambient_object = {
 				type = "dead_swarm_large_object"
 			}
-			last_created_ambient_object = { 
+			last_created_ambient_object = {
 				set_location = {
 					target = event_target:injured_queen
 					distance = 10
@@ -8228,7 +8241,7 @@ country_event = {
 			create_ambient_object = {
 				type = "dead_swarm_large_object"
 			}
-			last_created_ambient_object = { 
+			last_created_ambient_object = {
 				set_location = {
 					target = event_target:injured_queen
 					distance = 15
@@ -8239,7 +8252,7 @@ country_event = {
 			create_ambient_object = {
 				type = "dead_swarm_large_object"
 			}
-			last_created_ambient_object = { 
+			last_created_ambient_object = {
 				set_location = {
 					target = event_target:injured_queen
 					distance = 20
@@ -8265,9 +8278,9 @@ country_event = {
 	desc = "crisis.101.desc"
 	picture = GFX_evt_small_space_battle
 	show_sound = event_radio_chatter
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = crisis.101.a
 		event_target:injured_queen = {
@@ -8287,9 +8300,9 @@ ship_event = {
 	desc = "crisis.105.desc"
 	picture = GFX_evt_society_research
 	show_sound = event_alien_nature
-	
+
 	is_triggered_only = yes
-	
+
 	immediate = {
 		#destroy_ambient_object = event_target:injured_queen
 		destroy_ambient_object = fromfrom
@@ -8311,16 +8324,16 @@ ship_event = {
 			country_event = { id = crisis.107 }
 		}
 	}
-	
+
 	option = {
 		name = crisis.105.a
 		hidden_effect = {
 			create_fleet = {
 				name = "Domesticated Prethoryn"
-				settings = { 
-					can_upgrade = no 
-					can_change_composition = no 
-					can_change_leader = no 
+				settings = {
+					can_upgrade = no
+					can_change_composition = no
+					can_change_leader = no
 				}
 			}
 			owner = {
@@ -8356,17 +8369,17 @@ ship_event = {
 fleet_event = {
 	id = crisis.106
 	hide_window = yes
-	
+
 	trigger = {
 		has_fleet_flag = pet_queen
 		num_ships < 20
 		any_ship = { is_ship_size = queen_swarm }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 4
 	}
-		
+
 	immediate = {
 		random_list = {
 			50 = {
@@ -8394,13 +8407,13 @@ country_event = {
 	desc = "crisis.107.desc"
 	picture = GFX_evt_society_research
 	show_sound = event_radio_chatter
-	
+
 	is_triggered_only = yes
-	
+
 	immediate = {
 		set_country_flag = queen_snatched
 	}
-	
+
 	option = {
 		name = crisis.107.a
 	}
@@ -8412,13 +8425,13 @@ country_event = {
 planet_event = {
 	id = crisis.200
 	hide_window = yes
-	
+
 	is_triggered_only = yes
-	
+
 	trigger = {
 		is_planet_class = pc_infested
 	}
-	
+
 	immediate = {
 		destroy_colony = yes
 		set_planet_max_health = 0
@@ -8433,13 +8446,13 @@ planet_event = {
 country_event = {
 	id = crisis.201
 	hide_window = yes
-	
+
 	is_triggered_only = yes
-	
+
 	trigger = {
 		is_country_type = "swarm"
 	}
-	
+
 	immediate = {
 		FROMFROM = {
 			set_controller = root
@@ -8452,19 +8465,19 @@ country_event = {
 planet_event = {
 	id = crisis.202
 	hide_window = yes
-	
+
 	is_triggered_only = yes
-	
+
 	trigger = {
 		#num_pops = 0
 		controller = { is_country_type = "swarm" }
 	}
-	
+
 	immediate = {
 		add_threat = {
 			who = controller
 			amount = 10 # scales to pops
-		}	
+		}
 		if = {
 			limit = {
 				NOT = { is_planet_class = pc_ringworld_habitable }
@@ -8488,13 +8501,13 @@ planet_event = {
 planet_event = {
 	id = crisis.203
 	hide_window = yes
-	
+
 	is_triggered_only = yes
-	
+
 	trigger = {
 		owner = { is_country_type = "swarm" }
 	}
-	
+
 	immediate = {
 		every_owned_pop = { kill_pop = yes }
 		change_pc = pc_infested
@@ -8614,7 +8627,7 @@ event = {
 	id = crisis.205
 	hide_window = yes
 
-	is_triggered_only = yes 
+	is_triggered_only = yes
 
 	trigger = {
 		any_country = {
@@ -8710,31 +8723,31 @@ event = {
 				limit = {
 					is_country_type = swarm
 				}
-				
+
 				change_variable = {
-					which = "swarm_star" 
+					which = "swarm_star"
 					value = 1
 				}
-				
+
 				# Star broods every 14 years
 				if = {
 					limit = {
-						check_variable = { 
-							which = "swarm_star" 
+						check_variable = {
+							which = "swarm_star"
 							value > 7
 						}
 					}
-					
+
 					change_variable = {
-						which = "swarm_star" 
+						which = "swarm_star"
 						value = -7
 					}
 					country_event = { id = crisis.207 }
 				}
-				
+
 				# Infestors and troops
 				country_event = { id = crisis.290 }
-				
+
 				country_event = { id = crisis.288 }
 			}
 		}
@@ -9017,14 +9030,14 @@ country_event = {
 			set_location = {
 				target = event_target:spaceport_planet
 				distance = 35
-				angle = random 
+				angle = random
 			}
-			
+
 			set_fleet_stance = aggressive
 			set_aggro_range = 500
 			set_aggro_range_measure_from = self
 		}
-		
+
 		create_fleet = { name = "Prethoryn Star Brood" }
 		random_list = {
 			75 = {
@@ -9339,14 +9352,14 @@ country_event = {
 			set_location = {
 				target = event_target:spaceport_planet
 				distance = 35
-				angle = random 
+				angle = random
 			}
-			
+
 			set_fleet_stance = aggressive
 			set_aggro_range = 500
 			set_aggro_range_measure_from = self
 		}
-		
+
 		create_fleet = { name = "Prethoryn Star Brood" }
 		random_list = {
 			75 = {
@@ -9771,15 +9784,15 @@ country_event = {
 			set_location = {
 				target = event_target:spaceport_planet
 				distance = 35
-				angle = random 
+				angle = random
 			}
-			
+
 			set_fleet_stance = aggressive
 			set_aggro_range = 500
 			set_aggro_range_measure_from = self
 		}
-		
-		# Infestors		
+
+		# Infestors
 		create_fleet = { name = "Prethoryn Infestor" }
 		last_created_fleet = {
 			set_owner = event_target:prethoryn
@@ -9791,10 +9804,10 @@ country_event = {
 			set_location = {
 				target = event_target:spaceport_planet
 				distance = 35
-				angle = random 
+				angle = random
 			}
 		}
-		
+
 		# Constructor
 		create_fleet = { name = "Prethoryn Constructor" }
 		last_created_fleet = {
@@ -9807,10 +9820,10 @@ country_event = {
 			set_location = {
 				target = event_target:spaceport_planet
 				distance = 35
-				angle = random 
+				angle = random
 			}
 		}
-		
+
 		# Army Transports
 		create_fleet = { name = "Prethoryn Armies" }
 		last_created_fleet = {
@@ -9839,7 +9852,7 @@ country_event = {
 			set_location = {
 				target = event_target:spaceport_planet
 				distance = 35
-				angle = random 
+				angle = random
 			}
 		}
 	}
@@ -9908,112 +9921,112 @@ country_event = {
 		num_ships < 4711
 		#num_armies < 100
 	}
-	
+
 	immediate = {
 		if = {
 			limit = {
-				check_variable = { 
-					which = "swarm_reinforce" 
+				check_variable = {
+					which = "swarm_reinforce"
 					value < 1
 				}
 			}
-			
+
 			set_variable = {
-				which = "swarm_reinforce" 
+				which = "swarm_reinforce"
 				value = 1
 			}
 		}
-		
+
 		if = {
 			limit = {
 				num_owned_planets > 100
 			}
-			
+
 			change_variable = {
-				which = "swarm_reinforce" 
+				which = "swarm_reinforce"
 				value = 1
 			}
 		}
-		
+
 		if = {
 			limit = {
 				num_owned_planets > 80
 			}
-			
+
 			change_variable = {
-				which = "swarm_reinforce" 
+				which = "swarm_reinforce"
 				value = 1
 			}
 		}
-		
+
 		if = {
 			limit = {
 				num_owned_planets > 60
 			}
-			
+
 			change_variable = {
-				which = "swarm_reinforce" 
+				which = "swarm_reinforce"
 				value = 1
 			}
 		}
-		
+
 		if = {
 			limit = {
 				num_owned_planets > 40
 			}
-			
+
 			change_variable = {
-				which = "swarm_reinforce" 
+				which = "swarm_reinforce"
 				value = 1
 			}
 		}
-		
+
 		if = {
 			limit = {
 				num_owned_planets > 25
 			}
-			
+
 			change_variable = {
-				which = "swarm_reinforce" 
+				which = "swarm_reinforce"
 				value = 1
 			}
 		}
-		
+
 		if = {
 			limit = {
 				num_owned_planets > 10
 			}
-			
+
 			change_variable = {
-				which = "swarm_reinforce" 
+				which = "swarm_reinforce"
 				value = 1
 			}
 		}
-		
+
 		if = {
 			limit = {
 				num_owned_planets > 0
 			}
-			
+
 			change_variable = {
-				which = "swarm_reinforce" 
+				which = "swarm_reinforce"
 				value = 2
 			}
 		}
-		
+
 		if = {
 			limit = {
 				check_variable = {
-					which = "swarm_reinforce" 
+					which = "swarm_reinforce"
 					value > 12
 				}
 			}
-			
+
 			change_variable = {
-				which = "swarm_reinforce" 
+				which = "swarm_reinforce"
 				value = -12
 			}
-			
+
 			country_event = { id = crisis.289 }
 			country_event = { id = crisis.289 }
 			country_event = { id = crisis.289 }
@@ -10042,8 +10055,8 @@ country_event = {
 		random_owned_planet = {
 			limit = { has_spaceport = yes }
 			save_event_target_as = spaceport_planet
-		}		
-		
+		}
+
 		create_fleet = { name = "Prethoryn Hive Brood" }
 		random_list = {
 			25 = {
@@ -10110,11 +10123,6 @@ country_event = {
 				name = random
 				design = "Swarm Large"
 				graphical_culture = "swarm_01"
-			}		
-			create_ship = {
-				name = random
-				design = "Swarm Small"
-				graphical_culture = "swarm_01"
 			}
 			create_ship = {
 				name = random
@@ -10410,13 +10418,18 @@ country_event = {
 				name = random
 				design = "Swarm Small"
 				graphical_culture = "swarm_01"
-			}				
+			}
+			create_ship = {
+				name = random
+				design = "Swarm Small"
+				graphical_culture = "swarm_01"
+			}
 			set_location = {
 				target = event_target:spaceport_planet
 				distance = 35
-				angle = random 
+				angle = random
 			}
-			
+
 			set_fleet_stance = aggressive
 			set_aggro_range = 500
 			set_aggro_range_measure_from = self
@@ -10756,7 +10769,7 @@ country_event = {
 					graphical_culture = "swarm_01"
 				}
 			}
-		}		
+		}
 	}
 }
 
@@ -10773,20 +10786,20 @@ country_event = {
 		any_owned_planet = { has_spaceport = yes }
 		num_ships < 4711
 	}
-	
+
 	immediate = {
 		save_event_target_as = prethoryn
 		owner_species = { save_event_target_as = prethoryn_species }
 		random_owned_planet = {
 			limit = { has_spaceport = yes }
 			save_event_target_as = spaceport_planet
-		}	
+		}
 		# Clear armies because AI doesnt seem to use them
 		if ={
 			limit = {
 				num_armies > 50
 			}
-			
+
 			every_army_within_country = {
 				random_list = {
 					50 = {
@@ -10802,9 +10815,9 @@ country_event = {
 				count_owned_ships = {
 					limit = { is_ship_size = colony_ship_swarm }
 					count < 6
-				}	
+				}
 			}
-		
+
 			# Infestors
 			create_fleet = { name = "Prethoryn Infestor" }
 			last_created_fleet = {
@@ -10818,11 +10831,11 @@ country_event = {
 				set_location = {
 					target = event_target:spaceport_planet
 					distance = 35
-					angle = random 
+					angle = random
 				}
-			}			
+			}
 		}
-		
+
 		if = {
 			limit = {
 				count_owned_ships = {
@@ -10842,11 +10855,11 @@ country_event = {
 				set_location = {
 					target = event_target:spaceport_planet
 					distance = 35
-					angle = random 
+					angle = random
 				}
 			}
 		}
-		
+
 		# Army Transports
 		create_fleet = { name = "Prethoryn Armies" }
 		last_created_fleet = {
@@ -10868,7 +10881,7 @@ country_event = {
 			set_location = {
 				target = event_target:spaceport_planet
 				distance = 35
-				angle = random 
+				angle = random
 			}
 		}
 	}

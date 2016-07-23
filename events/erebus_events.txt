@@ -1,0 +1,209 @@
+namespace = isb_erebus
+
+# Fleet enters combat
+event = {
+	id = isb_erebus.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		FROMFROM = {
+			save_event_target_as = fleet_cur
+			if = {
+				limit = {
+					OWNER = {
+						count_owned_ships = {
+							limit = {
+								is_ship_size = erebus
+								FLEET = { is_same_value = event_target:fleet_cur }
+							}
+							count > 0
+						}
+					}
+				}
+				fleet_event = { id = isb_erebus.2 days = 5 }
+				#OWNER = {
+				#	every_owned_ship = {
+				#		limit = {
+				#			is_ship_size = erebus
+				#			FLEET = { is_same_value = event_target:fleet_cur }
+				#		}
+
+						# spawn drones
+				#		ship_event = { id = isb_erebus.2 }
+				#	}
+				#}
+			}
+		}
+
+		FROMFROMFROM = {
+			save_event_target_as = fleet_cur
+			if = {
+				limit = {
+					OWNER = {
+						count_owned_ships = {
+							limit = {
+								is_ship_size = erebus
+								FLEET = { is_same_value = event_target:fleet_cur }
+							}
+							count > 0
+						}
+					}
+				}
+				fleet_event = { id = isb_erebus.2 days = 5 }
+			}
+		}
+	}
+}
+
+# Spawn drones
+fleet_event = {
+	id = isb_erebus.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				check_variable = {
+					which = "erebus_tcount"
+					value < 1
+				}
+			}
+
+			set_variable = {
+				which = "erebus_tcount"
+				value < 1
+			}
+		}
+
+		change_variable = {
+			which = "erebus_tcount"
+			value = 1
+		}
+
+		if = {
+			limit = {
+				is_in_combat = yes
+				check_variable = {
+					which = "erebus_tcount"
+					value = 2
+				}
+			}
+
+			OWNER = {
+				every_owned_ship = {
+					limit = {
+						is_ship_size = erebus
+						FLEET = { is_same_value = PREVPREVPREV }
+					}
+					create_fleet = {
+						name = "Drone Squadron"
+						effect = {
+							create_ship = {
+								name = "Combat Drone"
+								design = "Erebus-Drone"
+								#graphical_culture = ROOT
+							}
+							create_ship = {
+								name = "Combat Drone"
+								design = "Erebus-Drone"
+								#graphical_culture = ROOT
+							}
+							create_ship = {
+								name = "Combat Drone"
+								design = "Erebus-Drone"
+								#graphical_culture = ROOT
+							}
+							create_ship = {
+								name = "Combat Drone"
+								design = "Erebus-Drone"
+								#graphical_culture = ROOT
+							}
+							create_ship = {
+								name = "Combat Drone"
+								design = "Erebus-Drone"
+								#graphical_culture = ROOT
+							}
+							create_ship = {
+								name = "Combat Drone"
+								design = "Erebus-Drone"
+								#graphical_culture = ROOT
+							}
+							create_ship = {
+								name = "Combat Drone"
+								design = "Erebus-Drone"
+								#graphical_culture = ROOT
+							}
+							create_ship = {
+								name = "Combat Drone"
+								design = "Erebus-Drone"
+								#graphical_culture = ROOT
+							}
+							create_ship = {
+								name = "Combat Drone"
+								design = "Erebus-Drone"
+								#graphical_culture = ROOT
+							}
+							create_ship = {
+								name = "Combat Drone"
+								design = "Erebus-Drone"
+								#graphical_culture = ROOT
+							}
+							
+							set_location = {
+								target = PREV
+								distance = 1
+								angle = random
+							}
+
+							set_owner = PREVPREV
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 500
+
+							fleet_event = { id = isb_erebus.4 days = 90}
+							set_event_locked = yes
+						}
+					}
+				}
+			}
+
+			fleet_event = { id = isb_erebus.3 days = 25 }
+
+			else = {
+				change_variable = {
+					which = "erebus_tcount"
+					value = -1
+				}
+			}
+		}
+	}
+}
+
+# Spawn drones loop
+fleet_event = {
+	id = isb_erebus.3
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		change_variable = {
+			which = "erebus_tcount"
+			value = -1
+		}
+
+		fleet_event = { id = isb_erebus.2 }
+	}
+}
+
+# End of drone fleet lifespan
+fleet_event = {
+	id = isb_erebus.4
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		destroy_fleet = THIS
+	}
+}

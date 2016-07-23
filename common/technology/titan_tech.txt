@@ -18,6 +18,7 @@
 @tier3cost3 = 3360
 @tier3cost4 = 3880
 @tier3cost5 = 4920
+@tier3cost6 = 5960
 
 ####################
 ### TECH WEIGHTS ###
@@ -342,7 +343,7 @@ tech_titan_eng_01_massive_construction = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = physics
+				area = engineering
 				has_trait = "leader_trait_expertise_industry"
 			}
 		}
@@ -399,7 +400,7 @@ tech_titan_eng_02_drone_swarm = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = physics
+				area = engineering
 				has_trait = "leader_trait_expertise_industry"
 			}
 		}
@@ -557,7 +558,7 @@ tech_titan_weapon_module_01 = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = engineering
+				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
 			}
 		}
@@ -572,7 +573,7 @@ tech_titan_weapon_module_01 = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = engineering
+				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
 			}
 		}
@@ -595,8 +596,8 @@ tech_titan_weapon_module_02 = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_materials"
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
 			}
 		}
 	}
@@ -607,8 +608,8 @@ tech_titan_weapon_module_02 = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_materials"
+				area = physics
+				has_trait = "leader_trait_expertise_field_manipulation"
 			}
 		}
 	}
@@ -630,8 +631,8 @@ tech_titan_weapon_module_03 = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_materials"
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
 			}
 		}
 	}
@@ -641,8 +642,8 @@ tech_titan_weapon_module_03 = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_materials"
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
 			}
 		}
 	}
@@ -664,8 +665,8 @@ tech_titan_weapon_module_04 = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_materials"
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
 			}
 		}
 	}
@@ -679,8 +680,8 @@ tech_titan_weapon_module_04 = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = engineering
-				has_trait = "leader_trait_expertise_materials"
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
 			}
 		}
 	}
@@ -702,7 +703,7 @@ tech_titan_weapon_module_05 = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = engineering
+				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
 		}
@@ -717,7 +718,7 @@ tech_titan_weapon_module_05 = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = engineering
+				area = physics
 				has_trait = "leader_trait_expertise_computing"
 			}
 		}
@@ -750,7 +751,7 @@ tech_titan_doomsday_weapons_01 = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = engineering
+				area = society
 				has_trait = "leader_trait_expertise_military_theory"
 			}
 		}
@@ -824,7 +825,7 @@ tech_titan_doomsday_weapons_03 = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = engineering
+				area = society
 				has_trait = "leader_trait_expertise_biology"
 			}
 		}
@@ -884,7 +885,115 @@ tech_titan_doomsday_weapons_05 = {
 	}
 	
 	modifier = {
-		influence_gain_add = 0.50
+		influence_gain_add = 0.25
+	}
+	
+	weight_modifier = {
+		factor = 1.0		
+	}
+	
+	ai_weight = {
+		factor = 1.25
+	}
+}
+
+
+# Atmospheric Stimulants
+tech_titan_doomsday_weapons_06 = {
+	area = society
+	cost = @tier3cost6
+	tier = 3
+	category = { biology }
+	ai_update_type = military
+	prerequisites = { "tech_titan_doomsday_weapons_05" }
+	weight = @tier3weight4
+	is_rare = yes
+	
+	prereqfor_desc = {
+		custom = {
+			title = "TECH_UNLOCK_TITAN_DOOMSDAY_TITLE"
+			desc = "TECH_UNLOCK_TITAN_DOOMSDAY_DESC"
+		}
+	}
+	
+	modifier = {
+		influence_gain_add = 0.25
+	}
+	
+	weight_modifier = {
+		factor = 1.25
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 1.25
+	}
+}
+
+# Primal Mutation
+tech_titan_doomsday_weapons_07 = {
+	area = society
+	cost = @tier3cost6
+	tier = 3
+	category = { biology }
+	ai_update_type = military
+	prerequisites = { "tech_titan_doomsday_weapons_06" }
+	weight = @tier3weight4
+	is_rare = yes
+	
+	prereqfor_desc = {
+		custom = {
+			title = "TECH_UNLOCK_TITAN_DOOMSDAY_TITLE"
+			desc = "TECH_UNLOCK_TITAN_DOOMSDAY_DESC"
+		}
+	}
+	
+	modifier = {
+		influence_gain_add = 0.25
+	}
+	
+	weight_modifier = {
+		factor = 1.25
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_biology"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 1.25
+	}
+}
+
+# Population Assimilation
+tech_titan_doomsday_weapons_08 = {
+	area = engineering
+	cost = @tier3cost6
+	tier = 3
+	category = { industry }
+	ai_update_type = military
+	prerequisites = { "tech_titan_doomsday_weapons_07"}
+	weight = @tier3weight4
+	is_rare = yes
+	
+	prereqfor_desc = {
+		custom = {
+			title = "TECH_UNLOCK_TITAN_DOOMSDAY_TITLE"
+			desc = "TECH_UNLOCK_TITAN_DOOMSDAY_DESC"
+		}
+	}
+	
+	modifier = {
+		influence_gain_add = 0.25
 	}
 	
 	weight_modifier = {

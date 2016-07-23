@@ -198,12 +198,30 @@ event = {
 	immediate = {
 		every_country = {
 			limit = { is_ai = no }
-			random_list = {
-				10 = { country_event = { id = crisis.10 days = 64000 random = 3500 } } # 175 years
-				35 = { country_event = { id = crisis.10 days = 71500 random = 3500 } } # 195 years
-				35 = { country_event = { id = crisis.10 days = 78500 random = 3500 } } # 215 years
-				25 = { country_event = { id = crisis.10 days = 82000 random = 3500 } } # 225 years
-			}
+			if = {
+				limit = {
+					OR = {
+						is_difficulty = 1
+						is_difficulty = 2
+					}
+				}
+				random_list = {
+					10 = { country_event = { id = crisis.10 days = 64000 random = 3500 } } # 175 years
+					35 = { country_event = { id = crisis.10 days = 71500 random = 3500 } } # 195 years
+					35 = { country_event = { id = crisis.10 days = 78500 random = 3500 } } # 215 years
+					25 = { country_event = { id = crisis.10 days = 82000 random = 3500 } } # 225 years
+				}
+				
+				# Normal mode
+				else = {
+					random_list = {
+						10 = { country_event = { id = crisis.10 days = 73000 random = 3500 } } # 200 years
+						35 = { country_event = { id = crisis.10 days = 80500 random = 3500 } } # 220 years
+						35 = { country_event = { id = crisis.10 days = 87500 random = 3500 } } # 240 years
+						25 = { country_event = { id = crisis.10 days = 91200 random = 3500 } } # 250 years
+					}
+				}
+			}			
 		}
 	}
 }

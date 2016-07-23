@@ -12,6 +12,15 @@
 @sun_crusher_combat_speed = 0.3
 @sun_crusher_combat_rotation = 0.01
 
+
+@erebus_combat_speed = 0.40
+@erebus_combat_rotation = 0.004
+@erebus_collision_radius = 19
+
+@erebus_drone_combat_speed = 1.5
+@erebus_drone_combat_rotation = 0.08
+@erebus_drone_collision_radius = 2
+
 ############
 # STANDARD #
 ############
@@ -26,16 +35,17 @@ titan = {
 	collision_radius = @titan_collision_radius
 	modifier = {
 		ship_evasion_mult = -0.99
-		ship_armor_add = 72		
-		ship_shield_hp_mult = 1.5
-		ship_hitpoints_mult = 1.0
+		ship_armor_add = 72
+		ship_armor_mult = -0.6
+		ship_shield_hp_mult = 2.25
+		ship_hitpoints_mult = 1.5
 		
 		SHIP_SHIELD_HP_ADD = 1250	
 		SHIP_SHIELD_REGEN_ADD = 100
 		
 		#SHIP_WEAPON_DAMAGE = 0.90 #Doesnt actually work, just using this to boost fleet power and make AI build titans
 	}
-	max_hitpoints = 10000
+	max_hitpoints = 8000
 	size_multiplier = 24
 	fleet_slot_size = 5
 	section_slots = { "bow" = { locator = "part1" } "mid" = { locator = "part2" } "stern" = { locator = "part3" } }
@@ -94,15 +104,16 @@ leviathan = {
 	collision_radius = @leviathan_collision_radius
 	modifier = {
 		ship_evasion_mult = -0.25
+		ship_armor_mult = -0.6
 		ship_armor_add = 48
-		ship_shield_hp_mult = 1.5
-		ship_hitpoints_mult = 1.0
+		ship_shield_hp_mult = 2.25
+		ship_hitpoints_mult = 1.5
 		ship_evasion_add = 15
 		
 		SHIP_SHIELD_HP_ADD = 500
 		SHIP_SHIELD_REGEN_ADD = 50
 	}
-	max_hitpoints = 12500
+	max_hitpoints = 10000
 	size_multiplier = 36
 	fleet_slot_size = 6
 	section_slots = { "bow" = { locator = "part1" } "mid" = { locator = "part2" } "stern" = { locator = "part3" } }
@@ -281,5 +292,80 @@ avatar_constructor = {
 	required_component_set = "thruster_components"
 	required_component_set = "ship_sensor_components"
 	
+	graphical_culture = no
+}
+
+
+erebus = {
+	max_speed = 2.5
+	acceleration = 0.25
+	rotation_speed = 0.175
+	combat_max_speed = @erebus_combat_speed
+	combat_rotation_speed = @erebus_combat_rotation
+	collision_radius = @erebus_collision_radius
+	modifier = {
+		ship_evasion_mult = -0.99
+		ship_armor_add = 30
+		ship_armor_mult = -0.5
+		ship_shield_hp_mult = 2.5
+		ship_hitpoints_mult = 1.5
+		
+		ship_upkeep_mult = 0.25
+
+		SHIP_SHIELD_HP_ADD = 14000
+		SHIP_SHIELD_REGEN_ADD = 600
+		SHIP_AUTO_REPAIR_ADD = 0.1
+	}
+	max_hitpoints = 6000
+	size_multiplier = 80
+	fleet_slot_size = 6
+	section_slots = { "mid" = { locator = "part2" } }
+	num_target_locators = 4
+	icon_frame = 5
+	class = shipclass_military
+	is_designable = yes
+	base_buildtime = 2800
+
+	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
+	is_civilian = no
+	
+	prerequisites = { "tech_erebus" }
+
+	graphical_culture = no
+	
+	required_component_set = "ftl_components"
+	required_component_set = "erebus_components"
+	required_component_set = "thruster_components"
+	required_component_set = "ship_sensor_components"
+}
+
+
+erebus_drone = {
+	max_speed = 4.5
+	acceleration = 0.75
+	rotation_speed = 0.175
+	combat_max_speed = @erebus_drone_combat_speed
+	combat_rotation_speed = @erebus_drone_combat_rotation
+	collision_radius = @erebus_drone_collision_radius
+	modifier = {
+		ship_evasion_add = 15
+		ship_armor_add = 6
+		
+		SHIP_SHIELD_HP_ADD = 2000
+		SHIP_SHIELD_REGEN_ADD = 60
+		SHIP_AUTO_REPAIR_ADD = 0.1
+	}
+	max_hitpoints = 1000
+	size_multiplier = 0
+	fleet_slot_size = 1
+	section_slots = { "mid" = { locator = "part1" } }
+	num_target_locators = 3
+	icon_frame = 2
+	class = shipclass_military
+	is_designable = no
+
+	enable_default_design = no	#if yes, countries will have an auto-generated design at start
+	is_civilian = no
+
 	graphical_culture = no
 }

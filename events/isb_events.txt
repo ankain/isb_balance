@@ -21,7 +21,7 @@ event = {
 			add_modifier = {
 				modifier = "fallen_ship_upkeep"
 				days = -1
-			}						
+			}
 		}
 
 		#every_country = {
@@ -40,7 +40,7 @@ event = {
 	hide_window = yes
 	is_triggered_only = yes
 
-	immediate = {		
+	immediate = {
 		every_country = {
 			limit = { is_ai = no }
 			add_modifier = {
@@ -57,10 +57,10 @@ event = {
 	hide_window = yes
 	is_triggered_only = yes
 
-	immediate = {		
+	immediate = {
 		every_country = {
 			limit = { is_ai = no }
-			remove_modifier = "test_mode"			
+			remove_modifier = "test_mode"
 		}
 	}
 }
@@ -332,12 +332,12 @@ event = {
 				}
 			}
 		}
-		
+
 		# swarm threat
 		if = {
 			random_country = {
 				limit = {
-					is_country_type = swarm					
+					is_country_type = swarm
 				}
 
 				random_country = {
@@ -399,12 +399,12 @@ event = {
 				}
 			}
 		}
-		
+
 		# AI threat. Didn't buff this crisis so count it as weak for now
 		if = {
 			random_country = {
 				limit = {
-					is_country_type = ai_empire					
+					is_country_type = ai_empire
 				}
 
 				random_country = {
@@ -416,7 +416,7 @@ event = {
 						value = 3
 					}
 				}
-				
+
 				# Count planets
 				if = {
 					limit = {
@@ -431,7 +431,7 @@ event = {
 							value = 3
 						}
 					}
-					
+
 					# 25 systems
 					if = {
 						limit = {
@@ -450,18 +450,18 @@ event = {
 				}
 			}
 		}
-		
+
 		random_country = {
 			limit = {
 				is_same_value = event_target:crisis_var
 			}
-			
+
 			if = {
 				limit = {
 					check_variable = {
 						which = "crisis_threat_count"
 						value > 1
-					}				
+					}
 				}
 				set_global_flag = crisis_threat_low
 
@@ -470,7 +470,7 @@ event = {
 						check_variable = {
 							which = "crisis_threat_count"
 							value > 8
-						}					
+						}
 					}
 					set_global_flag = crisis_threat_med
 
@@ -479,7 +479,7 @@ event = {
 							check_variable = {
 								which = "crisis_threat_count"
 								value > 16
-							}						
+							}
 						}
 						set_global_flag = crisis_threat_high
 					}
@@ -558,78 +558,178 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 
-	immediate = {		
-		capital_scope = {			
+	immediate = {
+		capital_scope = {
 			solar_system = {
-				random_system_planet  = {			
+				random_system_planet  = {
 					limit = {
 						is_star = yes
 					}
 					save_event_target_as = test_spawn_loc
 				}
-			}			
+			}
 		}
-			
-		
-		
+
+
+
 		create_country = {
 			name = "Test country"
 			type = bunny
 		}
 		last_created_country = {
 			establish_communications_no_message = ROOT
-			establish_contact = { who = ROOT }			
+			establish_contact = { who = ROOT }
 			save_event_target_as = bunny1
 			#declare_war = ROOT
-			
+
 			create_fleet = {
 				effect = {
 					#set_owner = event_target:bunny1
 					create_ship = {
 						name = random
-						design = "Avatar"						
-					}
-					set_location = {
-						target = event_target:test_spawn_loc
-						distance = 1
-					}
-					set_fleet_stance = aggressive					
-				}
-				
-			}
-			
-			#declare_war = ROOT
-		}
-		
-		create_country = {
-			name = "Test country2"
-			type = bunny
-		}
-		last_created_country = {
-			establish_communications_no_message = ROOT
-			establish_contact = { who = ROOT }			
-			establish_communications_no_message = event_target:bunny1
-			establish_contact = { who = event_target:bunny1 }
-			save_event_target_as = bunny2
-			
-			create_fleet = {
-				effect = {
-					#set_owner = event_target:bunny2
-					create_ship = {
-						name = random
-						design = "Avatar"						
+						design = "Avatar"
 					}
 					set_location = {
 						target = event_target:test_spawn_loc
 						distance = 1
 					}
 					set_fleet_stance = aggressive
-				}				
+				}
+
 			}
-			
+
+			#declare_war = ROOT
+		}
+
+		create_country = {
+			name = "Test country2"
+			type = bunny
+		}
+		last_created_country = {
+			establish_communications_no_message = ROOT
+			establish_contact = { who = ROOT }
+			establish_communications_no_message = event_target:bunny1
+			establish_contact = { who = event_target:bunny1 }
+			save_event_target_as = bunny2
+
+			create_fleet = {
+				effect = {
+					#set_owner = event_target:bunny2
+					create_ship = {
+						name = random
+						design = "Avatar"
+					}
+					set_location = {
+						target = event_target:test_spawn_loc
+						distance = 1
+					}
+					set_fleet_stance = aggressive
+				}
+			}
+
 			save_event_target_as = bunny2
 			declare_war = event_target:bunny1
 			#declare_war = ROOT
 		}
+	}
+}
+
+# Test event 2
+fleet_event = {
+	id = isb.4
+	hide_window = no
+	is_triggered_only = yes
+
+	picture = GFX_evt_physics_research
+
+	title = ftl_trigger
+
+	desc = {
+		text = you_are_system
+	}
+
+	trigger = {
+		any_system = {
+			has_star_flag = flag_galaxy_ftl_trap
+			distance = {
+				source = PREV
+				max_distance = 200 #50
+			}
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				OWNER = {
+					is_ai = no
+				}
+			}
+
+
+			#queue_actions = {
+			#	move_to = event_target:ftl_trap_system
+			#}
+
+			fleet_event = { id = isb.5 days = 5 }
+
+		}
+	}
+
+	option = {
+		name = ftl_trap
+	}
+}
+
+# Test event 2
+fleet_event = {
+	id = isb.5
+	hide_window = no
+	is_triggered_only = yes
+
+	picture = GFX_evt_physics_research
+
+	title = ftl_trigger_2
+
+	desc = {
+		text = you_are_trap
+	}
+
+	immediate = {
+		OWNER = { save_event_target_as = ftl_trap_owner}
+		random_system = {
+			limit = {
+				distance = {
+					source = PREV
+					max_distance = 10 #50
+				}
+				has_star_flag = flag_galaxy_ftl_trap
+			}
+			save_event_target_as = ftl_trap_system
+
+			random_system_planet = {
+				limit = {
+					is_star = yes
+				}
+
+				save_event_target_as = ftl_trap_star
+				enable_special_project = {
+					name = "PROJ_AVATAR_CONSTRUCT_01"
+					location = THIS
+					OWNER = event_target:ftl_trap_owner
+				}
+			}
+		}
+
+		clear_orders = yes
+		set_location = {
+			target = event_target:ftl_trap_star
+			distance = 10
+			angle = random
+		}
+	}
+
+	option = {
+		name = ftl_trap_2
 	}
 }

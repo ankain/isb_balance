@@ -50,7 +50,7 @@ ship_section_template = {
 	icon = "GFX_ship_part_core_mid"
 	
 	# Missiles & Strike Craft
-	weapon_preferences = { weapon_role_anti_armor }
+	weapon_preferences = { weapon_role_long_range }
 	ai_weight = {
 		modifier = {
 			factor = 8.0
@@ -92,7 +92,7 @@ ship_section_template = {
 	entity = "leviathan_stern_entity"
 	icon = "GFX_ship_part_core_stern"	
 	
-	weapon_preferences = { weapon_role_anti_armor }
+	weapon_preferences = { weapon_role_long_range }
 	ai_weight = {
 		factor = 1
 		modifier = {

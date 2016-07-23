@@ -302,3 +302,41 @@ AVATAR_CORE:0 "S² Core"
 # Avatar Opinions
 opinion_has_avatar:0 "Angst wird sie zähmen"
 opinion_doomsday_med:0 "Benutzt Brutale Doomsday-Waffen"
+
+# v1.4 Erebus
+erebus:0 "Erebus"
+erebus_plural:0 "Erebuses"
+erebus_drone:0 "Combat Drone"
+erebus_drone_plural:0 "Combat Drones"
+
+EREBUS_SECTION:0 "Purgatory"
+
+EREBUS_DRONE_GUN_01:0 "Pulse Cannon"
+EREBUS_DRONE_CORE:0 "Drone Core"
+EREBUS_CORE:0 "Darkness Core"
+
+TECH_UNLOCK_EREBUS_CHAIN_TITLE:0 "§EErebus Research Chain§!"
+TECH_UNLOCK_EREBUS_CHAIN_DESC:0 "Researching all technologies in this research chain will unlock the Erebus ship type"
+
+TECH_UNLOCK_EREBUS_CONSTRUCTION_TITLE:0 "§HUnlocks Ship type:§! Erebus"
+TECH_UNLOCK_EREBUS_CONSTRUCTION_DESC:0 "§HErebus§!\nA massive super-carrier that manufactures and launches fully-autonomous combat drones during engagements.\n\nThe Erebus launches one drone squadron (10 drones) every 25 days during combat. The drone squadrons last for 90 days, after which they will automatically self-destruct."
+
+# Doomsday weapons
+doomsday_nanite_nonorganic:0 "Nanite Deconstructors"
+doomsday_nanite_nonorganic_name:0 "Only Nanite Deconstructors can be used"
+doomsday_nanite_nonorganic_desc:1 "\n§EEvery month, any planet being bombarded with less than 10% hp and a Titan / Avatar size ship in system will have 3 buildings destroyed. This will continue until bombardment stops or there are no buildings left.\n\nWARNING: Nanite Deconstructors are considered a brutal doomsday weapon.§!\n"
+
+doomsday_mood_alteration:0 "Mind Control Stimulants"
+doomsday_mood_alteration_name:0 "Only Mind Control Stimulants can be used"
+doomsday_mood_alteration_desc:1 "\n§EEvery month, any planet being bombarded with less than 10% hp and a Titan / Avatar size ship in system will gain a -10% happiness, +20% ethics divergence modifier. The modifier will last for 2 years. \n\nWARNING: Mind Control Stimulants are considered a brutal doomsday weapon.§!\n"
+
+doomsday_weapon_06:0 "Mind Control Stimulants"
+doomsday_weapon_06_desc:0 "$tech_titan_doomsday_weapons_06_desc$"
+
+doomsday_nanite_gene:0 "Primal Mutation"
+doomsday_nanite_gene_name:0 "Only Primal Mutation can be used"
+doomsday_nanite_gene_desc:1 "\n§EEvery month, any planet being bombarded with less than 10% hp and a Titan / Avatar size ship in system will have one population killed and converted into 2 xenomorph armies under your control. The armies will automatically attack the planet. This doomsday weapon costs 700 energy per use. \n\nWARNING: Primal Mutation is considered a brutal doomsday weapon.§!\n"
+
+doomsday_abduction:0 "Forced Assimilation"
+doomsday_abduction_name:0 "Only Forced Assimilation can be used"
+doomsday_abduction_desc:1 "\n§EEvery two months, any planet being bombarded with less than 10% hp and a Titan / Avatar size ship in system will have one population relocated to a suitable planet under your control. The relocated population will have its ethos changed to match your Empire. This doomsday weapon costs 250 energy / 500 minerals per month.\n\nYou have to bombard the planet for two consecutive months for assimilation to occur. The process will be cancelled if you do not have any free space on your planets for a new population.\n\nWARNING: Forced Assimilation is considered a brutal doomsday weapon.§!\n"

@@ -1,0 +1,13 @@
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_ship_counter_erebus"
+		textureFile = "gfx/interface/system/icon_erebus.dds"
+	}
+}
+
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_ship_sizes_erebus"
+		textureFile = "gfx/interface/system/icon_erebus.dds"
+	}
+}

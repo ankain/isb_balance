@@ -331,3 +331,34 @@ ship_design = {
 	required_component = "TITAN_CORE_FALLEN"
 	required_component = "TITAN_VIRUS"
 }
+
+# Drone
+ship_design = {
+	name = "Erebus-Drone"
+	ship_size = erebus_drone
+
+	section = {
+		template = "EREBUS_DRONE_SECTION"
+		slot = "mid"
+		
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "EREBUS_DRONE_GUN_01"
+		}
+		
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "EREBUS_DRONE_GUN_01"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "EREBUS_DRONE_GUN_01"
+		}
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "LARGE_FLAK_BATTERY_1"
+		}
+	}
+	
+	required_component = "EREBUS_DRONE_CORE"
+}

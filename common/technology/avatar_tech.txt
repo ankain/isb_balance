@@ -241,7 +241,7 @@ tech_avatar_eng_01 = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = physics
+				area = engineering
 				has_trait = "leader_trait_expertise_industry"
 			}
 		}
@@ -410,7 +410,7 @@ tech_avatar_phy_02 = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = engineering
+				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
 			}
 		}
@@ -425,7 +425,7 @@ tech_avatar_phy_02 = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = engineering
+				area = physics
 				has_trait = "leader_trait_expertise_field_manipulation"
 			}
 		}
@@ -455,7 +455,7 @@ tech_avatar_doomsday_01 = {
 		modifier = {
 			factor = 1.25
 			research_leader = {
-				area = engineering
+				area = physics
 				has_trait = "leader_trait_expertise_particles"
 			}
 		}

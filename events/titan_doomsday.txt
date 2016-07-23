@@ -126,7 +126,7 @@ country_event = {
 							}
 						}
 
-						#Can use virus, kills 3 pops a month
+						#Can use virus, kills 3 pops a month and 2 armies
 						if = {
 							limit = { ROOT = { has_policy_flag = doomsday_virus } }
 
@@ -154,7 +154,7 @@ country_event = {
 									}
 									destroy_colony = yes
 									set_planet_max_health = 0
-									
+
 									orbital_deposit_tile = {
 										clear_deposits = yes
 									}
@@ -390,6 +390,300 @@ country_event = {
 										min = 40
 										max = 50
 									}
+								}
+							}
+						}
+
+						# v1.4 Erebus
+						# Can use nanite non-organic. 3 buildings destroyed per use but does not return resources.
+						if = {
+							limit = { ROOT = { has_policy_flag = doomsday_nanite_nonorganic } }
+
+							# Nanite non-organic use is brutal and will trigger additional opinion hits.
+							random_list = {
+								25 = {
+									# Opinion only applies when used against other empires or rebels
+									if = {
+										limit = {
+											OR = {
+												OWNER = { is_country_type = default }
+												OWNER = { is_country_type = rebel }
+												OWNER = { is_country_type = fallen_empire }
+											}
+										}
+										ROOT = { country_event = { id = titan_doomsday.808 } }
+									}
+								}
+								75 = {
+								}
+							}
+
+							random_tile = {
+								limit = {
+									has_building = yes
+								}
+								remove_building = yes
+							}
+
+							random_tile = {
+								limit = {
+									has_building = yes
+								}
+								remove_building = yes
+							}
+
+							random_tile = {
+								limit = {
+									has_building = yes
+								}
+								remove_building = yes
+							}
+						}
+
+						# Can use planet mood alteration. -10% happiness and +10% ethics divergence per use for a year
+						if = {
+							limit = { ROOT = { has_policy_flag = doomsday_mood_alteration } }
+
+							# Brutal weapon. Always applies opinion malus
+							# Opinion only applies when used against other empires or rebels
+							if = {
+								limit = {
+									OR = {
+										OWNER = { is_country_type = default }
+										OWNER = { is_country_type = rebel }
+										OWNER = { is_country_type = fallen_empire }
+									}
+								}
+								ROOT = { country_event = { id = titan_doomsday.808 } }
+							}
+
+							add_modifier = {
+								modifier = doomsday_weapon_06
+								days = 730
+							}
+						}
+
+						# Can use nanite induced mutation
+						if = {
+							limit = {
+								ROOT = {
+									energy > 750
+									has_policy_flag = doomsday_nanite_gene
+								}
+							}
+
+							# 750 energy cost
+							ROOT = { add_energy = -750 }
+
+							# Brutal weapon. Always applies opinion malus
+							# Opinion only applies when used against other empires or rebels
+							if = {
+								limit = {
+									OR = {
+										OWNER = { is_country_type = default }
+										OWNER = { is_country_type = rebel }
+										OWNER = { is_country_type = fallen_empire }
+									}
+								}
+								ROOT = { country_event = { id = titan_doomsday.808 } }
+							}
+
+							random_pop = {
+								limit = { is_robot_pop = no }
+								species = { save_event_target_as = army_species }
+								PREV = {
+									create_army = {
+										name = random
+										owner = ROOT
+										species = event_target:army_species
+										type = "xenomorph_army"
+									}
+
+									create_army = {
+										name = random
+										owner = ROOT
+										species = event_target:army_species
+										type = "xenomorph_army"
+									}
+								}
+
+								kill_pop = yes
+							}
+						}
+
+						# Can use population abduction and brainwashing. Takes 2 months to move 1 population, kills pop if no space available on planets. Cannot abduct robots
+						if = {
+							limit = {
+								ROOT = {
+									energy > 250
+									minerals > 500
+									has_policy_flag = doomsday_abduction
+								}
+							}
+
+							# 500 energy, 1000 minerals total, 50% each month
+							ROOT = {
+								add_energy = -250
+								add_minerals = -500
+							}
+
+							# 1st month sets flag, 2nd month attempts move
+							if = {
+								limit = {
+									has_planet_flag = flag_doomsday_abducting
+								}
+
+								remove_planet_flag = flag_doomsday_abducting
+
+								# Brutal weapon. Always applies opinion malus
+								# Opinion only applies when used against other empires or rebels
+								if = {
+									limit = {
+										OR = {
+											OWNER = { is_country_type = default }
+											OWNER = { is_country_type = rebel }
+											OWNER = { is_country_type = fallen_empire }
+										}
+									}
+									ROOT = { country_event = { id = titan_doomsday.808 } }
+								}
+
+								random_pop = {
+									limit = { is_robot_pop = no }
+									species = { save_event_target_as = abduct_species }
+									save_event_target_as = abduct_pop
+								}
+
+								ROOT = {
+									# gaia planet check
+									random_owned_planet = {
+										limit = {
+											habitability = {
+												who = event_target:abduct_pop
+												value > 0.79
+											}
+											free_pop_tiles > 0
+										}
+
+										best_tile_for_pop = {
+											create_pop = {
+												species = event_target:abduct_species
+												ethos = OWNER
+											}
+										}
+
+										PREV = { set_country_flag = flag_doomsday_abduct_found }
+									}
+
+									# 80% habitability check
+									if = {
+										limit = {
+											NOT = { has_country_flag = flag_doomsday_abduct_found }
+										}
+
+										random_owned_planet = {
+											limit = {
+												habitability = {
+													who = event_target:abduct_pop
+													value > 0.65
+												}
+												free_pop_tiles > 0
+											}
+
+											best_tile_for_pop = {
+												create_pop = {
+													species = event_target:abduct_species
+													ethos = OWNER
+												}
+											}
+
+											PREV = { set_country_flag = flag_doomsday_abduct_found }
+										}
+									}
+
+									if = {
+										limit = {
+											NOT = { has_country_flag = flag_doomsday_abduct_found }
+										}
+
+										random_owned_planet = {
+											limit = {
+												habitability = {
+													who = event_target:abduct_pop
+													value > 0.45
+												}
+												free_pop_tiles > 0
+											}
+
+											best_tile_for_pop = {
+												create_pop = {
+													species = event_target:abduct_species
+													ethos = OWNER
+												}
+											}
+
+											PREV = { set_country_flag = flag_doomsday_abduct_found }
+										}
+									}
+
+									if = {
+										limit = {
+											NOT = { has_country_flag = flag_doomsday_abduct_found }
+										}
+
+										random_owned_planet = {
+											limit = {
+												habitability = {
+													who = event_target:abduct_pop
+													value > 0.25
+												}
+												free_pop_tiles > 0
+											}
+
+											best_tile_for_pop = {
+												create_pop = {
+													species = event_target:abduct_species
+													ethos = OWNER
+												}
+											}
+
+											PREV = { set_country_flag = flag_doomsday_abduct_found }
+										}
+									}
+
+									if = {
+										limit = {
+											NOT = { has_country_flag = flag_doomsday_abduct_found }
+										}
+										# Any planet will do
+										random_owned_planet = {
+											limit = {
+												free_pop_tiles > 0
+											}
+
+											best_tile_for_pop = {
+												create_pop = {
+													species = event_target:abduct_species
+													ethos = OWNER
+												}
+											}
+
+											PREV = { set_country_flag = flag_doomsday_abduct_found }
+										}
+									}
+
+									if = {
+										limit = { has_country_flag = flag_doomsday_abduct_found }
+										remove_country_flag = flag_doomsday_abduct_found
+										
+										event_target:abduct_pop = {
+											kill_pop = yes
+										}
+									}
+								}
+
+								else = {
+									set_timed_planet_flag = { flag = flag_doomsday_abducting days = 35 }
 								}
 							}
 						}
