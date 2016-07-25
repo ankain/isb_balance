@@ -120,32 +120,32 @@ tech_avatar_doomsday_01:0 "Doomsday-Waffe: Heilige lanze"
 tech_avatar_doomsday_01_desc:0 "\n§EHier ruht ein gefalener Gott-\nSein sturz war gewaltig.\nWir erbauten seinen Sockel,\nEin schmaler und langer war es.§!\n\nDurch lokale Realitätsmanipulation sind wir in der lage, einen konntrolliertes Versagen des Schutzbehälters für den schwarzes Loch Antrieb des Avatars zu erzeugen. Dieses versagen kann si gelenkt werden, das es den Energieausstoß des schwarzen Lochs direkt projezirt, was uns erlaubt einen unglaublichn fluss an Energie zu erzeugen und zu richten - Stark genug um den Kern eines Planeten zu durchstechen.\n\n"
 
 # v1.4 Erebus
-tech_titan_doomsday_weapons_06:0 "Doomsday Weapon : Mind Control Stimulants"
-tech_titan_doomsday_weapons_06_desc:0 "\nBy releasing bio-engineered nano-particles into the atmosphere of the planet, we are able to subtly influence the thoughts of its population, making them more susceptible to external influences and reducing their happiness.\n\nYou may select this weapon through the empire policy screen and authorise its use under empire edicts.\n\n"
+tech_titan_doomsday_weapons_06:0 "Doomsday-Waffe: Gehirnwäsche Stimulanzien"
+tech_titan_doomsday_weapons_06_desc:0 "\nDurch impfen der Atmosphäre mit Bio-präparierten Nanopartikeln, können wir die Gedanken der Bevölkerung auf subtile Weise beeinflussen, machen sie reizbarer für Äußere Einflüsse und reduzieren ihre Zufriedenheit.\n\nWähle diese Waffe unter Imperialer Politik aus und autorisiere die Benutzung per imperialem Erlass.\n\n"
 
-tech_titan_doomsday_weapons_07:0 "Doomsday Weapon : Primal Mutation"
-tech_titan_doomsday_weapons_07_desc:0 "\nA modified strain of the Evolutionary Virus delivered and controlled via nanites. Through this delivery mechanism, we are able to engineer mutations within the enemy's population, greatly increasing their physical strength and aggressiveness, turning them into ferocious xenomorphs under our control. While most of the infected will not survive the mutation process, those that do turn into a horrific, rampaging force. This is an extremely energy intensive process.\n\nYou may select this weapon through the empire policy screen and authorise its use under empire edicts.\n\n"
+tech_titan_doomsday_weapons_07:0 "Doomsday-Waffe: Ur-Mutagen"
+tech_titan_doomsday_weapons_07_desc:0 "\nEine modifizierte und durch Naniten kontrollierte Weiterentwicklung des Evolutionsvirus. Durch diese Vektor-Organismen, können wir die feindliche Bevölkerung gezielt auf reine Stärke und Brutalität verändern und sie zu schrecklichen Xenomorphen unter unserer Kontrolle machen. Obgleich die meisten Opfer diesen Mutationsprozess nicht überleben, werden die die es überleben zu furchterregenden, rasend wütenden Killermaschinen. Der Prozess ist sehr Energieintensiv.\n\nWähle diese Waffe unter Imperialer Politik aus und autorisiere die Benutzung per imperialem Erlass.\n\n"
 
-tech_titan_doomsday_weapons_08:0 "Doomsday Weapon : Forced Assimilation"
-tech_titan_doomsday_weapons_08_desc:0 "\nThrough direct and prolonged exposure to concentrated quantities of Mind Control Stimulants delivered through nanites, we are able to rewrite the enemy population's memories and identity, making them believe they are citizens of our Empire. This allows us to assimilate them into our society. The process is extremely costly and time-consuming.\n\nYou may select this weapon through the empire policy screen and authorise its use under empire edicts.\n\n"
+tech_titan_doomsday_weapons_08:0 "Doomsday-Waffe: Erzwungene Assimilierung"
+tech_titan_doomsday_weapons_08_desc:0 "\nDurch verlängertes, direktes Aussetzen der Bevölkerung mit Gehirnwäsche Stimulanzien, können wir ihre Erinnerungen und Identität verändern, so dass sie glauben Anhänger unseres Imperiums zu sein. Somit können wir sie in unsere Gesellschaft integrieren. Der Prozess ist allerdings sehr Kosten und Zeitintensiv.\n\nWähle diese Waffe unter Imperialer Politik aus und autorisiere die Benutzung per imperialem Erlass.\n\n"
 
 tech_erebus:0 "Erebus"
-tech_erebus_desc:0 "\nA massive super-carrier that is basically a mobile shipyard that manufactures and launches fully-autonomous combat drones during engagements. Able to directly convert energy into the raw materials required for drone construction, the Erebus can construct and launch 10 drones every 25 days. The constant supply of reinforcements makes the Erebus an incredibly valuable asset in massive fleet battles. Due to the size and complexity of the drone manufactory, the Erebus relies heavily on extremely powerful shields for defence.\n\nCombat Drones created by the Erebus carry enough power to sustain them for 90 days, after which they will automatically self-destruct.\n\n"
+tech_erebus_desc:0 "\nEin gigantischer Super-Träger, gewissermaßen eine mobile Schiffswerft, die im Gefecht vollautomatische Kampfdrohnen produziert und einsetzt. Fähig, Energie direkt in Materie umzuwandeln, kann die Erebus alle 25 tage ein aus 10 Drohnen bestehendes Geschwader bereitstellen. Die konstante Produktion von Verstärkung macht die Erebus unabdenkbar in großen Raumgefechten. Durch ihre Größe und die Komplexität der Fertigungsanlagen verlässt sich die Erebus hauptsächlich auf besonders starke Schilde.\n\nKampfdrohnengeschwader der Erebus tragen genug Energie mit sich um 90 Tage zu überleben und zerstören sich danach automatisch selbst.\n\n"
 
-tech_erebus_phy_01:0 "Theory : Energy-Matter Reconstruction"
-tech_erebus_phy_01_desc:0 "\nWhile much of our technological advancement has been focused on the conversion of matter into energy, our scientists are beginning to realise that the efficient conversion of energy back into certain forms of matter has many interesting applications, most notably in the field of deep space combat operations where logistical support might not always be possible.\n\n"
+tech_erebus_phy_01:0 "Theorie: Energie-Materie-Rekonstruktion"
+tech_erebus_phy_01_desc:0 "\nNachdem sich der Hauptfokus der Forschung darauf gelegt hatte aus Materie Energie zu machen, beginnen unsere Wissenschaftler zu verstehen, das die effiziente und kostengünstige Umwandlung von Energie in bestimmte Materie durchaus ihre Anwendungsgebiete findet, am besten in weit entfernten Raumgefechten, wo logistische Unterstützung nahezu unmöglich ist.\n\n"
 
 tech_erebus_phy_02:0 "Theory : Layered Shielding"
 tech_erebus_phy_02_desc:0 "\nThe ability to layer our forcefield projections without interference will allow us to massively amplify the maximum theoretical integrity of shields, though at a small cost in shield recharge rates. Unfortunately, the size and power consumption of the forcefield projectors limits the use of this technology to only the largest vessels.\n\n"
 
-tech_erebus_soc_01:0 "Theory : Super-Carriers"
-tech_erebus_soc_01_desc:0 "\nThe creation of super-capital ships designed to destroy capital-size and above vessels has greatly increased the importance of smaller ships as fleet support. However, the high attrition rates of these support craft represent a significant problem during prolonged engagements. A new class of super-capital ships has thus been proposed to address this issue.\n\n"
+tech_erebus_soc_01:0 "Theorie: Super-Träger"
+tech_erebus_soc_01_desc:0 "\nDas Aufkommen von Super-Großkampfschiffen zum zerstören feindlicher Großkampfschiffe und darüber hinaus, hinterließ eine Lücke bei den kleinen, wendigeren Schiffen. Doch die hohe Verlustrate dieser oft als "Schussfang" dieser Unterstützerschiffe in langen Gefechten stellt ein großes Problem dar. Eine neue Klasse von Super-Großkampfschiffen wurde daher vorgeschlagen, um dieses Problem zu lösen.\n\n"
 
-tech_erebus_soc_02:0 "Doctrine : Drone Warfare"
-tech_erebus_soc_02_desc:0 "\nFully autonomous squadrons of combat drones create a shift in the structure and roles of traditional ships in a fleet. This doctrine will examine and define the changes necessary to fully integrate them into fleet operations.\n\n"
+tech_erebus_soc_02:0 "Doktrin: Totaler Drohnenkrieg"
+tech_erebus_soc_02_desc:0 "\nVollautomatische Kampfdrohnen bedeuten eine Umschichtung von Rollen und Positionen innerhalb einer Flotte. Diese Doktrin wird dies untersuchen und eine Integration von Drohnen in unsere Kmapfverbände ermöglichen.\n\n"
 
-tech_erebus_eng_01:0 "Framework : Mobile Construction Facilities"
-tech_erebus_eng_01_desc:0 "\nThe creation of an automated shipyard that can continue operating under enemy fire presents an interesting engineering challenge.\n\n"
+tech_erebus_eng_01:0 "Framework: Mobile Fabriken"
+tech_erebus_eng_01_desc:0 "\nDas Entwerfen einer automatischen Schiffwerft, die selbst unter Feindbeschuss noch einsatzfähig ist, ist eine interssante Ingenieursleistung.\n\n"
 
-tech_erebus_eng_02:0 "Framework : Combat Drones"
-tech_erebus_eng_02_desc:0 "\nCombat Drones are autonomous ships with a very limited lifespan that are designed to take out the enemy fleet's support craft, leaving their capital ships vulnerable.\n\n"
+tech_erebus_eng_02:0 "Framework: Kampfdrohnen"
+tech_erebus_eng_02_desc:0 "\nKampfdrohnen sind autarke, automatisierte Schiffe mit begrenzter Lebensdauer, entworfen um den Gegnerischen "Schussfang" zu zerstören und so feindliche Großkampfschiffe angreifbar zu machen.\n\n"
