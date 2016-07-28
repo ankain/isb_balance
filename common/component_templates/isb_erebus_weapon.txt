@@ -33,7 +33,7 @@ utility_component_template = {
 	icon_frame = 1	
 	cost = 0	
 	can_recharge_shield = yes
-	military_power = -900
+	military_power = -450
 	
 	ship_behavior = "erebus_drone"
 	
@@ -56,7 +56,7 @@ utility_component_template = {
 	cost = 22000	
 	#ftl = jumpdrive
 	power = 900
-	military_power = 95000
+	military_power = 55000
 	can_recharge_shield = yes
 	
 	ship_behavior = "avatar"

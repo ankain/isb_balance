@@ -563,6 +563,7 @@ country_event = {
 												value > 0.79
 											}
 											free_pop_tiles > 0
+											is_under_colonization = no
 										}
 
 										best_tile_for_pop = {
@@ -588,6 +589,7 @@ country_event = {
 													value > 0.65
 												}
 												free_pop_tiles > 0
+												is_under_colonization = no
 											}
 
 											best_tile_for_pop = {
@@ -613,6 +615,7 @@ country_event = {
 													value > 0.45
 												}
 												free_pop_tiles > 0
+												is_under_colonization = no
 											}
 
 											best_tile_for_pop = {
@@ -638,6 +641,7 @@ country_event = {
 													value > 0.25
 												}
 												free_pop_tiles > 0
+												is_under_colonization = no
 											}
 
 											best_tile_for_pop = {
@@ -659,6 +663,7 @@ country_event = {
 										random_owned_planet = {
 											limit = {
 												free_pop_tiles > 0
+												is_under_colonization = no
 											}
 
 											best_tile_for_pop = {
@@ -675,7 +680,7 @@ country_event = {
 									if = {
 										limit = { has_country_flag = flag_doomsday_abduct_found }
 										remove_country_flag = flag_doomsday_abduct_found
-										
+
 										event_target:abduct_pop = {
 											kill_pop = yes
 										}
@@ -1545,6 +1550,13 @@ event = {
 							}
 						}
 						add_opinion_modifier = { who = event_target:dooms_check modifier = opinion_doomsday_allowed }
+
+						if = {
+							limit = {
+								has_opinion_modifier = { who = event_target:dooms_check modifier = opinion_doomsday_outlawed }
+							}
+							remove_opinion_modifier = { who = event_target:dooms_check modifier = opinion_doomsday_outlawed }
+						}
 					}
 
 					if = {

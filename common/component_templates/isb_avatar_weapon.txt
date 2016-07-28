@@ -35,7 +35,7 @@ utility_component_template = {
 	sensor_range = 60
 	ftl = jumpdrive
 	power = 15000
-	military_power = 40000
+	military_power = 30000
 	can_recharge_shield = yes
 	
 	ship_behavior = "avatar"

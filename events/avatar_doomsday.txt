@@ -1108,7 +1108,7 @@ country_event = {
 				limit = {
 					OR = {
 						AND = {
-							THIS = { fleet_power > 100000 }
+							THIS = { fleet_power > 50000 }
 							# Opinion < -50 doesn't work. Wut
 							NOT = {
 								opinion = {
@@ -1245,7 +1245,7 @@ country_event = {
 				limit = {
 					OR = {
 						AND = {
-							THIS = { fleet_power > 100000 }
+							THIS = { fleet_power > 50000 }
 							NOT = {
 								opinion = {
 									who = FROM
@@ -1465,7 +1465,7 @@ country_event = {
 				limit = {
 					OR = {
 						AND = {
-							THIS = { fleet_power > 100000 }
+							THIS = { fleet_power > 50000 }
 							NOT = {
 								opinion = {
 									who = FROM
@@ -1618,7 +1618,7 @@ country_event = {
 					20 = {
 						if = {
 							limit = {
-								THIS = { fleet_power > 300000 }
+								THIS = { fleet_power > 150000 }
 							}
 							if = {
 								limit = {
@@ -1655,7 +1655,7 @@ country_event = {
 						if = {
 							limit = {
 								OR = {
-									THIS = { fleet_power > 500000 }
+									THIS = { fleet_power > 250000 }
 								}
 							}
 							if = {
@@ -1737,7 +1737,7 @@ country_event = {
 				limit = {
 					OR = {
 						AND = {
-							THIS = { fleet_power > 100000 }
+							THIS = { fleet_power > 50000 }
 							NOT = {
 								opinion = {
 									who = FROM
@@ -1906,7 +1906,7 @@ country_event = {
 
 				if = {
 					limit = {
-						THIS = { fleet_power > 200000 }
+						THIS = { fleet_power > 100000 }
 					}
 					last_created_fleet = {
 						create_ship = {
@@ -1929,7 +1929,7 @@ country_event = {
 					21 = {
 						if = {
 							limit = {
-								THIS = { fleet_power > 300000 }
+								THIS = { fleet_power > 150000 }
 							}
 							if = {
 								limit = {
@@ -1989,7 +1989,7 @@ country_event = {
 					15 = {
 						if = {
 							limit = {
-								THIS = { fleet_power > 500000 }
+								THIS = { fleet_power > 250000 }
 							}
 							if = {
 								limit = {

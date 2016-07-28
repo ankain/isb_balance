@@ -37,7 +37,7 @@ utility_component_template = {
 	power = @power_S6
 	cost = @cost_S6
 	
-	#military_power = 0
+	military_power = 2
 	can_recharge_shield = yes
 	
 	modifier = {
@@ -57,7 +57,7 @@ utility_component_template = {
 	power = @power_M6
 	cost = @cost_M6
 	
-	#military_power = 0
+	military_power = 5
 	can_recharge_shield = yes
 	
 	modifier = {
@@ -77,7 +77,7 @@ utility_component_template = {
 	power = @power_L6
 	cost = @cost_L6
 	
-	military_power = -75
+	military_power = 30
 	can_recharge_shield = yes
 	
 	modifier = {

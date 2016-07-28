@@ -256,8 +256,8 @@ avatar_construction_start.desc:0 "Construction of the Avatar has begun. The Avat
 avatar_construction_start.a:0 "Place all fleets on high alert."
 
 avatar_construction_complete.name:0 "Construction Complete"
-avatar_construction_complete.desc:0 "Weapons systems online, the Avatar is now fully operational."
-avatar_construction_complete.a:0 "Excellent."
+avatar_construction_complete.desc:0 "Now witness the firepower of this fully armed and operational battlestation."
+avatar_construction_complete.a:0 "Fire at will, Commander."
 
 avatar_raid_01.name:0 "Enemy Fleet Detected"
 avatar_raid_01.desc:0 "A fleet of unmarked vessels has been detected heading towards the Avatar construction system.\n\nFleet composition appears to be largely corvettes and destroyers. We are unable to identify any specific Empire affliations. They appear to be raiders, though that is unlikely.\n\nThis must be a scouting fleet to test our defences. "

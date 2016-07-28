@@ -22,9 +22,9 @@ NDefines.NAI.SHARED_THREAT_MAX = 250
 NDefines.NAI.THREAT_SIZE_FACTOR = 0.75					-- How much does the relative power of the aggressive empire affect threat?
 NDefines.NAI.THREAT_SIZE_FACTOR_MAX = 1.5
 
-NDefines.NAI.MAX_MINERALS_STORED_NAVY = 4000				-- Minerals AI will store for navy when it needs more
-NDefines.NAI.MINERAL_NAVY_BUDGET_FRACTION = 0.3 	-- AI will spend this fraction of their stored minerals on ships
-NDefines.NAI.MAX_MINERALS_STORED_SPACEPORT = 2500		-- Minerals AI will store for spaceport when it needs more
+--NDefines.NAI.MAX_MINERALS_STORED_NAVY = 4000				-- Minerals AI will store for navy when it needs more
+--NDefines.NAI.MINERAL_NAVY_BUDGET_FRACTION = 0.3 	-- AI will spend this fraction of their stored minerals on ships
+--NDefines.NAI.MAX_MINERALS_STORED_SPACEPORT = 2500		-- Minerals AI will store for spaceport when it needs more
 --NDefines.NAI.MINERAL_SPACEPORT_BUDGET_FRACTION = 0.2 -- AI will spend this fraction of their stored minerals on spaceport modules
 NDefines.NAI.ABORT_MISSION_LIMIT = 0.15
 

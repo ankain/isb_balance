@@ -11,7 +11,7 @@ country_edict = {
 		"tech_titan_doomsday_weapons_01"
 	}
 	
-	influence_cost = 15
+	influence_cost = 25
 		
 	allow = {
 		NOT = { has_policy_flag = doomsday_outlawed }
@@ -54,7 +54,7 @@ country_edict = {
 		"tech_avatar_doomsday_01"
 	}
 	
-	influence_cost = 30
+	influence_cost = 60
 		
 	allow = {
 		NOT = { has_policy_flag = doomsday_outlawed }
