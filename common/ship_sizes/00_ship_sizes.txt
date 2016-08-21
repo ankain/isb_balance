@@ -885,7 +885,7 @@ military_station_large_swarm = {
 		ship_armor_add = 150
 		ship_weapon_range_mult = 0.20
 	}
-	max_hitpoints = 16000
+	max_hitpoints = 12000
 	size_multiplier = 8
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "part1" } }
@@ -935,7 +935,7 @@ queen_swarm = {
 		ship_upkeep_mult = -1
 		ship_armor_add = 100
 	}
-	max_hitpoints = 17000
+	max_hitpoints = 16000
 	size_multiplier = 8
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "part1" } }

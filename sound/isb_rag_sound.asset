@@ -1,0 +1,39 @@
+sound =
+{
+	name = "isb_rag_doom_arm"
+	file = "lance_arm.wav"
+	volume = 0.6
+}
+
+sound =
+{
+	name = "isb_rag_doom_portal"
+	file = "lance_portal_open.wav"
+	volume = 0.9
+}
+
+sound =
+{
+	name = "isb_rag_doom_fire"
+	file = "lance_fire.wav"
+	volume = 1.0
+}
+
+sound =
+{
+	name = "isb_rag_hit_01"
+	file = "weapons/explosion_v2.wav"
+	volume = 1.0
+}
+sound =
+{
+	name = "isb_rag_hit_02"
+	file = "weapons/explosion_v3.wav"
+	volume = 1.0
+}
+sound =
+{
+	name = "isb_rag_hit_03"
+	file = "weapons/explosion_v4.wav"
+	volume = 1.0
+}

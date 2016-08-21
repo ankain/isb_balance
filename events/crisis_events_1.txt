@@ -420,6 +420,7 @@ country_event = {
 						}
 						add_modifier = {
 							modifier = swarm_strength_insane
+							days = -1
 						}
 						else = {
 							if = {
@@ -443,6 +444,9 @@ country_event = {
 							}
 						}
 					}
+					
+					# ISB Balance Difficulty Settings
+					country_event = { id = isb.7 }
 
 					create_ship_design = { design = "Swarm Transport" }
 					add_ship_design = last_created_design

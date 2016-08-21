@@ -1,0 +1,51 @@
+objectTypes = {	
+	pdxmesh = {
+		name = "extra_dimensional_01_titan_frame_mesh"
+		file = "gfx/models/ships/molluscoid_01/molluscoid_01_battleship_frame.mesh"
+				animation = { id = "idle"			type = "molluscoid_01_battleship_frame_idle_animation" }
+				animation = { id = "death"			type = "molluscoid_01_battleship_frame_death_animation" }
+				animation = { id = "death2"			type = "molluscoid_01_battleship_frame_death2_animation" }
+				animation = { id = "death3"			type = "molluscoid_01_battleship_frame_death3_animation" }
+				animation = { id = "attack"			type = "molluscoid_01_battleship_frame_idle_animation" }				
+		scale = 1.72
+	}
+	
+	pdxmesh = {
+		name = "extra_dimensional_01_titan_bow_mesh"
+		file = "gfx/models/ships/molluscoid_01/molluscoid_01_battleship_bow_M1S2SHB.mesh"
+		scale = 1.8
+		meshsettings = {
+			shader = "PdxMeshExtraDimensionalShip"
+			texture_diffuse = "ship_mask.dds"
+			texture_normal = "nonormal.dds"
+			texture_specular = "nospec.dds"
+		}
+	}	
+		
+	#######  Battleship mid sections  #######			
+	pdxmesh = {
+		name = "extra_dimensional_01_titan_mid_mesh"		
+		file = "gfx/models/ships/molluscoid_01/molluscoid_01_cruiser_mid_M2S2.mesh"
+		scale = 2.8
+		meshsettings = {
+			shader = "PdxMeshExtraDimensionalShip"
+			texture_diffuse = "ship_mask.dds"
+			texture_normal = "nonormal.dds"
+			texture_specular = "nospec.dds"
+		}
+	}
+		
+		
+	#######  Battleship stern sections  #######		
+	pdxmesh = {
+		name = "extra_dimensional_01_titan_stern_mesh"		
+		file = "gfx/models/ships/molluscoid_01/molluscoid_01_cruiser_stern_M1.mesh"
+		scale = 2.8
+		meshsettings = {
+			shader = "PdxMeshExtraDimensionalShip"
+			texture_diffuse = "ship_mask.dds"
+			texture_normal = "nonormal.dds"
+			texture_specular = "nospec.dds"
+		}
+	}	
+}

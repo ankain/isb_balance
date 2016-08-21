@@ -65,6 +65,87 @@ event = {
 	}
 }
 
+# clears difficulty buffs from swarm / ed and global flags
+country_event = {
+	id = isb.6
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = flag_crisis_easy
+			}
+			
+			remove_global_flag = flag_crisis_easy
+		}
+		
+		if = {
+			limit = {
+				has_global_flag = flag_crisis_hard
+			}
+			
+			remove_global_flag = flag_crisis_hard
+		}
+		
+		every_country = {
+			limit = {
+				OR = {
+					is_country_type = swarm
+					is_country_type = extradimensional
+					is_country_type = extradimensional_2
+					is_country_type = extradimensional_3
+				}
+			}
+			
+			if = {
+				limit = {
+					has_modifier = mod_crisis_easy
+				}
+
+				remove_modifier = "mod_crisis_easy"
+			}
+
+			if = {
+				limit = {
+					has_modifier = mod_crisis_hard
+				}
+
+				remove_modifier = "mod_crisis_hard"
+			}
+		}
+	}
+}
+
+country_event = {
+	id = isb.7
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = flag_crisis_easy
+			}
+			add_modifier = {
+				modifier = mod_crisis_easy
+				days = -1
+			}
+			else = {
+				if = {
+					limit = {
+						has_global_flag = flag_crisis_hard
+					}
+					add_modifier = {
+						modifier = mod_crisis_hard
+						days = -1
+					}
+				}
+			}
+		}		
+	}
+}					
+
 # Crisis check for opinion boost every 5 years.
 event = {
 	id = isb.2

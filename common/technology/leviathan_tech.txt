@@ -594,7 +594,7 @@ tech_sun_crusher = {
 	}
 	
 	ai_weight = {
-		factor = 0		
+		factor = 4	
 	}
 }
 
@@ -628,7 +628,7 @@ tech_sun_crusher_soc_01 = {
 		
 	
 	ai_weight = {
-		factor = 0		
+		factor = 20		
 	}
 }
 
@@ -662,7 +662,7 @@ tech_sun_crusher_phy_01 = {
 		
 	
 	ai_weight = {
-		factor = 0		
+		factor = 20		
 	}
 }
 
@@ -695,6 +695,6 @@ tech_sun_crusher_phy_02 = {
 		
 	
 	ai_weight = {
-		factor = 0		
+		factor = 20		
 	}
 }

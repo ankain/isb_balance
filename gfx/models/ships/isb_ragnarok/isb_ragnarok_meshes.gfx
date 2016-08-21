@@ -1,0 +1,23 @@
+objectTypes = {
+	####### stations #######	
+	
+	pdxmesh = {
+		name = "ragnarok_mesh"
+		file = "gfx/models/ships/molluscoid_01/molluscoid_01_terraforming_station.mesh"
+		
+		animation = { id = "idle"						type = "molluscoid_01_terraforming_station_idle_animation" }
+		animation = { id = "moving"						type = "molluscoid_01_terraforming_station_idle_animation" }
+		animation = { id = "death"						type = "molluscoid_01_terraforming_station_death_animation" }
+		
+		meshsettings = {
+			#name = "pPlaneShape1"
+			#index = 0
+			texture_diffuse = "ragnarok_diffuse.dds"
+			#texture_normal = "molluscoid_01_stations_normal.dds"
+			texture_specular = "ragnarok_specular.dds"
+			shader = "PdxMeshShip"
+		}
+		
+		scale = 1.0
+	}	
+}

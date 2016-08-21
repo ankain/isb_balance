@@ -140,6 +140,9 @@ country_event = {
 							}
 						}
 					}
+					
+					# ISB Balance Difficulty Settings
+					country_event = { id = isb.7 }
 
 					save_event_target_as = extradimensionals
 					create_ship_design = { design = "Void Shaper" }
@@ -3131,6 +3134,9 @@ country_event = {
 							}
 						}
 					}
+					
+					# ISB Balance Difficulty Settings
+					country_event = { id = isb.7 }
 
 					save_event_target_as = extradimensional_hunters
 					create_ship_design = { design = "Void Former" }
@@ -5965,6 +5971,9 @@ country_event = {
 							}
 						}
 					}
+					
+					# ISB Balance Difficulty Settings
+					country_event = { id = isb.7 }
 
 					save_event_target_as = extradimensional_trespassers
 					create_ship_design = { design = "Void Weaver" }

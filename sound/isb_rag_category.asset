@@ -1,0 +1,21 @@
+
+################## Weapon #############################
+category = {
+	name = "isb_ragnarok"
+	soundeffects = {
+		isb_rag_doom_arm_sound
+		isb_rag_doom_shoot_01
+		isb_rag_doom_hit	
+		isb_rag_doom_portal_open
+	}	
+
+	compressor = {
+		enabled = yes
+		pregain = 2.0
+		postgain = -9.0
+		ratio = 3.0
+		threshold = -10.0
+		attacktime = 0.100
+		releasetime = 0.20
+	}
+}

@@ -12,8 +12,8 @@ LEVIATHAN_BOW:0 "Hades' Bident"
 LEVIATHAN_MID:0 "Cornucopia"
 LEVIATHAN_STERN:0 "Aegis"
 
-titan_ship_fallen_empire:0 "Titan"
-titan_ship_fallen_empire_plural:0 "Titans"
+titan_ship_fallen_empire:0 "Fallen Titan"
+titan_ship_fallen_empire_plural:0 "Fallen Titans"
 
 ai_ship_upkeep:0 "Titan / Leviathan AI Fix"
 tech_isb_base:0 "Improved Space Battles"
@@ -101,11 +101,11 @@ doomsday_outlawed_desc:1 "Long have I gazed into the abyss. But I shall not wave
 
 doomsday_kinetic:0 "Kinetic Bombardment"
 doomsday_kinetic_name:0 "Only Neutronium Kinetic Bombardment can be used"
-doomsday_kinetic_desc:1 "When you are together, you can share a common catastrophe. You can be exterminated together.\n\n§EEvery month, any planet being bombarded with less than 10% hp and a Titan size ship in system will have 4 - 5 tiles converted to radioactive wastelands. This will continue until bombardment stops or all populations are dead.\n\nAfter selecting this weapon you have to authorise its use under empire edicts for your Titans to activate it.§!\n"
+doomsday_kinetic_desc:1 "When you are together, you can share a common catastrophe. You can be exterminated together.\n\n§EEvery month, any planet being bombarded with less than 10% hp and a Titan / Avatar size ship in system will have 4 - 5 tiles converted to radioactive wastelands. This will continue until bombardment stops or all populations are dead.\n\nAfter selecting this weapon you have to authorise its use under empire edicts for you to activate it.§!\n"
 
 doomsday_virus:0 "Evolutionary Virus"
 doomsday_virus_name:0 "Only the Evolutionary Virus can be used"
-doomsday_virus_desc:1 "What can make, can just as easily unmake.\n\n§EEvery month, any planet being bombarded with less than 10% hp and a Titan size ship in system will lose 3 populations. This will continue until bombardment stops or all populations are dead.\n\n5% chance of turning the planet barren.\n\nAfter selecting this weapon you have to authorise its use under empire edicts for your Titans to activate it.§!\n"
+doomsday_virus_desc:1 "What can make, can just as easily unmake.\n\n§EEvery month, any planet being bombarded with less than 10% hp and a Titan / Avatar size ship in system will lose 3 populations. This will continue until bombardment stops or all populations are dead.\n\n5% chance of turning the planet barren.\n\nAfter selecting this weapon you have to authorise its use under empire edicts for you to activate it.§!\n"
 
 opinion_doomsday_low:0 "Doomsday weapon user"
 
@@ -129,10 +129,10 @@ pc_destroyed:0 "Shattered Planet"
 pc_destroyed_desc:0 "The crust of this dying planet has been ripped open by incredible forces, exposing its molten core."
 
 pc_nova:0 "Glassed Planet"
-pc_nova_desc:0 "This planet was destroyed when its sun went nova. Most of its atmosphere has been stripped away and its surface turned into glass. Fires will continue to rage across the entire planet for millenia."
+pc_nova_desc:0 "This planet was destroyed by incredible energies. Most of its atmosphere has been stripped away and its surface turned into glass. Fires will continue to rage across the entire planet for millenia."
 
 pc_nova_gas:0 "Burning Gas Giant"
-pc_nova_gas_desc:0 "This gas giant was set on fire when its sun went nova. The heavier elements ejected during the nova will continue to consume and burn what remains of the gas giant's atmosphere until it is depleted."
+pc_nova_gas_desc:0 "This gas giant was set on fire by incredible energies. The heavier elements ejected during the nova will continue to consume and burn what remains of the gas giant's atmosphere until it is depleted."
 
 pc_ringworld_habitable_nova:0 "Burning Ring World"
 pc_ringworld_habitable_nova_desc:0 "An immense band encircling the system's sun.\n\nThis section of the superstructure appears irreparably damaged."
@@ -232,7 +232,7 @@ edict_doomsday_longinus_authorisation_desc:0 "\nRequires doomsday weapons to not
 
 doomsday_nanite:0 "Nanite Disassemblers"
 doomsday_nanite_name:0 "Only Nanite Disassemblers can be used"
-doomsday_nanite_desc:1 "\n§EEvery month, any planet being bombarded with less than 10% hp and a Titan / Avatar size ship in system will have 1 building and 1 population destroyed. This will continue until bombardment stops or there are no buildings and populations left.\n\nEach building destroyed will generate about 350 minerals and 50 energy. Each population destroyed will generate about 350 energy and 50 minerals.\n\nAfter selecting this weapon you have to authorise its use under empire edicts for you to activate it.\n\nWARNING: The Nanite Disassemblers are considered a brutal doomsday weapon.§!\n"
+doomsday_nanite_desc:1 "\n§EEvery month, any planet being bombarded with less than 10% hp and a Titan / Avatar size ship in system will have 1 building and 1 population destroyed. This will continue until bombardment stops or there are no buildings and populations left.\n\nEach building destroyed will generate about 350 minerals and 50 energy. Each population destroyed will generate about 350 energy and 50 minerals.\n\nAfter selecting this weapon you have to authorise its use under empire edicts for you to activate it.\n\nWARNING: Nanite Disassemblers are considered a brutal doomsday weapon.§!\n"
 
 # Avatar construction projects
 PROJ_AVATAR_CONSTRUCT_01:0 "Avatar Construction Frame (Deactivated)"
@@ -241,8 +241,8 @@ PROJ_AVATAR_CONSTRUCT_01_DESC:0 "This is the framework for the automated constru
 PROJ_AVATAR_CONSTRUCT_02:0 "Avatar Construction Frame (Activated)"
 PROJ_AVATAR_CONSTRUCT_02_DESC:0 "Avatar construction in progress. This special project cannot be researched. Construction will complete when this project times out."
 
-PROJ_AVATAR_ERROR_02:0 "Avatar Deactivated"
-PROJ_AVATAR_ERROR_02_DESC:0 "WARNING: The Avatar cannot be be placed in a fleet with other ships. Ensure the Avatar is the only ship in a fleet to reactivate it."
+PROJ_AVATAR_ERROR_02:0 "Ship Deactivated"
+PROJ_AVATAR_ERROR_02_DESC:0 "WARNING: The Avatar / Ragnarok cannot be be placed in a fleet with other ships. Ensure the it is the only ship in a fleet to reactivate it."
 
 # Avatar construction events
 avatar_constructor_01.name:0 "Confirmation"
@@ -256,8 +256,8 @@ avatar_construction_start.desc:0 "Construction of the Avatar has begun. The Avat
 avatar_construction_start.a:0 "Place all fleets on high alert."
 
 avatar_construction_complete.name:0 "Construction Complete"
-avatar_construction_complete.desc:0 "Weapons systems online, the Avatar is now fully operational."
-avatar_construction_complete.a:0 "Excellent."
+avatar_construction_complete.desc:0 "Now witness the firepower of this fully armed and operational battlestation."
+avatar_construction_complete.a:0 "Fire at will, Commander."
 
 avatar_raid_01.name:0 "Enemy Fleet Detected"
 avatar_raid_01.desc:0 "A fleet of unmarked vessels has been detected heading towards the Avatar construction system.\n\nFleet composition appears to be largely corvettes and destroyers. We are unable to identify any specific Empire affliations. They appear to be raiders, though that is unlikely.\n\nThis must be a scouting fleet to test our defences. "
@@ -283,8 +283,8 @@ avatar_error_01.name:0 "Unable to start Avatar Project"
 avatar_error_01.desc:0 "Our empire cannot support more than one Avatar."
 avatar_error_01.a:0 "Understood"
 
-avatar_error_02.name:0 "Avatar Deactivated"
-avatar_error_02.desc:0 "WARNING: The Avatar cannot be be placed in a fleet with other ships. Ensure the Avatar is the only ship in a fleet to reactivate it."
+avatar_error_02.name:0 "Ship Deactivated"
+avatar_error_02.desc:0 "WARNING: The Avatar / Ragnarok cannot be be placed in a fleet with other ships. Ensure it is the only ship in a fleet to reactivate it."
 avatar_error_02.a:0 "Understood"
 
 avatar_error_03.name:0 "Error"
@@ -299,6 +299,10 @@ AVATAR_CORE:0 "S² Core"
 # Avatar Opinions
 opinion_has_avatar:0 "Fear will keep them in line"
 opinion_doomsday_med:0 "Brutal doomsday weapon user"
+
+#Crisis normal mode balance
+mod_normal_ed:0 "Extra-dimensional Balance - Normal"
+mod_normal_swarm:0 "Prethoryn Scourge Balance - Normal"
 
 # v1.4 Erebus
 erebus:0 "Erebus"
@@ -337,3 +341,72 @@ doomsday_nanite_gene_desc:1 "\n§EEvery month, any planet being bombarded with l
 doomsday_abduction:0 "Forced Assimilation"
 doomsday_abduction_name:0 "Only Forced Assimilation can be used"
 doomsday_abduction_desc:1 "\n§EEvery two months, any planet being bombarded with less than 10% hp and a Titan / Avatar size ship in system will have one population relocated to a suitable planet under your control. The relocated population will have its ethos changed to match your Empire. This doomsday weapon costs 250 energy / 500 minerals per month.\n\nYou have to bombard the planet for two consecutive months for assimilation to occur. The process will be cancelled if you do not have any free space on your planets for a new population.\n\nWARNING: Forced Assimilation is considered a brutal doomsday weapon.§!\n"
+
+# 1.4.1 difficulty settings
+policy_isb_crisis_diff_policy:0 "ISB - Crisis Difficulty"
+policy_isb_crisis_diff_policy_desc:0 "\nAllows you to modify the difficulty of the end game crises"
+crisis_diff_normal:0 "Normal difficulty §Y(Default)§!"
+crisis_diff_normal_desc:0 "\nThe default difficulty setting, should provide a good challenge for veteran players.\n\n"
+crisis_diff_easy:0 "Easy difficulty"
+crisis_diff_easy_desc:0 "\nCrisis fleets are weaker than they appear. Useful if you're playing in smaller galaxies.\n\n"
+crisis_diff_hard:0 "Hard difficulty"
+crisis_diff_hard_desc:0 "\nCrisis fleets are a lot stronger than they appear. Not for the faint of heart.\n\n"
+
+# 1.5 Ragnarok
+TECH_UNLOCK_RAGNAROK_CONSTRUCTION_TITLE:0 "§HUnlocks Ship type:§! Ragnarok"
+TECH_UNLOCK_RAGNAROK_CONSTRUCTION_DESC:0 "§HRagnarok§!\nA super-capital class ship grown from the organic matter discovered near our galactic core. While we do not fully understand the ship or its technologies, we are able to exert some manner of control. It is able to deploy both the Spear of Longinus and Spear of Cassius doomsday weapons.§!\n\n§EThe Ragnarok starts out in an infantile stage. In order to grow its organic core to maturity, it has to consume planets through use of the Spear of Longinus. More details can be found in the associated event chain in the Situation Log once it has been constructed.§!\n\n§RWARNING: You may only own one Ragnarok at any time. Constructing another Ragnarok will result in its destruction due to core instabilities.§!"
+
+TECH_UNLOCK_RAGNAROK_CHAIN_TITLE:0 "§ERagnarok Research Chain§!"
+TECH_UNLOCK_RAGNAROK_CHAIN_DESC:0 "Researching all technologies in this research chain will unlock the Ragnarok ship type"
+
+ragnarok:0 "Ragnarok"
+ragnarok_plural:0 "Ragnaroks"
+consume_planet_bunny:0 "Planet Devourer"
+consume_planet_bunny_plural:0 "Planet Devourers"
+rag_effect_ship:0 "Fires of Ragnarok"
+rag_effect_ship_plural:0 "Fires of Ragnarok"
+rag_effect_explosion_ship:0 "Ragnarok Explosion Bunny"
+rag_effect_explosion_ship_plural: "Ragnarok Explosion Bunnies"
+rag_effect_damage_ship:0 "Spawn of Ragnarok"
+rag_effect_damage_ship_plural:0 "Spawns of Ragnarok"
+RAGNAROK_SECTION:0 "Jörmungandr"
+
+ISB_RAGNAROK_EXPLOSION_01:0 "EXPLOOOOOSIIIOOOOON"
+ISB_RAGNAROK_EXPLOSION_02:0 "EXPLOSIIIIIIIOOOOOOOONNNNNNN"
+
+ragnarok_consumed:0 "Planets Consumed"
+ragnarok_power_chain_title:0 "Ragnarok - Activation Phase"
+ragnarok_power_chain_desc:0 "§HThe Ragnarok will remain severely weakened until it has consumed 40 planets. \n\nNOTE: The Ragnarok cannot be placed in a fleet along with other ships. Ensure it is the only vessel in the fleet.§!\n\n§RWARNING: You may only own one Ragnarok at any time. Constructing another Ragnarok will result in its destruction due to core instabilities.§!"
+ragnarok_doomsday_charge_chain_title:0 "Spear of Cassius - Depleted"
+ragnarok_doomsday_charge_chain_desc:0 "The Spear of Cassius doomsday weapon has been depleted and requires recharging.\n\nThe weapon can be recharged by consuming 4 planets."
+
+ragnarok_construct_01.name:0 "Ragnarok - Gestation Complete"
+ragnarok_construct_01.desc:0 "The Ragnarok has completed its gestation cycle and is now FTL capable.\n\nHowever, its core is still in an infantile stage and must be fed to continue maturing. Our scientists believe that the Ragnarok is currently capable of utilising the Spear of Longinus to consume planets and grow. However, the process will render the planets uninhabitable.\n\nIt is estimated that 40 planets will be required for the Ragnarok to reach full maturity.\n\n§HThe Ragnarok will remain severely weakened until it has consumed 40 planets. You may track the number of planets consumed through the 'Ragnarok - Activation Phase' event in the situation log.\n\nNOTE: The Ragnarok cannot be placed in a fleet along with other ships. Ensure it is the only vessel in the fleet.§!\n\n§RWARNING: You may only own one Ragnarok at any time. Constructing another Ragnarok will result in its destruction due to core instabilities.§!"
+ragnarok_construct_01.a:0 "40 planets? A small price to pay for such power."
+
+ragnarok_construct_02.name:0 "Ragnarok - Activation Complete"
+ragnarok_construct_02.desc:0 "The Ragnarok is now fully mature. Its power has increased significantly and it is now able to deploy the Spear of Cassius doomsday weapon. \n\n§HTo use to Spear of Cassius, select the Ragnarok's fleet after entering combat. If the weapon is charged, a button called 'Spear of Cassius' will appear. \n\nClick the button (or press F) to activate targeting mode. A beacon will appear showing the expected area of effect. Move the beacon to the target location, then click the 'Spear of Cassius' button again (or press F).\n\nThe Ragnarok will take 31 days to charge the weapon before firing, and will be disabled for an additional 39 days after that.\n\nThe Spear of Cassius can be used only once before it must be recharged. You may recharge it by consuming 4 planets. The 'Spear of Cassius - Depleted' event will appear in the Situation log after you fire the weapon to help keep track of the number of planets required for recharge.§!"
+ragnarok_construct_02.a:0 "Excellent."
+
+ragnarok_recharge_02.name:0 "Spear of Cassius - Recharged"
+ragnarok_recharge_02.desc:0 "The Spear of Cassius has been recharged and is ready to fire again."
+ragnarok_recharge_02.a:0 "Excellent."
+
+ragnarok_error_01.name:0 "Ragnarok - Gestation Failed"
+ragnarok_error_01.desc:0 "The Ragnarok we were growing unexpectedly went berserk as it completed gestation. We were forced to enact safety protocols that resulted in its complete destruction.\n\n§RWARNING: You may only own one Ragnarok at any time. Constructing another Ragnarok will result in its destruction due to core instabilities.§!"
+ragnarok_error_01.a:0 "..."
+
+ragnarok_error_02.name:0 "Unable to fire - Spear of Cassius"
+ragnarok_error_02.desc:0 "The Spear of Cassius doomsday weapon has been depleted and requires recharging.\n\nThe weapon can be recharged by consuming 4 planets."
+ragnarok_error_02.a:0 "..."
+
+isb_rag_create_marker_tip:0 "§HSpear of Cassius§!\n\n§EClick this button and use the WASD keys or the arrow buttons to move the fire locator to target location, then press F or click the button again to active the Spear of Cassius.§!"
+isb_rag_fire_tip:0 "§HFire the Spear of Cassius§!"
+isb_rag_cancel_tip:0 "§RCancel§!"
+isb_rag_marker_move_tip:0 "§HMoves the fire beacon§!"
+isb_rag_marker_bunny_object:0 "§HSpear of Cassius§!"
+
+flag_rag_mode_delay:0 "§YUNPAUSE THE GAME TO ACTIVATE THE BUTTONS, you can pause again after they become clickable§!"
+
+RAGNAROK_CORE:0 "Awakened S² Core"
+ragnarok_components:0 "$RAGNAROK_CORE$"

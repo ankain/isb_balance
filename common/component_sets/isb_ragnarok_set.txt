@@ -1,0 +1,15 @@
+component_set = {
+	key = "ragnarok_components"
+	
+	show_in_designer = no
+	icon = "GFX_ship_part_border_extruder_1"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "ragnarok_doomsday_components"
+	
+	show_in_designer = no
+	icon = "GFX_ship_part_border_extruder_1"
+	icon_frame = 1
+}

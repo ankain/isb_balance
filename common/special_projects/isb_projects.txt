@@ -138,7 +138,10 @@ special_project = {
 		THIS = { 
 			NOT = {
 				any_owned_ship = {
-					is_ship_size = avatar
+					OR = {
+						is_ship_size = avatar
+						is_ship_size = ragnarok
+					}					
 					is_disabled = yes
 				}
 			}

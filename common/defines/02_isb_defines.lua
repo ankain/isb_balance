@@ -22,11 +22,16 @@ NDefines.NAI.SHARED_THREAT_MAX = 250
 NDefines.NAI.THREAT_SIZE_FACTOR = 0.75					-- How much does the relative power of the aggressive empire affect threat?
 NDefines.NAI.THREAT_SIZE_FACTOR_MAX = 1.5
 
---NDefines.NAI.MAX_MINERALS_STORED_NAVY = 4000				-- Minerals AI will store for navy when it needs more
---NDefines.NAI.MINERAL_NAVY_BUDGET_FRACTION = 0.3 	-- AI will spend this fraction of their stored minerals on ships
+NDefines.NAI.MAX_MINERALS_STORED_NAVY = 4000				-- Minerals AI will store for navy when it needs more
+NDefines.NAI.MINERAL_NAVY_BUDGET_FRACTION = 0.3 	-- AI will spend this fraction of their stored minerals on ships
 --NDefines.NAI.MAX_MINERALS_STORED_SPACEPORT = 2500		-- Minerals AI will store for spaceport when it needs more
 --NDefines.NAI.MINERAL_SPACEPORT_BUDGET_FRACTION = 0.2 -- AI will spend this fraction of their stored minerals on spaceport modules
-NDefines.NAI.ABORT_MISSION_LIMIT = 0.15
+NDefines.NAI.ABORT_MISSION_LIMIT = 0.2
+NDefines.NAI.ENEMY_FLEET_POWER_MULT = 1.1
+NDefines.NAI.ENEMY_NEUTRALS_FLEET_POWER_MULT = 1.3
+
+--NDefines.NAI.CRISIS_FLEET_SIZE_LIMIT_LOWER = 150
+--NDefines.NAI.CRISIS_NAVY_SIZE_LIMIT = 200
 
 -- NDefines.NEconomy.FLEET_UPGRADE_MINERAL_COST_MULT		= 1.0		-- mineral cost of ship upgrade is abs( price difference between old and new designs * FLEET_UPGRADE_MINERAL_COST_MULT )
 NDefines.NEconomy.FLEET_UPGRADE_TIME_COST_MULT		= 0.175		-- Upgrade fleet cost

@@ -147,7 +147,7 @@ tech_erebus_soc_01 = {
 		
 	
 	ai_weight = {
-		factor = 2		
+		factor = 20		
 		modifier = {
 			factor = 3
 			years_passed > 90
@@ -203,7 +203,7 @@ tech_erebus_soc_02 = {
 	}
 	
 	ai_weight = {
-		factor = 6 #Good bonus		
+		factor = 20 #Good bonus		
 		modifier = {
 			factor = 3
 			years_passed > 95
@@ -260,7 +260,7 @@ tech_erebus_eng_01 = {
 	}
 	
 	ai_weight = {
-		factor = 2
+		factor = 20
 		modifier = {
 			factor = 3
 			years_passed > 90
@@ -316,7 +316,7 @@ tech_erebus_eng_02 = {
 	}
 	
 	ai_weight = {
-		factor = 2
+		factor = 20
 		modifier = {
 			factor = 3
 			years_passed > 95
@@ -372,7 +372,7 @@ tech_erebus_phy_01 = {
 	}
 	
 	ai_weight = {
-		factor = 4 #good component
+		factor = 20 #good component
 		modifier = {
 			factor = 3
 			years_passed > 90
@@ -428,7 +428,7 @@ tech_erebus_phy_02 = {
 	}
 	
 	ai_weight = {
-		factor = 4
+		factor = 20
 		modifier = {
 			factor = 3
 			years_passed > 95

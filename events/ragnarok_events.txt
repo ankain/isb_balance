@@ -1,0 +1,1296 @@
+namespace = isb_ragnarok
+
+# Fire mode timeout
+country_event = {
+	id = isb_ragnarok.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		# Incase something else goes wrong, remove fire marker anyway
+		NOT = { has_country_flag = flag_rag_mode_new}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_country_flag = flag_rag_mode
+			}
+			remove_country_flag = flag_rag_mode
+		}
+		every_ambient_object = {
+			limit = {
+				has_ambient_object_flag = isb_rag_marker
+			}
+			destroy_ambient_object = THIS
+		}
+	}
+}
+
+# On fleet enter combat. bugged atm and fires twice with exact same scopes for same country
+country_event = {
+	id = isb_ragnarok.6
+	hide_window = yes
+	is_triggered_only = yes
+
+	picture = GFX_evt_physics_research
+
+	title = country_trigger
+
+	desc = {
+		text = you_are_country
+	}
+
+	trigger = {
+	}
+
+	immediate = {
+		FROMFROM = {
+			# reset
+			if = {
+				limit = {
+					NOT = { has_fleet_flag = flag_just_combat }
+					has_fleet_flag = flag_can_rag
+				}
+				remove_fleet_flag = flag_can_rag
+			}
+			#save_event_target_as = fleet_owner
+			if = {
+				limit = {
+					SOLAR_SYSTEM = {
+						any_ship_in_system = {
+							is_ship_size = ragnarok
+							FLEET = { is_same_value = PREVPREVPREV }
+							has_ship_flag = flag_rag_doomsday_charged
+						}
+					}
+				}
+				# Ragnarok just entered combat
+				if = {
+					limit = {
+						NOT = { has_fleet_flag = flag_just_combat }
+					}
+					if = {
+						limit = {
+							OWNER = { is_ai = no }
+						}
+						OWNER = { set_country_flag = flag_rag_button }
+
+						set_fleet_flag = flag_can_rag
+						# hack to fix enter battle firing twice for the player
+						set_timed_fleet_flag = { flag = flag_just_combat days = 5 }
+						#fleet_event = { id = isb_ragnarok.102 }
+
+						# AI ragnarok code
+						else = {
+							set_timed_fleet_flag = { flag = flag_just_combat days = 5 }
+							# Rag AI fleet check
+							fleet_event = { id = isb_ragnarok.16 }
+						}
+					}
+				}
+			}
+		}
+		FROMFROMFROM = {
+			# reset
+			if = {
+				limit = {
+					NOT = { has_fleet_flag = flag_just_combat }
+					has_fleet_flag = flag_can_rag
+				}
+				remove_fleet_flag = flag_can_rag
+			}
+			save_event_target_as = fleet_owner
+			if = {
+				limit = {
+					SOLAR_SYSTEM = {
+						any_ship_in_system = {
+							is_ship_size = ragnarok
+							FLEET = { is_same_value = PREVPREVPREV }
+							has_ship_flag = flag_rag_doomsday_charged
+						}
+					}
+				}
+				# Ragnarok just entered combat
+				if = {
+					limit = {
+						NOT = { has_fleet_flag = flag_just_combat }
+					}
+					if = {
+						limit = {
+							OWNER = { is_ai = no }
+						}
+						OWNER = { set_country_flag = flag_rag_button }
+
+						set_fleet_flag = flag_can_rag
+						# hack to fix enter battle firing twice for the player
+						set_timed_fleet_flag = { flag = flag_just_combat days = 5 }
+						#fleet_event = { id = isb_ragnarok.102 }
+
+						# AI ragnarok code
+						else = {
+							set_timed_fleet_flag = { flag = flag_just_combat days = 5 }
+							fleet_event = { id = isb_ragnarok.16 }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# ragnarok fire
+fleet_event = {
+	id = isb_ragnarok.7
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		OWNER = {
+			every_owned_ship = {
+				limit = {
+					is_ship_size = ragnarok
+					FLEET = { is_same_value = PREVPREVPREV }
+					has_ship_flag = flag_rag_doomsday_charged
+				}
+
+				save_event_target_as = ship_location
+
+				# Only players consume weapon charges
+				ship_event = { id = isb_ragnarok.53 }
+
+				create_ambient_object = {
+					type = "isb_rag_charge_bunny_object"
+				}
+				last_created_ambient_object = {
+					set_ambient_object_flag = "isb_rag_charge"
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { any_country = { is_country_type = rag_country } } }
+
+			create_country = {
+				name = random
+				type = 	rag_country
+			}
+			#every_country = { 	establish_communications_no_message = last_created_country }
+			last_created_country = { save_event_target_as = ragnarok_country }
+
+			else = {
+				random_country = {
+					limit = { is_country_type = rag_country	}
+					save_event_target_as = ragnarok_country
+				}
+			}
+		}
+
+		create_fleet = {
+			effect = {
+				set_owner = event_target:ragnarok_country
+				create_ship = {
+					name = random
+					design = "Fires of Ragnarok"
+				}
+
+				#set_location = {
+				#	target = event_target:ship_location
+				#	distance = 0.1
+				#	angle = 0
+				#}
+				set_location = event_target:ship_location
+
+				random_ambient_object = {
+					limit = { has_ambient_object_flag = isb_rag_fire }
+					PREV = {
+						queue_actions = {
+							move_to = PREV
+							WAIT = 30
+						}
+					}
+				}
+
+				fleet_event = { id = isb_ragnarok.12 days = 15 }
+			}
+		}
+
+		#create_ambient_object = {
+		#	type = "isb_rag_out_bunny_object"
+		#}
+
+		#last_created_ambient_object = {
+		#	set_ambient_object_flag = "isb_rag_charge_final"
+		#	set_location = event_target:ship_location
+			#	target = event_target:ship_location
+			#	distance = 0.1
+			#	angle = random
+			#}
+		#}
+
+		# Clear final effect
+	}
+}
+
+# Fun with syncing effects
+fleet_event = {
+	id = isb_ragnarok.12
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		# Clear charge particle
+		OWNER = { country_event = { id = isb_ragnarok.8 days = 10 } }
+
+		if = {
+			limit = { NOT = { any_country = { is_country_type = rag_country } } }
+
+			create_country = {
+				name = "Ragnarok"
+				type = 	rag_country
+			}
+			#every_country = { 	establish_communications_no_message = last_created_country }
+			last_created_country = { save_event_target_as = ragnarok_country }
+
+			else = {
+				random_country = {
+					limit = { is_country_type = rag_country	}
+					save_event_target_as = ragnarok_country
+				}
+			}
+		}
+
+		if = {
+			limit = { NOT = { any_country = { is_country_type = rag_hostile_country } } }
+
+			create_country = {
+				name = "Fires of Ragnarok"
+				type = 	rag_hostile_country
+			}
+			#every_country = { 	establish_communications_no_message = last_created_country }
+			last_created_country = { save_event_target_as = ragnarok_hostile_country }
+
+			else = {
+				random_country = {
+					limit = { is_country_type = rag_hostile_country	}
+					save_event_target_as = ragnarok_hostile_country
+				}
+			}
+		}
+
+		random_ambient_object = {
+			limit = { has_ambient_object_flag = isb_rag_fire }
+			PREV = {
+				create_fleet = {
+					effect = {
+						set_owner = event_target:ragnarok_country
+						create_ship = {
+							name = random
+							design = "Spawn of Ragnarok"
+						}
+						set_event_locked = yes
+
+						set_location = {
+							target = PREVPREV
+							distance = 0.1
+							angle = 0
+						}
+
+						queue_actions = {
+							WAIT = 15
+							effect = {
+								id = "isb_ragnarok.12.trigger.1"
+								create_fleet = {
+									effect = {
+										set_owner = event_target:ragnarok_hostile_country
+										create_ship = {
+											name = random
+											design = "Wrath of Ragnarok"
+										}
+										queue_actions = {
+											WAIT = 15
+											effect = {
+												id = "isb_ragnarok.12.trigger.2"
+												destroy_fleet = THIS
+											}
+										}
+										set_event_locked = yes
+
+										set_location = {
+											target = PREV
+											distance = 0.1
+											angle = 0
+										}
+									}
+								}
+							}
+							WAIT = 70
+							effect = {
+								id = "isb_ragnarok.12.trigger.3"
+								destroy_fleet = THIS
+							}
+						}
+					}
+				}
+			}
+
+			destroy_ambient_object = THIS
+		}
+		destroy_fleet = THIS
+	}
+}
+
+# clear last ambient
+country_event = {
+	id = isb_ragnarok.8
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		random_ambient_object = {
+			limit = { has_ambient_object_flag = isb_rag_charge }
+
+			destroy_ambient_object = THIS
+		}
+	}
+}
+
+# AI use of Ragnarok
+fleet_event = {
+	id = isb_ragnarok.9
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				is_in_combat = yes
+				SOLAR_SYSTEM = {
+					any_ship_in_system = {
+						is_ship_size = ragnarok
+						FLEET = { is_same_value = PREVPREVPREV }
+						NOT = { has_ship_flag = flag_rag_cooldown }
+					}
+				}
+			}
+
+			#set_timed_fleet_flag = { flag = flag_blink_cooldown days = 90 }
+			random_owned_ship = {
+				limit = {
+					is_ship_size = ragnarok
+					FLEET = { is_same_value = PREVPREVPREV }
+					NOT = { has_ship_flag = flag_rag_cooldown }
+				}
+
+				# 3 years cooldown for AI
+				set_timed_ship_flag = { flag = flag_rag_cooldown days = 1080 }
+
+				set_disabled = yes
+				ship_event = { id = isb_ragnarok.10 days = 1}
+
+				# Undisable
+				ship_event = { id = isb_ragnarok.13 days = 70 }
+			}
+		}
+	}
+}
+
+# AI ragnarok firing delayed
+ship_event = {
+	id = isb_ragnarok.10
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		create_ambient_object = {
+			type = "isb_rag_charge_bunny_object"
+		}
+		last_created_ambient_object = {
+			set_ambient_object_flag = "isb_rag_charge_ai"
+		}
+		OWNER = {
+			save_event_target_as = fleet_owner
+		}
+		save_event_target_as = ship_location
+
+		if = {
+			limit = { NOT = { any_country = { is_country_type = rag_country } } }
+
+			create_country = {
+				name = random
+				type = 	rag_country
+			}
+			#every_country = { 	establish_communications_no_message = last_created_country }
+			last_created_country = { save_event_target_as = ragnarok_country }
+
+			else = {
+				random_country = {
+					limit = { is_country_type = rag_country	}
+					save_event_target_as = ragnarok_country
+				}
+			}
+		}
+
+		# Find target fleet, going to be hilarious if multiple ragnarok AI fleets engage
+		SOLAR_SYSTEM = {
+			random_fleet_in_system = {
+				limit = {
+					is_in_combat = yes
+					has_fleet_flag = flag_rag_ai_target
+					OWNER = { is_hostile = event_target:fleet_owner }
+				}
+
+				save_event_target_as = ai_fleet_target
+				fleet_event = { id = isb_ragnarok.14 days = 15 }
+			}
+
+			create_fleet = {
+				effect = {
+					set_owner = event_target:ragnarok_country
+					create_ship = {
+						name = random
+						design = "Fires of Ragnarok"
+					}
+
+					#set_location = {
+					#	target = event_target:ship_location
+					#	distance = 0.1
+					#	angle = 0
+					#}
+					set_location = event_target:ship_location
+
+					queue_actions = {
+						move_to = event_target:ai_fleet_target
+						WAIT = 30
+					}
+
+					# destroy this fleet
+					fleet_event = { id = isb_ragnarok.15 days = 15 }
+				}
+			}
+
+			#create_ambient_object = {
+			#	type = "isb_rag_out_bunny_object"
+			#}
+
+			#last_created_ambient_object = {
+			#	set_ambient_object_flag = "isb_rag_ai_charge_final"
+			#	set_location = event_target:ship_location
+				#	target = event_target:ship_location
+				#	distance = 0.1
+				#	angle = random
+				#}
+			#}
+		}
+	}
+}
+
+# clear last auto ambient
+country_event = {
+	id = isb_ragnarok.11
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		random_ambient_object = {
+			limit = {
+				has_ambient_object_flag = isb_rag_charge_ai
+			}
+
+			destroy_ambient_object = THIS
+		}
+	}
+}
+
+# Remove ragnarok disable
+ship_event = {
+	id = isb_ragnarok.13
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		set_disabled = no
+		# Fix fleet desync in combat due to disabled ship
+		FLEET = {
+			set_event_locked = no
+			set_location = {
+				target = PREV
+				distance = 0.1
+				angle = 0
+			}
+		}
+	}
+}
+
+# AI ragnarok firing. FLEET = target fleet. Going to cheat a little for position
+fleet_event = {
+	id = isb_ragnarok.14
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { NOT = { any_country = { is_country_type = rag_country } } }
+
+			create_country = {
+				name = "Ragnarok"
+				type = 	rag_country
+			}
+			#every_country = { 	establish_communications_no_message = last_created_country }
+			last_created_country = { save_event_target_as = ragnarok_country }
+
+			else = {
+				random_country = {
+					limit = { is_country_type = rag_country	}
+					save_event_target_as = ragnarok_country
+				}
+			}
+		}
+
+		if = {
+			limit = { NOT = { any_country = { is_country_type = rag_hostile_country } } }
+
+			create_country = {
+				name = "Fires of Ragnarok"
+				type = 	rag_hostile_country
+			}
+			#every_country = { 	establish_communications_no_message = last_created_country }
+			last_created_country = { save_event_target_as = ragnarok_hostile_country }
+
+			else = {
+				random_country = {
+					limit = { is_country_type = rag_hostile_country	}
+					save_event_target_as = ragnarok_hostile_country
+				}
+			}
+		}
+
+		save_event_target_as = ai_target_fleet
+
+		create_fleet = {
+			effect = {
+				set_owner = event_target:ragnarok_country
+				create_ship = {
+					name = random
+					design = "Spawn of Ragnarok"
+				}
+				set_event_locked = yes
+
+				set_location = PREV
+
+				queue_actions = {
+					WAIT = 15
+					effect = {
+						id = "isb_ragnarok.14.trigger.1"
+						SOLAR_SYSTEM = {
+							event_target:ai_target_fleet = {
+								create_ambient_object = {
+									type = "isb_rag_fire_marker_bunny_object"
+								}
+
+								last_created_ambient_object = {
+									set_location = {
+										target = PREV
+										distance = 10
+										angle = random
+									}
+
+									PREVPREVPREV = {
+										set_location = PREV
+									}
+
+									destroy_ambient_object = THIS
+								}
+							}
+						}
+						#fleet_event = { id = isb_ragnarok.17 }
+						create_fleet = {
+							effect = {
+								set_owner = event_target:ragnarok_hostile_country
+								create_ship = {
+									name = random
+									design = "Wrath of Ragnarok (Mythic)"
+								}
+								queue_actions = {
+									WAIT = 15
+									effect = {
+										id = "isb_ragnarok.14.trigger.2"
+										destroy_fleet = THIS
+									}
+								}
+								set_event_locked = yes
+
+								set_location = PREV
+							}
+						}
+					}
+					WAIT = 70
+					effect = {
+						id = "isb_ragnarok.14.trigger.3"
+						destroy_fleet = THIS
+					}
+				}
+			}
+		}
+	}
+}
+
+# Rag ai firing ship destruction
+fleet_event = {
+	id = isb_ragnarok.15
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		destroy_fleet = THIS
+
+		# Clear charge effect
+		OWNER = { country_event = { id = isb_ragnarok.11 days = 10 } }
+	}
+}
+
+# Rag ai looking for targets
+fleet_event = {
+	id = isb_ragnarok.16
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_in_combat = yes
+		NOT = { has_fleet_flag = flag_rag_ai_target_found }
+	}
+
+	immediate = {
+		OWNER = { save_event_target_as = ai_fleet_owner }
+		SOLAR_SYSTEM = {
+			random_fleet_in_system = {
+				limit = {
+					is_in_combat = yes
+					OWNER = { is_hostile = event_target:ai_fleet_owner }
+					fleet_size > 150
+				}
+				# AI should fire within 90 days
+				set_timed_fleet_flag = { flag = flag_rag_ai_target days = 90 }
+
+				PREVPREV = {
+					fleet_event = { id = isb_ragnarok.9 days = 7 }
+					set_timed_fleet_flag = { flag = flag_rag_ai_target_found days = 90 }
+				}
+			}
+		}
+		# Checks for big fleets entering combat
+		if = {
+			limit = {
+				NOT = { has_fleet_flag = flag_rag_ai_target_found }
+			}
+
+			fleet_event = { id = isb_ragnarok.16 days = 7 }
+		}
+	}
+}
+
+# Ragnarok Construction Events
+# On Ship built
+# Root = Ship
+# From = Planet
+ship_event = {
+	id = isb_ragnarok.51
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ship_size = ragnarok
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				OWNER = {
+					count_owned_ships = {
+						limit = { is_ship_size = ragnarok }
+						count > 1
+					}
+				}
+			}
+
+			# Cannot have more than 1 ragnarok
+			# ROOT = { FLEET = { destroy_fleet = THIS } }
+			reduce_hp_percent = 100
+
+			# Display error 01 - Only 1 ragnarok allowed
+			OWNER = { country_event = { id = isb_ragnarok.108 } }
+
+			# Begin Ragnarok Power-up Chain
+			else = {
+				# Rganarok Power-up event explanation
+				OWNER = { country_event = { id = isb_ragnarok.104 } }
+
+				add_modifier = {
+					modifier = mod_ragnarok_depleted
+					days = -1
+				}
+
+				OWNER = {
+					if = {
+						limit = {
+							has_event_chain = ragnarok_doomsday_charge_chain
+						}
+
+						end_event_chain = ragnarok_doomsday_charge_chain
+					}
+					if = {
+						limit = {
+							has_event_chain = ragnarok_power_chain
+						}
+
+						end_event_chain = ragnarok_power_chain
+					}
+
+					begin_event_chain = {
+						event_chain = "ragnarok_power_chain"
+						target = THIS
+					}
+				}
+			}
+		}
+	}
+}
+
+# Ragnarok power-up / weapon recharge
+ship_event = {
+	id = isb_ragnarok.52
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ship_size = ragnarok
+	}
+
+	immediate = {
+		OWNER = {
+			if = {
+				limit = {
+					has_event_chain = ragnarok_power_chain
+				}
+
+				add_event_chain_counter = {
+					event_chain = ragnarok_power_chain
+					counter = ragnarok_consumed
+					amount = 1
+				}
+
+				if = {
+					limit = {
+						has_completed_event_chain_counter = {
+							event_chain = ragnarok_power_chain
+							counter = ragnarok_consumed
+						}
+					}
+
+					PREV = {
+						add_modifier = {
+							modifier = mod_ragnarok_activated
+							days = -1
+						}
+
+						# Charge doomsday weapon
+						set_ship_flag = flag_rag_doomsday_charged
+					}
+
+					end_event_chain = ragnarok_power_chain
+
+					# Ragnarok fully powered
+					country_event = { id = isb_ragnarok.105 days = 15 }
+				}
+
+				# check for doomsday weapon charge
+				else = {
+					if = {
+						limit = {
+							has_event_chain = ragnarok_doomsday_charge_chain
+						}
+
+						add_event_chain_counter = {
+							event_chain = ragnarok_doomsday_charge_chain
+							counter = ragnarok_consumed
+							amount = 1
+						}
+
+						if = {
+							limit = {
+								has_completed_event_chain_counter = {
+									event_chain = ragnarok_doomsday_charge_chain
+									counter = ragnarok_consumed
+								}
+							}
+
+							end_event_chain = ragnarok_doomsday_charge_chain
+
+							PREV = { set_ship_flag = flag_rag_doomsday_charged }
+
+							# Ragnarok weapon recharged
+							country_event = { id = isb_ragnarok.107 days = 15 }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# Ragnarok weapon recharge handling
+ship_event = {
+	id = isb_ragnarok.53
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ship_size = ragnarok
+	}
+
+	immediate = {
+		if = {
+			limit = { has_ship_flag = flag_rag_doomsday_charged }
+
+			remove_ship_flag = flag_rag_doomsday_charged
+		}
+		OWNER = {
+			# Only show recharge once
+			#if = {
+			#	limit = { NOT = { has_country_flag = flag_rag_charge_popup } }
+
+			#	country_event = { id = isb_ragnarok.106 }
+			#	set_country_flag = flag_rag_charge_popup
+			#}
+
+			if = {
+				limit = {
+					has_event_chain = ragnarok_doomsday_charge_chain
+				}
+
+				end_event_chain = ragnarok_doomsday_charge_chain
+			}
+
+			begin_event_chain = {
+				event_chain = "ragnarok_doomsday_charge_chain"
+				target = THIS
+			}
+		}
+	}
+}
+
+
+# Ship event for better placement of marker
+ship_event = {
+	id = isb_ragnarok.101
+	hide_window = yes
+	is_triggered_only = yes
+
+	picture = GFX_evt_physics_research
+
+	title = rag_trigger
+
+	desc = {
+		text = you_are_rag
+	}
+
+	trigger = {
+		#has_fleet_flag = flag_fleet_blinking
+	}
+
+	immediate = {
+		create_ambient_object = {
+			type = "isb_rag_marker_bunny_object"
+		}
+		last_created_ambient_object = {
+			set_ambient_object_flag = "isb_rag_marker"
+			# Flag for timeout
+
+			set_location = {
+				#target = event_target:fleet_target
+				target = PREV
+				distance = 0.1
+				angle = random
+			}
+		}
+	}
+}
+
+# Ragnarok yearly checks. Includes building ragnaroks for AI if they don't have it once every 7 years.
+event = {
+	id = isb_ragnarok.102
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_country = {
+			limit = {
+				is_country_type = default
+				has_technology = tech_ragnarok
+				NOT = { has_country_flag = flag_rag_ai_building }
+				fleet_power > 50000 # At least have some military power
+			}
+
+			if = {
+				limit = {
+					count_owned_ships = {
+						limit = { is_ship_size = ragnarok }
+						count < 1
+					}
+				}
+
+				# Start building, finish in ~7 years
+				country_event = { id = isb_ragnarok.103 days = 2420 random = 200 }
+				#country_event = { id = isb_ragnarok.103 days = 20 }
+
+				set_country_flag = flag_rag_ai_building
+			}
+		}
+		
+		# checks for dead ragnarok with orphan event chains
+		every_country = {
+			limit = {
+				is_ai = no
+			}
+			
+			if = {
+				limit = {
+					count_owned_ships = {
+						limit = { is_ship_size = ragnarok }
+						count < 1
+					}
+				}
+				
+				if = {
+					limit = {
+						has_event_chain = ragnarok_doomsday_charge_chain
+					}
+
+					end_event_chain = ragnarok_doomsday_charge_chain
+				}
+				
+				if = {
+					limit = {
+						has_event_chain = ragnarok_power_chain
+					}
+
+					end_event_chain = ragnarok_power_chain
+				}
+			}
+		}
+	}
+}
+
+# Builds ragnaroks for AI
+country_event = {
+	id = isb_ragnarok.103
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_country_flag = flag_rag_ai_building
+			}
+			
+			remove_country_flag = flag_rag_ai_building
+		}
+		# Make sure country did not get a Ragnarok somehow
+		if = {
+			limit = {
+				count_owned_ships = {
+					limit = { is_ship_size = ragnarok }
+					count < 1
+				}
+			}
+
+			CAPITAL_SCOPE = {
+				create_fleet = {
+					effect = {
+						set_owner = PREVPREV
+						create_ship = {
+							name = random
+							random_existing_design = "ragnarok"
+						}
+
+						last_created_ship = {
+							set_ship_flag = flag_rag_doomsday_charged
+						}
+
+						set_location = PREV
+
+						set_fleet_stance = aggressive
+					}
+				}
+			}
+		}
+	}
+}
+
+# Ragnarok Built - Planet consumption explanation
+country_event = {
+	id = isb_ragnarok.104
+	hide_window = no
+	is_triggered_only = yes
+	picture = GFX_evt_mining_station
+	#show_sound = event_nova_alert
+
+	title = ragnarok_construct_01.name
+
+	desc = {
+		text = ragnarok_construct_01.desc
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = ragnarok_construct_01.a
+	}
+}
+
+# Ragnarok Fully Powered
+country_event = {
+	id = isb_ragnarok.105
+	hide_window = no
+	is_triggered_only = yes
+	picture = GFX_evt_sentient_AI
+	#show_sound = event_nova_alert
+
+	title = ragnarok_construct_02.name
+
+	desc = {
+		text = ragnarok_construct_02.desc
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = ragnarok_construct_02.a
+	}
+}
+
+# Ragnarok Cannon Depleted - Recharge Explanation
+country_event = {
+	id = isb_ragnarok.106
+	hide_window = no
+	is_triggered_only = yes
+	picture = GFX_evt_unknown_ships
+	#show_sound = event_nova_alert
+
+	title = ragnarok_recharge_01.name
+
+	desc = {
+		text = ragnarok_recharge_01.desc
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = ragnarok_recharge_01.a
+	}
+}
+
+# Ragnarok Cannon Recharged
+country_event = {
+	id = isb_ragnarok.107
+	hide_window = no
+	is_triggered_only = yes
+	picture = GFX_evt_sentient_AI
+	#show_sound = event_nova_alert
+
+	title = ragnarok_recharge_02.name
+
+	desc = {
+		text = ragnarok_recharge_02.desc
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = ragnarok_recharge_02.a
+	}
+}
+
+# Ragnarok Error 01 - Cannot have more than 1 Ragnarok
+country_event = {
+	id = isb_ragnarok.108
+	hide_window = no
+	is_triggered_only = yes
+	picture = GFX_evt_unknown_ships
+	show_sound = event_nova_alert
+
+	title = ragnarok_error_01.name
+
+	desc = {
+		text = ragnarok_error_01.desc
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = ragnarok_error_01.a
+	}
+}
+
+# Ragnarok Error 02 - Weapon not charged error
+country_event = {
+	id = isb_ragnarok.197
+	hide_window = no
+	is_triggered_only = yes
+	picture = GFX_evt_unknown_ships
+	show_sound = event_nova_alert
+
+	title = ragnarok_error_02.name
+
+	desc = {
+		text = ragnarok_error_02.desc
+	}
+
+	immediate = {
+
+	}
+
+	option = {
+		name = ragnarok_error_02.a
+	}
+}
+
+# charge ragnarok
+country_event = {
+	id = isb_ragnarok.196
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_event_chain = ragnarok_doomsday_charge_chain
+			}
+
+			end_event_chain = ragnarok_doomsday_charge_chain
+		}
+		every_owned_ship = {
+			limit = { is_ship_size = ragnarok }
+			if = {
+				limit = { NOT = { has_ship_flag = flag_rag_doomsday_charged } }
+
+				set_ship_flag = flag_rag_doomsday_charged
+			}
+
+			repair_ship = yes
+		}
+	}
+}
+
+# Fire marker
+fleet_event = {
+	id = isb_ragnarok.110
+	hide_window = yes
+	is_triggered_only = yes
+
+	picture = GFX_evt_physics_research
+
+	title = blink_trigger
+
+	desc = {
+		text = you_are_blink
+	}
+
+	trigger = {
+		#has_fleet_flag = flag_fleet_blinking
+	}
+
+	immediate = {
+
+	}
+}
+
+# Fire marker bunny left
+fleet_event = {
+	id = isb_ragnarok.111
+	hide_window = yes
+	is_triggered_only = yes
+
+	picture = GFX_evt_physics_research
+
+	title = blink_trigger
+
+	desc = {
+		text = you_are_blink
+	}
+
+	trigger = {
+		#has_fleet_flag = flag_fleet_blinking
+	}
+
+	immediate = {
+		set_location = {
+			#target = event_target:fleet_target
+			target = THIS
+			distance = 15
+			angle = 180
+		}
+	}
+}
+
+# Fire failed error message
+fleet_event = {
+	id = isb_ragnarok.198
+	hide_window = no
+	is_triggered_only = yes
+	picture = GFX_evt_physics_research
+
+	title =  isb_ragnarok.198.name
+
+	desc = {
+		text =  isb_ragnarok.198.desc
+	}
+
+	immediate = {
+
+	}
+
+	option = {
+		name =  isb_ragnarok.198.a
+	}
+}
+
+# Fleet selector show fleet
+fleet_event = {
+	id = isb_ragnarok.199
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+	}
+}
+
+#blink marker bunny left
+country_event = {
+	id = isb_ragnarok.200
+	hide_window = no
+	is_triggered_only = yes
+
+	picture = GFX_evt_physics_research
+
+	title = blink_trigger
+
+	desc = {
+		text = you_are_failed
+	}
+
+	trigger = {
+
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = failed
+	}
+}

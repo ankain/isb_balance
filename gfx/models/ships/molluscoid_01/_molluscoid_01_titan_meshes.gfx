@@ -17,7 +17,7 @@ objectTypes = {
 	
 	pdxmesh = {
 		name = "molluscoid_01_titan_bow_mesh"
-		file = "gfx/models/ships/molluscoid_01/molluscoid_01_battleship_bow_M3S2.mesh"
+		file = "gfx/models/ships/molluscoid_01/molluscoid_01_battleship_bow_M1S2SHB.mesh"
 		scale = 1.8
 		meshsettings = {
 			shader = "PdxMeshShip"

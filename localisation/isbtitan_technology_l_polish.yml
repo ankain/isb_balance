@@ -148,3 +148,28 @@ tech_erebus_eng_01_desc:0 "\nThe creation of an automated shipyard that can cont
 
 tech_erebus_eng_02:0 "Framework : Combat Drones"
 tech_erebus_eng_02_desc:0 "\nCombat Drones are autonomous ships with a very limited lifespan that are designed to take out the enemy fleet's support craft, leaving their capital ships vulnerable.\n\n"
+
+# v1.5 Ragnarok
+tech_ragnarok:0 "Ragnarok"
+tech_ragnarok_desc:0 "\n§EThe world is for the living. Who are they?\nWe dared the dark to reach the white and warm.\nShe was the wind when the wind was in my way;\nAlive at noon, I perished in her form.\nWho rise from the flesh to spirit know the fall:\nThe word outleaps the world and light is all.\n\n-Theodore Roethke§!\n\n§RWARNING: You may only own one Ragnarok at any time. Constructing another Ragnarok will result in its destruction due to core instabilities.§!\n\n"
+
+tech_ragnarok_phy_01:0 "Organic Matter: Structure Analysis"
+tech_ragnarok_phy_01_desc:0 "\nAdvancements in scanning technology has revealed that the unidentified organic matter used in the construction of the Black Hole Containment Vessel exists in multiple dimensions separate from our those commonly utilised by our current technologies.\n\nThis discovery represents a divergent path of research that could fundamentaly change our understanding of reality and the laws that govern it. Further research is advised.\n\n"
+
+tech_ragnarok_phy_02:0 "Theory : Organic Growth Manipulation"
+tech_ragnarok_phy_02_desc:0 "\nAs we begin to unravel the mysteries of organic matter, we have discovered that it grows by feeding on exotic energy in higher dimensions. Unfortunately, the creation of these particles in sufficiently large quantities is proving extremely difficult.\n\nMore research is required to construct a formal theory for the laws governmening both the growth mechanism and particle creation.\n\n"
+
+tech_ragnarok_soc_01:0 "Theory : Organic Technology Interfacing"
+tech_ragnarok_soc_01_desc:0 "\nAI and computer systems will have to be redesigned to correct recognise and communicate with the new organic technology in order for us to begin to utilise them.\n\n"
+
+tech_ragnarok_soc_02:0 "Doctrine : Organic Technology Integration"
+tech_ragnarok_soc_02_desc:0 "\n'Is using this new organic technology really such a good idea? We don't even understand how it works.'\n\n'Shut up, Jerry.'\n\n'But - '\n\n'You just volunteered as integration test subject #1.'\n\n"
+
+tech_ragnarok_eng_01:0 "Framework : Organic Technology"
+tech_ragnarok_eng_01_desc:0 "\nThe organic matter has been analysed and dated to be older than the age of our galaxy. Therefore, it must have extra-galactic origins. It is definitely artificial, but represents a branch of technology from a completely alien root that is far removed from our own, making understanding and replication difficult at best. Nonetheless, it warrants further research.\n\n"
+
+tech_ragnarok_eng_02:0 "Organic Core"
+tech_ragnarok_eng_02_desc:0 "\nThe organic matter we currently possess appears to be the basis for some sort of core - the central governing mass from which other structures will grow. Our scientists believe this core was originally part of a massive, spacefaring entity and which was destroyed eons ago. That the core matter survived and remained dormant but alive for so long is a testament to the resilience of organic technology.\n\n"
+
+tech_ragnarok_doomsday_01:0 "Doomsday Weapon : Spear of Cassius"
+tech_ragnarok_doomsday_01_desc:0 "\n§EI know the evil of my ancestors because I am those people. The balance is delicate in the extreme. I know that few of you who read my words have ever thought about your ancestors this way.\n\nIt has not occurred to you that your ancestors were survivors and that the survival itself sometimes involved savage decisions, a kind of wanton brutality which civilized humankind works very hard to suppress.\n\nWhat price will you pay for that suppression? Will you accept your won extinction?\n\n-The Stolen Journals§!\n\n§HThe Spear of Cassius is an anti-fleet doomsday weapon deployed by the Ragnarok that inflicts massive damage to ships within its destruction radius. It has to be recharged after each use by consuming planets. More details can be found in the associated event chain in the Situation Log once the weapon has been used.§!"

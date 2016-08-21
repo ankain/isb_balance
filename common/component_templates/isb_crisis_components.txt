@@ -45,7 +45,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	cost = 0
-	military_power = -1000
+	military_power = -200
 	
 	ship_behavior = "aggressive"
 	
@@ -68,7 +68,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	cost = 0
-	military_power = -15000
+	military_power = -5000
 	
 	ship_behavior = "defensive"
 	
@@ -93,7 +93,7 @@ utility_component_template = {
 	cost = 0
 	
 	ship_behavior = "aggressive"
-	military_power = -1000
+	military_power = -300
 	
 	ship_modifier = {
 		#SHIP_WEAPON_DAMAGE = 0.75
@@ -117,7 +117,7 @@ utility_component_template = {
 	cost = 0
 	
 	ship_behavior = "defensive"
-	military_power = -5000
+	military_power = -1500
 	
 	ship_modifier = {
 		#SHIP_WEAPON_DAMAGE = 0.75

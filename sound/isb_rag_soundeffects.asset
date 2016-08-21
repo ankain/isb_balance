@@ -1,0 +1,61 @@
+soundeffect = {
+	name = isb_rag_doom_arm_sound
+	falloff = "falloff_weapons_close"
+	sounds = {
+		sound = isb_rag_doom_arm
+	}
+	is3d = yes
+	max_audible = 6
+	max_audible_behaviour = fail
+	volume = 0.6
+}
+
+soundeffect = {
+	name = isb_rag_doom_portal_open
+	falloff = "falloff_weapons_close"
+	sounds = {
+		sound = isb_rag_doom_portal
+	}
+	is3d = yes
+	max_audible = 6
+	max_audible_behaviour = fail
+	volume = 0.9
+}
+
+
+soundeffect = {
+	name = isb_rag_doom_shoot_01
+	falloff = "falloff_weapons_close"
+	sounds = {
+		sound = isb_rag_doom_fire
+		sound = station_explosion_energy_01
+		sound = energy_torpedo_fire_01
+		
+	}
+	is3d = yes
+	max_audible = 8
+	max_audible_behaviour = fail
+	delay_random_offset = { 0.0 0.15 }
+	delay_random_offset = { 0.0 0.5 }
+	volume = 0.8
+
+}
+
+soundeffect = {
+	name = isb_rag_doom_hit
+	falloff = "falloff_weapons_distance"
+	sounds = {		
+		sound = kinectic_artillery_hit_01
+		sound = isb_rag_hit_01
+		sound = isb_rag_hit_02
+		sound = isb_rag_hit_03
+		
+	}
+	is3d = yes
+	max_audible = 16
+	max_audible_behaviour = fail
+	delay_random_offset = { 0.0 0.15 }
+	delay_random_offset = { 0.0 0.5 }
+	volume = 0.8
+
+}

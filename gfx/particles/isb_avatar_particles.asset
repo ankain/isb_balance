@@ -564,46 +564,4 @@ particle={
 		op="MUL"
 		time="life"
 	}
-	force={
-		type="turbulence"
-		name="chaos"
-		position={
-			0.000 0.000 0.000 
-		}
-		direction={
-			0.000 1.000 0.000 
-		}
-		local_force=yes
-		yaw=0.000
-		division=16
-		amount=25.000
-	}
-	force={
-		type="point"
-		name="point"
-		position={
-			0.000 0.000 0.000 
-		}
-		direction={
-			0.000 1.000 0.000 
-		}
-		local_force=yes
-		yaw=0.000
-		division=16
-		amount=-40.000
-	}
-	force={
-		type="spin"
-		name="orbit_1"
-		position={
-			0.000 0.000 0.000 
-		}
-		direction={
-			1.000 1.000 0.000 
-		}
-		local_force=yes
-		yaw=0.000
-		division=16
-		amount=1.000
-	}
 }

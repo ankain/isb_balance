@@ -92,7 +92,13 @@ entity = {
 		event = { time = 0.0 node = "root" particle = "large_ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
 	}
 	
-	scale = 2.1
+	locator = {
+		name = "part1"
+		position = { 0.0 0.0 -25.0}
+		rotation = { 0 0 0 }
+	}
+	
+	scale = 2.0
 	
 	game_data = {
 		size = @titan_scale
@@ -118,37 +124,37 @@ entity = {
 	
 	locator = {
 		name = "large_gun_01"
-		position = { -1.5 6.9 -8.6}
+		position = { 8.2 -1.1 -15.8}
 		rotation = { 0 0 0 }
 	}
 	
 	locator = {
 		name = "large_gun_02"
-		position = { 6 5.1 -12.0}
+		position = { 6 5.5 1.0}
 		rotation = { 0 0 0 }
 	}
 	
 	locator = {
 		name = "large_gun_03"
-		position = { -6 5.1 -12.0}
+		position = { -6 5.5 1.0}
 		rotation = { 0 0 0 }
 	}
 	
 	locator = {
 		name = "large_gun_04"
-		position = { -3.5 6.5 -3.0}
+		position = { -8.2 -1.1 -15.8}
 		rotation = { 0 0 0 }
 	}
 	
 	locator = {
 		name = "large_gun_05"
-		position = { 1.5 6.9 -8.6}
+		position = { 0.0 7.7 1.0}
 		rotation = { 0 0 0 }
 	}
 	
 	locator = {
 		name = "medium_gun_02"
-		position = { 0.0 7.0 -11.6}
+		position = { 0.0 5.0 -8.6}
 		rotation = { 0 0 0 }
 	}
 }
@@ -217,16 +223,16 @@ entity = {
 	
 	default_state = "idle"
 	state = { name = "idle" state_time = 5
-		event = { time = 0 node = "engine_small_01" particle = "molluscoid_01_2_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_small_02" particle = "molluscoid_01_2_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_small_03" particle = "molluscoid_01_2_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_small_01" particle = "molluscoid_01_6_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_small_02" particle = "molluscoid_01_6_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_small_03" particle = "molluscoid_01_6_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
 		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
 		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }	
 	}
 	state = { name = "moving" state_time = 5
-		event = { time = 0 node = "engine_small_01" particle = "molluscoid_01_2_0_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_small_02" particle = "molluscoid_01_2_0_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_small_03" particle = "molluscoid_01_2_0_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_small_01" particle = "molluscoid_01_6_0_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_small_02" particle = "molluscoid_01_6_0_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_small_03" particle = "molluscoid_01_6_0_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
 		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
 		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }	
 	}

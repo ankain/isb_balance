@@ -96,31 +96,31 @@ entity = {
 		event = { time = 0 node = "light_locator_01" particle = "ship_light_green_effect" trigger_once = yes keep_particle = yes }
 		event = { time = 0 node = "light_locator_02" particle = "ship_light_green_effect" trigger_once = yes keep_particle = yes }
 		
-		event = { time = 0 node = "engine_large_up_01" particle = "fungoid_01_2_5_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_up_02" particle = "fungoid_01_2_5_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_up_03" particle = "fungoid_01_2_5_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_up_04" particle = "fungoid_01_2_5_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_up_05" particle = "fungoid_01_2_5_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_down_01" particle = "fungoid_01_2_5_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_down_02" particle = "fungoid_01_2_5_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_down_03" particle = "fungoid_01_2_5_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_down_04" particle = "fungoid_01_2_5_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_down_05" particle = "fungoid_01_2_5_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_up_01" particle = "fungoid_01_5_0_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_up_02" particle = "fungoid_01_5_0_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_up_03" particle = "fungoid_01_5_0_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_up_04" particle = "fungoid_01_5_0_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_up_05" particle = "fungoid_01_5_0_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_down_01" particle = "fungoid_01_5_0_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_down_02" particle = "fungoid_01_5_0_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_down_03" particle = "fungoid_01_5_0_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_down_04" particle = "fungoid_01_5_0_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_down_05" particle = "fungoid_01_5_0_exhaust_oblong_particle" trigger_once = yes keep_particle = yes }
 	}
 	state = { name = "moving" state_time = 5
 		event = { time = 0 node = "light_locator_01" particle = "ship_light_green_effect" trigger_once = yes keep_particle = yes }
 		event = { time = 0 node = "light_locator_02" particle = "ship_light_green_effect" trigger_once = yes keep_particle = yes }
 		
-		event = { time = 0 node = "engine_large_up_01" particle = "fungoid_01_2_5_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_up_02" particle = "fungoid_01_2_5_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_up_03" particle = "fungoid_01_2_5_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_up_04" particle = "fungoid_01_2_5_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_up_05" particle = "fungoid_01_2_5_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_down_01" particle = "fungoid_01_2_5_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_down_02" particle = "fungoid_01_2_5_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_down_03" particle = "fungoid_01_2_5_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_down_04" particle = "fungoid_01_2_5_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_down_05" particle = "fungoid_01_2_5_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_up_01" particle = "fungoid_01_5_0_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_up_02" particle = "fungoid_01_5_0_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_up_03" particle = "fungoid_01_5_0_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_up_04" particle = "fungoid_01_5_0_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_up_05" particle = "fungoid_01_5_0_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_down_01" particle = "fungoid_01_5_0_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_down_02" particle = "fungoid_01_5_0_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_down_03" particle = "fungoid_01_5_0_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_down_04" particle = "fungoid_01_5_0_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_down_05" particle = "fungoid_01_5_0_exhaust_oblong_moving_particle" trigger_once = yes keep_particle = yes }
 	}
 	state = { name = "death" state_time = 5 }
 	

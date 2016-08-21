@@ -1,0 +1,21 @@
+objectTypes = {
+			
+	#######  Construction Ship  #######	
+		
+	pdxmesh = {
+		name = "plantoid_01_sun_crusher_mesh"
+		file = "gfx/models/ships/plantoid_01/plantoid_01_construction.mesh"
+		scale = 1.0
+		
+		animation = { id = "idle"						type = "plantoid_01_construction_idle_animation" }
+		animation = { id = "working"					type = "plantoid_01_construction_working_animation" }
+		animation = { id = "working_looping"			type = "plantoid_01_construction_working_looping_animation" }
+		
+		meshsettings = {
+			name = "pSphere8Shape"			
+			shader = "PdxMeshShip"
+			texture_diffuse = "plantoid_01_sun_crusher_diffuse.dds"			
+		}
+			
+	}	
+}

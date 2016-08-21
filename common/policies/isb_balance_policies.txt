@@ -1,0 +1,123 @@
+isb_crisis_diff_policy = {
+
+	potential = {
+		always = yes
+	}
+	
+	option = {
+		name = "crisis_diff_normal"
+
+		potential = {
+		}
+
+		policy_flags = {
+		}
+
+		on_enabled = {
+			hidden_effect = {
+				if = {
+					limit = { is_ai = no }
+
+					# clears crisis mods
+					country_event = { id = isb.6 }
+				}
+			}
+		}
+
+		AI_weight = {
+			modifier = {
+				factor = 1
+			}
+		}
+	}
+
+	option = {
+		name = "crisis_diff_easy"
+
+		potential = { }
+
+		policy_flags = {
+		}
+
+		on_enabled = {
+			hidden_effect = {
+				if = {
+					limit = { is_ai = no }
+
+					# clears crisis mods
+					country_event = { id = isb.6 }
+					
+					set_global_flag = flag_crisis_easy
+
+					every_country = {
+						limit = {
+							OR = {
+								is_country_type = swarm
+								is_country_type = extradimensional
+								is_country_type = extradimensional_2
+								is_country_type = extradimensional_3
+							}
+						}
+
+						add_modifier = {
+							modifier = "mod_crisis_easy"
+							days = -1
+						}
+					}
+				}
+			}
+		}
+
+		AI_weight = {
+			modifier = {
+				factor = 0
+				always = yes
+			}
+		}
+	}
+
+	option = {
+		name = "crisis_diff_hard"
+
+		potential = {			
+		}
+
+		policy_flags = {			
+		}
+
+		on_enabled = {
+			hidden_effect = {				
+				if = {
+					limit = { is_ai = no }
+					
+					# clears crisis mods
+					country_event = { id = isb.6 }
+					
+					set_global_flag = flag_crisis_hard
+
+					every_country = {
+						limit = {
+							OR = {
+								is_country_type = swarm
+								is_country_type = extradimensional
+								is_country_type = extradimensional_2
+								is_country_type = extradimensional_3
+							}
+						}
+						
+						add_modifier = {
+							modifier = "mod_crisis_hard"
+							days = -1
+						}
+					}					
+				}
+			}
+		}
+
+		AI_weight = {
+			modifier = {
+				factor = 0
+			}
+		}
+	}
+}

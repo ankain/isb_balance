@@ -162,4 +162,3 @@ isb_doomsday_policy = {
 		}		
 	}
 }
-

@@ -96,7 +96,7 @@ tech_avatar = {
 	}
 	
 	ai_weight = {
-		factor = 0 #AI can't use the Avatar		
+		factor = 40 #AI can't use the Avatar		
 	}
 }
 

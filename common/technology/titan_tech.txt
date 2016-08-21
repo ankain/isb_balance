@@ -189,7 +189,7 @@ tech_titan_soc_01_weapons_platform = {
 		
 	
 	ai_weight = {
-		factor = 2
+		factor = 20
 		modifier = {
 			factor = 0.65
 			has_ethic = ethic_fanatic_pacifist
@@ -276,7 +276,7 @@ tech_titan_soc_02_super_capital = {
 	}
 	
 	ai_weight = {
-		factor = 6 #Good bonus
+		factor = 20 #Good bonus
 		modifier = {
 			factor = 0.65
 			has_ethic = ethic_fanatic_pacifist
@@ -350,7 +350,7 @@ tech_titan_eng_01_massive_construction = {
 	}
 	
 	ai_weight = {
-		factor = 2
+		factor = 20
 		modifier = {
 			factor = 3
 			years_passed > 70
@@ -407,7 +407,7 @@ tech_titan_eng_02_drone_swarm = {
 	}
 	
 	ai_weight = {
-		factor = 2
+		factor = 20
 		modifier = {
 			factor = 3
 			years_passed > 75
@@ -464,7 +464,7 @@ tech_titan_phy_01_mass_manipulation = {
 	}
 	
 	ai_weight = {
-		factor = 4 #good component
+		factor = 20 #good component
 		modifier = {
 			factor = 3
 			years_passed > 70
@@ -521,7 +521,7 @@ tech_titan_phy_02_inertia_dampeners = {
 	}
 	
 	ai_weight = {
-		factor = 4
+		factor = 20
 		modifier = {
 			factor = 3
 			years_passed > 75
@@ -565,7 +565,7 @@ tech_titan_weapon_module_01 = {
 	}
 	
 	ai_weight = {
-		factor = 1.25
+		factor = 40
 		modifier = {
 			factor = 2
 			years_passed > 80
@@ -592,7 +592,7 @@ tech_titan_weapon_module_02 = {
 	is_rare = yes
 	
 	weight_modifier = {
-		factor = 1.25
+		factor = 4
 		modifier = {
 			factor = 1.25
 			research_leader = {
@@ -603,7 +603,7 @@ tech_titan_weapon_module_02 = {
 	}
 	
 	ai_weight = {
-		factor = 0 #AI shouldn't use this
+		factor = 20 #AI shouldn't use this
 		
 		modifier = {
 			factor = 1.25
@@ -627,7 +627,7 @@ tech_titan_weapon_module_03 = {
 	is_rare = yes
 	
 	weight_modifier = {
-		factor = 1.25
+		factor = 4
 		modifier = {
 			factor = 1.25
 			research_leader = {
@@ -638,7 +638,7 @@ tech_titan_weapon_module_03 = {
 	}
 	
 	ai_weight = {
-		factor = 0 #AI shouldnt use this
+		factor = 20 #AI shouldnt use this
 		modifier = {
 			factor = 1.25
 			research_leader = {
@@ -661,7 +661,7 @@ tech_titan_weapon_module_04 = {
 	is_rare = yes
 	
 	weight_modifier = {
-		factor = 1.25
+		factor = 4
 		modifier = {
 			factor = 1.25
 			research_leader = {
@@ -672,7 +672,7 @@ tech_titan_weapon_module_04 = {
 	}
 	
 	ai_weight = {
-		factor = 2
+		factor = 20
 		modifier = {
 			factor = 2
 			years_passed > 80
@@ -699,7 +699,7 @@ tech_titan_weapon_module_05 = {
 	is_rare = yes
 	
 	weight_modifier = {
-		factor = 1.25
+		factor = 4
 		modifier = {
 			factor = 1.25
 			research_leader = {
@@ -710,7 +710,7 @@ tech_titan_weapon_module_05 = {
 	}
 	
 	ai_weight = {
-		factor = 2
+		factor = 20
 		modifier = {
 			factor = 2
 			years_passed > 80
@@ -747,7 +747,7 @@ tech_titan_doomsday_weapons_01 = {
 	}
 	
 	weight_modifier = {
-		factor = 1.25
+		factor = 4
 		modifier = {
 			factor = 1.25
 			research_leader = {

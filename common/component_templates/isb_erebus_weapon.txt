@@ -40,8 +40,8 @@ utility_component_template = {
 	ship_modifier = {
 		#ship_speed_mult = 5.0
 		#ship_combat_speed_mult = 5.0
-		ship_weapon_damage = 0.75
-		ship_fire_rate_mult = 1.0
+		ship_weapon_damage = 1.0
+		ship_fire_rate_mult = 0.5
 		SHIP_ACCURACY_ADD = 50.0
 	}
 		
