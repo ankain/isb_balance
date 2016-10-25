@@ -87,19 +87,19 @@ entity = {
 	
 	locator = {
 		name = "large_gun_01"
-		position = { 6.0 2.0 -18.5}
-		rotation = { 0 0 0 }
+		position = { 5.0 2.8 -14.3}
+		rotation = { 0 0 0 }		
 	}
 	
 	locator = {
 		name = "large_gun_02"
-		position = { -6.0 2.0 -18.5}
+		position = { -6.0 2.5 -19.5}
 		rotation = { 0 0 0 }
 	}
 	
 	locator = {
 		name = "large_gun_03"
-		position = { 5.0 2.8 -14.3}
+		position = { 6.0 2.5 -19.5}
 		rotation = { 0 0 0 }
 	}
 	
@@ -111,8 +111,8 @@ entity = {
 	
 	locator = {
 		name = "large_gun_05"
-		position = { 0 -4.2 -15}
-		rotation = { 0 0 180 }
+		position = { 0 -2.0 -23}
+		rotation = { 0 0 0 }
 	}
 }
 

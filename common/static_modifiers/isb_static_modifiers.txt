@@ -59,3 +59,33 @@ doomsday_weapon_06 = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_unknown.dds"
 	icon_frame = 3
 }
+
+mod_guardian_buff_50 = {
+	ship_hitpoints_mult = 1.0
+	ship_shield_hp_mult = 1.0
+	
+	ship_weapon_damage = 1.0
+	
+	SHIP_AUTO_REPAIR_ADD = 0.05
+}
+
+mod_guardian_buff_100 = {
+	ship_hitpoints_mult = 1.0
+	ship_shield_hp_mult = 1.0
+	
+	ship_weapon_damage = 2.0
+}
+
+mod_guardian_buff_150 = {
+	ship_hitpoints_mult = 1.5
+	ship_shield_hp_mult = 1.5
+	
+	ship_weapon_damage = 2.0
+}
+
+mod_guardian_buff_200 = {
+	ship_hitpoints_mult = 2.0
+	ship_shield_hp_mult = 2.0
+	
+	ship_weapon_damage = 3.0
+}

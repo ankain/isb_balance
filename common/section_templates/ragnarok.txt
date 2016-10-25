@@ -7,34 +7,34 @@ ship_section_template = {
 	
 	cost = 20000
 	
-	weapon_preferences = { weapon_role_long_range }
+	#weapon_preferences = { weapon_role_long_range }
 	
 	component_slot = {
-		name = "LARGE_GUN_01"
-		slot_size = LARGE
+		name = "EXTRA_LARGE_GUN_01"
+		slot_size = extra_large
 		slot_type = weapon
-		locatorname = "root"
+		locatorname = "xl_weapon"
 	}
 
 	component_slot = {
-		name = "LARGE_GUN_02"
-		slot_size = LARGE
+		name = "EXTRA_LARGE_GUN_02"
+		slot_size = extra_large
 		slot_type = weapon
-		locatorname = "root"
+		locatorname = "xl_weapon"
 	}
 	
 	component_slot = {
-		name = "LARGE_GUN_03"
-		slot_size = LARGE
+		name = "EXTRA_LARGE_GUN_03"
+		slot_size = extra_large
 		slot_type = weapon
-		locatorname = "root"
+		locatorname = "xl_weapon"
 	}
 
 	component_slot = {
-		name = "LARGE_GUN_04"
-		slot_size = LARGE
+		name = "EXTRA_LARGE_GUN_04"
+		slot_size = extra_large
 		slot_type = weapon
-		locatorname = "root"
+		locatorname = "xl_weapon"
 	}
 	
 	component_slot = {
@@ -50,9 +50,21 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "root"
 	}
-
 	
-	medium_utility_slots = 0
-	small_utility_slots = 0
-	large_utility_slots = 9
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		slot_size = MEDIUM
+		slot_type = weapon
+		locatorname = "root"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_04"
+		slot_size = MEDIUM
+		slot_type = weapon
+		locatorname = "root"
+	}
+
+	large_utility_slots = 8
+	aux_utility_slots = 4
 }

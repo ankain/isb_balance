@@ -91,7 +91,7 @@ entity = {
 	
 	locator = {
 		name = "large_gun_01"
-		position = { 0 2.5 -9.6}
+		position = { 0 0.5 -22.6}
 		rotation = { 0 0 0 }
 	}
 	

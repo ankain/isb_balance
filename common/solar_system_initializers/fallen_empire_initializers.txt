@@ -24,14 +24,14 @@ fallen_1_1 = {
 		modifiers = none
 
 		init_effect = {
-			root = {
-				# assigns ethos to Fallen Empire during system initialization,
-				# to allow ethics-triggered systems to spawn
-				random_list = {
-					50 = { country_add_ethic = "ethic_fanatic_xenophobe" }
-					50 = { country_add_ethic = "ethic_fanatic_materialist" }
-				}
+
+			create_cluster = {
+				id = fe1_cluster
+				radius = 80
+				center = this.solar_system
 			}
+
+			set_planet_flag = fallen_empire_world
 			prevent_anomaly = yes
 			set_owner = ROOT
 			set_capital = yes
@@ -299,6 +299,10 @@ fallen_1_1 = {
 				species = owner_main_species
 				ethos = owner
 			}
+			every_tile = {
+				limit = { has_building = no has_blocker = no has_pop = no }
+				set_blocker = tb_ancient_ruins
+			}
 			create_army = {
 				name = random
 				owner = ROOT
@@ -391,7 +395,7 @@ fallen_1_1 = {
 				}
 				set_spaceport_module = {
 					slot = 4
-					module = "solar_panel_network"
+					module = "engineering_bay"
 				}
 			}
 			create_fleet = {
@@ -399,7 +403,7 @@ fallen_1_1 = {
 					set_owner = ROOT
 					create_ship = {
 						name = random
-						design = "Servitor"
+						design = "Theta"
 						graphical_culture = root
 					}
 					set_location = {
@@ -413,7 +417,7 @@ fallen_1_1 = {
 					set_owner = ROOT
 					create_ship = {
 						name = random
-						design = "Servitor"
+						design = "Theta"
 						graphical_culture = root
 					}
 					set_location = {
@@ -427,7 +431,7 @@ fallen_1_1 = {
 					set_owner = ROOT
 					create_ship = {
 						name = random
-						design = "Servitor"
+						design = "Theta"
 						graphical_culture = root
 					}
 					set_location = {
@@ -436,927 +440,362 @@ fallen_1_1 = {
 					}
 				}
 			}
-			create_fleet = {
-				effect = {
-					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Arbitrator"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						random_existing_design = "leviathan"
-						graphical_culture = "fallen_empire_01"
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Arbitrator"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					set_location = {
-						target = PREV
-						distance = 90
-						angle = random
-					}
-				}
-			}
-			create_fleet = {
-				effect = {
-					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Arbitrator"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						random_existing_design = "leviathan"
-						graphical_culture = "fallen_empire_01"
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Arbitrator"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					set_location = {
-						target = PREV
-						distance = 90
-						angle = random
-					}
-				}
-			}
-			create_fleet = {
-				effect = {
-					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Arbitrator"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						random_existing_design = "leviathan"
-						graphical_culture = "fallen_empire_01"
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Arbitrator"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					set_location = {
-						target = PREV
-						distance = 90
-						angle = random
-					}
-				}
-			}
-			create_fleet = {
-				effect = {
-					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Arbitrator"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						random_existing_design = "leviathan"
-						graphical_culture = "fallen_empire_01"
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Arbitrator"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					set_location = {
-						target = PREV
-						distance = 90
-						angle = random
-					}
-				}
-			}
-			create_fleet = {
-				effect = {
-					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Arbitrator"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Arbitrator"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						random_existing_design = "leviathan"
-						graphical_culture = "fallen_empire_01"
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Arbitrator"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					set_location = {
-						target = PREV
-						distance = 90
-						angle = random
-					}
-				}
-			}
 			random = {
 				chance = 100
+				#chance = 15
 				create_fleet = {
 					effect = {
 						set_owner = ROOT
 						create_ship = {
 							name = random
-							design = "Arbitrator"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}				
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}					
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							random_existing_design = "leviathan"
-							graphical_culture = "fallen_empire_01"
-						}					
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}					
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
+							design = "Alpha"
 							graphical_culture = root
 						}
 						set_location = {
 							target = PREV
-							distance = 90
+							distance = 20
 							angle = random
 						}
 					}
 				}
 			}
 			random = {
-				chance = 50
+				chance = 100
+				#chance = 15
 				create_fleet = {
 					effect = {
 						set_owner = ROOT
 						create_ship = {
 							name = random
-							design = "Arbitrator"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
+							design = "Alpha"
 							graphical_culture = root
 						}
 						set_location = {
 							target = PREV
-							distance = 90
+							distance = 20
+							angle = random
+						}
+					}
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Beta"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Beta"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Beta"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Beta"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Beta"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Beta"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Beta"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Beta"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Beta"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Beta"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Gamma"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Gamma"
+						graphical_culture = root
+					}
+					set_location = {
+						target = PREV
+						distance = 90
+						angle = random
+					}
+				}
+			}
+			random = {
+				chance = 33
+				create_fleet = {
+					effect = {
+						set_owner = ROOT
+						create_ship = {
+							name = random
+							design = "Beta"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Beta"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Beta"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Beta"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Beta"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Beta"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Beta"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Beta"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Beta"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Beta"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Gamma"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Gamma"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Gamma"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Gamma"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Gamma"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Gamma"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Gamma"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Gamma"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Gamma"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Gamma"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Gamma"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Gamma"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Gamma"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Gamma"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Gamma"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Gamma"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Gamma"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Gamma"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Gamma"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Gamma"
+							graphical_culture = root
+						}
+						set_location = {
+							target = PREV
+							distance = 60
 							angle = random
 						}
 					}
@@ -1445,6 +884,7 @@ fallen_1_1 = {
 		modifiers = none
 
 		init_effect = {
+			set_planet_flag = fallen_empire_world
 			prevent_anomaly = yes
 			set_owner = ROOT
 			random_tile = {
@@ -1601,44 +1041,12 @@ fallen_1_1 = {
 				}
 				set_spaceport_module = {
 					slot = 4
-					module = "solar_panel_network"
+					module = "engineering_bay"
 				}
 			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
-			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
-			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
-			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
-			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
-			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
+			every_tile = {
+				limit = { has_building = no has_blocker = no has_pop = no }
+				set_blocker = tb_ancient_ruins
 			}
 			create_army = {
 				name = random
@@ -1699,6 +1107,7 @@ fallen_1_1 = {
 		modifiers = none
 
 		init_effect = {
+			set_planet_flag = fallen_empire_world
 			prevent_anomaly = yes
 			set_owner = ROOT
 			random_tile = {
@@ -1836,41 +1245,9 @@ fallen_1_1 = {
 				species = owner_main_species
 				ethos = owner
 			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
-			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
-			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
-			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
-			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
-			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
+			every_tile = {
+				limit = { has_building = no has_blocker = no has_pop = no }
+				set_blocker = tb_ancient_ruins
 			}
 			create_army = {
 				name = random
@@ -1928,7 +1305,7 @@ fallen_1_1 = {
 				}
 				set_spaceport_module = {
 					slot = 4
-					module = "solar_panel_network"
+					module = "engineering_bay"
 				}
 			}
 		}
@@ -1954,6 +1331,7 @@ fallen_1_1 = {
 		modifiers = none
 
 		init_effect = {
+			set_planet_flag = fallen_empire_world
 			prevent_anomaly = yes
 			set_owner = ROOT
 			random_tile = {
@@ -1998,18 +1376,18 @@ fallen_1_1 = {
 			}
 			random_tile = {
 				limit = { has_building = no has_blocker = no }
-				set_building = "building_agri_processing_complex"
+				set_building = "building_dark_matter_power_plant"
 				add_resource = {
-					resource = food
+					resource = energy
 					amount = 1
 					replace = yes
 				}
 			}
 			random_tile = {
 				limit = { has_building = no has_blocker = no }
-				set_building = "building_agri_processing_complex"
+				set_building = "building_dark_matter_power_plant"
 				add_resource = {
-					resource = food
+					resource = energy
 					amount = 1
 					replace = yes
 				}
@@ -2038,41 +1416,9 @@ fallen_1_1 = {
 				species = owner_main_species
 				ethos = owner
 			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
-			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
-			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
-			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
-			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
-			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
+			every_tile = {
+				limit = { has_building = no has_blocker = no has_pop = no }
+				set_blocker = tb_ancient_ruins
 			}
 			create_army = {
 				name = random
@@ -2130,7 +1476,7 @@ fallen_1_1 = {
 				}
 				set_spaceport_module = {
 					slot = 4
-					module = "solar_panel_network"
+					module = "engineering_bay"
 				}
 			}
 		}
@@ -2365,6 +1711,7 @@ fallen_1_3 = {
 		modifiers = none
 
 		init_effect = {
+			set_planet_flag = fallen_empire_world
 			prevent_anomaly = yes
 			set_owner = ROOT
 			random_tile = {
@@ -2527,6 +1874,10 @@ fallen_1_3 = {
 				species = owner_main_species
 				ethos = owner
 			}
+			every_tile = {
+				limit = { has_building = no has_blocker = no has_pop = no }
+				set_blocker = tb_ancient_ruins
+			}
 			create_spaceport = {
 				owner = ROOT
 				initial_module = "fallen_empire_weapon"
@@ -2547,50 +1898,8 @@ fallen_1_3 = {
 				}
 				set_spaceport_module = {
 					slot = 4
-					module = "solar_panel_network"
+					module = "engineering_bay"
 				}
-			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
-			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
-			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
-			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
-			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
-			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
-			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
 			}
 			create_army = {
 				name = random
@@ -2663,257 +1972,152 @@ fallen_1_3 = {
 					set_owner = ROOT
 					create_ship = {
 						name = random
-						design = "Avatar"
+						design = "Beta"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Avatar"
+						design = "Beta"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Avatar"
+						design = "Beta"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Avatar"
+						design = "Beta"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Avatar"
+						design = "Beta"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Avatar"
+						design = "Beta"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Avatar"
+						design = "Beta"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Avatar"
+						design = "Beta"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Avatar"
+						design = "Beta"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Avatar"
+						design = "Beta"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Avatar"
+						design = "Gamma"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Avatar"
+						design = "Gamma"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Avatar"
+						design = "Gamma"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Avatar"
+						design = "Gamma"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Avatar"
+						design = "Gamma"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Avatar"
+						design = "Gamma"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Avatar"
+						design = "Gamma"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Avatar"
+						design = "Gamma"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Avatar"
+						design = "Gamma"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Avatar"
+						design = "Gamma"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Gamma"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Gamma"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Gamma"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Gamma"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Gamma"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Gamma"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Gamma"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Gamma"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Gamma"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
+						design = "Gamma"
 						graphical_culture = root
 					}
 					set_location = {
@@ -3046,14 +2250,14 @@ fallen_2 = {
 		modifiers = none
 
 		init_effect = {
-			root = {
-				# assigns ethos to Fallen Empire during system initialization,
-				# to allow ethics-triggered systems to spawn
-				random_list = {
-					25 = { country_add_ethic = "ethic_fanatic_xenophile" }
-					75 = { country_add_ethic = "ethic_fanatic_spiritualist" }
-				}
+
+			create_cluster = {
+				id = fe2_cluster
+				radius = 140
+				center = this.solar_system
 			}
+
+			set_planet_flag = fallen_empire_world
 			prevent_anomaly = yes
 			set_owner = ROOT
 			set_capital = yes
@@ -3343,15 +2547,6 @@ fallen_2 = {
 			}
 			random_tile = {
 				limit = { has_building = no has_blocker = no }
-				set_building = "building_dark_matter_power_plant"
-				add_resource = {
-					resource = energy
-					amount = 1
-					replace = yes
-				}
-			}
-			random_tile = {
-				limit = { has_building = no has_blocker = no }
 				set_building = "building_ancient_factory"
 				add_resource = {
 					resource = minerals
@@ -3386,41 +2581,50 @@ fallen_2 = {
 					replace = yes
 				}
 			}
-			create_army = {
-				name = random
-				owner = ROOT
-				species = ROOT
-				type = "gene_warrior_army"
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_ancient_factory"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}
 			}
 			create_army = {
 				name = random
 				owner = ROOT
 				species = ROOT
-				type = "gene_warrior_army"
+				type = "psionic_army"
 			}
 			create_army = {
 				name = random
 				owner = ROOT
 				species = ROOT
-				type = "gene_warrior_army"
+				type = "psionic_army"
 			}
 			create_army = {
 				name = random
 				owner = ROOT
 				species = ROOT
-				type = "gene_warrior_army"
+				type = "psionic_army"
 			}
 			create_army = {
 				name = random
 				owner = ROOT
 				species = ROOT
-				type = "gene_warrior_army"
+				type = "psionic_army"
 			}
 			create_army = {
 				name = random
 				owner = ROOT
 				species = ROOT
-				type = "gene_warrior_army"
+				type = "psionic_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "psionic_army"
 			}
 			create_army = {
 				name = random
@@ -3478,7 +2682,7 @@ fallen_2 = {
 				}
 				set_spaceport_module = {
 					slot = 4
-					module = "solar_panel_network"
+					module = "engineering_bay"
 				}
 			}
 			create_fleet = {
@@ -3486,22 +2690,7 @@ fallen_2 = {
 					set_owner = ROOT
 					create_ship = {
 						name = random
-						design = "Omega"
-						graphical_culture = root
-					}
-					set_location = {
-						target = PREV
-						distance = 20
-						angle = 90
-					}
-				}
-			}
-			create_fleet = {
-				effect = {
-					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Omega"
+						design = "Bulwark"
 						graphical_culture = root
 					}
 					set_location = {
@@ -3516,22 +2705,7 @@ fallen_2 = {
 					set_owner = ROOT
 					create_ship = {
 						name = random
-						design = "Omega"
-						graphical_culture = root
-					}
-					set_location = {
-						target = PREV
-						distance = 20
-						angle = 270
-					}
-				}
-			}
-			create_fleet = {
-				effect = {
-					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Omega"
+						design = "Bulwark"
 						graphical_culture = root
 					}
 					set_location = {
@@ -3546,7 +2720,7 @@ fallen_2 = {
 					set_owner = ROOT
 					create_ship = {
 						name = random
-						design = "Servitor"
+						design = "Penitent"
 						graphical_culture = root
 					}
 					set_location = {
@@ -3560,7 +2734,7 @@ fallen_2 = {
 					set_owner = ROOT
 					create_ship = {
 						name = random
-						design = "Servitor"
+						design = "Penitent"
 						graphical_culture = root
 					}
 					set_location = {
@@ -3574,7 +2748,7 @@ fallen_2 = {
 					set_owner = ROOT
 					create_ship = {
 						name = random
-						design = "Servitor"
+						design = "Penitent"
 						graphical_culture = root
 					}
 					set_location = {
@@ -3583,19 +2757,52 @@ fallen_2 = {
 					}
 				}
 			}
+			random = {
+				chance = 100
+				#chance = 15
+				create_fleet = {
+					effect = {
+						set_owner = ROOT
+						create_ship = {
+							name = random
+							design = "Eternal"
+							graphical_culture = root
+						}
+						set_location = {
+							target = PREV
+							distance = 20
+							angle = random
+						}
+					}
+				}
+			}
+			random = {
+				chance = 100
+				#chance = 15
+				create_fleet = {
+					effect = {
+						set_owner = ROOT
+						create_ship = {
+							name = random
+							design = "Eternal"
+							graphical_culture = root
+						}
+						set_location = {
+							target = PREV
+							distance = 20
+							angle = random
+						}
+					}
+				}
+			}
 			create_fleet = {
 				effect = {
 					set_owner = ROOT
 					create_ship = {
 						name = random
-						design = "Arbitrator"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
 						design = "Avatar"
 						graphical_culture = root
-					}					
+					}
 					create_ship = {
 						name = random
 						design = "Avatar"
@@ -3608,8 +2815,8 @@ fallen_2 = {
 					}
 					create_ship = {
 						name = random
-						random_existing_design = "leviathan"
-						graphical_culture = "fallen_empire_03"
+						design = "Avatar"
+						graphical_culture = root
 					}
 					create_ship = {
 						name = random
@@ -3618,92 +2825,132 @@ fallen_2 = {
 					}
 					create_ship = {
 						name = random
-						design = "Arbitrator"
+						design = "Avatar"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Avatar"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Avatar"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Avatar"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Avatar"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Zealot"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Zealot"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Zealot"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Zealot"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Zealot"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Zealot"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Zealot"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Zealot"
 						graphical_culture = root
 					}
 					set_location = {
 						target = PREV
-						distance = 90
+						distance = 70
 						angle = random
 					}
 				}
@@ -3713,14 +2960,9 @@ fallen_2 = {
 					set_owner = ROOT
 					create_ship = {
 						name = random
-						design = "Arbitrator"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
 						design = "Avatar"
 						graphical_culture = root
-					}					
+					}
 					create_ship = {
 						name = random
 						design = "Avatar"
@@ -3733,8 +2975,8 @@ fallen_2 = {
 					}
 					create_ship = {
 						name = random
-						random_existing_design = "leviathan"
-						graphical_culture = "fallen_empire_03"
+						design = "Avatar"
+						graphical_culture = root
 					}
 					create_ship = {
 						name = random
@@ -3743,87 +2985,122 @@ fallen_2 = {
 					}
 					create_ship = {
 						name = random
-						design = "Arbitrator"
+						design = "Avatar"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Avatar"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Avatar"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Avatar"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Avatar"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
 						graphical_culture = root
 					}
 					create_ship = {
 						name = random
-						design = "Eclipse"
+						design = "Zealot"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Zealot"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Zealot"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Zealot"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Zealot"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Zealot"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Zealot"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Zealot"
 						graphical_culture = root
 					}
 					set_location = {
@@ -3833,717 +3110,169 @@ fallen_2 = {
 					}
 				}
 			}
-			create_fleet = {
-				effect = {
-					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Arbitrator"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}					
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						random_existing_design = "leviathan"
-						graphical_culture = "fallen_empire_03"
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Arbitrator"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					set_location = {
-						target = PREV
-						distance = 90
-						angle = random
-					}
-				}
-			}
-			create_fleet = {
-				effect = {
-					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Arbitrator"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}					
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						random_existing_design = "leviathan"
-						graphical_culture = "fallen_empire_03"
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Arbitrator"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					set_location = {
-						target = PREV
-						distance = 90
-						angle = random
+			random = {
+				chance = 33
+				create_fleet = {
+					effect = {
+						set_owner = ROOT
+						create_ship = {
+							name = random
+							design = "Avatar"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Avatar"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Avatar"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Avatar"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Avatar"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Avatar"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Avatar"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Avatar"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Avatar"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Avatar"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Zealot"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Zealot"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Zealot"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Zealot"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Zealot"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Zealot"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Zealot"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Zealot"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Zealot"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Zealot"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Zealot"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Zealot"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Zealot"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Zealot"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Zealot"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Zealot"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Zealot"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Zealot"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Zealot"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Zealot"
+							graphical_culture = root
+						}
+						set_location = {
+							target = PREV
+							distance = 45
+							angle = random
+						}
 					}
 				}
 			}			
-			create_fleet = {
-				effect = {
-					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Arbitrator"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Avatar"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Arbitrator"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					create_ship = {
-						name = random
-						design = "Eclipse"
-						graphical_culture = root
-					}
-					set_location = {
-						target = PREV
-						distance = 90
-						angle = random
-					}
-				}
-			}
-			random = {
-				chance = 45
-				create_fleet = {
-					effect = {
-						set_owner = ROOT
-						create_ship = {
-							name = random
-							design = "Arbitrator"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						set_location = {
-							target = PREV
-							distance = 90
-							angle = random
-						}
-					}
-				}
-			}
-			random = {
-				chance = 50
-				create_fleet = {
-					effect = {
-						set_owner = ROOT
-						create_ship = {
-							name = random
-							design = "Arbitrator"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						set_location = {
-							target = PREV
-							distance = 90
-							angle = random
-						}
-					}
-				}
-			}
 		}
 
 		change_orbit = @base_moon_distance
@@ -4557,6 +3286,319 @@ fallen_2 = {
 			modifiers = none
 
 			init_effect = { prevent_anomaly = yes }
+		}
+	}
+
+	planet = {
+		name = "Sky Temple"
+		orbit_distance = 30
+		class = pc_gaia
+		orbit_angle = { min = 90 max = 270 }
+		size = 15
+		tile_blockers = none
+		modifiers = none
+
+		init_effect = {
+			set_planet_flag = fallen_empire_world
+			prevent_anomaly = yes
+			set_owner = ROOT
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
+				set_building = "building_capital_2"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}
+				add_resource = {
+					resource = food
+					amount = 1
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_agri_processing_complex"
+				add_resource = {
+					resource = food
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_ancient_factory"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_ancient_factory"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_ancient_factory"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_ancient_factory"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_ancient_factory"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_ancient_factory"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_ancient_factory"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "defense_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "defense_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "defense_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "defense_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "defense_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "defense_army"
+			}
+			create_spaceport = {
+				owner = ROOT
+				initial_module = "fallen_empire_weapon"
+			}
+			spaceport = {
+				set_spaceport_level = 6
+				set_spaceport_module = {
+					slot = 1
+					module = "crew_quarters"
+				}
+				set_spaceport_module = {
+					slot = 2
+					module = "fleet_academy"
+				}
+				set_spaceport_module = {
+					slot = 3
+					module = "synchronized_defenses"
+				}
+				set_spaceport_module = {
+					slot = 4
+					module = "engineering_bay"
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Bulwark"
+						graphical_culture = root
+					}
+					set_location = {
+						target = PREV
+						distance = 20
+						angle = 90
+					}
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Bulwark"
+						graphical_culture = root
+					}
+					set_location = {
+						target = PREV
+						distance = 20
+						angle = 270
+					}
+				}
+			}
 		}
 	}
 
@@ -4603,7 +3645,7 @@ fallen_2 = {
 					set_owner = ROOT
 					create_ship = {
 						name = random
-						design = "Sigma"
+						design = "Faith"
 						graphical_culture = root
 					}
 					set_location = {
@@ -4633,7 +3675,7 @@ fallen_2 = {
 					set_owner = ROOT
 					create_ship = {
 						name = random
-						design = "Sigma"
+						design = "Faith"
 						graphical_culture = root
 					}
 					set_location = {
@@ -4661,53 +3703,21 @@ fallen_2 = {
 	}
 	neighbor_system = {
 		distance = { min = 0 max = 50 }
-		initializer = "fallen_orbitals_1"
-	}
-	neighbor_system = {
-		distance = { min = 0 max = 50 }
 		initializer = "fallen_orbitals_2"
 	}
 	neighbor_system = {
-		distance = { min = 0 max = 50 }
-		initializer = "fallen_orbitals_2"
-	}
-	neighbor_system = {
-		distance = { min = 0 max = 50 }
-		initializer = "fallen_shielded_2"
-	}
-	neighbor_system = {
-		trigger = {
-			root = {
-				has_ethic = ethic_fanatic_spiritualist
-			}
-		}
 		distance = { min = 30 max = 100 }
 		initializer = "fallen_holy_01"
 	}
 	neighbor_system = {
-		trigger = {
-			root = {
-				has_ethic = ethic_fanatic_spiritualist
-			}
-		}
 		distance = { min = 50 max = 150 }
 		initializer = "fallen_holy_02"
 	}
 	neighbor_system = {
-		trigger = {
-			root = {
-				has_ethic = ethic_fanatic_spiritualist
-			}
-		}
 		distance = { min = 80 max = 200 }
 		initializer = "fallen_holy_03"
 	}
 	neighbor_system = {
-		trigger = {
-			root = {
-				has_ethic = ethic_fanatic_spiritualist
-			}
-		}
 		distance = { min = 120 max = 250 }
 		initializer = "fallen_holy_04"
 	}
@@ -4757,14 +3767,14 @@ fallen_3 = {
 			modifiers = none
 
 			init_effect = {
-				root = {
-					# assigns ethos to Fallen Empire during system initialization,
-					# to allow ethics-triggered systems to spawn
-					random_list = {
-						25 = { country_add_ethic = "ethic_fanatic_xenophile" }
-						75 = { country_add_ethic = "ethic_fanatic_xenophobe" }
-					}
+
+				create_cluster = {
+					id = fe3_cluster
+					radius = 120
+					center = this.solar_system
 				}
+
+				set_planet_flag = fallen_empire_world
 				prevent_anomaly = yes
 				set_owner = ROOT
 				set_capital = yes
@@ -5045,37 +4055,37 @@ fallen_3 = {
 					name = random
 					owner = ROOT
 					species = ROOT
-					type = "gene_warrior_army"
+					type = "xenomorph_army"
 				}
 				create_army = {
 					name = random
 					owner = ROOT
 					species = ROOT
-					type = "gene_warrior_army"
+					type = "xenomorph_army"
 				}
 				create_army = {
 					name = random
 					owner = ROOT
 					species = ROOT
-					type = "gene_warrior_army"
+					type = "xenomorph_army"
 				}
 				create_army = {
 					name = random
 					owner = ROOT
 					species = ROOT
-					type = "gene_warrior_army"
+					type = "xenomorph_army"
 				}
 				create_army = {
 					name = random
 					owner = ROOT
 					species = ROOT
-					type = "gene_warrior_army"
+					type = "xenomorph_army"
 				}
 				create_army = {
 					name = random
 					owner = ROOT
 					species = ROOT
-					type = "gene_warrior_army"
+					type = "xenomorph_army"
 				}
 				create_army = {
 					name = random
@@ -5133,7 +4143,7 @@ fallen_3 = {
 					}
 					set_spaceport_module = {
 						slot = 4
-						module = "solar_panel_network"
+						module = "engineering_bay"
 					}
 				}
 				create_fleet = {
@@ -5141,7 +4151,7 @@ fallen_3 = {
 						set_owner = ROOT
 						create_ship = {
 							name = random
-							design = "Servitor"
+							design = "Builder"
 							graphical_culture = root
 						}
 						set_location = {
@@ -5155,7 +4165,7 @@ fallen_3 = {
 						set_owner = ROOT
 						create_ship = {
 							name = random
-							design = "Servitor"
+							design = "Builder"
 							graphical_culture = root
 						}
 						set_location = {
@@ -5169,7 +4179,7 @@ fallen_3 = {
 						set_owner = ROOT
 						create_ship = {
 							name = random
-							design = "Servitor"
+							design = "Builder"
 							graphical_culture = root
 						}
 						set_location = {
@@ -5178,945 +4188,39 @@ fallen_3 = {
 						}
 					}
 				}
-				create_fleet = {
-					effect = {
-						set_owner = ROOT
-						create_ship = {
-							name = random
-							design = "Arbitrator"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}					
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							random_existing_design = "leviathan"
-							graphical_culture = "fallen_empire_02"
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Arbitrator"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						set_location = {
-							target = PREV
-							distance = 90
-							angle = random
-						}
-					}
-				}
-				create_fleet = {
-					effect = {
-						set_owner = ROOT
-						create_ship = {
-							name = random
-							design = "Arbitrator"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}					
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							random_existing_design = "leviathan"
-							graphical_culture = "fallen_empire_02"
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-
-						create_ship = {
-							name = random
-							design = "Arbitrator"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						set_location = {
-							target = PREV
-							distance = 90
-							angle = random
-						}
-					}
-				}
-				create_fleet = {
-					effect = {
-						set_owner = ROOT
-						create_ship = {
-							name = random
-							design = "Arbitrator"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}					
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							random_existing_design = "leviathan"
-							graphical_culture = "fallen_empire_02"
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-
-						create_ship = {
-							name = random
-							design = "Arbitrator"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						set_location = {
-							target = PREV
-							distance = 90
-							angle = random
-						}
-					}
-				}
-				create_fleet = {
-					effect = {
-						set_owner = ROOT
-						create_ship = {
-							name = random
-							design = "Arbitrator"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}					
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							random_existing_design = "leviathan"
-							graphical_culture = "fallen_empire_02"
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-
-						create_ship = {
-							name = random
-							design = "Arbitrator"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						set_location = {
-							target = PREV
-							distance = 90
-							angle = random
-						}
-					}
-				}
-				create_fleet = {
-					effect = {
-						set_owner = ROOT
-						create_ship = {
-							name = random
-							design = "Arbitrator"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}					
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							random_existing_design = "leviathan"
-							graphical_culture = "fallen_empire_02"
-						}
-						create_ship = {
-							name = random
-							design = "Avatar"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Arbitrator"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						create_ship = {
-							name = random
-							design = "Eclipse"
-							graphical_culture = root
-						}
-						set_location = {
-							target = PREV
-							distance = 90
-							angle = random
-						}
-					}
-				}
 				random = {
-					chance = 45
+					chance = 100
+					#chance = 15
 					create_fleet = {
 						effect = {
 							set_owner = ROOT
 							create_ship = {
 								name = random
-								design = "Arbitrator"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
+								design = "Keeper"
 								graphical_culture = root
 							}
 							set_location = {
 								target = PREV
-								distance = 90
+								distance = 20
 								angle = random
 							}
 						}
 					}
 				}
 				random = {
-					chance = 50
+					chance = 100
+					#chance = 15
 					create_fleet = {
 						effect = {
 							set_owner = ROOT
 							create_ship = {
 								name = random
-								design = "Arbitrator"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Avatar"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
-								graphical_culture = root
-							}
-							create_ship = {
-								name = random
-								design = "Eclipse"
+								design = "Keeper"
 								graphical_culture = root
 							}
 							set_location = {
 								target = PREV
-								distance = 90
+								distance = 20
 								angle = random
 							}
 						}
@@ -6127,7 +4231,490 @@ fallen_3 = {
 						set_owner = ROOT
 						create_ship = {
 							name = random
-							design = "Omega"
+							design = "Custodian"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Custodian"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Custodian"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Custodian"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Custodian"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Custodian"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Custodian"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Custodian"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Custodian"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Custodian"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						set_location = {
+							target = PREV
+							distance = 70
+							angle = random
+						}
+					}
+				}
+				create_fleet = {
+					effect = {
+						set_owner = ROOT
+						create_ship = {
+							name = random
+							design = "Custodian"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Custodian"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Custodian"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Custodian"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Custodian"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Custodian"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Custodian"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Custodian"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Custodian"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Custodian"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Warden"
+							graphical_culture = root
+						}
+						set_location = {
+							target = PREV
+							distance = 90
+							angle = random
+						}
+					}
+				}
+				random = {
+					chance = 33
+					create_fleet = {
+						effect = {
+							set_owner = ROOT
+							create_ship = {
+								name = random
+								design = "Custodian"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Custodian"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Custodian"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Custodian"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Custodian"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Custodian"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Custodian"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Custodian"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Custodian"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Custodian"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Warden"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Warden"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Warden"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Warden"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Warden"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Warden"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Warden"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Warden"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Warden"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Warden"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Warden"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Warden"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Warden"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Warden"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Warden"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Warden"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Warden"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Warden"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Warden"
+								graphical_culture = root
+							}
+							create_ship = {
+								name = random
+								design = "Warden"
+								graphical_culture = root
+							}
+							set_location = {
+								target = PREV
+								distance = 45
+								angle = random
+							}
+						}
+					}
+				}
+				create_fleet = {
+					effect = {
+						set_owner = ROOT
+						create_ship = {
+							name = random
+							design = "Sentinel"
 							graphical_culture = root
 						}
 						set_location = {
@@ -6142,7 +4729,7 @@ fallen_3 = {
 						set_owner = ROOT
 						create_ship = {
 							name = random
-							design = "Omega"
+							design = "Sentinel"
 							graphical_culture = root
 						}
 						set_location = {
@@ -6157,7 +4744,7 @@ fallen_3 = {
 						set_owner = ROOT
 						create_ship = {
 							name = random
-							design = "Omega"
+							design = "Sentinel"
 							graphical_culture = root
 						}
 						set_location = {
@@ -6172,7 +4759,7 @@ fallen_3 = {
 						set_owner = ROOT
 						create_ship = {
 							name = random
-							design = "Omega"
+							design = "Sentinel"
 							graphical_culture = root
 						}
 						set_location = {
@@ -6204,6 +4791,7 @@ fallen_3 = {
 			modifiers = none
 
 			init_effect = {
+				set_planet_flag = fallen_empire_world
 				prevent_anomaly = yes
 				set_owner = ROOT
 				random_tile = {
@@ -6363,6 +4951,29 @@ fallen_3 = {
 					owner = ROOT
 					species = ROOT
 					type = "defense_army"
+				}
+				create_spaceport = {
+					owner = ROOT
+					initial_module = "fallen_empire_weapon"
+				}
+				spaceport = {
+					set_spaceport_level = 6
+					set_spaceport_module = {
+						slot = 1
+						module = "crew_quarters"
+					}
+					set_spaceport_module = {
+						slot = 2
+						module = "fleet_academy"
+					}
+					set_spaceport_module = {
+						slot = 3
+						module = "synchronized_defenses"
+					}
+					set_spaceport_module = {
+						slot = 4
+						module = "engineering_bay"
+					}
 				}
 			}
 		}
@@ -6377,6 +4988,7 @@ fallen_3 = {
 			modifiers = none
 
 			init_effect = {
+				set_planet_flag = fallen_empire_world
 				prevent_anomaly = yes
 				set_owner = ROOT
 				random_tile = {
@@ -6563,6 +5175,1473 @@ fallen_3 = {
 					species = ROOT
 					type = "defense_army"
 				}
+				create_spaceport = {
+					owner = ROOT
+					initial_module = "fallen_empire_weapon"
+				}
+				spaceport = {
+					set_spaceport_level = 6
+					set_spaceport_module = {
+						slot = 1
+						module = "crew_quarters"
+					}
+					set_spaceport_module = {
+						slot = 2
+						module = "fleet_academy"
+					}
+					set_spaceport_module = {
+						slot = 3
+						module = "synchronized_defenses"
+					}
+					set_spaceport_module = {
+						slot = 4
+						module = "engineering_bay"
+					}
+				}
+			}
+		}
+	}
+
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_xeno_zoo"
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_orbitals_1"
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_orbitals_2"
+	}
+}
+
+# Home System IV
+fallen_4 = {
+	usage = fallen_empire_init
+	class = "rl_standard_stars"
+	asteroids_distance = 50
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+
+	change_orbit = 50
+
+	planet = {
+		count = { min = 0 max = 3 }
+		class = random_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 40 max = 100 }
+	}
+
+	planet = {
+		count = { min = 0 max = 3 }
+		orbit_distance = 20
+		class = random_non_colonizable
+		orbit_angle = { min = 90 max = 270 }
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		name = "The Core"
+		orbit_distance = 20
+		class = pc_gaia
+		orbit_angle = { min = 90 max = 270 }
+		size = 25
+		tile_blockers = none
+		modifiers = none
+		has_ring = no
+
+		init_effect = {
+
+			create_cluster = {
+				id = fe4_cluster
+				radius = 100
+				center = this.solar_system
+			}
+
+			set_planet_flag = fallen_empire_world
+			prevent_anomaly = yes
+			set_owner = ROOT
+			set_capital = yes
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = owner_main_species
+				ethos = owner
+			}
+			create_pop = {
+				species = ROBOT_POP_SPECIES_3
+				ethos = owner
+			}
+			create_pop = {
+				species = ROBOT_POP_SPECIES_3
+				ethos = owner
+			}
+			create_pop = {
+				species = ROBOT_POP_SPECIES_3
+				ethos = owner
+			}
+			create_pop = {
+				species = ROBOT_POP_SPECIES_3
+				ethos = owner
+			}
+			create_pop = {
+				species = ROBOT_POP_SPECIES_3
+				ethos = owner
+			}
+			create_pop = {
+				species = ROBOT_POP_SPECIES_3
+				ethos = owner
+			}
+			create_pop = {
+				species = ROBOT_POP_SPECIES_3
+				ethos = owner
+			}
+			create_pop = {
+				species = ROBOT_POP_SPECIES_3
+				ethos = owner
+			}
+			create_pop = {
+				species = ROBOT_POP_SPECIES_3
+				ethos = owner
+			}
+			create_pop = {
+				species = ROBOT_POP_SPECIES_3
+				ethos = owner
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
+				set_building = "building_capital_3"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}
+				add_resource = {
+					resource = food
+					amount = 1
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_agri_processing_complex"
+				add_resource = {
+					resource = food
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = food
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_dark_matter_power_plant"
+				add_resource = {
+					resource = energy
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_ancient_factory"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_ancient_factory"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_ancient_factory"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_ancient_factory"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_ancient_factory"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_ancient_factory"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}
+			}
+			random_tile = {
+				limit = { has_building = no has_blocker = no }
+				set_building = "building_ancient_factory"
+				add_resource = {
+					resource = minerals
+					amount = 1
+					replace = yes
+				}
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "android_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "android_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "android_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "android_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "android_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "android_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "defense_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "defense_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "defense_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "defense_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "defense_army"
+			}
+			create_army = {
+				name = random
+				owner = ROOT
+				species = ROOT
+				type = "defense_army"
+			}
+			create_spaceport = {
+				owner = ROOT
+				initial_module = "fallen_empire_weapon"
+			}
+			spaceport = {
+				set_spaceport_level = 6
+				set_spaceport_module = {
+					slot = 1
+					module = "crew_quarters"
+				}
+				set_spaceport_module = {
+					slot = 2
+					module = "fleet_academy"
+				}
+				set_spaceport_module = {
+					slot = 3
+					module = "synchronized_defenses"
+				}
+				set_spaceport_module = {
+					slot = 4
+					module = "engineering_bay"
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Reaper"
+						graphical_culture = root
+					}
+					set_location = {
+						target = PREV
+						distance = 20
+						angle = 90
+					}
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Reaper"
+						graphical_culture = root
+					}
+					set_location = {
+						target = PREV
+						distance = 20
+						angle = 180
+					}
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Reaper"
+						graphical_culture = root
+					}
+					set_location = {
+						target = PREV
+						distance = 20
+						angle = 270
+					}
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Reaper"
+						graphical_culture = root
+					}
+					set_location = {
+						target = PREV
+						distance = 20
+						angle = 0
+					}
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Servitor"
+						graphical_culture = root
+					}
+					set_location = {
+						target = PREV
+						distance = 80
+					}
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Servitor"
+						graphical_culture = root
+					}
+					set_location = {
+						target = PREV
+						distance = 90
+					}
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Servitor"
+						graphical_culture = root
+					}
+					set_location = {
+						target = PREV
+						distance = 100
+					}
+				}
+			}
+			random = {
+				chance = 100
+				#chance = 15
+				create_fleet = {
+					effect = {
+						set_owner = ROOT
+						create_ship = {
+							name = random
+							design = "Imperium"
+							graphical_culture = root
+						}
+						set_location = {
+							target = PREV
+							distance = 20
+							angle = random
+						}
+					}
+				}
+			}
+			random = {
+				chance = 100
+				#chance = 15
+				create_fleet = {
+					effect = {
+						set_owner = ROOT
+						create_ship = {
+							name = random
+							design = "Imperium"
+							graphical_culture = root
+						}
+						set_location = {
+							target = PREV
+							distance = 20
+							angle = random
+						}
+					}
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Supremacy"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Supremacy"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Supremacy"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Supremacy"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Supremacy"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Supremacy"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Supremacy"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Supremacy"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Supremacy"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Supremacy"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					set_location = {
+						target = PREV
+						distance = 70
+						angle = random
+					}
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Supremacy"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Supremacy"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Supremacy"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Supremacy"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Supremacy"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Supremacy"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Supremacy"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Supremacy"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Supremacy"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Supremacy"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					create_ship = {
+						name = random
+						design = "Glory"
+						graphical_culture = root
+					}
+					set_location = {
+						target = PREV
+						distance = 90
+						angle = random
+					}
+				}
+			}
+			random = {
+				chance = 33
+				create_fleet = {
+					effect = {
+						set_owner = ROOT
+						create_ship = {
+							name = random
+							design = "Supremacy"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Supremacy"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Supremacy"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Supremacy"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Supremacy"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Supremacy"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Supremacy"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Supremacy"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Supremacy"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Supremacy"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Glory"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Glory"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Glory"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Glory"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Glory"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Glory"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Glory"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Glory"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Glory"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Glory"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Glory"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Glory"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Glory"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Glory"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Glory"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Glory"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Glory"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Glory"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Glory"
+							graphical_culture = root
+						}
+						create_ship = {
+							name = random
+							design = "Glory"
+							graphical_culture = root
+						}
+						set_location = {
+							target = PREV
+							distance = 45
+							angle = random
+						}
+					}
+				}
+			}
+		}
+
+		moon = {
+			name = "Boundary"
+			class = "pc_gaia"
+			size = 12
+			orbit_distance = 14
+			orbit_angle = 10
+			tile_blockers = none
+			modifiers = none
+
+			init_effect = {
+				set_planet_flag = fallen_empire_world
+				prevent_anomaly = yes
+				set_owner = ROOT
+				random_tile = {
+					limit = { has_building = no has_blocker = no num_adjacent_tiles > 3 }
+					set_building = "building_capital_2"
+					add_resource = {
+						resource = minerals
+						amount = 1
+						replace = yes
+					}
+					add_resource = {
+						resource = food
+						amount = 1
+					}
+				}
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_agri_processing_complex"
+					add_resource = {
+						resource = food
+						amount = 1
+						replace = yes
+					}
+				}
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_dark_matter_power_plant"
+					add_resource = {
+						resource = food
+						amount = 1
+						replace = yes
+					}
+				}
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_dark_matter_power_plant"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}
+				}
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_dark_matter_power_plant"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}
+				}
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_dark_matter_power_plant"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}
+				}
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_dark_matter_power_plant"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}
+				}
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_ancient_factory"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}
+				}
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_ancient_factory"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}
+				}
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_ancient_factory"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}
+				}
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_ancient_factory"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}
+				}
+				random_tile = {
+					limit = { has_building = no has_blocker = no }
+					set_building = "building_ancient_factory"
+					add_resource = {
+						resource = energy
+						amount = 1
+						replace = yes
+					}
+				}
+				create_pop = {
+					species = owner_main_species
+					ethos = owner
+				}
+				create_pop = {
+					species = owner_main_species
+					ethos = owner
+				}
+				create_pop = {
+					species = owner_main_species
+					ethos = owner
+				}
+				create_pop = {
+					species = owner_main_species
+					ethos = owner
+				}
+				create_pop = {
+					species = owner_main_species
+					ethos = owner
+				}
+				create_pop = {
+					species = owner_main_species
+					ethos = owner
+				}
+				create_pop = {
+					species = owner_main_species
+					ethos = owner
+				}
+				create_pop = {
+					species = ROBOT_POP_SPECIES_3
+					ethos = owner
+				}
+				create_pop = {
+					species = ROBOT_POP_SPECIES_3
+					ethos = owner
+				}
+				create_pop = {
+					species = ROBOT_POP_SPECIES_3
+					ethos = owner
+				}
+				create_pop = {
+					species = ROBOT_POP_SPECIES_3
+					ethos = owner
+				}
+				create_pop = {
+					species = ROBOT_POP_SPECIES_3
+					ethos = owner
+				}
+				create_army = {
+					name = random
+					owner = ROOT
+					species = ROOT
+					type = "defense_army"
+				}
+				create_army = {
+					name = random
+					owner = ROOT
+					species = ROOT
+					type = "defense_army"
+				}
+				create_army = {
+					name = random
+					owner = ROOT
+					species = ROOT
+					type = "defense_army"
+				}
+				create_army = {
+					name = random
+					owner = ROOT
+					species = ROOT
+					type = "defense_army"
+				}
+				create_spaceport = {
+					owner = ROOT
+					initial_module = "fallen_empire_weapon"
+				}
+				spaceport = {
+					set_spaceport_level = 6
+					set_spaceport_module = {
+						slot = 1
+						module = "crew_quarters"
+					}
+					set_spaceport_module = {
+						slot = 2
+						module = "fleet_academy"
+					}
+					set_spaceport_module = {
+						slot = 3
+						module = "synchronized_defenses"
+					}
+					set_spaceport_module = {
+						slot = 4
+						module = "engineering_bay"
+					}
+				}
+			}
+		}
+	}
+
+	planet = {
+		count = { min = 2 max = 4 }
+		orbit_distance = 20
+		class = random_non_colonizable
+		orbit_angle = { min = 90 max = 270 }
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		count = { min = 1 max = 2 }
+		orbit_distance = 20
+		class = pc_gas_giant
+		orbit_angle = { min = 90 max = 270 }
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 3 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	init_effect = {
+		random_system_planet = {
+			limit = { has_deposit_for = shipclass_mining_station }
+			create_mining_station = {
+				owner = ROOT
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Devastator"
+						graphical_culture = root
+					}
+					set_location = {
+						target = PREV
+						distance = 20
+						angle = 90
+					}
+				}
+			}
+		}
+		random_system_planet = {
+			limit = {
+				has_deposit_for = shipclass_mining_station
+				has_mining_station = no
+			}
+			create_mining_station = {
+				owner = ROOT
+			}
+		}
+		random_system_planet = {
+			limit = { has_deposit_for = shipclass_research_station }
+			create_research_station = {
+				owner = ROOT
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Devastator"
+						graphical_culture = root
+					}
+					set_location = {
+						target = PREV
+						distance = 20
+						angle = 90
+					}
+				}
+			}
+		}
+		random_system_planet = {
+			limit = {
+				has_deposit_for = shipclass_research_station
+				has_research_station = no
+			}
+			create_research_station = {
+				owner = ROOT
 			}
 		}
 	}
@@ -6573,22 +6652,21 @@ fallen_3 = {
 	}
 	neighbor_system = {
 		distance = { min = 0 max = 50 }
-		initializer = "fallen_orbitals_1"
-	}
-	neighbor_system = {
-		distance = { min = 0 max = 50 }
 		initializer = "fallen_orbitals_2"
 	}
 	neighbor_system = {
 		distance = { min = 0 max = 50 }
-		initializer = "fallen_orbitals_2"
+		initializer = "fallen_shielded_1"
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_shielded_2"
 	}
 	neighbor_system = {
 		distance = { min = 0 max = 50 }
 		initializer = "fallen_shielded_3"
 	}
 }
-
 
 ### STANDARD FALLEN EMPIRE SYSTEMS
 
@@ -6641,6 +6719,7 @@ fallen_col_1 = {
 		modifiers = none
 
 		init_effect = {
+			set_planet_flag = fallen_empire_world
 			prevent_anomaly = yes
 			set_owner = ROOT
 			random_tile = {
@@ -6800,7 +6879,7 @@ fallen_col_1 = {
 				}
 				set_spaceport_module = {
 					slot = 4
-					module = "solar_panel_network"
+					module = "engineering_bay"
 				}
 			}
 		}
@@ -6856,10 +6935,45 @@ fallen_col_1 = {
 			create_fleet = {
 				effect = {
 					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Sigma"
-						graphical_culture = root
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_materialist }
+						}
+						create_ship = {
+							name = random
+							design = "Sigma"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_spiritualist }
+						}
+						create_ship = {
+							name = random
+							design = "Faith"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophobe }
+						}
+						create_ship = {
+							name = random
+							design = "Devastator"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophile }
+						}
+						create_ship = {
+							name = random
+							design = "Watcher"
+							graphical_culture = root
+						}
 					}
 					set_location = {
 						target = PREV
@@ -6886,10 +7000,45 @@ fallen_col_1 = {
 			create_fleet = {
 				effect = {
 					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Sigma"
-						graphical_culture = root
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_materialist }
+						}
+						create_ship = {
+							name = random
+							design = "Sigma"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_spiritualist }
+						}
+						create_ship = {
+							name = random
+							design = "Faith"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophobe }
+						}
+						create_ship = {
+							name = random
+							design = "Devastator"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophile }
+						}
+						create_ship = {
+							name = random
+							design = "Watcher"
+							graphical_culture = root
+						}
 					}
 					set_location = {
 						target = PREV
@@ -6916,10 +7065,45 @@ fallen_col_1 = {
 			create_fleet = {
 				effect = {
 					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Sigma"
-						graphical_culture = root
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_materialist }
+						}
+						create_ship = {
+							name = random
+							design = "Sigma"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_spiritualist }
+						}
+						create_ship = {
+							name = random
+							design = "Faith"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophobe }
+						}
+						create_ship = {
+							name = random
+							design = "Devastator"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophile }
+						}
+						create_ship = {
+							name = random
+							design = "Watcher"
+							graphical_culture = root
+						}
 					}
 					set_location = PREV
 				}
@@ -6954,6 +7138,7 @@ fallen_col_2 = {
 		modifiers = none
 
 		init_effect = {
+			set_planet_flag = fallen_empire_world
 			prevent_anomaly = yes
 			set_owner = ROOT
 			random_tile = {
@@ -7113,7 +7298,7 @@ fallen_col_2 = {
 				}
 				set_spaceport_module = {
 					slot = 4
-					module = "solar_panel_network"
+					module = "engineering_bay"
 				}
 			}
 		}
@@ -7200,10 +7385,45 @@ fallen_col_2 = {
 			create_fleet = {
 				effect = {
 					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Sigma"
-						graphical_culture = root
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_materialist }
+						}
+						create_ship = {
+							name = random
+							design = "Sigma"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_spiritualist }
+						}
+						create_ship = {
+							name = random
+							design = "Faith"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophobe }
+						}
+						create_ship = {
+							name = random
+							design = "Devastator"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophile }
+						}
+						create_ship = {
+							name = random
+							design = "Watcher"
+							graphical_culture = root
+						}
 					}
 					set_location = {
 						target = PREV
@@ -7230,10 +7450,45 @@ fallen_col_2 = {
 			create_fleet = {
 				effect = {
 					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Sigma"
-						graphical_culture = root
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_materialist }
+						}
+						create_ship = {
+							name = random
+							design = "Sigma"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_spiritualist }
+						}
+						create_ship = {
+							name = random
+							design = "Faith"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophobe }
+						}
+						create_ship = {
+							name = random
+							design = "Devastator"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophile }
+						}
+						create_ship = {
+							name = random
+							design = "Watcher"
+							graphical_culture = root
+						}
 					}
 					set_location = {
 						target = PREV
@@ -7260,10 +7515,45 @@ fallen_col_2 = {
 			create_fleet = {
 				effect = {
 					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Sigma"
-						graphical_culture = root
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_materialist }
+						}
+						create_ship = {
+							name = random
+							design = "Sigma"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_spiritualist }
+						}
+						create_ship = {
+							name = random
+							design = "Faith"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophobe }
+						}
+						create_ship = {
+							name = random
+							design = "Devastator"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophile }
+						}
+						create_ship = {
+							name = random
+							design = "Watcher"
+							graphical_culture = root
+						}
 					}
 					set_location = PREV
 				}
@@ -7308,6 +7598,7 @@ fallen_orbitals_1 = {
 				}
 				is_colony = no
 			}
+			set_planet_flag = fallen_empire_world
 			prevent_anomaly = yes
 			set_owner = ROOT
 			random_tile = {
@@ -7509,10 +7800,45 @@ fallen_orbitals_1 = {
 			create_fleet = {
 				effect = {
 					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Sigma"
-						graphical_culture = root
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_materialist }
+						}
+						create_ship = {
+							name = random
+							design = "Sigma"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_spiritualist }
+						}
+						create_ship = {
+							name = random
+							design = "Faith"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophobe }
+						}
+						create_ship = {
+							name = random
+							design = "Devastator"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophile }
+						}
+						create_ship = {
+							name = random
+							design = "Watcher"
+							graphical_culture = root
+						}
 					}
 					set_location = {
 						target = PREV
@@ -7539,10 +7865,45 @@ fallen_orbitals_1 = {
 			create_fleet = {
 				effect = {
 					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Sigma"
-						graphical_culture = root
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_materialist }
+						}
+						create_ship = {
+							name = random
+							design = "Sigma"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_spiritualist }
+						}
+						create_ship = {
+							name = random
+							design = "Faith"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophobe }
+						}
+						create_ship = {
+							name = random
+							design = "Devastator"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophile }
+						}
+						create_ship = {
+							name = random
+							design = "Watcher"
+							graphical_culture = root
+						}
 					}
 					set_location = {
 						target = PREV
@@ -7569,10 +7930,45 @@ fallen_orbitals_1 = {
 			create_fleet = {
 				effect = {
 					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Sigma"
-						graphical_culture = root
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_materialist }
+						}
+						create_ship = {
+							name = random
+							design = "Sigma"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_spiritualist }
+						}
+						create_ship = {
+							name = random
+							design = "Faith"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophobe }
+						}
+						create_ship = {
+							name = random
+							design = "Devastator"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophile }
+						}
+						create_ship = {
+							name = random
+							design = "Watcher"
+							graphical_culture = root
+						}
 					}
 					set_location = PREV
 				}
@@ -7642,6 +8038,7 @@ fallen_orbitals_2 = {
 				}
 				is_colony = no
 			}
+			set_planet_flag = fallen_empire_world
 			prevent_anomaly = yes
 			set_owner = ROOT
 			random_tile = {
@@ -7843,10 +8240,45 @@ fallen_orbitals_2 = {
 			create_fleet = {
 				effect = {
 					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Sigma"
-						graphical_culture = root
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_materialist }
+						}
+						create_ship = {
+							name = random
+							design = "Sigma"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_spiritualist }
+						}
+						create_ship = {
+							name = random
+							design = "Faith"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophobe }
+						}
+						create_ship = {
+							name = random
+							design = "Devastator"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophile }
+						}
+						create_ship = {
+							name = random
+							design = "Watcher"
+							graphical_culture = root
+						}
 					}
 					set_location = {
 						target = PREV
@@ -7873,10 +8305,45 @@ fallen_orbitals_2 = {
 			create_fleet = {
 				effect = {
 					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Sigma"
-						graphical_culture = root
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_materialist }
+						}
+						create_ship = {
+							name = random
+							design = "Sigma"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_spiritualist }
+						}
+						create_ship = {
+							name = random
+							design = "Faith"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophobe }
+						}
+						create_ship = {
+							name = random
+							design = "Devastator"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophile }
+						}
+						create_ship = {
+							name = random
+							design = "Watcher"
+							graphical_culture = root
+						}
 					}
 					set_location = {
 						target = PREV
@@ -7903,10 +8370,45 @@ fallen_orbitals_2 = {
 			create_fleet = {
 				effect = {
 					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Sigma"
-						graphical_culture = root
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_materialist }
+						}
+						create_ship = {
+							name = random
+							design = "Sigma"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_spiritualist }
+						}
+						create_ship = {
+							name = random
+							design = "Faith"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophobe }
+						}
+						create_ship = {
+							name = random
+							design = "Devastator"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophile }
+						}
+						create_ship = {
+							name = random
+							design = "Watcher"
+							graphical_culture = root
+						}
 					}
 					set_location = PREV
 				}
@@ -8011,11 +8513,45 @@ fallen_shielded_1 = {
 			create_fleet = {
 				effect = {
 					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Sigma"
-						#graphical_culture = root
-						graphical_culture = root
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_materialist }
+						}
+						create_ship = {
+							name = random
+							design = "Sigma"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_spiritualist }
+						}
+						create_ship = {
+							name = random
+							design = "Faith"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophobe }
+						}
+						create_ship = {
+							name = random
+							design = "Devastator"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophile }
+						}
+						create_ship = {
+							name = random
+							design = "Watcher"
+							graphical_culture = root
+						}
 					}
 					set_location = {
 						target = PREV
@@ -8042,10 +8578,45 @@ fallen_shielded_1 = {
 			create_fleet = {
 				effect = {
 					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Sigma"
-						graphical_culture = root
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_materialist }
+						}
+						create_ship = {
+							name = random
+							design = "Sigma"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_spiritualist }
+						}
+						create_ship = {
+							name = random
+							design = "Faith"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophobe }
+						}
+						create_ship = {
+							name = random
+							design = "Devastator"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophile }
+						}
+						create_ship = {
+							name = random
+							design = "Watcher"
+							graphical_culture = root
+						}
 					}
 					set_location = {
 						target = PREV
@@ -8069,10 +8640,45 @@ fallen_shielded_1 = {
 			create_fleet = {
 				effect = {
 					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Omega"
-						graphical_culture = root
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_materialist }
+						}
+						create_ship = {
+							name = random
+							design = "Omega"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_spiritualist }
+						}
+						create_ship = {
+							name = random
+							design = "Bulwark"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophobe }
+						}
+						create_ship = {
+							name = random
+							design = "Reaper"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophile }
+						}
+						create_ship = {
+							name = random
+							design = "Sentinel"
+							graphical_culture = root
+						}
 					}
 					set_location = PREV
 				}
@@ -8166,11 +8772,45 @@ fallen_shielded_2 = {
 			create_fleet = {
 				effect = {
 					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Sigma"
-						#graphical_culture = root
-						graphical_culture = root
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_materialist }
+						}
+						create_ship = {
+							name = random
+							design = "Sigma"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_spiritualist }
+						}
+						create_ship = {
+							name = random
+							design = "Faith"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophobe }
+						}
+						create_ship = {
+							name = random
+							design = "Devastator"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophile }
+						}
+						create_ship = {
+							name = random
+							design = "Watcher"
+							graphical_culture = root
+						}
 					}
 					set_location = {
 						target = PREV
@@ -8197,10 +8837,45 @@ fallen_shielded_2 = {
 			create_fleet = {
 				effect = {
 					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Sigma"
-						graphical_culture = root
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_materialist }
+						}
+						create_ship = {
+							name = random
+							design = "Sigma"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_spiritualist }
+						}
+						create_ship = {
+							name = random
+							design = "Faith"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophobe }
+						}
+						create_ship = {
+							name = random
+							design = "Devastator"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophile }
+						}
+						create_ship = {
+							name = random
+							design = "Watcher"
+							graphical_culture = root
+						}
 					}
 					set_location = {
 						target = PREV
@@ -8224,10 +8899,45 @@ fallen_shielded_2 = {
 			create_fleet = {
 				effect = {
 					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Omega"
-						graphical_culture = root
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_materialist }
+						}
+						create_ship = {
+							name = random
+							design = "Omega"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_spiritualist }
+						}
+						create_ship = {
+							name = random
+							design = "Bulwark"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophobe }
+						}
+						create_ship = {
+							name = random
+							design = "Reaper"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophile }
+						}
+						create_ship = {
+							name = random
+							design = "Sentinel"
+							graphical_culture = root
+						}
 					}
 					set_location = PREV
 				}
@@ -8322,11 +9032,45 @@ fallen_shielded_3 = {
 			create_fleet = {
 				effect = {
 					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Sigma"
-						#graphical_culture = root
-						graphical_culture = root
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_materialist }
+						}
+						create_ship = {
+							name = random
+							design = "Sigma"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_spiritualist }
+						}
+						create_ship = {
+							name = random
+							design = "Faith"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophobe }
+						}
+						create_ship = {
+							name = random
+							design = "Devastator"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophile }
+						}
+						create_ship = {
+							name = random
+							design = "Watcher"
+							graphical_culture = root
+						}
 					}
 					set_location = {
 						target = PREV
@@ -8353,10 +9097,45 @@ fallen_shielded_3 = {
 			create_fleet = {
 				effect = {
 					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Sigma"
-						graphical_culture = root
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_materialist }
+						}
+						create_ship = {
+							name = random
+							design = "Sigma"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_spiritualist }
+						}
+						create_ship = {
+							name = random
+							design = "Faith"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophobe }
+						}
+						create_ship = {
+							name = random
+							design = "Devastator"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophile }
+						}
+						create_ship = {
+							name = random
+							design = "Watcher"
+							graphical_culture = root
+						}
 					}
 					set_location = {
 						target = PREV
@@ -8380,10 +9159,45 @@ fallen_shielded_3 = {
 			create_fleet = {
 				effect = {
 					set_owner = ROOT
-					create_ship = {
-						name = random
-						design = "Omega"
-						graphical_culture = root
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_materialist }
+						}
+						create_ship = {
+							name = random
+							design = "Omega"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_spiritualist }
+						}
+						create_ship = {
+							name = random
+							design = "Bulwark"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophobe }
+						}
+						create_ship = {
+							name = random
+							design = "Reaper"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophile }
+						}
+						create_ship = {
+							name = random
+							design = "Sentinel"
+							graphical_culture = root
+						}
 					}
 					set_location = PREV
 				}
@@ -8612,3 +9426,177 @@ fallen_holy_04 = {
 		orbit_angle = { min = 90 max = 270 }
 	}
 }
+
+# Fallen Empire Xeno Zoo
+fallen_xeno_zoo = {
+	class = "rl_standard_stars"
+	asteroids_distance = 80
+
+	flags = { fe_xeno_zoo }
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+
+	change_orbit = 70
+
+	planet = {
+		count = 1
+		orbit_distance = 15
+		class = "pc_gaia"
+		name = "The Preserve"
+		orbit_angle = { min = 90 max = 270 }
+		size = 20
+
+		orbit_angle = 60
+		orbit_distance = 0
+		tile_blockers = none
+		modifiers = none
+
+		init_effect = {
+			set_planet_flag = fallen_empire_world
+			prevent_anomaly = yes
+			set_owner = ROOT
+			set_planet_flag = fe_the_preserve
+
+			create_species = {
+				name = random
+				class = random
+				portrait = random
+				traits = random
+			}
+			random_tile = {
+				limit = { has_building = no has_pop = no has_blocker = no }
+				create_pop = {
+					species = last_created_species
+					ethos = random
+				}
+				set_building = "building_fe_xeno_zoo"
+			}
+
+			create_species = {
+				name = random
+				class = random
+				portrait = random
+				traits = random
+			}
+			random_tile = {
+				limit = { has_building = no has_pop = no has_blocker = no }
+				create_pop = {
+					species = last_created_species
+					ethos = random
+				}
+				set_building = "building_fe_xeno_zoo"
+			}
+
+			create_species = {
+				name = random
+				class = random
+				portrait = random
+				traits = random
+			}
+			random_tile = {
+				limit = { has_building = no has_pop = no has_blocker = no }
+				create_pop = {
+					species = last_created_species
+					ethos = random
+				}
+				set_building = "building_fe_xeno_zoo"
+			}
+
+			every_tile = {
+				limit = { has_building = no has_pop = no }
+				set_blocker = tb_xeno_preserve
+			}
+
+			create_spaceport = {
+				owner = ROOT
+				initial_module = "fallen_empire_weapon"
+			}
+			spaceport = {
+				set_spaceport_level = 6
+				set_spaceport_module = {
+					slot = 1
+					module = "crew_quarters"
+				}
+				set_spaceport_module = {
+					slot = 2
+					module = "fleet_academy"
+				}
+				set_spaceport_module = {
+					slot = 3
+					module = "synchronized_defenses"
+				}
+				set_spaceport_module = {
+					slot = 4
+					module = "engineering_bay"
+				}
+			}
+
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_materialist }
+						}
+						create_ship = {
+							name = random
+							design = "Omega"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_spiritualist }
+						}
+						create_ship = {
+							name = random
+							design = "Bulwark"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophobe }
+						}
+						create_ship = {
+							name = random
+							design = "Reaper"
+							graphical_culture = root
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { has_ethic = ethic_fanatic_xenophile }
+						}
+						create_ship = {
+							name = random
+							design = "Sentinel"
+							graphical_culture = root
+						}
+					}
+					set_location = {
+						target = PREV
+						distance = 30
+					}
+				}
+			}
+		}
+	}
+
+	change_orbit = -45
+
+	planet = {
+		count = { min = 1 max = 1 }
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+	}
+}
+
+

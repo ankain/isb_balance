@@ -95,11 +95,11 @@ objectTypes = {
 		cull_distance = 999999999.0f
 	}	
 	
-	pdxmesh = {
-		name = "asteroid_03_mesh"
-		file = "gfx/models/planets/asteroid_03.mesh"
-		cull_distance = 999999999.0f
-	}
+#	pdxmesh = {
+#		name = "asteroid_03_mesh"
+#		file = "gfx/models/planets/asteroid_03.mesh"
+#		cull_distance = 999999999.0f
+#	}
 		
 	pdxmesh = {
 		name = "asteroid_04_mesh"
@@ -157,7 +157,7 @@ objectTypes = {
 		file = "gfx/models/planets/ringworld_habitable.mesh"
 		cull_distance = 999999999.0f
 		
-		scale = 1.8
+		scale = 2
 	}
 
 	pdxmesh = {
@@ -165,7 +165,7 @@ objectTypes = {
 		file = "gfx/models/planets/ringworld_habitable_damaged.mesh"
 		cull_distance = 999999999.0f
 		
-		scale = 1.8
+		scale = 2
 	}
 	
 	pdxmesh = {
@@ -173,7 +173,7 @@ objectTypes = {
 		file = "gfx/models/planets/ringworld_seam.mesh"
 		cull_distance = 999999999.0f
 		
-		scale = 1.8
+		scale = 2
 	}
 	
 	pdxmesh = {
@@ -181,7 +181,7 @@ objectTypes = {
 		file = "gfx/models/planets/ringworld_seam_damaged.mesh"
 		cull_distance = 999999999.0f
 		
-		scale = 1.8
+		scale = 2
 	}
 
 	pdxmesh = {
@@ -189,7 +189,7 @@ objectTypes = {
 		file = "gfx/models/planets/ringworld_tech.mesh"
 		cull_distance = 999999999.0f
 		
-		scale = 1.8
+		scale = 2
 	}	
 	
 	pdxmesh = {
@@ -197,7 +197,7 @@ objectTypes = {
 		file = "gfx/models/planets/ringworld_tech_damaged.mesh"
 		cull_distance = 999999999.0f
 		
-		scale = 1.8
+		scale = 2
 	}
 	
 	## Bombardment

@@ -89,7 +89,7 @@
 		
 		locator = {
 			name = "large_gun_01"
-			position = { 0.0 1.2 -13.0}
+			position = { 0.0 0.0 -27.5}
 			rotation = { 0 0 0 }
 		}
 		

@@ -69,7 +69,7 @@ ship_event = {
 		if = {
 			limit = {
 				FLEET = {
-					count_ships = { count > 1 }
+					num_ships > 1
 				}
 			}
 
@@ -844,6 +844,7 @@ country_event = {
 
 				create_fleet = {
 					name = "Raiders"
+					settings = { spawn_debris = no }
 				}
 
 				#spawn based on wave
@@ -909,9 +910,14 @@ country_event = {
 												last_created_fleet = {
 													if = {
 														limit = {
-															count_ships = {
-																limit = { is_ship_size = titan }
-																count < 2
+															OWNER = {
+																count_owned_ships = {
+																	limit = { 
+																		FLEET = { is_same_value = PREVPREVPREV }
+																		is_ship_size = titan 
+																	}
+																	count < 2
+																}
 															}
 														}
 														create_ship = {
@@ -933,9 +939,14 @@ country_event = {
 												last_created_fleet = {
 													if = {
 														limit = {
-															count_ships = {
-																limit = { is_ship_size = leviathan }
-																count < 1
+															OWNER = {
+																count_owned_ships = {
+																	limit = { 
+																		FLEET = { is_same_value = PREVPREVPREV }
+																		is_ship_size = leviathan 
+																	}
+																	count < 1
+																}
 															}
 														}
 														create_ship = {
@@ -1002,9 +1013,14 @@ country_event = {
 																last_created_fleet = {
 																	if = {
 																		limit = {
-																			count_ships = {
-																				limit = { is_ship_size = titan }
-																				count < 4
+																			OWNER = {
+																				count_owned_ships = {
+																					limit = { 
+																						FLEET = { is_same_value = PREVPREVPREV }
+																						is_ship_size = titan 
+																					}
+																					count < 4
+																				}
 																			}
 																		}
 																		create_ship = {
@@ -1031,9 +1047,14 @@ country_event = {
 																last_created_fleet = {
 																	if = {
 																		limit = {
-																			count_ships = {
-																				limit = { is_ship_size = leviathan }
-																				count < 2
+																			OWNER = {
+																				count_owned_ships = {
+																					limit = { 
+																						FLEET = { is_same_value = PREVPREVPREV }
+																						is_ship_size = leviathan 
+																					}
+																					count < 2
+																				}
 																			}
 																		}
 																		create_ship = {

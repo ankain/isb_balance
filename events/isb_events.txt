@@ -76,18 +76,18 @@ country_event = {
 			limit = {
 				has_global_flag = flag_crisis_easy
 			}
-			
+
 			remove_global_flag = flag_crisis_easy
 		}
-		
+
 		if = {
 			limit = {
 				has_global_flag = flag_crisis_hard
 			}
-			
+
 			remove_global_flag = flag_crisis_hard
 		}
-		
+
 		every_country = {
 			limit = {
 				OR = {
@@ -97,7 +97,7 @@ country_event = {
 					is_country_type = extradimensional_3
 				}
 			}
-			
+
 			if = {
 				limit = {
 					has_modifier = mod_crisis_easy
@@ -142,9 +142,9 @@ country_event = {
 					}
 				}
 			}
-		}		
+		}
 	}
-}					
+}
 
 # Crisis check for opinion boost every 5 years.
 event = {
@@ -633,184 +633,80 @@ event = {
 	}
 }
 
-# Test event
-country_event = {
-	id = isb.3
+# Strengthen Guardians every 50 years, up to 200 years
+event = {
+	id = isb.4
 	hide_window = yes
 	is_triggered_only = yes
 
 	immediate = {
-		capital_scope = {
-			solar_system = {
-				random_system_planet  = {
-					limit = {
-						is_star = yes
-					}
-					save_event_target_as = test_spawn_loc
-				}
-			}
-		}
-
-
-
-		create_country = {
-			name = "Test country"
-			type = bunny
-		}
-		last_created_country = {
-			establish_communications_no_message = ROOT
-			establish_contact = { who = ROOT }
-			save_event_target_as = bunny1
-			#declare_war = ROOT
-
-			create_fleet = {
-				effect = {
-					#set_owner = event_target:bunny1
-					create_ship = {
-						name = random
-						design = "Avatar"
-					}
-					set_location = {
-						target = event_target:test_spawn_loc
-						distance = 1
-					}
-					set_fleet_stance = aggressive
-				}
-
+		every_country = {
+			limit = {
+				is_guardian_country = yes
 			}
 
-			#declare_war = ROOT
-		}
-
-		create_country = {
-			name = "Test country2"
-			type = bunny
-		}
-		last_created_country = {
-			establish_communications_no_message = ROOT
-			establish_contact = { who = ROOT }
-			establish_communications_no_message = event_target:bunny1
-			establish_contact = { who = event_target:bunny1 }
-			save_event_target_as = bunny2
-
-			create_fleet = {
-				effect = {
-					#set_owner = event_target:bunny2
-					create_ship = {
-						name = random
-						design = "Avatar"
-					}
-					set_location = {
-						target = event_target:test_spawn_loc
-						distance = 1
-					}
-					set_fleet_stance = aggressive
-				}
-			}
-
-			save_event_target_as = bunny2
-			declare_war = event_target:bunny1
-			#declare_war = ROOT
+			country_event = { id = isb.5 }
 		}
 	}
 }
 
-# Test event 2
-fleet_event = {
-	id = isb.4
-	hide_window = no
+# Country buff for guardians
+country_event = {
+	id = isb.5
+	hide_window = yes
 	is_triggered_only = yes
-
-	picture = GFX_evt_physics_research
-
-	title = ftl_trigger
-
-	desc = {
-		text = you_are_system
-	}
-
-	trigger = {
-		any_system = {
-			has_star_flag = flag_galaxy_ftl_trap
-			distance = {
-				source = PREV
-				max_distance = 200 #50
-			}
-		}
-	}
 
 	immediate = {
 		if = {
 			limit = {
-				OWNER = {
-					is_ai = no
-				}
+				years_passed > 49
+				NOT = { has_country_flag = flag_guardian_buff_50 }
 			}
 
-
-			#queue_actions = {
-			#	move_to = event_target:ftl_trap_system
-			#}
-
-			fleet_event = { id = isb.5 days = 5 }
-
-		}
-	}
-
-	option = {
-		name = ftl_trap
-	}
-}
-
-# Test event 2
-fleet_event = {
-	id = isb.5
-	hide_window = no
-	is_triggered_only = yes
-
-	picture = GFX_evt_physics_research
-
-	title = ftl_trigger_2
-
-	desc = {
-		text = you_are_trap
-	}
-
-	immediate = {
-		OWNER = { save_event_target_as = ftl_trap_owner}
-		random_system = {
-			limit = {
-				distance = {
-					source = PREV
-					max_distance = 10 #50
-				}
-				has_star_flag = flag_galaxy_ftl_trap
+			set_country_flag = flag_guardian_buff_50
+			add_modifier = {
+				modifier = "mod_guardian_buff_50"
+				days = -1
 			}
-			save_event_target_as = ftl_trap_system
 
-			random_system_planet = {
+			if = {
 				limit = {
-					is_star = yes
+					years_passed > 99
+					NOT = { has_country_flag = flag_guardian_buff_100 }
 				}
 
-				save_event_target_as = ftl_trap_star
-				enable_special_project = {
-					name = "PROJ_AVATAR_CONSTRUCT_01"
-					location = THIS
-					OWNER = event_target:ftl_trap_owner
+				set_country_flag = flag_guardian_buff_100
+				add_modifier = {
+					modifier = "mod_guardian_buff_100"
+					days = -1
+				}
+
+				if = {
+					limit = {
+						years_passed > 149
+						NOT = { has_country_flag = flag_guardian_buff_150 }
+					}
+
+					set_country_flag = flag_guardian_buff_150
+					add_modifier = {
+						modifier = "mod_guardian_buff_150"
+						days = -1
+					}
+
+					if = {
+						limit = {
+							years_passed > 199
+							NOT = { has_country_flag = flag_guardian_buff_200 }
+						}
+
+						set_country_flag = flag_guardian_buff_200
+						add_modifier = {
+							modifier = "mod_guardian_buff_200"
+							days = -1
+						}
+					}
 				}
 			}
 		}
-
-		clear_orders = yes
-		set_location = {
-			target = event_target:ftl_trap_star
-			distance = 10
-			angle = random
-		}
-	}
-
-	option = {
-		name = ftl_trap_2
 	}
 }

@@ -20,18 +20,6 @@ ship_design = {
 			template = "LARGE_SCOURGE_MISSILE_1"
 		}
 		component = {
-			slot = "LARGE_GUN_04"
-			template = "LARGE_SCOURGE_MISSILE_1"
-		}
-		component = {
-			slot = "LARGE_GUN_05"
-			template = "LARGE_SCOURGE_MISSILE_1"
-		}
-		component = {
-			slot = "LARGE_GUN_06"
-			template = "SCOURGE_PROJECTILE_WEAPON"
-		}
-		component = {
 			slot = "MEDIUM_GUN_01"
 			template = "SCOURGE_PROJECTILE_WEAPON"
 		}
@@ -48,45 +36,14 @@ ship_design = {
 			template = "LARGE_ARMOR_5"
 		}
 		component = {
-			slot = "MEDIUM_UTILITY_1"
-			template = "MEDIUM_AUTO_REPAIR"
-		}
-		component = {
-			slot = "MEDIUM_UTILITY_2"
-			template = "MEDIUM_AUTO_REPAIR"
-		}
-		component = {
-			slot = "MEDIUM_UTILITY_3"
-			template = "MEDIUM_AUTO_REPAIR"
-		}
-		component = {
-			slot = "MEDIUM_UTILITY_4"
-			template = "MEDIUM_AUTO_REPAIR"
-		}
-		component = {
-			slot = "LARGE_UTILITY_3"
-			template = "LARGE_ARMOR_5"
-		}
-		component = {
-			slot = "LARGE_UTILITY_4"
-			template = "LARGE_ARMOR_5"
-		}
-		component = {
-			slot = "LARGE_UTILITY_5"
-			template = "LARGE_ARMOR_5"
-		}
-		component = {
-			slot = "LARGE_UTILITY_6"
-			template = "LARGE_ARMOR_5"
-		}
-		component = {
-			slot = "LARGE_UTILITY_7"
-			template = "LARGE_ARMOR_5"
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
 		}
 	}
-	required_component="WARP_DRIVE_3"	
+	required_component="WARP_DRIVE_3"
 	required_component = "CORE_SWARM_AGGRESSIVE"
-	required_component="SHIP_THRUSTER_4"	
+	required_component="SHIP_THRUSTER_4"
+	required_component="SHIP_SENSOR_4"
 }
 
 # Swarm Large Carrier Ship
@@ -115,30 +72,6 @@ ship_design = {
 			template = "SWARM_STRIKE_CRAFT_PREONLY"
 		}
 		component = {
-			slot = "STRIKE_CRAFT_05"
-			template = "SWARM_STRIKE_CRAFT_PREONLY"
-		}
-		component = {
-			slot = "STRIKE_CRAFT_06"
-			template = "SWARM_STRIKE_CRAFT_PREONLY"
-		}
-		component = {
-			slot = "STRIKE_CRAFT_07"
-			template = "SWARM_STRIKE_CRAFT_PREONLY"
-		}
-		component = {
-			slot = "STRIKE_CRAFT_08"
-			template = "SWARM_STRIKE_CRAFT_PREONLY"
-		}
-		component = {
-			slot = "STRIKE_CRAFT_09"
-			template = "SWARM_STRIKE_CRAFT_PREONLY"
-		}
-		component = {
-			slot = "STRIKE_CRAFT_10"
-			template = "SWARM_STRIKE_CRAFT_PREONLY"
-		}
-		component = {
 			slot = "SMALL_GUN_01"
 			template = "SCOURGE_PROJECTILE_WEAPON"
 		}
@@ -155,45 +88,14 @@ ship_design = {
 			template = "LARGE_ARMOR_5"
 		}
 		component = {
-			slot = "LARGE_UTILITY_3"
-			template = "LARGE_ARMOR_5"
-		}
-		component = {
-			slot = "LARGE_UTILITY_4"
-			template = "LARGE_ARMOR_5"
-		}
-		component = {
-			slot = "LARGE_UTILITY_5"
-			template = "LARGE_ARMOR_5"
-		}
-		component = {
-			slot = "LARGE_UTILITY_6"
-			template = "LARGE_ARMOR_5"
-		}
-		component = {
-			slot = "LARGE_UTILITY_7"
-			template = "LARGE_ARMOR_5"
-		}
-		component = {
-			slot = "MEDIUM_UTILITY_1"
-			template = "MEDIUM_AUTO_REPAIR"
-		}
-		component = {
-			slot = "MEDIUM_UTILITY_2"
-			template = "MEDIUM_AUTO_REPAIR"
-		}
-		component = {
-			slot = "MEDIUM_UTILITY_3"
-			template = "MEDIUM_AUTO_REPAIR"
-		}
-		component = {
-			slot = "MEDIUM_UTILITY_4"
-			template = "MEDIUM_AUTO_REPAIR"
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
 		}
 	}
-	required_component="WARP_DRIVE_3"	
+	required_component= "WARP_DRIVE_3"
 	required_component = "CORE_SWARM_DEFEND"
-	required_component="SHIP_THRUSTER_4"	
+	required_component="SHIP_THRUSTER_4"
+	required_component="SHIP_SENSOR_4"
 }
 
 # Swarm Small Ship
@@ -223,12 +125,13 @@ ship_design = {
 		}
 		component = {
 			slot = "MEDIUM_UTILITY_1"
-			template = "MEDIUM_AUTO_REPAIR"
+			template = "AUTO_REPAIR"
 		}
 	}
-	required_component="WARP_DRIVE_3"	
+	required_component="WARP_DRIVE_3"
 	required_component = "CORE_SWARM_AGGRESSIVE"
-	required_component="SHIP_THRUSTER_4"	
+	required_component="SHIP_THRUSTER_4"
+	required_component="SHIP_SENSOR_4"
 }
 
 # Swarm Large Station
@@ -309,10 +212,11 @@ ship_design = {
 			template = "LARGE_ARMOR_5"
 		}
 		component = {
-			slot = "MEDIUM_UTILITY_1"
-			template = "MEDIUM_AUTO_REPAIR"
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
 		}
 	}
+	required_component="SHIP_SENSOR_4"
 	required_component = "CORE_SWARM_DEFEND"
 }
 
@@ -366,10 +270,11 @@ ship_design = {
 			template = "MEDIUM_ARMOR_5"
 		}
 		component = {
-			slot = "MEDIUM_UTILITY_4"
-			template = "MEDIUM_AUTO_REPAIR"
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
 		}
 	}
+	required_component="SHIP_SENSOR_4"
 	required_component = "CORE_SWARM_DEFEND"
 }
 
@@ -384,40 +289,20 @@ ship_design = {
 		
 		component = {
 			slot = "LARGE_GUN_01"
-			template = "SCOURGE_PROJECTILE_WEAPON"
+			template = "LARGE_SCOURGE_MISSILE_1"
 		}
 		component = {
 			slot = "LARGE_GUN_02"
-			template = "SCOURGE_PROJECTILE_WEAPON"
+			template = "LARGE_SCOURGE_MISSILE_1"
 		}
 		component = {
 			slot = "LARGE_GUN_03"
-			template = "SCOURGE_PROJECTILE_WEAPON"
+			template = "LARGE_SCOURGE_MISSILE_1"
 		}
 		component = {
 			slot = "LARGE_GUN_04"
-			template = "SCOURGE_PROJECTILE_WEAPON"
+			template = "LARGE_SCOURGE_MISSILE_1"
 		}
-		component = {
-			slot = "LARGE_GUN_05"
-			template = "SCOURGE_PROJECTILE_WEAPON"
-		}
-		component = {
-			slot = "LARGE_GUN_06"
-			template = "SCOURGE_PROJECTILE_WEAPON"
-		}
-		component = {
-			slot = "LARGE_GUN_07"
-			template = "SCOURGE_PROJECTILE_WEAPON"
-		}
-		component = {
-			slot = "LARGE_GUN_08"
-			template = "SCOURGE_PROJECTILE_WEAPON"
-		}
-		component = {
-			slot = "LARGE_GUN_09"
-			template = "SCOURGE_PROJECTILE_WEAPON"
-		}		
 		component = {
 			slot = "MEDIUM_GUN_01"
 			template = "SCOURGE_PROJECTILE_WEAPON"
@@ -443,30 +328,6 @@ ship_design = {
 			template = "SWARM_STRIKE_CRAFT_PREONLY"
 		}
 		component = {
-			slot = "STRIKE_CRAFT_04"
-			template = "SWARM_STRIKE_CRAFT_PREONLY"
-		}
-		component = {
-			slot = "STRIKE_CRAFT_05"
-			template = "SWARM_STRIKE_CRAFT_PREONLY"
-		}
-		component = {
-			slot = "STRIKE_CRAFT_06"
-			template = "SWARM_STRIKE_CRAFT_PREONLY"
-		}
-		component = {
-			slot = "STRIKE_CRAFT_07"
-			template = "SWARM_STRIKE_CRAFT_PREONLY"
-		}
-		component = {
-			slot = "STRIKE_CRAFT_08"
-			template = "SWARM_STRIKE_CRAFT_PREONLY"
-		}
-		component = {
-			slot = "STRIKE_CRAFT_09"
-			template = "SWARM_STRIKE_CRAFT_PREONLY"
-		}
-		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "LARGE_ARMOR_5"
 		}
@@ -479,73 +340,14 @@ ship_design = {
 			template = "LARGE_ARMOR_5"
 		}
 		component = {
-			slot = "LARGE_UTILITY_4"
-			template = "LARGE_ARMOR_5"
-		}
-		component = {
-			slot = "LARGE_UTILITY_5"
-			template = "LARGE_ARMOR_5"
-		}
-		component = {
-			slot = "LARGE_UTILITY_6"
-			template = "LARGE_ARMOR_5"
-		}
-		component = {
-			slot = "LARGE_UTILITY_7"
-			template = "LARGE_ARMOR_5"
-		}
-		component = {
-			slot = "LARGE_UTILITY_8"
-			template = "LARGE_ARMOR_5"
-		}
-		component = {
-			slot = "LARGE_UTILITY_9"
-			template = "LARGE_ARMOR_5"
-		}
-		component = {
-			slot = "LARGE_UTILITY_10"
-			template = "LARGE_ARMOR_5"
-		}
-		component = {
-			slot = "MEDIUM_UTILITY_1"
-			template = "MEDIUM_AUTO_REPAIR"
-		}
-		component = {
-			slot = "MEDIUM_UTILITY_2"
-			template = "MEDIUM_AUTO_REPAIR"
-		}
-		component = {
-			slot = "MEDIUM_UTILITY_3"
-			template = "MEDIUM_AUTO_REPAIR"
-		}
-		component = {
-			slot = "MEDIUM_UTILITY_4"
-			template = "MEDIUM_AUTO_REPAIR"
-		}
-		component = {
-			slot = "MEDIUM_UTILITY_5"
-			template = "MEDIUM_AUTO_REPAIR"
-		}
-		component = {
-			slot = "MEDIUM_UTILITY_6"
-			template = "MEDIUM_AUTO_REPAIR"
-		}
-		component = {
-			slot = "MEDIUM_UTILITY_7"
-			template = "MEDIUM_AUTO_REPAIR"
-		}
-		component = {
-			slot = "MEDIUM_UTILITY_8"
-			template = "MEDIUM_AUTO_REPAIR"
-		}
-		component = {
-			slot = "MEDIUM_UTILITY_9"
-			template = "MEDIUM_AUTO_REPAIR"
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
 		}
 	}
-	required_component="WARP_DRIVE_3"	
-	required_component="SHIP_THRUSTER_4"
+	required_component="WARP_DRIVE_3"
 	required_component = "CORE_SWARM_DEFEND"
+	required_component="SHIP_THRUSTER_4"
+	required_component="SHIP_SENSOR_4"
 }
 
 # Swarm Transport
@@ -559,8 +361,8 @@ ship_design = {
 		slot = "mid"
 		
 		component = {
-			slot = "MEDIUM_UTILITY_1"
-			template = "MEDIUM_AUTO_REPAIR"
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
 		}
 	}
 	
@@ -579,13 +381,14 @@ ship_design = {
 		slot = "mid"
 		
 		component = {
-			slot = "MEDIUM_UTILITY_1"
-			template = "MEDIUM_AUTO_REPAIR"
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
 		}
 	}
 	
 	required_component="WARP_DRIVE_3"
 	required_component="SHIP_THRUSTER_4"
+	required_component="SHIP_SENSOR_4"
 }
 
 # Swarm Constructor
@@ -599,11 +402,12 @@ ship_design = {
 		slot = "mid"
 		
 		component = {
-			slot = "MEDIUM_UTILITY_1"
-			template = "MEDIUM_AUTO_REPAIR"
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
 		}
 	}
 	
 	required_component="WARP_DRIVE_3"
 	required_component="SHIP_THRUSTER_4"
+	required_component="SHIP_SENSOR_4"
 }

@@ -925,6 +925,7 @@ event = {
 		every_country = {
 			limit = {
 				is_country_type = default
+				is_ai = yes
 				has_technology = tech_ragnarok
 				NOT = { has_country_flag = flag_rag_ai_building }
 				fleet_power > 50000 # At least have some military power
@@ -985,6 +986,10 @@ country_event = {
 	id = isb_ragnarok.103
 	hide_window = yes
 	is_triggered_only = yes
+	
+	trigger = {
+		#is_ai = yes
+	}
 
 	immediate = {
 		if = {

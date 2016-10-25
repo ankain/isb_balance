@@ -99,7 +99,10 @@ fleet_event = {
 					}
 					create_fleet = {
 						name = "Drone Squadron"
+						settings = { spawn_debris = no }
 						effect = {
+							set_owner = PREVPREV
+							
 							create_ship = {
 								name = "Combat Drone"
 								design = "Erebus-Drone"
@@ -156,8 +159,7 @@ fleet_event = {
 								distance = 1
 								angle = random
 							}
-
-							set_owner = PREVPREV
+							
 							set_fleet_stance = aggressive
 							set_aggro_range_measure_from = self
 							set_aggro_range = 500

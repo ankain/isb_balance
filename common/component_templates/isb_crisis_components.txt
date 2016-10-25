@@ -7,16 +7,16 @@ strike_craft_component_template = {
 	cost = 80
 	power = -80
 
-	count = 6
+	count = 12
 	regeneration_per_day = 1.0
 	launch_time = 2.0
 	
-	damage = { min = 30 max = 60 }
+	damage = { min = 45 max = 90 }
 	cooldown = 9.0
 	range = 12.0
 	accuracy = 1.0
 	
-	health = 300
+	health = 450
 	armor = 0
 	shield = 0
 	
@@ -45,15 +45,15 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	cost = 0
-	military_power = -200
+	#military_power = -1000
 	
 	ship_behavior = "aggressive"
 	
 	ship_modifier = {
-		SHIP_WEAPON_DAMAGE = -0.5
+		SHIP_WEAPON_DAMAGE = 1.0
 		#SHIP_HITPOINTS_MULT = -0.15
 		SHIP_AUTO_REPAIR_ADD = 0.15
-		ship_fire_rate_mult = 0.15
+		ship_fire_rate_mult = 0.5
 	}
 	
 	ai_weight = {
@@ -68,14 +68,14 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	cost = 0
-	military_power = -5000
+	#military_power = -15000
 	
 	ship_behavior = "defensive"
 	
 	ship_modifier = {
-		SHIP_WEAPON_DAMAGE = -0.5
+		SHIP_WEAPON_DAMAGE = 1.0
 		#SHIP_HITPOINTS_MULT = -0.25
-		ship_fire_rate_mult = 0.15
+		ship_fire_rate_mult = 0.5
 		SHIP_AUTO_REPAIR_ADD = 0.15
 	}
 	
@@ -93,14 +93,15 @@ utility_component_template = {
 	cost = 0
 	
 	ship_behavior = "aggressive"
-	military_power = -300
+	#military_power = -1000
 	
 	ship_modifier = {
-		#SHIP_WEAPON_DAMAGE = 0.75
+		SHIP_WEAPON_DAMAGE = 1.0
+		ship_fire_rate_mult = 0.5
 		#SHIP_HITPOINTS_MULT = -0.25
-		SHIP_AUTO_REPAIR_ADD = 0.1
+		SHIP_AUTO_REPAIR_ADD = 0.05
 		SHIP_SHIELD_REGEN_MULT = 1.0
-		#SHIP_EVASION_ADD = 15
+		#SHIP_EVASION_ADD = 20
 	}
 	
 	ai_weight = {
@@ -108,6 +109,7 @@ utility_component_template = {
 	}	
 }
 
+# ED Portal Core
 utility_component_template = {
 	key = "CORE_ED_DEFEND"
 	size = medium
@@ -117,14 +119,16 @@ utility_component_template = {
 	cost = 0
 	
 	ship_behavior = "defensive"
-	military_power = -1500
+	#military_power = -5000
 	
 	ship_modifier = {
-		#SHIP_WEAPON_DAMAGE = 0.75
-		SHIP_AUTO_REPAIR_ADD = 0.1
+		#SHIP_WEAPON_DAMAGE = 1.0
+		#ship_fire_rate_mult = 0.5
 		#SHIP_HITPOINTS_MULT = -0.25
-		#SHIP_EVASION_ADD = 15
-		SHIP_SHIELD_REGEN_MULT = 1.0
+		SHIP_AUTO_REPAIR_ADD = 0.01
+		#SHIP_SHIELD_REGEN_MULT = 1.0
+		SHIP_EVASION_ADD = 40
+		SHIP_HITPOINTS_MULT = 1.0
 	}
 	
 	ai_weight = {

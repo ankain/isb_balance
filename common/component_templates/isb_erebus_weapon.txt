@@ -17,7 +17,7 @@ weapon_component_template = {
 	
 	icon = "GFX_ship_part_flak_batteries_2"
 	icon_frame = 1
-	color = { 0.1 1.0 0.1 1 }
+	#color = { 0.1 1.0 0.1 1 }
 	power = 0
 	cost = 0
 	prerequisites = { }
@@ -33,7 +33,7 @@ utility_component_template = {
 	icon_frame = 1	
 	cost = 0	
 	can_recharge_shield = yes
-	military_power = -450
+	military_power = -70
 	
 	ship_behavior = "erebus_drone"
 	

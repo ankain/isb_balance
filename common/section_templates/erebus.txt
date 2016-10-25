@@ -5,18 +5,18 @@ ship_section_template = {
 	entity = "erebus_section_entity"
 	icon = "GFX_ship_part_core_mid"
 	
-	weapon_preferences = { weapon_role_long_range weapon_role_long_range }
+	#weapon_preferences = { weapon_role_long_range weapon_role_long_range }
 
 	component_slot = {
-		name = "LARGE_GUN_01"
-		slot_size = large
+		name = "EXTRA_LARGE_GUN_01"
+		slot_size = extra_large
 		slot_type = weapon
 		locatorname = "large_gun_01"
 	}
 
 	component_slot = {
-		name = "LARGE_GUN_02"
-		slot_size = large
+		name = "EXTRA_LARGE_GUN_02"
+		slot_size = extra_large
 		slot_type = weapon
 		locatorname = "large_gun_02"
 	}
@@ -48,10 +48,9 @@ ship_section_template = {
 		slot_type = weapon
 		locatorname = "large_gun_06"
 	}
-
-	small_utility_slots = 0
-	medium_utility_slots = 0
-	large_utility_slots = 9
+	
+	large_utility_slots = 6
+	aux_utility_slots = 3
 
 	cost = 20000
 }

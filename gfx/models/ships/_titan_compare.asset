@@ -48,7 +48,7 @@ entity = {
 		attach = { s5_022_Cruiser 		= "test_arthropoid_01_cruiser_entity" }
 		attach = { s5_032_Cruiser 		= "test_plantoid_01_titan_entity" }
 		attach = { s5_042_Cruiser 		= "test_plantoid_01_battleship_01_entity" }
-		attach = { s6_012_Cruiser 		= "test_plantoid_01_cruiser_01_entity" }
+		attach = { s6_012_Cruiser 		= "test_plantoid_01_battleship_01_entity" }
 		#attach = { s6_022_Cruiser 		= "test_reptilian_01_battleship_01_entity" }
 		#attach = { s6_032_Cruiser 		= "test_reptilian_01_titan_entity" }
 		#attach = { s6_042_Cruiser 		= "test_reptilian_01_battleship_01_entity" }

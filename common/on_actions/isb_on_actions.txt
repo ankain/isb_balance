@@ -39,6 +39,13 @@ on_bi_yearly_pulse = {
 	}
 }
 
+# No scope, like on_game_start
+on_decade_pulse = {
+	events = {
+		isb.4
+	}
+}
+
 # This = owner of fleet 1
 # From = owner of fleet 2
 # FromFrom = fleet 1

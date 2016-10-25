@@ -120,9 +120,9 @@ entity = {
 	state = { name = "death" state_time = 5 }
 		
 	locator = {
-		name = "large_gun_02"
-		position = { -0.0 -1.5 -11.0 }
-		rotation = { 0 0 180 }
+		name = "large_gun_01"
+		position = { 0.0 1.0 -22.0 }
+		rotation = { 0 0 0 }
 	}
 }
 

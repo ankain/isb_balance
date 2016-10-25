@@ -1,0 +1,484 @@
+# causes errors in error.log but cleaner than replacing entire guardians event file
+
+namespace = guardian
+
+# Stellarite spawns
+country_event = {
+	id = guardian.1000
+	title = guardian.1000.name
+	desc = guardian.1000.desc
+	picture = GFX_evt_stellarites
+	show_sound = event_radio_chatter
+	location = fromfrom
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_flag = guardians_stellarite_encountered }
+		any_system = {
+			has_star_flag = guardians_stellarite_about_to_spawn
+			has_star_flag = guardians_stellarite_system
+		}
+	}
+
+	option = {
+		name = BATTLESTATIONS
+		hidden_effect = {
+			set_country_flag = guardians_stellarite_encountered
+			country_event = { id = story.8 days = 15 }
+			event_target:stellarite_system = {
+				random_system_planet = {
+					limit = {
+						is_star = yes
+					}
+					change_planet_size = -5
+					spawn_sun_temperature_effect = yes
+					create_country = {
+						name = "Stellarite"
+						type = guardian_stellarite
+						flag = {
+							icon = {
+								category = "zoological"
+								file = "flag_zoological_1.dds"
+							}
+							background= {
+								category = "backgrounds"
+								file = "00_solid.dds"
+							}
+							colors={
+								"black"
+								"black"
+								"null"
+								"null"
+							}
+						}
+					}
+					last_created_country = {
+						save_global_event_target_as = stellarite_country
+						set_country_flag = guardian_stellarite_country
+						
+						country_event = { id = isb.5 days = 1 }
+						
+						create_fleet = {
+							name = "Stellarite Devourer"
+							settings = {
+								spawn_debris = no 
+								is_boss = yes
+							}
+							effect = {
+								set_owner = event_target:stellarite_country
+								create_ship = {
+									name = "Stellar Devourer"
+									design = "Stellarite"
+									effect = {
+										set_ship_flag = stellarite_ship
+										save_global_event_target_as = stellarite
+									}
+								}
+								set_location = PREVPREV
+								set_fleet_stance = aggressive
+								set_aggro_range_measure_from = self
+								set_aggro_range = 100
+							}
+						}
+					}
+				}
+			}
+			establish_communications_no_message = event_target:stellarite_country
+		}
+	}
+}
+
+# Wraith is born
+planet_event = {
+	id = guardian.2011
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		name = guardian.2011.a
+		create_country = {
+			name = "Wraith"
+			type = guardian_wraith
+			flag = {
+				icon = {
+					category = "zoological"
+					file = "flag_zoological_5.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors={
+					"red"
+					"red"
+					"null"
+					"null"
+				}
+			}
+		}
+		last_created_country = {
+			set_country_flag = wraith_country
+			guardian_difficulty = yes
+			save_global_event_target_as = wraith_country
+			
+			country_event = { id = isb.5 days = 1 }
+			
+			create_fleet = {
+				name = "Specter"
+				settings = {
+					spawn_debris = no
+					is_boss = yes
+				}
+				effect = {
+					set_owner = event_target:wraith_country
+					random_list = {
+						33 = {
+							create_ship = {
+								name = "Wraith 650THz"
+								design = "Spectral Wraith 650THz"
+								effect = {
+									set_ship_flag = wraith_ship
+									set_ship_flag = wraith_freq_blue
+								}
+							}
+						}
+						33 = {
+							create_ship = {
+								name = "Wraith 450THz"
+								design = "Spectral Wraith 450THz"
+								effect = {
+									set_ship_flag = wraith_ship
+									set_ship_flag = wraith_freq_red
+								}
+							}
+						}
+						33 = {
+							create_ship = {
+								name = "Wraith 520THz"
+								design = "Spectral Wraith 520THz"
+								effect = {
+									set_ship_flag = wraith_ship
+									set_ship_flag = wraith_freq_yellow
+								}
+							}
+						}
+					}
+					save_global_event_target_as = wraith_fleet
+					set_location = root
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 20
+					queue_actions = {
+						repeat = {
+							find_closest_system = {
+								trigger = {
+									id = wraith.1.trigger.3
+									NOT = {
+										exists = space_owner
+										any_ship_in_system = {
+											fleet = { is_same_value = event_target:wraith_fleet }
+										}
+										has_star_flag = guardians_wraith_visited
+									}
+								}
+								found_system = {
+									move_to = this
+									find_closest_planet = {
+										trigger = {
+											id = wraith.1.trigger.4
+											is_star = yes
+										}
+										found_planet = {
+											move_to = this
+											#orbit_planet = this
+											wait = {
+												duration = 10
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = { exists = space_owner }
+			space_owner = {
+				country_event = { id = guardian.2012 }
+			}
+		}
+	}
+}
+
+# 3000 DIMENSIONAL HORROR
+
+# Entering System
+ship_event = {
+	id = guardian.3000
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			NOT = { has_country_flag = encountered_horror }
+		}
+		FROM = {
+			has_star_flag = guardians_horror_system
+			OR = {
+				NOT = { has_star_flag = horror_spawned }
+				any_ship = { is_ship_size = dimensional_horror }
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				solar_system = {
+					NOT = { has_star_flag = horror_spawned }
+				}
+			}
+			solar_system = {
+				set_star_flag = horror_spawned
+				save_event_target_as = horror_system
+				random_system_planet = {
+					limit = { is_planet_class = pc_black_hole }
+					create_country = {
+						name = "Dimensional Horror"
+						type = guardian_horror
+						flag = {
+							icon = {
+								category = "zoological"
+								file = "flag_zoological_3.dds"
+							}
+							background = {
+								category = "backgrounds"
+								file = "00_solid.dds"
+							}
+							colors={
+								"red"
+								"red"
+								"null"
+								"null"
+							}
+						}
+					}
+					last_created_country = {
+						guardian_difficulty = yes
+						save_global_event_target_as = dimensional_horror_country
+						set_country_flag = dimensional_horror_country
+						
+						country_event = { id = isb.5 days = 1 }
+					}
+					create_fleet = {
+						name = "Dimensional Horror"
+						settings = {
+							spawn_debris = no
+							is_boss = yes
+						}
+						effect = {
+							set_owner = event_target:dimensional_horror_country
+							save_global_event_target_as = dimensional_horror
+							create_ship = {
+								name = "Dimensional Horror"
+								design = "Dimensional Horror"
+								effect = { set_disabled = yes }
+							}
+							set_location = {
+								target = PREV
+								distance = 100
+								angle = random
+							}
+						}
+					}
+					last_created_fleet = {
+						create_ambient_object = {
+							type = "horror_spawn_object"
+							location = THIS
+							use_3d_location = yes
+							duration = 10
+						}
+						fleet_event = { id = guardian.3220 days = 8 }
+					}
+				}
+			}
+		}
+		owner = { 
+			set_country_flag = encountered_horror
+			establish_communications_no_message = event_target:dimensional_horror_country
+			country_event = { id = guardian.3001 }
+		}
+	}
+}
+
+# Hivers Appear
+country_event = {
+	id = guardian.3201
+	title = "guardian.3201"
+	desc = "guardian.3201.desc"
+	picture = GFX_evt_hive
+	location = event_target:hiver_system
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:hiver_system = {
+			random_system_ambient_object = {
+				limit = { has_ambient_object_flag = hive_asteroid_1 }
+				save_event_target_as = ambient_hive_1
+			}
+			random_system_ambient_object = {
+				limit = { has_ambient_object_flag = hive_asteroid_2 }
+				save_event_target_as = ambient_hive_2
+			}
+			random_system_ambient_object = {
+				limit = { has_ambient_object_flag = hive_asteroid_3 }
+				save_event_target_as = ambient_hive_3
+			}
+			random_system_ambient_object = {
+				limit = { has_ambient_object_flag = hive_asteroid_4 }
+				save_event_target_as = ambient_hive_4
+			}
+			random_system_ambient_object = {
+				limit = { has_ambient_object_flag = hive_asteroid_5 }
+				save_event_target_as = ambient_hive_5
+			}
+			random_system_ambient_object = {
+				limit = { has_ambient_object_flag = hive_asteroid_6 }
+				save_event_target_as = ambient_hive_6
+			}
+		}
+		create_country = {
+			name = "Alien Hive"
+			type = guardian_hiver
+			flag = {
+				icon = {
+					category = "spherical"
+					file = "flag_spherical_6.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors={
+					"red"
+					"red"
+					"null"
+					"null"
+				}
+			}
+		}
+		last_created_country = {
+			save_global_event_target_as = hive_country
+			set_country_flag = hive_country
+			
+			country_event = { id = isb.5 days = 1 }
+		}
+		create_fleet = {
+			name = "Hiver Nest"
+			settings = { spawn_debris = no }
+			effect = {
+				set_owner = event_target:hive_country
+				create_ship = {
+					name = "Hiver Nest"
+					design = "Hive Asteroid"
+				}
+				set_location = event_target:ambient_hive_1
+				#set_fleet_stance = aggressive
+				#set_aggro_range = 500
+				#set_aggro_range_measure_from = self				
+			}
+		}
+		event_target:ambient_hive_1 = { destroy_ambient_object = this }
+		create_fleet = {
+			name = "Hiver Nest"
+			settings = { spawn_debris = no }
+			effect = {
+				set_owner = event_target:hive_country
+				create_ship = {
+					name = "Hiver Nest"
+					design = "Hive Asteroid"
+				}
+				set_location = event_target:ambient_hive_2
+				#set_fleet_stance = aggressive
+				#set_aggro_range = 500
+				#set_aggro_range_measure_from = self		
+			}
+		}
+		event_target:ambient_hive_2 = { destroy_ambient_object = this }
+		create_fleet = {
+			name = "Hiver Nest"
+			settings = { spawn_debris = no }
+			effect = {
+				set_owner = event_target:hive_country
+				create_ship = {
+					name = "Hiver Nest"
+					design = "Hive Asteroid"
+				}
+				set_location = event_target:ambient_hive_3
+				#set_fleet_stance = aggressive
+				#set_aggro_range = 500
+				#set_aggro_range_measure_from = self		
+			}
+		}
+		event_target:ambient_hive_3 = { destroy_ambient_object = this }
+		create_fleet = {
+			name = "Hiver Nest"
+			settings = { spawn_debris = no }
+			effect = {
+				set_owner = event_target:hive_country
+				create_ship = {
+					name = "Hiver Nest"
+					design = "Hive Asteroid"
+				}
+				set_location = event_target:ambient_hive_4
+				#set_fleet_stance = aggressive
+				#set_aggro_range = 500
+				#set_aggro_range_measure_from = self		
+			}
+		}
+		event_target:ambient_hive_4 = { destroy_ambient_object = this }
+		create_fleet = {
+			name = "Hiver Nest"
+			settings = { spawn_debris = no }
+			effect = {
+				set_owner = event_target:hive_country
+				create_ship = {
+					name = "Hiver Nest"
+					design = "Hive Asteroid"
+				}
+				set_location = event_target:ambient_hive_5
+				#set_fleet_stance = aggressive
+				#set_aggro_range = 500
+				#set_aggro_range_measure_from = self		
+			}
+		}
+		event_target:ambient_hive_5 = { destroy_ambient_object = this }
+		create_fleet = {
+			name = "Hiver Nest"
+			settings = { spawn_debris = no }
+			effect = {
+				set_owner = event_target:hive_country
+				create_ship = {
+					name = "Hiver Nest"
+					design = "Hive Asteroid"
+				}
+				set_location = event_target:ambient_hive_6
+				#set_fleet_stance = aggressive
+				#set_aggro_range = 500
+				#set_aggro_range_measure_from = self		
+			}
+		}
+		event_target:ambient_hive_6 = { destroy_ambient_object = this }
+		set_country_flag = provoked_hivers
+	}
+	
+	option = {
+		name = "guardian.3201.a"
+	}
+}

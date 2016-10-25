@@ -17,10 +17,10 @@ mod_normal_swarm = {
 }
 
 mod_crisis_easy = {
-	ship_weapon_damage = -0.25
-	ship_fire_rate_mult = -0.75
+	ship_weapon_damage = -1.25
+	ship_fire_rate_mult = -1.5
 	ship_armor_mult = -0.5
-	SHIP_ACCURACY_ADD = -20
+	SHIP_ACCURACY_ADD = -30
 }
 
 mod_crisis_hard = {

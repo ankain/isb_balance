@@ -29,7 +29,7 @@ particle={
 		}
 		duration=9.000
 		emitter_yaw={ 0.000 0.000 }
-		emitter_pitch={ -96.000 0.000 }
+		emitter_pitch={ -90.000 0.000 }
 		velocity_pitch=0.000
 		velocity_yaw=0.000
 		velocity=0.040
@@ -71,7 +71,7 @@ particle={
 		velocity_yaw={ 0.000 20.000 }
 		velocity=0.200
 		life=3.000
-		emission=15.000
+		emission=0.000
 		size=0.000,grow
 		rotation={ 0.000 180.000 }
 	}
@@ -104,13 +104,13 @@ particle={
 		}
 		duration=10.000
 		emitter_yaw={ 0.000 0.000 }
-		emitter_pitch={ -96.000 0.000 }
+		emitter_pitch={ -90.000 0.000 }
 		velocity_pitch={ 0.00 0.000 }
 		velocity_yaw={ 0.000 0.000 }
-		velocity=0.055
-		life={ 3.40 0.00 }
-		emission=100.000
-		size={ 0.500 0.250 }
+		velocity=0.045
+		life={ 4.80 0.00 }
+		emission=50.000
+		size={ 0.45 0.20 }
 		rotation={ 0.000 0.000 }
 		rotation_speed = 10.0
 	}
@@ -143,13 +143,13 @@ particle={
 		}
 		duration=10.000
 		emitter_yaw={ 0.000 0.000 }
-		emitter_pitch={ -96.000 0.000 }
+		emitter_pitch={ -90.000 0.000 }
 		velocity_pitch={ 0.000 0.000 }
 		velocity_yaw={ 0.000 0.000 }
-		velocity=0.050
-		life={ 3.000 0.000 }
+		velocity=0.035
+		life={ 4.000 0.000 }
 		emission=35.000
-		size={ 1.250 0.500 }
+		size={ 0.50 0.40 }
 		rotation={ 0.000 0.000 }
 	}
 	subsystem={
@@ -182,7 +182,7 @@ particle={
 		start=2.0
 		duration=10.00
 		emitter_yaw={ 0.000 0.000 }
-		emitter_pitch={ -96.000 5.000 }
+		emitter_pitch={ -90.000 5.000 }
 		velocity_pitch={ 0.000 10.000 }
 		velocity_yaw={ 0.000 20.000 }
 		velocity=0.01
@@ -214,20 +214,20 @@ particle={
 			alpha=105.000,alpha_fade_curve
 		}
 		position={
-			x=-9.50
+			x=0.00
 			y=-75.000
 			z=0.000
 		}
 		start=0.7
 		duration=8.35
 		emitter_yaw={ 0.000 0.000 }
-		emitter_pitch={ -96.000 0.000 }
+		emitter_pitch={ -90.000 0.000 }
 		velocity_pitch={ 0.000 0.000 }
 		velocity_yaw={ 0.000 0.000 }
 		velocity=0.00
-		life={ 1.600 0.000 }
+		life={ 0.800 0.000 }
 		emission=50.000
-		size={ 4.0 0.500 }
+		size={ 6.0 0.500 }
 		rotation={ 0.000 0.000 }
 	}
 	subsystem={
@@ -253,20 +253,20 @@ particle={
 			alpha=105.000,alpha_fade_curve
 		}
 		position={
-			x=-15.000
+			x=0.000
 			y=-140.000
 			z=0.000
 		}
 		start=1.20
 		duration=8.15
 		emitter_yaw={ 0.000 0.000 }
-		emitter_pitch={ -96.000 0.000 }
+		emitter_pitch={ -90.000 0.000 }
 		velocity_pitch={ 0.000 0.000 }
 		velocity_yaw={ 0.000 0.000 }
 		velocity=0.00
-		life={ 1.600 0.000 }
+		life={ 0.800 0.000 }
 		emission=50.000
-		size={ 3.00 0.500 }
+		size={ 4.50 0.500 }
 		rotation={ 0.000 0.000 }
 	}
 	subsystem={
@@ -298,7 +298,7 @@ particle={
 		}
 		duration=10.000
 		emitter_yaw={ 0.000 0.000 }
-		emitter_pitch={ -96.000 0.000 }
+		emitter_pitch={ -90.000 0.000 }
 		velocity_pitch={ 0.000 0.000 }
 		velocity_yaw={ 0.000 0.000 }
 		velocity=0.075
