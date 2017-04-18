@@ -405,22 +405,22 @@ opinion_has_avatar = {
 		base = 0
 		modifier = {
 			add = -100
-			THIS = { fleet_power > 600000 }
+			THIS = { fleet_power > 450000 }
 			NOT = { is_country_type = fallen_empire }
 		}
 		modifier = {
 			add = -100
-			THIS = { fleet_power > 400000 }
+			THIS = { fleet_power > 325000 }
 			NOT = { is_country_type = fallen_empire }
 		}
 		modifier = {
 			add = 50
-			THIS = { fleet_power < 300001 }
+			THIS = { fleet_power < 250001 }
 			NOT = { is_country_type = fallen_empire }
 		}
 		modifier = {
 			add = 50
-			THIS = { fleet_power < 200001 }
+			THIS = { fleet_power < 175001 }
 			NOT = { is_country_type = fallen_empire }
 		}
 		modifier = {
@@ -431,4 +431,19 @@ opinion_has_avatar = {
 	}
 	
 	accumulative = no
+}
+
+# Destroyed own colony with doomsday weapon
+opinion_doomsday_monster = {
+	opinion = {
+		base = -300		
+	}
+	
+	min = -3000
+	
+	accumulative = yes
+
+	decay = {
+		base = 1
+	}
 }

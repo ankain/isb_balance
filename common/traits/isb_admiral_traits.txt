@@ -22,6 +22,7 @@ leader_trait_hive_regeneration = {
 	leader_trait = yes
 	leader_class = { admiral }	
 	initial = no
+	randomized = no
 }
 
 leader_trait_hive_hp = {
@@ -34,6 +35,7 @@ leader_trait_hive_hp = {
 	leader_trait = yes
 	leader_class = { admiral }	
 	initial = no
+	randomized = no
 }
 
 leader_trait_hive_speed = {
@@ -47,4 +49,5 @@ leader_trait_hive_speed = {
 	leader_trait = yes
 	leader_class = { admiral }
 	initial = no
+	randomized = no
 }

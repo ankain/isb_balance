@@ -17,8 +17,8 @@
 @tier3cost2 = 2840
 @tier3cost3 = 3360
 @tier3cost4 = 3880
-@tier3cost5 = 4920
-@tier3cost6 = 5960
+@tier3cost5 = 4520
+@tier3cost6 = 5260
 
 ####################
 ### TECH WEIGHTS ###

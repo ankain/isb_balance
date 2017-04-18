@@ -17,7 +17,8 @@
 @tier3cost2 = 2840
 @tier3cost3 = 3360
 @tier3cost4 = 3880
-@tier3cost5 = 4920
+@tier3cost5 = 4520
+@tier3cost6 = 5260
 
 ####################
 ### TECH WEIGHTS ###
@@ -74,15 +75,15 @@ tech_leviathan = {
 			}
 		}
 		modifier = {
-			factor = 2
+			factor = 6
 			years_passed > 100
 		}
 		modifier = {
-			factor = 3
+			factor = 9
 			years_passed > 110
 		}
 		modifier = {
-			factor = 4
+			factor = 12
 			years_passed > 120
 		}
 		modifier = {
@@ -130,11 +131,11 @@ tech_leviathan_soc_01 = {
 	
 	weight_modifier = {
 		modifier = {
-			factor = 1.5
+			factor = 4
 			years_passed > 90
 		}
 		modifier = {
-			factor = 2
+			factor = 6
 			years_passed > 100
 		}
 		modifier = {
@@ -218,11 +219,11 @@ tech_leviathan_soc_02 = {
 	
 	weight_modifier = {		
 		modifier = {
-			factor = 1.5
+			factor = 4
 			years_passed > 95
 		}
 		modifier = {
-			factor = 2
+			factor = 6
 			years_passed > 100
 		}
 		modifier = {
@@ -309,11 +310,11 @@ tech_leviathan_eng_01 = {
 	
 	weight_modifier = {		
 		modifier = {
-			factor = 1.5
+			factor = 4
 			years_passed > 90
 		}
 		modifier = {
-			factor = 2
+			factor = 6
 			years_passed > 100
 		}
 		modifier = {
@@ -367,11 +368,11 @@ tech_leviathan_eng_02 = {
 	
 	weight_modifier = {
 		modifier = {
-			factor = 1.5
+			factor = 4
 			years_passed > 95
 		}
 		modifier = {
-			factor = 2
+			factor = 6
 			years_passed > 100
 		}	
 		modifier = {
@@ -424,11 +425,11 @@ tech_leviathan_phy_01 = {
 	
 	weight_modifier = {
 		modifier = {
-			factor = 1.5
+			factor = 4
 			years_passed > 90
 		}
 		modifier = {
-			factor = 2
+			factor = 6
 			years_passed > 100
 		}			
 		modifier = {
@@ -480,11 +481,11 @@ tech_leviathan_phy_02 = {
 	
 	weight_modifier = {
 		modifier = {
-			factor = 1.5
+			factor = 4
 			years_passed > 95
 		}
 		modifier = {
-			factor = 2
+			factor = 6
 			years_passed > 100
 		}
 		modifier = {
@@ -525,11 +526,11 @@ tech_phased_shields = {
 	
 	weight_modifier = {
 		modifier = {
-			factor = 1.5
+			factor = 4
 			years_passed > 95
 		}
 		modifier = {
-			factor = 2
+			factor = 6
 			years_passed > 100
 		}
 		modifier = {
@@ -576,12 +577,12 @@ tech_sun_crusher = {
 	}
 	
 	modifier = {
-		influence_gain_add = 1.0
+		country_resource_influence_add = 1.0
 	}
 	
 	weight_modifier = {
 		modifier = {
-			factor = 1.5
+			factor = 4
 			years_passed > 105
 		}
 		modifier = {
@@ -616,12 +617,12 @@ tech_sun_crusher_soc_01 = {
 	}
 		
 	modifier = {
-		influence_gain_add = 0.5
+		country_resource_influence_add = 0.5
 	}
 	
 	weight_modifier = {
 		modifier = {
-			factor = 1.5
+			factor = 4
 			years_passed > 90
 		}		
 	}
@@ -655,7 +656,7 @@ tech_sun_crusher_phy_01 = {
 	
 	weight_modifier = {
 		modifier = {
-			factor = 1.5
+			factor = 4
 			years_passed > 90
 		}		
 	}
@@ -688,7 +689,7 @@ tech_sun_crusher_phy_02 = {
 	
 	weight_modifier = {
 		modifier = {
-			factor = 1.5
+			factor = 4
 			years_passed > 90
 		}		
 	}

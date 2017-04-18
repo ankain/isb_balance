@@ -11,8 +11,8 @@ strike_craft_component_template = {
 	regeneration_per_day = 1.0
 	launch_time = 2.0
 	
-	damage = { min = 45 max = 90 }
-	cooldown = 9.0
+	damage = { min = 30 max = 60 }
+	cooldown = 6.0
 	range = 12.0
 	accuracy = 1.0
 	
@@ -24,11 +24,11 @@ strike_craft_component_template = {
 	rotation_speed = 0.4
 	acceleration = 0.7	
 	
-	shield_damage = 2.0
-	shield_penetration = 0.0
-	armor_penetration = 1.0
+	shield_damage = 0.0
+	shield_penetration = 1.0
+	armor_penetration = 0.8
 	
-	ship_behavior = "bombers_behavior"
+	ship_behavior = "fighters_behavior"
 	
 	weapon_type = point_defence
 	projectile_gfx = "small_space_amoeba_weapon"
@@ -46,14 +46,17 @@ utility_component_template = {
 	power = 0
 	cost = 0
 	#military_power = -1000
+	hidden = yes
 	
-	ship_behavior = "aggressive"
+	ship_behavior = "isb_aggressive"
 	
 	ship_modifier = {
 		SHIP_WEAPON_DAMAGE = 1.0
 		#SHIP_HITPOINTS_MULT = -0.15
 		SHIP_AUTO_REPAIR_ADD = 0.15
 		ship_fire_rate_mult = 0.5
+		
+		ship_tracking_add = 20
 	}
 	
 	ai_weight = {
@@ -68,15 +71,19 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	cost = 0
-	#military_power = -15000
+	#military_power = -5000	
+	hidden = yes
 	
-	ship_behavior = "defensive"
+	ship_behavior = "isb_defensive"
 	
 	ship_modifier = {
 		SHIP_WEAPON_DAMAGE = 1.0
 		#SHIP_HITPOINTS_MULT = -0.25
 		ship_fire_rate_mult = 0.5
 		SHIP_AUTO_REPAIR_ADD = 0.15
+		
+		weapon_type_strike_craft_weapon_damage_mult = 1.0
+		weapon_type_strike_craft_weapon_fire_rate_mult = 0.5 
 	}
 	
 	ai_weight = {
@@ -90,9 +97,10 @@ utility_component_template = {
 	icon = "GFX_ship_part_titan_core_01"
 	icon_frame = 1
 	power = 0
-	cost = 0
+	cost = 0	
+	hidden = yes
 	
-	ship_behavior = "aggressive"
+	ship_behavior = "isb_aggressive"
 	#military_power = -1000
 	
 	ship_modifier = {
@@ -102,6 +110,8 @@ utility_component_template = {
 		SHIP_AUTO_REPAIR_ADD = 0.05
 		SHIP_SHIELD_REGEN_MULT = 1.0
 		#SHIP_EVASION_ADD = 20
+		
+		ship_tracking_add = 30
 	}
 	
 	ai_weight = {
@@ -116,9 +126,10 @@ utility_component_template = {
 	icon = "GFX_ship_part_titan_core_01"
 	icon_frame = 1
 	power = 0
-	cost = 0
+	cost = 0	
+	hidden = yes
 	
-	ship_behavior = "defensive"
+	ship_behavior = "isb_defensive"
 	#military_power = -5000
 	
 	ship_modifier = {
@@ -142,9 +153,10 @@ utility_component_template = {
 	icon = "GFX_ship_part_titan_core_01"
 	icon_frame = 1
 	power = 0
-	cost = 0
+	cost = 0	
+	hidden = yes
 	
-	ship_behavior = "defensive"
+	ship_behavior = "isb_defensive"
 	can_recharge_shield = yes
 	
 	ship_modifier = {

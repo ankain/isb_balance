@@ -1,6 +1,6 @@
 spriteTypes = {	
 	spriteType = {
-		name = "GFX_ship_counter_titan"
+		name = "GFX_ship_counter_24"
 		textureFile = "gfx/interface/system/icon_titan.dds"
 	}
 }

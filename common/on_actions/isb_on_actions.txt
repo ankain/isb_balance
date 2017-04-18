@@ -4,6 +4,11 @@ on_game_start = {
 		isb.1
 	}
 }
+on_monthly_pulse = {
+	events = {
+		isb.11
+	}
+}
 
 # A planet is being bombarded
 # This = planet under bombardment

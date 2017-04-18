@@ -143,3 +143,69 @@ utility_component_template = {
 	prerequisites = { "tech_leviathan_phy_02" }
 	component_set = "CRYSTAL_ARMOR_ISB_01"
 }
+
+utility_component_template = {
+	key = "STATION_SENSOR_BOOST_PART_ISB_SMALL"
+	size = aux
+	icon = "GFX_ship_part_sensor_1"
+	icon_frame = 1
+	power = -200
+	cost = 200
+	class_restriction = { shipclass_military_station }
+	#size_restriction = { military_station_small military_station_medium military_station_large }
+	
+	prerequisites = { "tech_sensors_2" }
+	component_set = "STATION_SENSOR_BOOST_ISB_SMALL"
+	
+	ship_modifier = {
+		ship_sensor_range_mult = 0.5
+	}
+		
+	ai_weight = {
+		weight = 0
+	}
+}
+
+utility_component_template = {
+	key = "STATION_SENSOR_BOOST_PART_ISB_MEDIUM"
+	size = aux
+	icon = "GFX_ship_part_sensor_2"
+	icon_frame = 1
+	power = -500
+	cost = 500
+	class_restriction = { shipclass_military_station }
+	#size_restriction = { military_station_small military_station_medium military_station_large }
+	
+	prerequisites = { "tech_sensors_3" }
+	component_set = "STATION_SENSOR_BOOST_ISB_MEDIUM"
+	
+	ship_modifier = {
+		ship_sensor_range_mult = 1.5
+	}
+		
+	ai_weight = {
+		weight = 0
+	}
+}
+
+utility_component_template = {
+	key = "STATION_SENSOR_BOOST_PART_ISB_LARGE"
+	size = aux
+	icon = "GFX_ship_part_sensor_3"
+	icon_frame = 1
+	power = -800
+	cost = 800
+	class_restriction = { shipclass_military_station }
+	#size_restriction = { military_station_small military_station_medium military_station_large }
+	
+	prerequisites = { "tech_sensors_4" }
+	component_set = "STATION_SENSOR_BOOST_ISB_LARGE"
+	
+	ship_modifier = {
+		ship_sensor_range_mult = 3.0
+	}
+		
+	ai_weight = {
+		weight = 0
+	}
+}

@@ -193,11 +193,11 @@ country_event = {
 								kill_pop = yes
 							}
 
-							random_army = {
+							random_planet_army = {
 								remove_army = yes
 							}
 
-							random_army = {
+							random_planet_army = {
 								remove_army = yes
 							}
 						}
@@ -281,7 +281,7 @@ country_event = {
 								}
 							}
 
-							random_army = {
+							random_planet_army = {
 								remove_army = yes
 							}
 						}
@@ -1006,7 +1006,7 @@ country_event = {
 					clear_deposits = yes
 				}
 			}
-			#set_name = ""
+			#set_name = ""			
 
 			solar_system = {
 				#set_name = ""
@@ -1112,10 +1112,13 @@ country_event = {
 											change_pc = pc_nova
 											set_ring = no
 										}
-										75 = {
+										50 = {
 											#change_pc = pc_toxic
 											change_pc = pc_nova_gas
 											set_ring = no
+										}
+										25 = {
+											remove_planet = yes
 										}
 									}
 
@@ -1134,14 +1137,20 @@ country_event = {
 													change_pc = pc_molten
 													set_ring = no
 												}
-												70 = {
+												40 = {
 													#change_pc = pc_toxic
 													change_pc = pc_nova
 													set_ring = no
 												}
+												30 = {
+													remove_planet = yes
+												}
 											}
 										}
 									}
+								}
+								else = {
+									remove_planet = yes
 								}
 							}
 						}

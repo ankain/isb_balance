@@ -109,7 +109,7 @@ particle={
 		velocity_yaw={ 0.000 0.000 }
 		velocity=0.045
 		life={ 4.80 0.00 }
-		emission=50.000
+		emission=40.000
 		size={ 0.45 0.20 }
 		rotation={ 0.000 0.000 }
 		rotation_speed = 10.0
@@ -134,11 +134,11 @@ particle={
 			x=240.000
 			y=25.000
 			z=20.000
-			alpha=200.000,spark_tingle
+			alpha=250.000,spark_tingle
 		}
 		position={
 			x=1.000
-			y=-3.000
+			y=23.000
 			z=0.000
 		}
 		duration=10.000
@@ -146,10 +146,10 @@ particle={
 		emitter_pitch={ -90.000 0.000 }
 		velocity_pitch={ 0.000 0.000 }
 		velocity_yaw={ 0.000 0.000 }
-		velocity=0.035
-		life={ 4.000 0.000 }
-		emission=35.000
-		size={ 0.50 0.40 }
+		velocity=0.04
+		life={ 4.400 0.000 }
+		emission=40.000
+		size={ 0.80 0.40 }
 		rotation={ 0.000 0.000 }
 	}
 	subsystem={
@@ -215,7 +215,7 @@ particle={
 		}
 		position={
 			x=0.00
-			y=-75.000
+			y=-90.000
 			z=0.000
 		}
 		start=0.7
@@ -227,7 +227,46 @@ particle={
 		velocity=0.00
 		life={ 0.800 0.000 }
 		emission=50.000
-		size={ 6.0 0.500 }
+		size={ 6.5 0.500 }
+		rotation={ 0.000 0.000 }
+	}
+	subsystem={
+		name="flare_base_mid"
+		max_amount=100
+		slave_particles=0
+		emitter_type="point"
+		invert=no
+		trail=no
+		local_space=no
+		billboard=yes
+		hide=no
+		texture={
+			file="gfx/particles/flare_extra_wide.dds"
+			x=1
+			y=1
+			shader="ParticleAdditive"
+		}
+		color={
+			x=240.000
+			y=240.000
+			z=240.000
+			alpha=40.000,alpha_fade_curve
+		}
+		position={
+			x=0.00
+			y=-90.000
+			z=0.000
+		}
+		start=0.7
+		duration=8.35
+		emitter_yaw={ 0.000 0.000 }
+		emitter_pitch={ -90.000 0.000 }
+		velocity_pitch={ 0.000 0.000 }
+		velocity_yaw={ 0.000 0.000 }
+		velocity=0.00
+		life={ 0.800 0.000 }
+		emission=10.000
+		size={ 5.0 0.500 }
 		rotation={ 0.000 0.000 }
 	}
 	subsystem={
@@ -254,7 +293,7 @@ particle={
 		}
 		position={
 			x=0.000
-			y=-140.000
+			y=-145.000
 			z=0.000
 		}
 		start=1.20
@@ -265,8 +304,47 @@ particle={
 		velocity_yaw={ 0.000 0.000 }
 		velocity=0.00
 		life={ 0.800 0.000 }
-		emission=50.000
-		size={ 4.50 0.500 }
+		emission=0.000
+		size={ 5.50 0.500 }
+		rotation={ 0.000 0.000 }
+	}
+	subsystem={
+		name="flare_base2_mid"
+		max_amount=100
+		slave_particles=0
+		emitter_type="point"
+		invert=no
+		trail=no
+		local_space=no
+		billboard=yes
+		hide=no
+		texture={
+			file="gfx/particles/flare_extra_wide.dds"
+			x=1
+			y=1
+			shader="ParticleAdditive"
+		}
+		color={
+			x=240.00
+			y=240.000
+			z=240.000
+			alpha=40.000,alpha_fade_curve
+		}
+		position={
+			x=0.000
+			y=-145.000
+			z=0.000
+		}
+		start=1.20
+		duration=8.15
+		emitter_yaw={ 0.000 0.000 }
+		emitter_pitch={ -90.000 0.000 }
+		velocity_pitch={ 0.000 0.000 }
+		velocity_yaw={ 0.000 0.000 }
+		velocity=0.00
+		life={ 0.800 0.000 }
+		emission=0.000
+		size={ 4.00 0.500 }
 		rotation={ 0.000 0.000 }
 	}
 	subsystem={
@@ -303,10 +381,10 @@ particle={
 		velocity_yaw={ 0.000 0.000 }
 		velocity=0.075
 		life={ 2.500 0.000 }
-		emission=1.000
+		emission=0.000
 		size={ 0.750 0.250 }
 		rotation={ 0.000 0.000 }
-		particle_pitch = { 99.00 0.00}
+		particle_pitch = { 90.00 0.00}
 		rotation_speed = 30.0
 	}	
 	subsystem={

@@ -148,7 +148,7 @@ entity = {
 	state = { name = "death" state_time = 5 }
 	
 	locator = {
-		name = "large_gun_01"
+		name = "medium_gun_01"
 		position = { 4 3.5 8.5}
 		rotation = { 0 0 -0 }
 	}
@@ -160,9 +160,21 @@ entity = {
 	}
 	
 	locator = {
-		name = "large_gun_03"
+		name = "medium_gun_02"
 		position = { -4.6 3.5 8.5}
 		rotation = { 0 0 10 }
+	}
+	
+	locator = {
+		name = "large_gun_01"
+		position = { 8 0.0 6.5}
+		rotation = { 0 0 0 }
+	}
+	
+	locator = {
+		name = "large_gun_03"
+		position = { 0 3.0 10.0}
+		rotation = { 0 0 0 }
 	}
 	
 	locator = {

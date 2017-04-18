@@ -59,7 +59,7 @@ massive_ship_fallen_empire = {
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon_frame = 5
+	icon_frame = 7
 	
 	cost = 10000
 	base_buildtime = 700

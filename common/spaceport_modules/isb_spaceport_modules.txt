@@ -1,0 +1,135 @@
+#ai_weight - checks that required resources are available by AI will be made in code for performance reasons
+
+#modifiers that can be added from modules
+#"modifier", category: MODIFIER_CATEGORY_SPACEPORT. things that affect the builder part of the spaceport. like construction costs and speeds
+#"orbit_modifier", category: MODIFIER_CATEGORY_FLEET | MODIFIER_CATEGORY_SHIP. applied on all orbiting fleets and ships
+#"planet_modifier", category: MODIFIER_CATEGORY_PLANET | MODIFIER_CATEGORY_POP | MODIFIER_CATEGORY_TILE. affects the planet
+#"station_modifier", category: MODIFIER_CATEGORY_FLEET | MODIFIER_CATEGORY_SHIP. affects the ship part of the spaceport. like health and armor
+#"ship_modifier", category: MODIFIER_CATEGORY_SHIP. affects all ships that are built by this space port
+
+isb_defense_platform_01 = {
+	icon = "GFX_spaceport_synchronized_defenses"
+	section = "SPACEPORT_SENTINEL_01_SECTION"
+	#section = "CORE_SPACEPORT_SECTION"
+	construction_days = 360
+	prerequisites = { tech_space_defense_station_3 }
+	spaceport_level = 6
+
+	cost = {
+		minerals = 8000
+	}
+
+	required_resources = {
+		energy = 5
+	}
+
+	component_set = "PLASMA_3"
+
+	station_modifier = {
+		#ship_fire_rate_mult = 0.25
+		ship_weapon_damage = 0.5
+		#SHIP_HITPOINTS_MULT = 1.0
+		SHIP_HITPOINTS_ADD = 5000
+		SHIP_WEAPON_RANGE_MULT = 0.2
+		#SHIP_SHIELD_HP_ADD = 2500
+		#SHIP_SHIELD_REGEN_ADD = 25
+	}
+
+	ai_weight = {
+		weight = 10000
+		modifier = {
+			factor = 0
+			FROM = {
+				NOT = {
+					planet_size > 9
+				}
+			}
+		}
+	}
+}
+
+isb_defense_platform_02 = {
+	icon = "GFX_spaceport_synchronized_defenses"
+	section = "SPACEPORT_SENTINEL_02_SECTION"
+	#section = "CORE_SPACEPORT_SECTION"
+	construction_days = 720
+	prerequisites = { tech_titan }
+	spaceport_level = 6
+
+	cost = {
+		minerals = 20000
+	}
+
+	required_resources = {
+		energy = 5
+	}
+
+	component_set = "MASS_DRIVER_5"
+
+	station_modifier = {
+		#ship_fire_rate_mult = 0.25
+		ship_weapon_damage = 1.0
+		SHIP_HITPOINTS_MULT = 0.5
+		SHIP_HITPOINTS_ADD = 12500
+		SHIP_WEAPON_RANGE_MULT = 0.2
+		
+		SHIP_AUTO_REPAIR_ADD = 0.03
+		#SHIP_SHIELD_HP_ADD = 10000
+		#SHIP_SHIELD_REGEN_ADD = 100
+	}
+
+	ai_weight = {
+		weight = 10000
+		modifier = {
+			factor = 0
+			FROM = {
+				NOT = {
+					planet_size > 14
+				}
+			}
+		}
+	}
+}
+
+isb_defense_platform_03 = {
+	icon = "GFX_spaceport_synchronized_defenses"
+	section = "SPACEPORT_SENTINEL_03_SECTION"
+	#section = "CORE_SPACEPORT_SECTION"
+	construction_days = 1440
+	prerequisites = { tech_leviathan }
+	spaceport_level = 6
+
+	cost = {
+		minerals = 30000
+	}
+
+	required_resources = {
+		energy = 5
+	}
+
+	component_set = "FALLEN_EMPIRE_SPACEPORT_LANCE"
+
+	station_modifier = {
+		#ship_fire_rate_mult = 0.25
+		ship_weapon_damage = 1.5
+		SHIP_HITPOINTS_MULT = 1.0
+		SHIP_HITPOINTS_ADD = 20000
+		SHIP_WEAPON_RANGE_MULT = 0.2
+		
+		SHIP_AUTO_REPAIR_ADD = 0.07
+		#SHIP_SHIELD_HP_ADD = 30000
+		#SHIP_SHIELD_REGEN_ADD = 175
+	}
+
+	ai_weight = {
+		weight = 10000
+		modifier = {
+			factor = 0
+			FROM = {
+				NOT = {
+					planet_size > 17
+				}
+			}
+		}
+	}
+}

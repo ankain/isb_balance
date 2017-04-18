@@ -1,9 +1,10 @@
+
 # Country types specify the rules by which a country plays the game.
 # Example:
 #name_of_country_type = {
 #	can_own_empty_planets					#no by default, decides if empty planets belonging to country are automatically removed from the country.
 #	playable = yes							#if this type is available for players. used when listing countries for hot-joining players
-#	as_fortifications = yes					#does this type use planetary fortifications?
+#	has_fortifications = no					#does this type use planetary fortifications?
 #	shuffle_pop_ethos = yes					#if pops belonging to this country type should mutate their ethos every now and then
 #	sub_title = "EXAMPLE_COUNTRY"			#sub title that will be shown for this empire. Like "Example Federation - Fallen Empire"
 #	sub_title_desc = "EXAMPLE_COUNTRY_DESC" #description for the sub title. used in tooltips
@@ -13,13 +14,20 @@
 #	can_planets_be_attacked = yes			#default yes, if no then planets owned by this country type can not be attacked
 #	colonizing_title = "COLONIZING_PLANET_DEFAULT"		#localization key for colonization view title
 #	colonizing_desc = "PLANET_VIEW_UNDER_COLONIZATION_DEFAULT_DESC"	#localization key for colonization view desc
-#	orbital_bomardment = yes				#default yes, does orbital bombardment
+#	orbital_bombardment = yes				#default yes, does orbital bombardment
 #	diplomatic_wars = no					#default no, decides if the country needs to declare war to be hostile, only works against countries who also have diplomatic wars toggled on
+#	min_navy_for_wars = 0					#default 0, decides how large a navy this country wants (out of desired size) before declaring any wars
 # 	share_communications = no				#default yes, decides if they share communciations with anyone you have contact with
 #	relations = no							#default no, this controls whether the country makes us of opinion
 #	fallen_empire = no						#default no, this controls whether the empire uses the special Fallen Empire AI
+#	awakened_fallen_empire = no				#default no, this controls whether the empire uses the special Awakened Fallen Empire AI
+# 	can_use_special_buildables = no			#default no, this controls whether this empire can build shipsizes that are defined as special buildables
 #	default_closed_borders = no				#default no, controls if the country has closed borders as default
 #	closed_borders_message_key = x			#default "NO_ACCESS_TO_COUNTRY_SYSTEMS", the message when hovering a system you don't have access to.
+#	distant_ftl_cost_mult = x 				#default 0.0, modifiers how much FTL winddown/windup a country gets from FTL to territories distant from borders
+#	show_in_contacts_list = yes				#default yes, whether to show an entry in the contacts list
+#	minimalist_contacts_list_profile = no	#default no, whether to show only empire name and flag in diplomacy panel in the contacts list
+#	government = no							#default yes, if yes then the country has a government
 #
 #	faction = {							#these values are copied to the country and can be changed during the game
 #		neutral = no						#if yes, fleets will never attack anything and will never be attacked
@@ -33,7 +41,7 @@
 #		hostile_when_attacked = yes			#toggles if country turns hostile against attacker.
 #		show_borders_in_us = yes			#if no, borders for countries of this type will not be shown if in uncharted space
 #	}
-#
+#	
 #	ai = {								#block of AI settings
 #		enabled = yes						#run ai for this country type? default no
 #		declare_war = yes					#should AI declare wars? default yes
@@ -42,15 +50,15 @@
 #		construction = yes					#should AI build ships and buildings? default yes
 #		tech = yes							#should AI advance its technology? default yes
 #		ship_data							#highest fleet slot size first for military ship sizes
-#
+#		
 #		modules = {							#List of diferent ai modules this country type should have
 #			military_minister_module
 #			foreign_minister_module
 #			interior_minister_module
 #		}
 #	}
-#
-#	modules = {							#List of modules countries of this should have.
+#	
+#	modules = {							#List of modules countries of this should have. 
 #										#A module controls what code a country will use for a specific system, for instance we can decide to run a completely different economy module that uses cats as main currency ( if such a module exists, that is )
 #										#Only one module per module type is allowed
 #		standard_event_module = {}
@@ -59,12 +67,16 @@
 #		standard_diplomacy_module = {}
 #		standard_technology_module = {}
 #		standard_pop_factions_module = {}
+#		standard_expansion_module = {}
 #	}
 #}
 
 default = {
+	has_fortifications = yes
+	can_have_orbital_stations = yes
 	has_difficulty_bonuses = yes
 	counts_for_victory = yes
+	pop_growth = yes			 
 	playable = yes
 	shuffle_pop_ethos = yes
 	diplomatic_wars = yes
@@ -77,6 +89,7 @@ default = {
 		min_navy_for_wars = 0.5
 		colonizer = yes
 		internal_policies = yes
+		traditions = yes		  
 		construction = yes
 		modules = {
 			military_minister_module
@@ -261,8 +274,8 @@ default = {
 									has_leader_flag = has_elite_guard
 								}
 								OR = {
-									has_government = despotic_hegemony
-									has_government = ai_overlordship
+									has_government = gov_despotic_hegemony
+									has_government = gov_illuminated_autocracy
 								}
 							}
 						}
@@ -286,6 +299,9 @@ default = {
 								has_ai_personality_behaviour = robot_exploiter
 								has_technology = tech_droid_workers
 							}
+								any_owned_planet = {
+									has_building = building_slave_processing
+								}
 						}
 					}
 				}
@@ -297,8 +313,8 @@ default = {
 					modifier = {
 						factor = 0
 						NOT = {
-							has_ai_personality_behaviour = robot_exploiter
-							has_technology = tech_droid_workers
+								has_ai_personality_behaviour = robot_exploiter
+								has_technology = tech_droid_workers
 						}
 					}
 				}
@@ -342,8 +358,8 @@ default = {
 									has_leader_flag = has_elite_guard
 								}
 								OR = {
-									has_government = despotic_hegemony
-									has_government = ai_overlordship
+									has_government = gov_despotic_hegemony
+									has_government = gov_illuminated_autocracy
 								}
 							}
 						}
@@ -388,8 +404,8 @@ default = {
 									has_leader_flag = has_elite_guard
 								}
 								OR = {
-									has_government = despotic_hegemony
-									has_government = ai_overlordship
+									has_government = gov_despotic_hegemony
+									has_government = gov_illuminated_autocracy
 								}
 							}
 						}
@@ -433,8 +449,8 @@ default = {
 									has_leader_flag = has_elite_guard
 								}
 								OR = {
-									has_government = despotic_hegemony
-									has_government = ai_overlordship
+									has_government = gov_despotic_hegemony
+									has_government = gov_illuminated_autocracy
 								}
 							}
 						}
@@ -477,8 +493,8 @@ default = {
 									has_leader_flag = has_elite_guard
 								}
 								OR = {
-									has_government = despotic_hegemony
-									has_government = ai_overlordship
+									has_government = gov_despotic_hegemony
+									has_government = gov_illuminated_autocracy
 								}
 							}
 						}
@@ -517,8 +533,8 @@ default = {
 								has_leader_flag = has_elite_guard
 							}
 							OR = {
-								has_government = despotic_hegemony
-								has_government = ai_overlordship
+								has_government = gov_despotic_hegemony
+								has_government = gov_illuminated_autocracy
 							}
 						}
 					}
@@ -534,6 +550,7 @@ default = {
 		standard_technology_module = {}
 		standard_pop_factions_module = {}
 		standard_expansion_module = {}
+		standard_species_rights_module = {}							 
 	}
 }
 
@@ -544,9 +561,12 @@ awakened_fallen_empire = {
 	sub_title_desc = "COUNTRY_AWAKENED_FALLEN_EMPIRE_DESC"
 
 	relations = yes
+	has_fortifications = yes					 
 	fallen_empire = yes
+	can_have_orbital_stations = yes							
 	awakened_fallen_empire = yes
 	diplomatic_wars = yes
+	pop_growth = yes			 
 	default_closed_borders = yes
 	can_use_special_buildables = yes
 	closed_borders_message_key = "NO_ACCESS_TO_COUNTRY_SYSTEMS_FALLEN_EMPIRE"
@@ -631,28 +651,28 @@ awakened_fallen_empire = {
 				max = 6
 				planet_mult = 0.05
 			}
-			
-			erebus = {
-				fraction = {
-					base = 5
-				}
-			}
-			
-			leviathan = {
-				fraction = {
-					base = 10
-				}
-			}
-			
-			titan = {
+
+			titan_ship_fallen_empire = {
 				fraction = {
 					base = 10
 				}
 			}
 
+			erebus = {
+				fraction = {
+					base = 5
+				}
+			}
+
+			leviathan = {
+				fraction = {
+					base = 5
+				}
+			}
+
 			large_ship_fallen_empire = {
 				fraction = {
-					base = 20
+					base = 25
 				}
 			}
 			small_ship_fallen_empire = {
@@ -668,6 +688,7 @@ awakened_fallen_empire = {
 		standard_event_module = {}
 		standard_leader_module = {}
 		standard_economy_module = {}
+		standard_species_rights_module = {}							 
 		exclusive_diplomacy_module = {
 			can_receive = {
 				action_declare_war

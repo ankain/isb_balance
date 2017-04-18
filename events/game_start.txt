@@ -7,6 +7,8 @@ event = {
 	is_triggered_only = yes
 	
 	immediate = {
+		set_global_flag = game_started
+
 		every_country = {
 			limit = { is_ai = no }
 			country_event = { id = country.900 days = 360 random = 60 }
@@ -47,6 +49,28 @@ event = {
 							}
 						}
 					}
+				}
+			}
+		}
+
+		### SPAWN SPECIAL COUNTRIES
+		create_country = {
+			name = "The Shroud"
+			type = shroud
+			flag = {
+				icon = {
+					category = "special"
+					file = "the_shroud.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors={
+					"red"
+					"black"
+					"null"
+					"null"
 				}
 			}
 		}
@@ -198,30 +222,12 @@ event = {
 	immediate = {
 		every_country = {
 			limit = { is_ai = no }
-			if = {
-				limit = {
-					OR = {
-						is_difficulty = 1
-						is_difficulty = 2
-					}
-				}
-				random_list = {
-					10 = { country_event = { id = crisis.10 days = 64000 random = 3500 } } # 175 years
-					35 = { country_event = { id = crisis.10 days = 71500 random = 3500 } } # 195 years
-					35 = { country_event = { id = crisis.10 days = 78500 random = 3500 } } # 215 years
-					25 = { country_event = { id = crisis.10 days = 82000 random = 3500 } } # 225 years
-				}
-				
-				# Normal mode
-				else = {
-					random_list = {
-						10 = { country_event = { id = crisis.10 days = 73000 random = 3500 } } # 200 years
-						35 = { country_event = { id = crisis.10 days = 80500 random = 3500 } } # 220 years
-						35 = { country_event = { id = crisis.10 days = 87500 random = 3500 } } # 240 years
-						25 = { country_event = { id = crisis.10 days = 91200 random = 3500 } } # 250 years
-					}
-				}
-			}			
+			random_list = {
+				10 = { country_event = { id = crisis.10 days = 64000 random = 3500 } } # 175 years
+				35 = { country_event = { id = crisis.10 days = 71500 random = 3500 } } # 195 years
+				35 = { country_event = { id = crisis.10 days = 78500 random = 3500 } } # 215 years
+				25 = { country_event = { id = crisis.10 days = 82000 random = 3500 } } # 225 years
+			}
 		}
 	}
 }
@@ -241,6 +247,235 @@ event = {
 				25 = { country_event = { id = nomad.1 days = 14600 random = 500 } } # 40 years
 				25 = { country_event = { id = nomad.1 days = 20075 random = 500 } } # 55 years
 				30 = { } # No nomads
+			}
+		}
+	}
+}
+
+### Country-scope start event for advanced empires
+country_event = {
+	id = game_start.6
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		give_technology = { tech = "tech_ship_armor_1" message = no }
+		give_technology = { tech = "tech_shields_1" message = no }
+		give_technology = { tech = "tech_solar_panel_network" message = no }
+		give_technology = { tech = "tech_biolab_1" message = no }
+		give_technology = { tech = "tech_engineering_lab_1" message = no }
+		give_technology = { tech = "tech_physics_lab_1" message = no }
+		give_technology = { tech = "tech_planetary_unification" message = no }
+	}
+}
+
+### initialize capital pops
+# called from the create_capital_initial_pops on_action
+planet_event = {
+	id = game_start.7
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = { limit = { owner = { has_civic = civic_mechanists } }
+			while = {
+				count = 4
+				random_tile = {
+					limit = {
+						OR = {
+							has_building = building_mining_network_1
+							has_building = building_hydroponics_farm_1
+						}
+						has_pop = no
+					}				
+					build_pop = {
+						name = buildable_robot_pop_1
+					}
+				}
+			}
+		}
+
+		if = { 
+			limit = { 
+				owner = { 
+					has_civic = civic_syncretic_evolution
+					capital_scope = { NOT = { has_planet_flag = planet_earth } }
+				}
+			}
+			create_species = {
+				traits = {
+					trait = trait_presentient_proles
+					trait = trait_strong
+				}
+				homeworld = this
+			}
+			owner = {
+				last_created_species = {
+					set_citizenship_type = {
+						country = prev
+						type = citizenship_slavery
+					}
+				}
+			}
+			while = {
+				count = 4
+				random_tile = {
+					limit = {
+						OR = {
+							has_building = building_mining_network_1
+							has_building = building_hydroponics_farm_1
+						}
+						has_pop = no
+					}
+					create_pop = {
+						species = last_created
+						ethos = random
+					}					
+				}
+			}
+		}
+
+		if = { 
+			limit = { 
+				owner = { 
+					has_civic = civic_syncretic_evolution
+					capital_scope = { has_planet_flag = planet_earth }
+				}
+			}
+			create_species = {
+				name = "Neo-Chimp"
+				plural = "Neo-Chimps"
+				adjective = "Neo-Chimp"
+				class = "MAM"
+				portrait = pre_mam13
+				traits = {
+					trait = trait_presentient_proles
+					trait = trait_strong
+				}
+				homeworld = this
+			}
+			owner = {
+				last_created_species = {
+					set_citizenship_type = {
+						country = prev
+						type = citizenship_slavery
+					}
+				}
+			}
+			while = {
+				count = 4
+				random_tile = {
+					limit = {
+						OR = {
+							has_building = building_mining_network_1
+							has_building = building_hydroponics_farm_1
+						}
+						has_pop = no
+					}
+					create_pop = {
+						species = last_created
+						ethos = random
+					}					
+				}
+			}
+		}
+
+		if = {	limit = { owner = { has_authority = auth_hive_mind } }
+			owner = {
+				modify_species = {
+					species = this
+					add_trait = trait_hive_mind
+					add_traits_at_start_of_list = yes
+				}
+				change_dominant_species = last_created_species
+			}
+		}
+
+		while = {
+			limit = { num_pops < 8 }
+			create_pop = {
+				species = owner_main_species
+				ethos = random
+			}
+		}
+	}
+}
+### Empire init - add technologies
+country_event = {
+	id = game_start.8
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = { limit = { has_civic = civic_mechanists } 
+			give_technology = { message = no tech = tech_powered_exoskeletons }
+			give_technology = { message = no tech = tech_robotic_workers }
+		}
+	}
+}
+
+### Empire init - add ships
+country_event = {
+	id = game_start.9
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		
+		#science
+		create_fleet = {
+			effect = {
+				set_owner = prev
+
+				create_ship = {
+					name = random
+					random_existing_design = science
+				}
+
+				set_fleet_stance = evasive				
+				set_location = prev.capital_scope
+				
+				owner = {
+					create_leader = {
+						type = scientist
+						sub_type = survey
+						name = random
+						species = owner_main_species
+					}
+				}
+				set_leader = last_created_leader
+			}			
+		}
+			
+		#constructor
+		create_fleet = {
+			effect = {
+				set_owner = prev
+				
+				create_ship = {
+					name = random
+					random_existing_design = constructor
+				}
+				
+				set_fleet_stance = evasive
+				set_location = prev.capital_scope
+			}
+		}
+
+		#military
+		create_fleet = {
+			effect = {
+				set_owner = prev
+				
+				while = {
+					count = 3
+					create_ship = {
+						name = random
+						random_existing_design = corvette
+					}
+				}
+				
+				set_location = prev.capital_scope
 			}
 		}
 	}

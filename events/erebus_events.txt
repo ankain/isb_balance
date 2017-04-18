@@ -108,51 +108,61 @@ fleet_event = {
 								design = "Erebus-Drone"
 								#graphical_culture = ROOT
 							}
+							last_created_ship = { ship_event = { id = isb_erebus.5 days = 90} }
 							create_ship = {
 								name = "Combat Drone"
 								design = "Erebus-Drone"
 								#graphical_culture = ROOT
 							}
+							last_created_ship = { ship_event = { id = isb_erebus.5 days = 90} }
 							create_ship = {
 								name = "Combat Drone"
 								design = "Erebus-Drone"
 								#graphical_culture = ROOT
 							}
+							last_created_ship = { ship_event = { id = isb_erebus.5 days = 90} }
 							create_ship = {
 								name = "Combat Drone"
 								design = "Erebus-Drone"
 								#graphical_culture = ROOT
 							}
+							last_created_ship = { ship_event = { id = isb_erebus.5 days = 90} }
 							create_ship = {
 								name = "Combat Drone"
 								design = "Erebus-Drone"
 								#graphical_culture = ROOT
 							}
+							last_created_ship = { ship_event = { id = isb_erebus.5 days = 90} }
 							create_ship = {
 								name = "Combat Drone"
 								design = "Erebus-Drone"
 								#graphical_culture = ROOT
 							}
+							last_created_ship = { ship_event = { id = isb_erebus.5 days = 90} }
 							create_ship = {
 								name = "Combat Drone"
 								design = "Erebus-Drone"
 								#graphical_culture = ROOT
 							}
+							last_created_ship = { ship_event = { id = isb_erebus.5 days = 90} }
 							create_ship = {
 								name = "Combat Drone"
 								design = "Erebus-Drone"
 								#graphical_culture = ROOT
 							}
+							last_created_ship = { ship_event = { id = isb_erebus.5 days = 90} }
 							create_ship = {
 								name = "Combat Drone"
 								design = "Erebus-Drone"
 								#graphical_culture = ROOT
 							}
+							last_created_ship = { ship_event = { id = isb_erebus.5 days = 90} }
 							create_ship = {
 								name = "Combat Drone"
 								design = "Erebus-Drone"
 								#graphical_culture = ROOT
 							}
+							last_created_ship = { ship_event = { id = isb_erebus.5 days = 90} }
 							
 							set_location = {
 								target = PREV
@@ -163,9 +173,10 @@ fleet_event = {
 							set_fleet_stance = aggressive
 							set_aggro_range_measure_from = self
 							set_aggro_range = 500
-
-							fleet_event = { id = isb_erebus.4 days = 90}
-							set_event_locked = yes
+							
+							# Switched to ship event destruction because split fleet bug and event lock no longer allows ships to attack.
+							#fleet_event = { id = isb_erebus.4 days = 90}
+							#set_event_locked = yes
 						}
 					}
 				}
@@ -207,5 +218,17 @@ fleet_event = {
 
 	immediate = {
 		destroy_fleet = THIS
+	}
+}
+
+# End of drone ship lifespan 
+ship_event = {
+	id = isb_erebus.5
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {		
+		#destroy_fleet = THIS		
+		reduce_hp_percent = 100
 	}
 }

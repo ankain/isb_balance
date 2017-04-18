@@ -189,7 +189,7 @@ fleet_event = {
 			effect = {
 				set_owner = event_target:ragnarok_country
 				create_ship = {
-					name = random
+					name = "Unknown"
 					design = "Fires of Ragnarok"
 				}
 
@@ -284,7 +284,7 @@ fleet_event = {
 					effect = {
 						set_owner = event_target:ragnarok_country
 						create_ship = {
-							name = random
+							name = "Unknown"
 							design = "Spawn of Ragnarok"
 						}
 						set_event_locked = yes
@@ -303,7 +303,7 @@ fleet_event = {
 									effect = {
 										set_owner = event_target:ragnarok_hostile_country
 										create_ship = {
-											name = random
+											name = "Unknown"
 											design = "Wrath of Ragnarok"
 										}
 										queue_actions = {
@@ -385,7 +385,7 @@ fleet_event = {
 				set_timed_ship_flag = { flag = flag_rag_cooldown days = 1080 }
 
 				set_disabled = yes
-				ship_event = { id = isb_ragnarok.10 days = 1}
+				ship_event = { id = isb_ragnarok.10 days = 1 }
 
 				# Undisable
 				ship_event = { id = isb_ragnarok.13 days = 70 }
@@ -447,7 +447,7 @@ ship_event = {
 				effect = {
 					set_owner = event_target:ragnarok_country
 					create_ship = {
-						name = random
+						name = "Unknown"
 						design = "Fires of Ragnarok"
 					}
 
@@ -570,7 +570,7 @@ fleet_event = {
 			effect = {
 				set_owner = event_target:ragnarok_country
 				create_ship = {
-					name = random
+					name = "Unknown"
 					design = "Spawn of Ragnarok"
 				}
 				set_event_locked = yes
@@ -578,7 +578,7 @@ fleet_event = {
 				set_location = PREV
 
 				queue_actions = {
-					WAIT = 15
+					WAIT = 10
 					effect = {
 						id = "isb_ragnarok.14.trigger.1"
 						SOLAR_SYSTEM = {
@@ -607,7 +607,7 @@ fleet_event = {
 							effect = {
 								set_owner = event_target:ragnarok_hostile_country
 								create_ship = {
-									name = random
+									name = "Unknown"
 									design = "Wrath of Ragnarok (Mythic)"
 								}
 								queue_actions = {

@@ -31,7 +31,7 @@ entity = {
 		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
 		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
 		
-		start_event = { trigger_once = yes sound = { soundeffect = "amb_starship_hum" } }
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_construction_ship_hum" } }
 	}
 	state = { name = "moving"						animation = "idle"
 		event = { time = 0 node = "engine_medium_01" particle = "mammalian_01_2_35_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }

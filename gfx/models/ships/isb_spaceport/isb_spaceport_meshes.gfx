@@ -1,0 +1,112 @@
+objectTypes = {	
+	pdxmesh = {
+		name = "sentinel_mesh_01"
+		file = "gfx/models/system_map/space_mine.mesh"
+		scale = 3.0
+
+		animation = { id = "rotate"			type = "space_mine_idle_animation" }
+		
+		meshsettings = {
+			name = "pSphere16Shape"
+			index = 0
+			texture_diffuse = "sentinel_03_diffuse.dds"
+			texture_normal = "space_mine_normal.dds"
+			texture_specular = "sentinel_01_specular.dds"
+			shader = "PdxMeshTerra"
+		}
+	}
+	
+	pdxmesh = {
+		name = "sentinel_mesh_02"
+		file = "gfx/models/system_map/space_mine.mesh"
+		scale = 3.0
+
+		animation = { id = "rotate"			type = "space_mine_idle_animation" }
+		
+		meshsettings = {
+			name = "pSphere16Shape"
+			index = 0
+			texture_diffuse = "sentinel_02_diffuse.dds"
+			texture_normal = "space_mine_normal.dds"
+			texture_specular = "sentinel_01_specular.dds"
+			shader = "PdxMeshTerra"
+		}
+	}
+	
+	pdxmesh = {
+		name = "sentinel_mesh_03"
+		file = "gfx/models/system_map/space_mine.mesh"
+		scale = 3.5
+
+		animation = { id = "rotate"			type = "space_mine_idle_animation" }
+		
+		meshsettings = {
+			name = "pSphere16Shape"
+			index = 0
+			texture_diffuse = "sentinel_01_diffuse.dds"
+			texture_normal = "space_mine_normal.dds"
+			texture_specular = "sentinel_01_specular.dds"
+			shader = "PdxMeshTerra"
+		}
+	}
+	
+	pdxmesh = {
+		name = "isb_spaceport_ring_01_mesh"
+		file = "gfx/models/ships/other/abandoned_wormhole_station_01.mesh"
+		scale = 2.0
+
+		animation = { id = "idle"			type = "abandoned_wormhole_station_01_idle_animation" }
+		#animation = { id = "idle"			type = "molluscoid_01_destroyer_frame_idle_animation" }
+		animation = { id = "death"			type = "abandoned_wormhole_station_01_death_animation" }
+
+		meshsettings = {
+			name = "lpShape"
+			index = 0
+			texture_diffuse = "nospec.dds"
+			texture_normal = "nonormal.dds"
+			texture_specular = "nospec.dds"
+			shader = "PdxMeshAlphaBlend"
+			#shader = "PdxMeshShip"
+			}
+	}
+	
+	pdxmesh = {
+		name = "isb_spaceport_ring_02_mesh"
+		file = "gfx/models/ships/other/abandoned_wormhole_station_01.mesh"
+		scale = 2.5
+
+		animation = { id = "idle"			type = "abandoned_wormhole_station_01_idle_animation" }
+		#animation = { id = "idle"			type = "molluscoid_01_destroyer_frame_idle_animation" }
+		animation = { id = "death"			type = "abandoned_wormhole_station_01_death_animation" }
+
+		meshsettings = {
+			name = "lpShape"
+			index = 0
+			texture_diffuse = "nospec.dds"
+			texture_normal = "nonormal.dds"
+			texture_specular = "nospec.dds"
+			shader = "PdxMeshAlphaBlend"
+			#shader = "PdxMeshShip"
+			}
+	}
+	
+	pdxmesh = {
+		name = "isb_spaceport_ring_03_mesh"
+		file = "gfx/models/ships/other/abandoned_wormhole_station_01.mesh"
+		scale = 3.5
+
+		animation = { id = "idle"			type = "abandoned_wormhole_station_01_idle_animation" }
+		#animation = { id = "idle"			type = "molluscoid_01_destroyer_frame_idle_animation" }
+		animation = { id = "death"			type = "abandoned_wormhole_station_01_death_animation" }
+
+		meshsettings = {
+			name = "lpShape"
+			index = 0
+			texture_diffuse = "nospec.dds"
+			texture_normal = "nonormal.dds"
+			texture_specular = "nospec.dds"
+			shader = "PdxMeshAlphaBlend"
+			#shader = "PdxMeshShip"
+			}
+	}
+}

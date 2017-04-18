@@ -33,4 +33,11 @@ objectTypes = {
 		
 		scale = 5.0
 	}
+	
+	pdxparticle = {
+		name = "isb_titan_core_01_particle"
+		type = "isb_titan_core_01_effect"
+		
+		scale = 1.5
+	}
 }

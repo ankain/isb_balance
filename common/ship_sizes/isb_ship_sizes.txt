@@ -3,12 +3,12 @@
 
 @titan_combat_speed = 0.6
 @titan_combat_rotation = 0.01
-@titan_collision_radius = 14
+@titan_collision_radius = 13
 @titan_formation_priority = 2
 
 @leviathan_combat_speed = 1.0
 @leviathan_combat_rotation = 0.05
-@leviathan_collision_radius = 11
+@leviathan_collision_radius = 9
 @leviathan_formation_priority = 3
 
 @sun_crusher_combat_speed = 0.3
@@ -70,11 +70,12 @@ titan = {
 	required_component_set = "thruster_components"
 	required_component_set = "ship_sensor_components"
 	required_component_set = "titan_weapon_components"
+	required_component_set = "powerstation_components"
 }
 
 # Fallen Empire Titan Ship
 titan_ship_fallen_empire = {
-	graphical_culture = { "fallen_empire_01" "fallen_empire_02" "fallen_empire_03"}
+	graphical_culture = { "fallen_empire_01" "fallen_empire_02" "fallen_empire_03" "fallen_empire_04"}
 	max_speed = 2.5
 	acceleration = 0.2
 	rotation_speed = 0.075
@@ -88,13 +89,16 @@ titan_ship_fallen_empire = {
 		ship_shield_hp_mult = 2.00
 		ship_hitpoints_mult = 2.00
 	}
-	max_hitpoints = 11560
+	max_hitpoints = 7500
 	size_multiplier = 24
-	fleet_slot_size = 5
+	fleet_slot_size = 10
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
 	icon_frame = 5
+	
+	cost = 10000
+	base_buildtime = 2000	
 
 	class = shipclass_military
 	is_designable = no
@@ -110,12 +114,12 @@ leviathan = {
 	combat_rotation_speed = @leviathan_combat_rotation
 	collision_radius = @leviathan_collision_radius
 	modifier = {
-		#ship_evasion_mult = -0.25
+		ship_evasion_mult = -0.4
 		#ship_armor_mult = -0.6
 		ship_armor_add = 48
 		ship_shield_hp_mult = 2.25
 		ship_hitpoints_mult = 1.5
-		ship_evasion_add = 30
+		ship_evasion_add = 60
 
 		SHIP_SHIELD_HP_ADD = 500
 		SHIP_SHIELD_REGEN_ADD = 50
@@ -139,6 +143,7 @@ leviathan = {
 	required_component_set = "leviathan_core_components"
 	required_component_set = "thruster_components"
 	required_component_set = "ship_sensor_components"
+	required_component_set = "powerstation_components"
 }
 
 sun_crusher = {
@@ -370,7 +375,7 @@ erebus_drone = {
 	}
 	max_hitpoints = 1000
 	size_multiplier = 0
-	fleet_slot_size = 1
+	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 3
 	icon_frame = 2

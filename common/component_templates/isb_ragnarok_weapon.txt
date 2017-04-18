@@ -33,7 +33,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	cost = 500	
-
+	
 	prerequisites = { }
 
 	hostile_aura = {

@@ -28,7 +28,7 @@ entity = {
 		event = { time = 0 node = "engine_large_01" particle = "molluscoid_01_3_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
 		event = { time = 0 node = "engine_medium_01" particle = "molluscoid_01_2_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
 		event = { time = 0 node = "engine_medium_02" particle = "molluscoid_01_2_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
-		start_event = { trigger_once = yes sound = { soundeffect = "amb_starship_hum" } }
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_construction_ship_hum" } }
 	}
 	state = { name = "moving"						animation = "idle"
 		event = { time = 0 node = "engine_large_01" particle = "molluscoid_01_3_0_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }

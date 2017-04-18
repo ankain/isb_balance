@@ -17,9 +17,10 @@
 @tier3cost2 = 2840
 @tier3cost3 = 3360
 @tier3cost4 = 3880
-@tier3cost5 = 4920
-@tier3cost6 = 7000
-@tier3cost5b =5960
+@tier3cost5 = 4520
+@tier3cost6 = 6100
+@tier3cost5b =5260
+
 
 ####################
 ### TECH WEIGHTS ###
@@ -424,7 +425,7 @@ tech_ragnarok_doomsday_01 = {
 	is_rare = yes
 	
 	modifier = {
-		influence_gain_add = 1.0
+		country_resource_influence_add = 1.0
 	}
 	
 	weight_modifier = {

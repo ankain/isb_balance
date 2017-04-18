@@ -188,7 +188,7 @@ entity = {
 	}
 	locator = {
 		name = "point_forward_01"
-		position = { -34 29 -60.0 }
+		position = { -34 29 -58.0 }
 		rotation = { 0 0 90 }
 	}
 	locator = {
@@ -198,12 +198,12 @@ entity = {
 	}
 	locator = {
 		name = "point_forward_03"
-		position = { 4 9 -60.0 }
+		position = { 4 9 -56.0 }
 		rotation = { 0 0 90 }
 	}
 	locator = {
 		name = "point_forward_04"
-		position = { 22 24 -60.0 }
+		position = { 22 24 -62.0 }
 		rotation = { 0 0 90 }
 	}
 	locator = {
@@ -213,12 +213,12 @@ entity = {
 	}
 	locator = {
 		name = "point_forward_06"
-		position = { -38 -20 -60.0 }
+		position = { -38 -20 -64.0 }
 		rotation = { 0 0 90 }
 	}
 	locator = {
 		name = "point_forward_07"
-		position = { -16 -28 -60.0 }
+		position = { -16 -28 -58.0 }
 		rotation = { 0 0 90 }
 	}
 	locator = {
@@ -228,22 +228,22 @@ entity = {
 	}
 	locator = {
 		name = "point_forward_09"
-		position = { 13 -27 -60.0 }
+		position = { 13 -27 -64.0 }
 		rotation = { 0 0 90 }
 	}
 	locator = {
 		name = "point_forward_10"
-		position = { 37 -19 -60.0 }
+		position = { 37 -19 -62.0 }
 		rotation = { 0 0 90 }
 	}
 	locator = {
 		name = "point_forward_11"
-		position = { -20 4 -60.0 }
+		position = { -20 4 -56.0 }
 		rotation = { 0 0 90 }
 	}
 	locator = {
 		name = "point_forward_12"
-		position = { 17 -9 -60.0 }
+		position = { 17 -9 -58.0 }
 		rotation = { 0 0 90 }
 	}
 	locator = {
@@ -253,12 +253,12 @@ entity = {
 	}
 	locator = {
 		name = "point_forward_14"
-		position = { -43 1 -60.0 }
+		position = { -43 1 -62.0 }
 		rotation = { 0 0 90 }
 	}
 	locator = {
 		name = "point_forward_15"
-		position = { -52 17 -60.0 }
+		position = { -52 17 -64.0 }
 		rotation = { 0 0 90 }
 	}
 	locator = {
@@ -268,7 +268,7 @@ entity = {
 	}
 	locator = {
 		name = "point_forward_17"
-		position = { 52 17 -60.0 }
+		position = { 52 17 -58.0 }
 		rotation = { 0 0 90 }
 	}
 	locator = {
@@ -400,8 +400,8 @@ entity = {
 		event = { time = 15.8 node = "exp_layer_13" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "isb_rag_doom_hit" } }
 		event = { time = 16.2 node = "exp_layer_14" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes }
 		event = { time = 16.6 node = "exp_layer_16" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes }
-		#event = { time = 17.0 node = "exp_layer_17" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes }
-		#event = { time = 17.4 node = "exp_layer_18" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 17.0 node = "exp_layer_17" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 17.4 node = "exp_layer_18" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes }
 	}
 
 	state = { name = "swap" animation = "idle" animation_speed = 1.0 looping = yes }
@@ -516,7 +516,7 @@ entity = {
 	}
 
 	default_state = "idle"
-	state = { name = "idle" animation = "death" animation_speed = 0.85 looping = no
+	state = { name = "idle" animation = "death" animation_speed = 0.8 looping = no
 		event = { time = 11.0 node = "exp_layer_01" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes }
 		event = { time = 11.4 node = "exp_layer_02" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "isb_rag_doom_hit" } }
 		event = { time = 11.8 node = "exp_layer_03" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes }
@@ -530,10 +530,10 @@ entity = {
 		event = { time = 15.0 node = "exp_layer_11" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes }
 		event = { time = 15.4 node = "exp_layer_12" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "isb_rag_doom_hit" } }
 		event = { time = 15.8 node = "exp_layer_13" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes }
-		#event = { time = 16.2 node = "exp_layer_14" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes }
-		#event = { time = 16.6 node = "exp_layer_16" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes }
-		#event = { time = 17.0 node = "exp_layer_17" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes }
-		#event = { time = 17.4 node = "exp_layer_18" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "isb_rag_doom_hit" } }
+		event = { time = 16.2 node = "exp_layer_14" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 16.6 node = "exp_layer_16" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 17.0 node = "exp_layer_17" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 17.4 node = "exp_layer_18" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "isb_rag_doom_hit" } }
 	}
 
 	state = { name = "swap" animation = "idle" animation_speed = 1.0 looping = yes }
@@ -662,7 +662,7 @@ entity = {
 	}
 
 	default_state = "idle"
-	state = { name = "idle" animation = "death" animation_speed = 1.0 looping = no
+	state = { name = "idle" animation = "death" animation_speed = 0.95 looping = no
 		event = { time = 11.0 node = "exp_layer_01" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "isb_rag_doom_hit" } }
 		event = { time = 11.4 node = "exp_layer_02" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes }
 		event = { time = 11.8 node = "exp_layer_03" particle = "ragnarok_doom_hit_particle" keep_particle = yes trigger_once = yes }

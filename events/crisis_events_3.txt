@@ -53,6 +53,22 @@ namespace = crisis
 @tier6influencemin = 300
 @tier6influencemax = 600
 
+@tier1unityreward = 6
+@tier1unitymin = 100
+@tier1unitymax = 500
+@tier2unityreward = 12
+@tier2unitymin = 150
+@tier2unitymax = 1000
+@tier3unityreward = 18
+@tier3unitymin = 250
+@tier3unitymax = 1500
+@tier4unityreward = 24
+@tier4unitymin = 350
+@tier4unitymax = 2000
+@tier5unityreward = 48
+@tier5unitymin = 700
+@tier5unitymax = 4000
+
 @tier1researchreward = 6
 @tier1researchmin = 60
 @tier1researchmax = 150
@@ -442,7 +458,14 @@ country_event = {
 					50 = { # AI flag 1
 						create_country = {
 							name = random
-							government = machine_consciousness
+							ethos = {
+								ethic = ethic_fanatic_xenophobe
+								ethic = militarist
+							}
+							authority = auth_machine_consciousness
+							civics = {
+								civic = civic_machine_consciousness
+							}
 							type = "ai_empire"
 							species = ROBOT_POP_SPECIES_3
 							name_list = "AI"
@@ -467,7 +490,14 @@ country_event = {
 					50 = { # AI flag 2
 						create_country = {
 							name = random
-							government = machine_consciousness
+							ethos = {
+								ethic = ethic_fanatic_xenophobe
+								ethic = militarist
+							}
+							authority = auth_machine_consciousness
+							civics = {
+								civic = civic_machine_consciousness
+							}
 							type = "ai_empire"
 							species = ROBOT_POP_SPECIES_3
 							name_list = "AI"
@@ -512,7 +542,7 @@ country_event = {
 									add_modifier = {
 										modifier = ai_strength
 										days = -1
-									}	
+									}
 								}
 							}
 						}
@@ -526,9 +556,8 @@ country_event = {
 				}
 				while = {
 					count = 24
-					create_pop = { 
+					create_pop = {
 						species = owner_main_species
-						ethos = owner 
 					}
 				}
 				random_tile = {
@@ -546,8 +575,8 @@ country_event = {
 					}
 				}
 				random_tile = {
-					limit = { 
-						has_building = "building_power_plant_3" 
+					limit = {
+						has_building = "building_power_plant_3"
 						any_neighboring_tile = { has_building = no }
 					}
 					every_neighboring_tile = {
@@ -567,8 +596,8 @@ country_event = {
 					}
 				}
 				random_tile = {
-					limit = { 
-						has_building = "building_mining_network_3" 
+					limit = {
+						has_building = "building_mining_network_3"
 						any_neighboring_tile = { has_building = no }
 					}
 					every_neighboring_tile = {
@@ -578,8 +607,8 @@ country_event = {
 					}
 				}
 				random_tile = {
-					limit = { 
-						has_building = "building_power_plant_3" 
+					limit = {
+						has_building = "building_power_plant_3"
 						any_neighboring_tile = { has_building = no }
 					}
 					every_neighboring_tile = {
@@ -589,8 +618,8 @@ country_event = {
 					}
 				}
 				random_tile = {
-					limit = { 
-						has_building = "building_power_plant_3" 
+					limit = {
+						has_building = "building_power_plant_3"
 						any_neighboring_tile = { has_building = no }
 					}
 					every_neighboring_tile = {
@@ -636,7 +665,7 @@ country_event = {
 					}
 				}
 				create_fleet = {
-					name = "AI Core"
+					name = "NAME_AI_Core"
 					effect = {
 						set_owner = last_created_country
 						create_ship = {
@@ -711,7 +740,7 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 45
-								angle = random 
+								angle = random
 							}
 						}
 					}
@@ -744,7 +773,7 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 45
-								angle = random 
+								angle = random
 							}
 						}
 					}
@@ -777,7 +806,7 @@ country_event = {
 							set_location = {
 								target = PREVPREV
 								distance = 45
-								angle = random 
+								angle = random
 							}
 						}
 					}
@@ -790,8 +819,8 @@ country_event = {
 				}
 			}
 			random_system_planet = {
-				limit = { 
-					has_deposit_for = shipclass_mining_station 
+				limit = {
+					has_deposit_for = shipclass_mining_station
 					has_mining_station = no
 				}
 				create_mining_station = {
@@ -799,8 +828,8 @@ country_event = {
 				}
 			}
 			random_system_planet = {
-				limit = { 
-					has_deposit_for = shipclass_mining_station 
+				limit = {
+					has_deposit_for = shipclass_mining_station
 					has_mining_station = no
 				}
 				create_mining_station = {
@@ -808,8 +837,8 @@ country_event = {
 				}
 			}
 			random_system_planet = {
-				limit = { 
-					has_deposit_for = shipclass_mining_station 
+				limit = {
+					has_deposit_for = shipclass_mining_station
 					has_mining_station = no
 				}
 				create_mining_station = {
@@ -823,8 +852,8 @@ country_event = {
 				}
 			}
 			random_system_planet = {
-				limit = { 
-					has_deposit_for = shipclass_research_station 
+				limit = {
+					has_deposit_for = shipclass_research_station
 					has_research_station = no
 				}
 				create_research_station = {
@@ -832,8 +861,8 @@ country_event = {
 				}
 			}
 			random_system_planet = {
-				limit = { 
-					has_deposit_for = shipclass_research_station 
+				limit = {
+					has_deposit_for = shipclass_research_station
 					has_research_station = no
 				}
 				create_research_station = {
@@ -841,8 +870,8 @@ country_event = {
 				}
 			}
 			random_system_planet = {
-				limit = { 
-					has_deposit_for = shipclass_research_station 
+				limit = {
+					has_deposit_for = shipclass_research_station
 					has_research_station = no
 				}
 				create_research_station = {
@@ -926,7 +955,7 @@ pop_event = {
 		planet = {
 			exists = owner
 			owner = { has_country_flag = ai_revolt_creators }
-		}		
+		}
 		is_enslaved = no
 		is_being_purged = no
 	}
@@ -1023,7 +1052,7 @@ planet_event = {
 		random_pop = { kill_pop = yes }
 		every_owned_pop = {
 			limit = {
-				NOT = { 
+				NOT = {
 					is_species = ROBOT_POP_SPECIES_1
 					is_species = ROBOT_POP_SPECIES_2
 					is_species = ROBOT_POP_SPECIES_3
@@ -1039,12 +1068,7 @@ planet_event = {
 			}
 			enslave_pop = no
 			purge = no
-			remove_modifier = "pop_had_purge"
 			remove_modifier = "pop_recently_conquered"
-			remove_modifier = "pop_was_enslaved"
-			remove_modifier = "pop_species_had_purge"
-			remove_modifier = "pop_colony_had_purge"
-			remove_modifier = "pop_alien_slavery"
 		}
 		best_tile_for_pop = {
 			create_pop = { species = ROBOT_POP_SPECIES_3 }
@@ -1733,6 +1757,10 @@ country_event = {
 
 	option = {
 		name = EXCELLENT
+		add_monthly_resource_mult = {
+			resource = unity
+			value = @tier3unityreward
+		}
 	}
 }
 
@@ -1789,10 +1817,22 @@ planet_event = {
 			set_blocker = "tb_bomb_crater"
 		}
 		set_planet_flag = synth_activity
+		owner = {
+			add_modifier = {
+				modifier = unity_reduction_crisis_2204
+				days = 1800
+			}
+		}
 	}
 	
 	option = {
 		name = crisis.2204.a
+		tooltip = {
+			add_modifier = {
+				modifier = unity_reduction_crisis_2204
+				days = 1800
+			}
+		}
 	}
 }
 
@@ -1963,7 +2003,7 @@ country_event = {
 	immediate = {
 		add_threat = {
 			who = root
-			amount = 10 # scales to pops
+			amount = 1 # scales to pops
 		}
 		FROMFROM = {
 			set_owner = controller
@@ -1987,12 +2027,7 @@ country_event = {
 				}
 				enslave_pop = no
 				purge = no
-				remove_modifier = "pop_had_purge"
 				remove_modifier = "pop_recently_conquered"
-				remove_modifier = "pop_was_enslaved"
-				remove_modifier = "pop_species_had_purge"
-				remove_modifier = "pop_colony_had_purge"
-				remove_modifier = "pop_alien_slavery"
 			}
 			best_tile_for_pop = { create_pop = { species = ROBOT_POP_SPECIES_3 } }
 			best_tile_for_pop = { create_pop = { species = ROBOT_POP_SPECIES_3 } }

@@ -65,87 +65,6 @@ event = {
 	}
 }
 
-# clears difficulty buffs from swarm / ed and global flags
-country_event = {
-	id = isb.6
-	hide_window = yes
-	is_triggered_only = yes
-
-	immediate = {
-		if = {
-			limit = {
-				has_global_flag = flag_crisis_easy
-			}
-
-			remove_global_flag = flag_crisis_easy
-		}
-
-		if = {
-			limit = {
-				has_global_flag = flag_crisis_hard
-			}
-
-			remove_global_flag = flag_crisis_hard
-		}
-
-		every_country = {
-			limit = {
-				OR = {
-					is_country_type = swarm
-					is_country_type = extradimensional
-					is_country_type = extradimensional_2
-					is_country_type = extradimensional_3
-				}
-			}
-
-			if = {
-				limit = {
-					has_modifier = mod_crisis_easy
-				}
-
-				remove_modifier = "mod_crisis_easy"
-			}
-
-			if = {
-				limit = {
-					has_modifier = mod_crisis_hard
-				}
-
-				remove_modifier = "mod_crisis_hard"
-			}
-		}
-	}
-}
-
-country_event = {
-	id = isb.7
-	hide_window = yes
-	is_triggered_only = yes
-
-	immediate = {
-		if = {
-			limit = {
-				has_global_flag = flag_crisis_easy
-			}
-			add_modifier = {
-				modifier = mod_crisis_easy
-				days = -1
-			}
-			else = {
-				if = {
-					limit = {
-						has_global_flag = flag_crisis_hard
-					}
-					add_modifier = {
-						modifier = mod_crisis_hard
-						days = -1
-					}
-				}
-			}
-		}
-	}
-}
-
 # Crisis check for opinion boost every 5 years.
 event = {
 	id = isb.2
@@ -632,7 +551,7 @@ event = {
 		}
 	}
 }
-
+### Guardian scaling events
 # Strengthen Guardians every 50 years, up to 200 years
 event = {
 	id = isb.4
@@ -658,55 +577,795 @@ country_event = {
 
 	immediate = {
 		if = {
-			limit = {
-				years_passed > 49
-				NOT = { has_country_flag = flag_guardian_buff_50 }
-			}
+			limit = { NOT = { has_global_flag = flag_guardian_off } }
 
-			set_country_flag = flag_guardian_buff_50
-			add_modifier = {
-				modifier = "mod_guardian_buff_50"
-				days = -1
+			if = {
+				limit = {
+					years_passed > 49
+					NOT = {
+						has_modifier = mod_guardian_buff_50
+						has_modifier = mod_guardian_buff_50_easy
+					}
+				}
+
+				if = {
+					limit = { has_global_flag = flag_guardian_easy }
+
+					add_modifier = {
+						modifier = "mod_guardian_buff_50_easy"
+						days = -1
+					}
+
+					else = {
+						if = {
+							limit = { has_global_flag = flag_guardian_normal }
+
+							add_modifier = {
+								modifier = "mod_guardian_buff_50"
+								days = -1
+							}
+						}
+					}
+				}
 			}
 
 			if = {
 				limit = {
 					years_passed > 99
-					NOT = { has_country_flag = flag_guardian_buff_100 }
-				}
-
-				set_country_flag = flag_guardian_buff_100
-				add_modifier = {
-					modifier = "mod_guardian_buff_100"
-					days = -1
+					NOT = {
+						has_modifier = mod_guardian_buff_100
+						has_modifier = mod_guardian_buff_100_easy
+					}
 				}
 
 				if = {
-					limit = {
-						years_passed > 149
-						NOT = { has_country_flag = flag_guardian_buff_150 }
-					}
+					limit = { has_global_flag = flag_guardian_easy }
 
-					set_country_flag = flag_guardian_buff_150
 					add_modifier = {
-						modifier = "mod_guardian_buff_150"
+						modifier = "mod_guardian_buff_100_easy"
 						days = -1
 					}
 
-					if = {
-						limit = {
-							years_passed > 199
-							NOT = { has_country_flag = flag_guardian_buff_200 }
-						}
+					else = {
+						if = {
+							limit = { has_global_flag = flag_guardian_normal }
 
-						set_country_flag = flag_guardian_buff_200
-						add_modifier = {
-							modifier = "mod_guardian_buff_200"
-							days = -1
+							add_modifier = {
+								modifier = "mod_guardian_buff_100"
+								days = -1
+							}
 						}
 					}
 				}
 			}
+
+			if = {
+				limit = {
+					years_passed > 149
+					NOT = {
+						has_modifier = mod_guardian_buff_150
+						has_modifier = mod_guardian_buff_150_easy
+					}
+				}
+
+				if = {
+					limit = { has_global_flag = flag_guardian_easy }
+
+					add_modifier = {
+						modifier = "mod_guardian_buff_150_easy"
+						days = -1
+					}
+
+					else = {
+						if = {
+							limit = { has_global_flag = flag_guardian_normal }
+
+							add_modifier = {
+								modifier = "mod_guardian_buff_150"
+								days = -1
+							}
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					years_passed > 199
+					NOT = {
+						has_modifier = mod_guardian_buff_200
+						has_modifier = mod_guardian_buff_200_easy
+					}
+				}
+
+				if = {
+					limit = { has_global_flag = flag_guardian_easy }
+
+					add_modifier = {
+						modifier = "mod_guardian_buff_200_easy"
+						days = -1
+					}
+
+					else = {
+						if = {
+							limit = { has_global_flag = flag_guardian_normal }
+
+							add_modifier = {
+								modifier = "mod_guardian_buff_200"
+								days = -1
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# Clears all guardian buffs and flags
+country_event = {
+	id = isb.8
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = flag_guardian_off
+			}
+
+			remove_global_flag = flag_guardian_off
+		}
+
+		if = {
+			limit = {
+				has_global_flag = flag_guardian_easy
+			}
+
+			remove_global_flag = flag_guardian_easy
+		}
+
+		if = {
+			limit = {
+				has_global_flag = flag_guardian_normal
+			}
+
+			remove_global_flag = flag_guardian_normal
+		}
+
+		every_country = {
+			limit = {
+				is_guardian_country = yes
+			}
+
+			if = {
+				limit = {
+					has_modifier = mod_guardian_buff_50
+				}
+
+				remove_modifier = "mod_guardian_buff_50"
+			}
+
+			if = {
+				limit = {
+					has_modifier = mod_guardian_buff_100
+				}
+
+				remove_modifier = "mod_guardian_buff_100"
+			}
+
+			if = {
+				limit = {
+					has_modifier = mod_guardian_buff_150
+				}
+
+				remove_modifier = "mod_guardian_buff_150"
+			}
+
+			if = {
+				limit = {
+					has_modifier = mod_guardian_buff_200
+				}
+
+				remove_modifier = "mod_guardian_buff_200"
+			}
+
+			if = {
+				limit = {
+					has_modifier = mod_guardian_buff_50_easy
+				}
+
+				remove_modifier = "mod_guardian_buff_50_easy"
+			}
+
+			if = {
+				limit = {
+					has_modifier = mod_guardian_buff_100_easy
+				}
+
+				remove_modifier = "mod_guardian_buff_100_easy"
+			}
+
+			if = {
+				limit = {
+					has_modifier = mod_guardian_buff_150_easy
+				}
+
+				remove_modifier = "mod_guardian_buff_150_easy"
+			}
+
+			if = {
+				limit = {
+					has_modifier = mod_guardian_buff_200_easy
+				}
+
+				remove_modifier = "mod_guardian_buff_200_easy"
+			}
+		}
+	}
+}
+
+# Monthly Pulse to replace triggered modifiers. For performance.
+event = {
+	id = isb.11
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		random_country ={
+			# ISB Buffs
+			country_event = { id = isb.12 }
+
+			# Crisis Difficulty
+			country_event = { id = isb.13 }
+
+			# AE difficulty
+			country_event = { id = isb.16 }
+			
+			# FE difficulty
+			country_event = { id = isb.19 }
+		}
+	}
+}
+
+# Pulse for ISB buff. Adds buffs to all AI countries.
+country_event = {
+	id = isb.12
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_country = {
+			limit = {
+				OR = {
+					is_country_type = default
+					is_country_type = awakened_fallen_empire
+				}
+				is_ai = yes
+				NOT = { has_modifier = ai_ship_upkeep }
+			}
+
+			add_modifier = {
+				modifier = ai_ship_upkeep
+				days = -1
+			}
+		}
+
+		#Removes buffs from non-ai countries, in case players take control
+		every_country = {
+			limit = {
+				is_ai = no
+				has_modifier = ai_ship_upkeep
+			}
+
+			remove_modifier = ai_ship_upkeep
+		}
+	}
+}
+
+### Crisis difficulty events
+# clears difficulty buffs from swarm / ed and global flags
+country_event = {
+	id = isb.6
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = flag_crisis_easy
+			}
+
+			remove_global_flag = flag_crisis_easy
+		}
+
+		if = {
+			limit = {
+				has_global_flag = flag_crisis_hard
+			}
+
+			remove_global_flag = flag_crisis_hard
+		}
+
+		if = {
+			limit = {
+				has_global_flag = flag_crisis_very_easy
+			}
+
+			remove_global_flag = flag_crisis_very_easy
+		}
+
+		if = {
+			limit = {
+				has_global_flag = flag_crisis_insane
+			}
+
+			remove_global_flag = flag_crisis_insane
+		}
+
+		every_country = {
+			limit = {
+				OR = {
+					is_country_type = swarm
+					is_country_type = extradimensional
+					is_country_type = extradimensional_2
+					is_country_type = extradimensional_3
+					is_country_type = ai_empire
+				}
+			}
+
+			country_event = { id = isb.14 }
+		}
+	}
+}
+
+# Pulse for Crisis Difficulty Settings. Mostly for when the crisis first spawns.
+country_event = {
+	id = isb.13
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = flag_crisis_very_easy
+					has_global_flag = flag_crisis_easy
+					has_global_flag = flag_crisis_hard
+					has_global_flag = flag_crisis_insane
+				}
+			}
+
+			every_country = {
+				limit = {
+					OR = {
+						is_country_type = swarm
+						is_country_type = extradimensional
+						is_country_type = extradimensional_2
+						is_country_type = extradimensional_3
+						is_country_type = ai_empire
+					}
+					NOT = { has_country_flag = has_crisis_difficulty_mod }
+				}
+
+				# Clears crisis buffs, just in case
+				country_event = { id = isb.14 }
+
+				# Adds correct buff
+				country_event = { id = isb.15 }
+			}
+		}
+	}
+}
+
+# Clears crisis buffs
+country_event = {
+	id = isb.14
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_modifier = mod_crisis_very_easy
+			}
+
+			remove_modifier = mod_crisis_very_easy
+		}
+
+		if = {
+			limit = {
+				has_modifier = mod_crisis_easy
+			}
+
+			remove_modifier = mod_crisis_easy
+		}
+
+		if = {
+			limit = {
+				has_modifier = mod_crisis_hard
+			}
+
+			remove_modifier = mod_crisis_hard
+		}
+
+		if = {
+			limit = {
+				has_modifier = mod_crisis_insane
+			}
+
+			remove_modifier = mod_crisis_insane
+		}
+
+		if = {
+			limit = {
+				has_country_flag = has_crisis_difficulty_mod
+			}
+
+			remove_country_flag = has_crisis_difficulty_mod
+		}
+	}
+}
+
+# Adds crisis buffs. Should never have multiple flags.
+country_event = {
+	id = isb.15
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = flag_crisis_very_easy
+			}
+
+			add_modifier = {
+				modifier = mod_crisis_very_easy
+				days = -1
+			}
+
+			set_country_flag = has_crisis_difficulty_mod
+		}
+
+		if = {
+			limit = {
+				has_global_flag = flag_crisis_easy
+			}
+
+			add_modifier = {
+				modifier = mod_crisis_easy
+				days = -1
+			}
+
+			set_country_flag = has_crisis_difficulty_mod
+		}
+
+		if = {
+			limit = {
+				has_global_flag = flag_crisis_hard
+			}
+
+			add_modifier = {
+				modifier = mod_crisis_hard
+				days = -1
+			}
+
+			set_country_flag = has_crisis_difficulty_mod
+		}
+
+		if = {
+			limit = {
+				has_global_flag = flag_crisis_insane
+			}
+
+			add_modifier = {
+				modifier = mod_crisis_insane
+				days = -1
+			}
+
+			set_country_flag = has_crisis_difficulty_mod
+		}
+	}
+}
+
+
+### FE / AE difficulty events
+# AE Pulse
+country_event = {
+	id = isb.16
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		# Clears any FE difficulty mods from awakening, if difficulty set to normal for AE
+		if = {
+			limit = {
+				NOT = {	has_global_flag = flag_awakened_easy }
+				NOT = { has_global_flag = flag_awakened_hard }
+			}
+
+			every_country = {
+				limit = {
+					is_country_type = awakened_fallen_empire
+					has_country_flag = has_fe_difficulty_mod
+				}
+				
+				# Clears FE buffs
+				country_event = { id = isb.20 }
+			}
+		}
+
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = flag_awakened_easy
+					has_global_flag = flag_awakened_hard
+				}
+			}
+
+			every_country = {
+				limit = {
+					OR = {
+						is_country_type = awakened_fallen_empire
+					}
+					NOT = { has_country_flag = has_ae_difficulty_mod }
+				}
+
+				# AEs spawn from FEs, remove FE buffs
+				if = {
+					limit = {
+						has_country_flag = has_fe_difficulty_mod
+					}
+
+					# Clears FE buffs
+					country_event = { id = isb.20 }
+				}
+
+				# Clears AE buffs, just in case
+				country_event = { id = isb.17 }
+
+				# Adds correct buff
+				country_event = { id = isb.18 }
+			}
+		}
+	}
+}
+
+# Clears all Awakened Empire flags
+country_event = {
+	id = isb.9
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = flag_awakened_easy
+			}
+
+			remove_global_flag = flag_awakened_easy
+		}
+
+		if = {
+			limit = {
+				has_global_flag = flag_awakened_hard
+			}
+
+			remove_global_flag = flag_awakened_hard
+		}
+
+		every_country = {
+			limit = {
+				OR = {
+					is_country_type = awakened_fallen_empire
+				}
+			}
+
+			country_event = { id = isb.17 }
+		}
+	}
+}
+
+# Clears all Awakened Empire buffs
+country_event = {
+	id = isb.17
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_modifier = mod_awakened_easy
+			}
+
+			remove_modifier = mod_awakened_easy
+		}
+
+		if = {
+			limit = {
+				has_modifier = mod_awakened_hard
+			}
+
+			remove_modifier = mod_awakened_hard
+		}
+
+		if = {
+			limit = {
+				has_country_flag = has_ae_difficulty_mod
+			}
+
+			remove_country_flag = has_ae_difficulty_mod
+		}
+	}
+}
+
+# Adds correct AE buff
+country_event = {
+	id = isb.18
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = flag_awakened_easy
+			}
+
+			add_modifier = {
+				modifier = mod_awakened_easy
+				days = -1
+			}
+
+			set_country_flag = has_ae_difficulty_mod
+		}
+
+		if = {
+			limit = {
+				has_global_flag = flag_awakened_hard
+			}
+
+			add_modifier = {
+				modifier = mod_awakened_hard
+				days = -1
+			}
+
+			set_country_flag = has_ae_difficulty_mod
+		}
+	}
+}
+
+# FE Pulse
+country_event = {
+	id = isb.19
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = flag_fallen_easy
+					has_global_flag = flag_fallen_hard
+				}
+			}
+
+			every_country = {
+				limit = {
+					OR = {
+						is_country_type = fallen_empire
+					}
+					NOT = { has_country_flag = has_fe_difficulty_mod }
+				}
+
+				# Clears all buffs
+				country_event = { id = isb.20 }
+
+				# Adds correct buff
+				country_event = { id = isb.21 }
+			}
+		}
+	}
+}
+
+# Clears all FE flags
+country_event = {
+	id = isb.10
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = flag_fallen_easy
+			}
+
+			remove_global_flag = flag_fallen_easy
+		}
+
+		if = {
+			limit = {
+				has_global_flag = flag_fallen_hard
+			}
+
+			remove_global_flag = flag_fallen_hard
+		}
+
+		every_country = {
+			limit = {
+				OR = {
+					is_country_type = fallen_empire
+				}
+			}
+
+			country_event = { id = isb.20 }
+		}
+	}
+}
+
+# Clears all FE buffs
+country_event = {
+	id = isb.20
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_modifier = mod_fallen_easy
+			}
+
+			remove_modifier = mod_fallen_easy
+		}
+
+		if = {
+			limit = {
+				has_modifier = mod_fallen_hard
+			}
+
+			remove_modifier = mod_fallen_hard
+		}
+
+		if = {
+			limit = {
+				has_country_flag = has_fe_difficulty_mod
+			}
+
+			remove_country_flag = has_fe_difficulty_mod
+		}
+	}
+}
+
+# Clears all Fallen Empire buffs and flags
+country_event = {
+	id = isb.21
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = flag_fallen_easy
+			}
+
+			add_modifier = {
+				modifier = mod_fallen_easy
+				days = -1
+			}
+
+			set_country_flag = has_fe_difficulty_mod
+		}
+
+		if = {
+			limit = {
+				has_global_flag = flag_fallen_hard
+			}
+
+			add_modifier = {
+				modifier = mod_fallen_hard
+				days = -1
+			}
+
+			set_country_flag = has_fe_difficulty_mod
 		}
 	}
 }

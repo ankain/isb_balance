@@ -1,6 +1,6 @@
-objectTypes = {	
+objectTypes = {
 	#######  Battleship frame  #######
-	
+
 	pdxmesh = {
 		name = "mammalian_01_titan_frame_mesh"
 		file = "gfx/models/ships/mammalian_01/mammalian_01_battleship_frame.mesh"
@@ -8,16 +8,17 @@ objectTypes = {
 				animation = { id = "death"			type = "mammalian_01_battleship_frame_death_animation" }
 				animation = { id = "death2"			type = "mammalian_01_battleship_frame_death2_animation" }
 				animation = { id = "death3"			type = "mammalian_01_battleship_frame_death3_animation" }
-		#		animation = { id = "attack"			type = "mammalian_01_battleship_frame_idle_animation" }				
-		scale = 1.52
+		#		animation = { id = "attack"			type = "mammalian_01_battleship_frame_idle_animation" }
+		#scale = 1.52
+		scale = 3.0
 		meshsettings = {
 			shader = "PdxMeshShip"
 		}
 	}
-	
+
 	pdxmesh = {
 		name = "mammalian_01_titan_bow_mesh"
-		file = "gfx/models/ships/mammalian_01/mammalian_01_destroyer_bow_M1S2.mesh"		
+		file = "gfx/models/ships/mammalian_01/mammalian_01_destroyer_bow_M1S2.mesh"
 		scale = 2.4
 		meshsettings = {
 			shader = "PdxMeshShip"
@@ -25,9 +26,9 @@ objectTypes = {
 		#texture_diffuse = "2x2.dds"
 		}
 	}
-		
-	#######  Battleship mid sections  #######					
-		
+
+	#######  Battleship mid sections  #######
+
 	pdxmesh = {
 		name = "mammalian_01_titan_mid_mesh"
 		file = "gfx/models/ships/mammalian_01/mammalian_01_battleship_mid_S4LHB.mesh"
@@ -38,10 +39,10 @@ objectTypes = {
 		#texture_diffuse = "2x2.dds"
 		}
 	}
-		
-		
-	#######  Battleship stern sections  #######	
-		
+
+
+	#######  Battleship stern sections  #######
+
 	pdxmesh = {
 		name = "mammalian_01_titan_stern_mesh"
 		file = "gfx/models/ships/mammalian_01/mammalian_01_battleship_stern_M2.mesh"
@@ -51,5 +52,94 @@ objectTypes = {
 			#Mipmap tweaking
 		#texture_diffuse = "2x2.dds"
 		}
+	}
+
+	# New Titan Design
+	pdxmesh = {
+		name = "mammalian_01_titan_stern_attach_2_mesh"
+		file = "gfx/models/ships/mammalian_01/mammalian_01_battleship_stern_M2.mesh"
+		scale = 3.0
+		meshsettings = {
+			shader = "PdxMeshShip"
+			#Mipmap tweaking
+			#texture_diffuse = "2x2.dds"
+		}
+	}
+
+	pdxmesh = {
+		name = "mammalian_01_titan_stern_attach_3_mesh"
+		file = "gfx/models/ships/mammalian_01/mammalian_01_cruiser_bow_L1.mesh"
+		scale = 3.0
+		meshsettings = {
+			shader = "PdxMeshShip"
+			#Mipmap tweaking
+			#texture_diffuse = "1x1.dds"
+		}
+	}
+
+	pdxmesh = {
+		name = "mammalian_01_titan_stern_attach_1_mesh"
+		file = "gfx/models/ships/mammalian_01/mammalian_01_destroyer_stern_M1.mesh"
+		scale = 3.0
+		meshsettings = {
+			shader = "PdxMeshShip"
+			#Mipmap tweaking
+			#texture_diffuse = "1x512.dds"
+		}
 	}	
+
+	pdxmesh = {
+		name = "mammalian_01_titan_mid_attach_1_mesh"
+		file = "gfx/models/ships/mammalian_01/mammalian_01_cruiser_mid_M2S2.mesh"
+		scale = 3.0
+		meshsettings = {
+			shader = "PdxMeshShip"
+			#Mipmap tweaking
+			#texture_diffuse = "1x1.dds"
+		}
+	}
+
+	pdxmesh = {
+		name = "mammalian_01_titan_mid_attach_3_mesh"
+		file = "gfx/models/ships/mammalian_01/mammalian_01_battleship_mid_L3.mesh"
+		scale = 3.0
+		meshsettings = {
+			shader = "PdxMeshShip"
+			#Mipmap tweaking
+		#texture_diffuse = "2x2.dds"
+		}
+	}
+
+	pdxmesh = {
+		name = "mammalian_01_titan_mid_attach_4_mesh"
+		file = "gfx/models/ships/mammalian_01/mammalian_01_terraforming_station.mesh"
+		scale = 3.0
+		meshsettings = {
+			shader = "PdxMeshShip"
+		}
+	}
+
+	pdxmesh = {
+		name = "mammalian_01_titan_bow_attach_1_mesh"
+		file = "gfx/models/ships/mammalian_01/mammalian_01_battleship_bow_XL1.mesh"
+		scale = 3.0
+		meshsettings = {
+			shader = "PdxMeshShip"
+			#Mipmap tweaking
+		#texture_diffuse = "2x2.dds"
+		}
+	}
+	
+	pdxmesh = {
+		name = "mammalian_01_titan_bow_attach_2_mesh"
+		file = "gfx/models/ships/mammalian_01/mammalian_01_battleship_bow_L1M1S2.mesh"
+		scale = 3.0
+		meshsettings = {
+			shader = "PdxMeshShip"
+		#Mipmap tweaking
+		#texture_diffuse = "2x2.dds"
+		}
+	}
 }
+
+

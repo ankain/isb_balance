@@ -7,7 +7,7 @@ utility_component_template = {
 	power = 0
 	cost = 100
 	military_power = 0
-	can_recharge_shield = yes
+	can_recharge_shield = yes	
 
 	ship_behavior = "isb_aggressive"
 
@@ -39,7 +39,7 @@ utility_component_template = {
 	power = 0
 	cost = 100
 	military_power = 0
-	can_recharge_shield = yes
+	can_recharge_shield = yes	
 
 	ship_behavior = "isb_defensive"
 

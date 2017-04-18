@@ -6,7 +6,6 @@
 @fallen_titan_scale = 1.5
 @fallen_leviathan_scale = 1.75
 
-
 entity = {
 	name = "fallen_empire_01_leviathan_entity"
 	locator = { name = "part1" 	position = { 0 0 0 } rotation = { 0 0 50 } }

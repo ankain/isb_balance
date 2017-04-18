@@ -17,8 +17,8 @@
 @tier3cost2 = 2840
 @tier3cost3 = 3360
 @tier3cost4 = 3880
-@tier3cost5 = 4920
-@tier3cost6 = 5960
+@tier3cost5 = 4520
+@tier3cost6 = 5260
 
 ####################
 ### TECH WEIGHTS ###
@@ -94,21 +94,21 @@ tech_titan = {
 			NOT = { years_passed > 70 }
 		}	
 		modifier = {
-			factor = 2
+			factor = 4
 			any_neighbor_country = {
 				has_technology = tech_titan
 			}
 		}
 		modifier = {
-			factor = 2
+			factor = 4
 			years_passed > 90
 		}
 		modifier = {
-			factor = 3
+			factor = 6
 			years_passed > 100
 		}
 		modifier = {
-			factor = 4
+			factor = 8
 			years_passed > 110
 		}
 		modifier = {
@@ -155,11 +155,11 @@ tech_titan_soc_01_weapons_platform = {
 	
 	weight_modifier = {
 		modifier = {
-			factor = 1.5
+			factor = 3
 			years_passed > 70
 		}
 		modifier = {
-			factor = 2
+			factor = 6
 			years_passed > 80
 		}
 		modifier = {
@@ -243,11 +243,11 @@ tech_titan_soc_02_super_capital = {
 	
 	weight_modifier = {		
 		modifier = {
-			factor = 1.5
+			factor = 3
 			years_passed > 80
 		}
 		modifier = {
-			factor = 2
+			factor = 6
 			years_passed > 85
 		}
 		modifier = {
@@ -333,11 +333,11 @@ tech_titan_eng_01_massive_construction = {
 	
 	weight_modifier = {		
 		modifier = {
-			factor = 1.5
+			factor = 3
 			years_passed > 70
 		}
 		modifier = {
-			factor = 2
+			factor = 6
 			years_passed > 80
 		}
 		modifier = {
@@ -390,11 +390,11 @@ tech_titan_eng_02_drone_swarm = {
 	
 	weight_modifier = {
 		modifier = {
-			factor = 1.5
+			factor = 3
 			years_passed > 80
 		}
 		modifier = {
-			factor = 2
+			factor = 6
 			years_passed > 85
 		}	
 		modifier = {
@@ -447,11 +447,11 @@ tech_titan_phy_01_mass_manipulation = {
 	
 	weight_modifier = {
 		modifier = {
-			factor = 1.5
+			factor = 3
 			years_passed > 70
 		}
 		modifier = {
-			factor = 2
+			factor = 6
 			years_passed > 80
 		}			
 		modifier = {
@@ -504,11 +504,11 @@ tech_titan_phy_02_inertia_dampeners = {
 	
 	weight_modifier = {
 		modifier = {
-			factor = 1.5
+			factor = 3
 			years_passed > 80
 		}
 		modifier = {
-			factor = 2
+			factor = 6
 			years_passed > 85
 		}
 		modifier = {
@@ -567,7 +567,7 @@ tech_titan_weapon_module_01 = {
 	ai_weight = {
 		factor = 40
 		modifier = {
-			factor = 2
+			factor = 6
 			years_passed > 80
 		}
 		modifier = {
@@ -743,7 +743,7 @@ tech_titan_doomsday_weapons_01 = {
 	}
 	
 	modifier = {
-		influence_gain_add = 1
+		country_resource_influence_add = 1
 	}
 	
 	weight_modifier = {
@@ -780,7 +780,7 @@ tech_titan_doomsday_weapons_02 = {
 	}
 	
 	modifier = {
-		influence_gain_add = 0.25
+		country_resource_influence_add = 0.25
 	}
 	
 	weight_modifier = {
@@ -817,7 +817,7 @@ tech_titan_doomsday_weapons_03 = {
 	}
 	
 	modifier = {
-		influence_gain_add = 0.25
+		country_resource_influence_add = 0.25
 	}
 	
 	weight_modifier = {
@@ -885,7 +885,7 @@ tech_titan_doomsday_weapons_05 = {
 	}
 	
 	modifier = {
-		influence_gain_add = 0.25
+		country_resource_influence_add = 0.25
 	}
 	
 	weight_modifier = {
@@ -917,7 +917,7 @@ tech_titan_doomsday_weapons_06 = {
 	}
 	
 	modifier = {
-		influence_gain_add = 0.25
+		country_resource_influence_add = 0.25
 	}
 	
 	weight_modifier = {
@@ -955,7 +955,7 @@ tech_titan_doomsday_weapons_07 = {
 	}
 	
 	modifier = {
-		influence_gain_add = 0.25
+		country_resource_influence_add = 0.25
 	}
 	
 	weight_modifier = {
@@ -993,7 +993,7 @@ tech_titan_doomsday_weapons_08 = {
 	}
 	
 	modifier = {
-		influence_gain_add = 0.25
+		country_resource_influence_add = 0.25
 	}
 	
 	weight_modifier = {

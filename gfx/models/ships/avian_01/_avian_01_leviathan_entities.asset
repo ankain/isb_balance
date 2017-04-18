@@ -1,4 +1,4 @@
-@leviathan_scale = 25
+@leviathan_scale = 40.0
 
 # FRAME
 entity = {

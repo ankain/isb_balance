@@ -65,6 +65,7 @@
 
 swarm = {	
 	counts_for_victory = yes
+	has_fortifications = yes					 
 	can_own_empty_planets = yes
 	needs_survey = no
 	can_planets_be_attacked = no
@@ -72,7 +73,6 @@ swarm = {
 	enforces_borders = no
 	colonizing_title = "COLONIZING_PLANET_SWARM"
 	colonizing_desc = "PLANET_VIEW_UNDER_COLONIZATION_SWARM_DESC"
-	orbital_bombardment = no
 	home_system = swarm_invasion_target_1
 	
 	ai = {
@@ -123,7 +123,7 @@ extradimensional = {
 	#	extradimensional_2
 	#	extradimensional_3
 	#}
-	
+	government = no
 	ai = {
 		enabled = yes
 		colonizer = yes
@@ -140,6 +140,10 @@ extradimensional = {
 			military_station_small_ed = {
 				min = 0
 			}
+			
+			#anchor_station = {
+			#	min = 1
+			#}
 		}
 	}
 	faction = {
@@ -171,7 +175,7 @@ extradimensional_2 = {
 	#	extradimensional
 	#	extradimensional_3
 	#}
-	
+	government = no
 	ai = {
 		enabled = yes
 		colonizer = yes
@@ -188,6 +192,10 @@ extradimensional_2 = {
 			military_station_small_ed = {
 				min = 0
 			}
+			
+			#anchor_station = {
+			#	min = 1
+			#}
 		}
 	}
 	faction = {
@@ -219,7 +227,7 @@ extradimensional_3 = {
 		#extradimensional
 		#extradimensional_2
 	#}
-	
+	government = no
 	ai = {
 		enabled = yes
 		colonizer = yes
@@ -236,6 +244,10 @@ extradimensional_3 = {
 			military_station_small_ed = {
 				min = 0
 			}
+			
+			#anchor_station = {
+			#	min = 1
+			#}
 		}
 	}
 	faction = {

@@ -4,7 +4,7 @@
 
 # FRAME
 entity = {
-	name = "mammalian_01_titan_entity"
+	name = "old_mammalian_01_titan_entity"
 	pdxmesh = "mammalian_01_titan_frame_mesh"
 	
 	default_state = "idle"
@@ -73,7 +73,7 @@ entity = {
 
 
 entity = {
-	name = "mammalian_01_titan_bow_entity"
+	name = "old_mammalian_01_titan_bow_entity"
 	pdxmesh = "mammalian_01_titan_bow_mesh"
 	
 	default_state = "idle"
@@ -139,7 +139,7 @@ entity = {
 
 #MID
 entity = {
-	name = "mammalian_01_titan_mid_entity"
+	name = "old_mammalian_01_titan_mid_entity"
 	pdxmesh = "mammalian_01_titan_mid_mesh"
 	
 	default_state = "idle"
@@ -212,7 +212,7 @@ entity = {
 # STERN
 
 entity = {
-	name = "mammalian_01_titan_stern_entity"
+	name = "old_mammalian_01_titan_stern_entity"
 	pdxmesh = "mammalian_01_titan_stern_mesh"
 	
 	default_state = idle

@@ -35,14 +35,17 @@ utility_component_template = {
 	can_recharge_shield = yes
 	military_power = -70
 	
+	hidden = yes
+	
 	ship_behavior = "erebus_drone"
 	
 	ship_modifier = {
 		#ship_speed_mult = 5.0
-		#ship_combat_speed_mult = 5.0
+		ship_combat_speed_mult = 0.75
 		ship_weapon_damage = 1.0
 		ship_fire_rate_mult = 0.5
 		SHIP_ACCURACY_ADD = 50.0
+		ship_tracking_add = 25.0
 	}
 		
 	component_set = "erebus_weapon_components"	

@@ -12,19 +12,21 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	cost = 0
-	military_power = -10000
-	can_recharge_shield = yes
+	military_power = -5000
+	can_recharge_shield = yes	
+	
+	size_restriction = { titan_ship_fallen_empire }
 
 	ship_behavior = "isb_aggressive"
 
 	ship_modifier = {
-		SHIP_WEAPON_DAMAGE = 2.5
+		SHIP_WEAPON_DAMAGE = 1.5
 		SHIP_WEAPON_RANGE_MULT = 0.15
 
-		SHIP_HITPOINTS_ADD = 5000
+		SHIP_HITPOINTS_ADD = 2500
 		SHIP_SHIELD_HP_ADD = 5000
 
-		SHIP_AUTO_REPAIR_ADD = 0.15
+		SHIP_AUTO_REPAIR_ADD = 0.10
 		SHIP_SHIELD_REGEN_ADD = 150
 		ship_combat_speed_mult = 0.5
 	}
@@ -238,6 +240,8 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	cost = 100
+	
+	#size_restriction = { titan }
 
 	ship_behavior = "isb_defensive"
 	can_recharge_shield = yes
@@ -270,6 +274,8 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	cost = 100
+	
+	#size_restriction = { titan }
 
 	ship_behavior = "isb_aggressive"
 	can_recharge_shield = yes
@@ -303,6 +309,8 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 	cost = 100
+	
+	#size_restriction = { titan }
 
 	ship_behavior = "isb_defensive"
 	can_recharge_shield = yes
@@ -339,6 +347,8 @@ utility_component_template = {
 	ftl = jumpdrive
 	power = -30
 	#military_power = 1
+	
+	#size_restriction = { sun_crusher }
 
 	ship_modifier = {
 		ship_speed_mult = 0.1

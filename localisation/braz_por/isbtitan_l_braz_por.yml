@@ -1,4 +1,4 @@
-﻿l_french:
+﻿l_braz_por:
 
 titan:0 "Titan"
 titan_plural:0 "Titans"
@@ -342,16 +342,6 @@ doomsday_abduction:0 "Forced Assimilation"
 doomsday_abduction_name:0 "Only Forced Assimilation can be used"
 doomsday_abduction_desc:1 "\n§EEvery two months, any planet being bombarded with less than 10% hp and a Titan / Avatar size ship in system will have one population relocated to a suitable planet under your control. The relocated population will have its ethos changed to match your Empire. This doomsday weapon costs 250 energy / 500 minerals per month.\n\nYou have to bombard the planet for two consecutive months for assimilation to occur. The process will be cancelled if you do not have any free space on your planets for a new population.\n\nWARNING: Forced Assimilation is considered a brutal doomsday weapon.§!\n"
 
-# 1.4.1 difficulty settings
-policy_isb_crisis_diff_policy:0 "ISB - Crisis Difficulty"
-policy_isb_crisis_diff_policy_desc:0 "\nAllows you to modify the difficulty of the end game crises"
-crisis_diff_normal:0 "Normal difficulty §Y(Default)§!"
-crisis_diff_normal_desc:0 "\nThe default difficulty setting, should provide a good challenge for veteran players.\n\n"
-crisis_diff_easy:0 "Easy difficulty"
-crisis_diff_easy_desc:0 "\nCrisis fleets are weaker than they appear. Useful if you're playing in smaller galaxies.\n\n"
-crisis_diff_hard:0 "Hard difficulty"
-crisis_diff_hard_desc:0 "\nCrisis fleets are a lot stronger than they appear. Not for the faint of heart.\n\n"
-
 # 1.5 Ragnarok
 TECH_UNLOCK_RAGNAROK_CONSTRUCTION_TITLE:0 "§HUnlocks Ship type:§! Ragnarok"
 TECH_UNLOCK_RAGNAROK_CONSTRUCTION_DESC:0 "§HRagnarok§!\nA super-capital class ship grown from the organic matter discovered near our galactic core. While we do not fully understand the ship or its technologies, we are able to exert some manner of control. It is able to deploy both the Spear of Longinus and Spear of Cassius doomsday weapons.§!\n\n§EThe Ragnarok starts out in an infantile stage. In order to grow its organic core to maturity, it has to consume planets through use of the Spear of Longinus. More details can be found in the associated event chain in the Situation Log once it has been constructed.§!\n\n§RWARNING: You may only own one Ragnarok at any time. Constructing another Ragnarok will result in its destruction due to core instabilities.§!"
@@ -410,3 +400,62 @@ flag_rag_mode_delay:0 "§YUNPAUSE THE GAME TO ACTIVATE THE BUTTONS, you can paus
 
 RAGNAROK_CORE:0 "Awakened S² Core"
 ragnarok_components:0 "$RAGNAROK_CORE$"
+
+# Heinlein Compatibility Patch (v1.5.1)
+STATION_SENSOR_BOOST_ISB_SMALL:0 "Subspace Array"
+STATION_SENSOR_BOOST_ISB_SMALL_DESC:0 "Boosts the sensor range of military space stations"
+STATION_SENSOR_BOOST_ISB_MEDIUM:0 "Advanced Subspace Array"
+STATION_SENSOR_BOOST_ISB_MEDIUM_DESC:0 "Boosts the sensor range of military space stations"
+STATION_SENSOR_BOOST_ISB_LARGE:0 "Overcharged Subspace Array"
+STATION_SENSOR_BOOST_ISB_LARGE_DESC:0 "Boosts the sensor range of military space stations"
+
+STATION_SENSOR_BOOST_PART_ISB_SMALL:0 "Subspace Array"
+STATION_SENSOR_BOOST_PART_ISB_MEDIUM:0 "Advanced Subspace Array"
+STATION_SENSOR_BOOST_PART_ISB_LARGE:0 "Overcharged Subspace Array"
+
+# Heinlein Patch 2 (v1.5.2)
+sm_isb_defense_platform_01:0 "Sentinel Defense System : E-Class"
+sm_isb_defense_platform_02:0 "Sentinel Defense System : D-Class"
+sm_isb_defense_platform_03:0 "Sentinel Defense System : C-Class"
+
+# Updated crisis difficulty settings
+policy_isb_crisis_diff_policy:0 "ISB - Crisis Difficulty"
+policy_isb_crisis_diff_policy_desc:0 "\nAllows you to modify the difficulty of the end game crises"
+crisis_diff_normal:0 "Normal §Y(Default)§!"
+crisis_diff_normal_desc:0 "\nThe default difficulty setting, should provide a good challenge for veteran players.\n\n"
+crisis_diff_very_easy:0 "Fluffy Pillows"
+crisis_diff_very_easy_desc:0 "\nTime for a pillow fight!\n\n"
+crisis_diff_easy:0 "Easy"
+crisis_diff_easy_desc:0 "\nCrisis fleets are weaker than they appear. Useful if you're playing in smaller galaxies.\n\n"
+crisis_diff_hard:0 "Hard"
+crisis_diff_hard_desc:0 "\nCrisis fleets are a lot stronger than they appear. Not for the faint of heart.\n\n"
+crisis_diff_insane:0 "The Long Dark"
+crisis_diff_insane_desc:0 "\n§RDeep into the darkness peering,\nLong I stood there, wondering,\nfearing, doubting,\nDreaming dreams no mortal ever\ndared to dream before...§!\n\n"
+
+# Guardian, AE and FE difficulty settings
+policy_isb_guardian_diff_policy:0 "ISB - Guardian Difficulty"
+policy_isb_guardian_diff_policy_desc:0 "\nAllows you to modify the difficulty of Guardians and how their power scales with time."
+guardian_diff_off:0 "Off"
+guardian_diff_off_desc:0 "\nGuardians do not grow stronger with time."
+guardian_diff_easy:0 "Easy"
+guardian_diff_easy_desc:0 "\nGuardians still grow stronger as time passes, but at a greatly reduced rate.\n\n"
+guardian_diff_normal:0 "Normal §Y(Default)§!"
+guardian_diff_normal_desc:0 "\nThe default difficulty setting. Guardians grow stronger as time passes.\n\n"
+
+policy_isb_awakened_diff_policy:0 "ISB - Awakened Empire Difficulty"
+policy_isb_awakened_diff_policy_desc:0 "\nAllows you to modify the difficulty of Awakened Empires. Does not affect Fallen Empires."
+awakened_diff_easy:0 "Easy"
+awakened_diff_easy_desc:0 "\nAwakened Empire ships are weaker. Suited for smaller galaxies."
+awakened_diff_normal:0 "Normal §Y(Default)§!"
+awakened_diff_normal_desc:0 "\nDefault difficulty setting."
+awakened_diff_hard:0 "Hard"
+awakened_diff_hard_desc:0 "\nAwakened Empire ships are stronger, expect a challenge."
+
+policy_isb_fallen_diff_policy:0 "ISB - Fallen Empire Difficulty"
+policy_isb_fallen_diff_policy_desc:0 "\nAllows you to modify the difficulty of Fallen Empires. Does not affect Awakened Empires."
+fallen_diff_easy:0 "Easy"
+fallen_diff_easy_desc:0 "\nFallen Empire ships are weaker. Suited for smaller galaxies."
+fallen_diff_normal:0 "Normal §Y(Default)§!"
+fallen_diff_normal_desc:0 "\nDefault difficulty setting."
+fallen_diff_hard:0 "Hard"
+fallen_diff_hard_desc:0 "\nFallen Empire ships are stronger, expect a challenge."
